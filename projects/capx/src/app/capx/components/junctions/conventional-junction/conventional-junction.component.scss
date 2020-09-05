@@ -1,0 +1,33 @@
+:host
+{
+  table, tr, td, th {
+    padding: 0;
+    margin: 0;
+  }
+
+  td {
+    text-align: center;
+  }
+
+  table {
+    border: 1px solid black;
+  }
+
+  .west-rotation{
+    transform: rotate(90deg);
+  }
+
+  .east-rotation{
+    transform: rotate(90deg);
+  }
+
+  input {
+    text-align: center;
+    max-width: 46px;
+    border: 0px;
+  }
+
+  input:focus {
+    z-index: 100;
+  }
+}

@@ -38,12 +38,52 @@ import { DoubleCrossoverDiamondInterchangeEastWestJunctionComponent } from '../c
 import { SinglePointInterchangeNorthSouthJunctionComponent } from '../capx/components/junctions/single-point-interchange-north-south-junction/single-point-interchange-north-south-junction.component';
 import { SinglePointInterchangeEastWestJunctionComponent } from '../capx/components/junctions/single-point-interchange-east-west-junction/single-point-interchange-east-west-junction.component';
 import { CriticalLaneVolumeSumComponent } from '../capx/components/common/critical-lane-volume-sum/critical-lane-volume-sum.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { ConventionalDesignComponent } from '../capx/components/junctions/conventional-junction/conventional-design/conventional-design.component';
 
 @NgModule({
-  declarations: [AnalysisComponent, JunctionAnalysisParametersComponent, JunctionAnalysisScoreResultsComponent, ConventionalJunctionComponent, ConventionalSharedRightTurnLeftTurnJunctionComponent, QuadrantRoadwayIntersectionSouthWestJunctionComponent, QuadrantRoadwayIntersectionNorthEastJunctionComponent, QuadrantRoadwayIntersectionSouthEastJunctionComponent, QuadrantRoadwayIntersectionNorthWestJunctionComponent, PartialDisplacedLeftTurnIntersectionNorthSouthJunctionComponent, PartialDisplacedLeftTurnIntersectionEastWestJunctionComponent, FullDisplacedLeftTurnIntersectionJunctionComponent, RestrictedCrossingUTurnIntersectionNorthSouthJunctionComponent, RestrictedCrossingUTurnIntersectionEastWestJunctionComponent, MedianUTurnIntersectionNorthSouthJunctionComponent, MedianUTurnIntersectionEastWestJunctionComponent, PartialMedianUTurnIntersectionNorthSouthJunctionComponent, PartialMedianUTurnIntersectionEastWestJunctionComponent, FiftyICDMiniRoundaboutJunctionComponent, SeventyFiveICDMiniRoundaboutJunctionComponent, OneNorthSouthxOneEastWestRoundaboutJunctionComponent, OneNorthSouthxTwoEastWestLaneRoundaboutJunctionComponent, TwoNorthSouthxOneEastWestLaneRoundaboutJunctionComponent, TwoNorthSouthxTwoEastWestLaneRoundaboutJunctionComponent, ThreeNorthSouthxThreeEastWestLaneRoundaboutJunctionComponent, TraditionalDiamondNorthSouthJunctionComponent, TraditionalDiamondEastWestJunctionComponent, PartialCloverleafNorthSouthJunctionComponent, PartialCloverleafEastWestJunctionComponent, DisplacedLeftTurnInterchangeNorthSouthJunctionComponent, DisplacedLeftTurnInterchangeEastWestJunctionComponent, DoubleCrossoverDiamondInterchangeNorthSouthJunctionComponent, DoubleCrossoverDiamondInterchangeEastWestJunctionComponent, SinglePointInterchangeNorthSouthJunctionComponent, SinglePointInterchangeEastWestJunctionComponent, CriticalLaneVolumeSumComponent],
+  declarations: [
+    AnalysisComponent,
+    JunctionAnalysisParametersComponent,
+    JunctionAnalysisScoreResultsComponent,
+     ConventionalJunctionComponent,
+     ConventionalSharedRightTurnLeftTurnJunctionComponent,
+     QuadrantRoadwayIntersectionSouthWestJunctionComponent,
+     QuadrantRoadwayIntersectionNorthEastJunctionComponent,
+     QuadrantRoadwayIntersectionSouthEastJunctionComponent,
+     QuadrantRoadwayIntersectionNorthWestJunctionComponent,
+     PartialDisplacedLeftTurnIntersectionNorthSouthJunctionComponent,
+     PartialDisplacedLeftTurnIntersectionEastWestJunctionComponent,
+     FullDisplacedLeftTurnIntersectionJunctionComponent,
+     RestrictedCrossingUTurnIntersectionNorthSouthJunctionComponent,
+     RestrictedCrossingUTurnIntersectionEastWestJunctionComponent,
+     MedianUTurnIntersectionNorthSouthJunctionComponent,
+     MedianUTurnIntersectionEastWestJunctionComponent,
+     PartialMedianUTurnIntersectionNorthSouthJunctionComponent,
+     PartialMedianUTurnIntersectionEastWestJunctionComponent,
+     FiftyICDMiniRoundaboutJunctionComponent,
+     SeventyFiveICDMiniRoundaboutJunctionComponent,
+     OneNorthSouthxOneEastWestRoundaboutJunctionComponent,
+     OneNorthSouthxTwoEastWestLaneRoundaboutJunctionComponent,
+     TwoNorthSouthxOneEastWestLaneRoundaboutJunctionComponent,
+     TwoNorthSouthxTwoEastWestLaneRoundaboutJunctionComponent,
+     ThreeNorthSouthxThreeEastWestLaneRoundaboutJunctionComponent,
+     TraditionalDiamondNorthSouthJunctionComponent,
+     TraditionalDiamondEastWestJunctionComponent,
+     PartialCloverleafNorthSouthJunctionComponent,
+     PartialCloverleafEastWestJunctionComponent,
+     DisplacedLeftTurnInterchangeNorthSouthJunctionComponent,
+     DisplacedLeftTurnInterchangeEastWestJunctionComponent,
+     DoubleCrossoverDiamondInterchangeNorthSouthJunctionComponent,
+     DoubleCrossoverDiamondInterchangeEastWestJunctionComponent,
+     SinglePointInterchangeNorthSouthJunctionComponent,
+     SinglePointInterchangeEastWestJunctionComponent,
+     CriticalLaneVolumeSumComponent,
+     ConventionalDesignComponent],
   imports: [
     CommonModule,
-    CapxRoutingModule
+    CapxRoutingModule,
+    FlexLayoutModule
   ]
 })
 export class CapxModule { }

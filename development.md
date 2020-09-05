@@ -9,7 +9,9 @@ ng generate module Capx --routing=true --routingScope=Child
 ng generate component capx/components/Analysis --prefix=capx --module=Capx --flat
 ng generate component capx/components/JunctionAnalysisParameters --prefix=capx --module=Capx
 ng generate component capx/components/JunctionAnalysisScoreResults --prefix=capx --module=Capx
+
 ng generate component capx/components/junctions/ConventionalJunction  --prefix=capx --module=Capx
+
 ng generate component capx/components/junctions/ConventionalSharedRightTurnLeftTurnJunction  --prefix=capx --module=Capx
 ng generate component capx/components/junctions/QuadrantRoadwayIntersectionSouthWestJunction  --prefix=capx --module=Capx
 ng generate component capx/components/junctions/QuadrantRoadwayIntersectionNorthEastJunction  --prefix=capx --module=Capx
@@ -47,4 +49,7 @@ ng generate component capx/components/junctions/SinglePointInterchangeEastWestJu
 ng generate component capx/components/common/CriticalLaneVolumeSum --prefix=capx --module=Capx
 
 
+
+ng generate component capx/components/junctions/conventional-junction/ConventionalDesign --prefix=capx --module=Capx
+ng generate component capx/components/junctions/conventional-junction/ConventionalConfiguration  --prefix=capx --module=Capx
 
