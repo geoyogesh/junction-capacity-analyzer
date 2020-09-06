@@ -1,11 +1,11 @@
 <p>Conventional</p>
 <div fxLayout="column" fxLayoutAlign="space-around stretch" >
-  <capx-critical-lane-volume-sum></capx-critical-lane-volume-sum>
+  <capx-critical-lane-volume-sum vc="{{(capxStateService.conventionalJunctionResult$ | async)!.zone5_center_vc}}"></capx-critical-lane-volume-sum>
   <div fxLayout="row" fxLayoutAlign=" stretch" fxLayoutGap="20px" style="padding:20px">
     <div fxFlex fxFlex="50" fxLayout="column" fxLayoutAlign="space-around center">
       <capx-conventional-design></capx-conventional-design>
     </div>
-    <div fxFlex="50">
+    <div fxFlex="50" [formGroup]="form">
       <table class="no-border">
         <tr>
           <td></td>
@@ -30,9 +30,9 @@
                 <td>{{(capxStateService.masterParameters$ | async)!.south_bound_right}}</td>
               </tr>
               <tr>
-                <td><input type="number" value="1"></td>
-                <td><input type="number" value="1"></td>
-                <td colspan="2"><input type="number" value="0"></td>
+                <td><input type="number" min="0" value="1" formControlName="south_bound_left"></td>
+                <td><input type="number" min="0" value="1" formControlName="south_bound_thru"></td>
+                <td colspan="2"><input type="number" value="0" formControlName="south_bound_right"></td>
               </tr>
             </table>
           </td>
@@ -47,7 +47,7 @@
                   <td><img src="assets/capx/east-u-turn.png" /></td>
                   <td class="east-rotation">Pepch</td>
                   <td class="east-rotation">{{(capxStateService.masterParameters$ | async)!.east_bound_u}}</td>
-                  <td rowspan="2" class="east-rotation"><input type="number" value="1"></td>
+                  <td rowspan="2" class="east-rotation"><input type="number" min="0" value="1" formControlName="east_bound_left"></td>
                 </tr>
                 <tr>
                   <td><img src="assets/capx/east-left-turn.png" /></td>
@@ -59,14 +59,14 @@
                   <td><img src="assets/capx/east-thru.png" /></td>
                   <td class="east-rotation">Pepch</td>
                   <td class="east-rotation">{{(capxStateService.masterParameters$ | async)!.east_bound_thru}}</td>
-                  <td class="east-rotation"><input type="number" value="1"></td>
+                  <td class="east-rotation"><input type="number" min="0" value="1" formControlName="east_bound_thru"></td>
                 </tr>
 
                 <tr>
                   <td><img src="assets/capx/east-right-turn.png" /></td>
                   <td class="east-rotation">Pepch</td>
                   <td class="east-rotation">{{(capxStateService.masterParameters$ | async)!.east_bound_right}}</td>
-                  <td class="east-rotation"><input type="number" value="1"></td>
+                  <td class="east-rotation"><input type="number" min="0" value="1" formControlName="east_bound_right"></td>
                 </tr>
               </table>
             </div>
@@ -81,7 +81,7 @@
                   <td>Zone 5</td>
                 </tr>
                 <tr>
-                  <td>1136</td>
+                  <td>{{(capxStateService.conventionalJunctionResult$ | async)!.zone5_center_clv}}</td>
                 </tr>
               </table>
             </div>
@@ -91,20 +91,20 @@
             <div>
               <table>
                 <tr>
-                  <td class="west-rotation"><input type="number" value="1"></td>
+                  <td class="west-rotation"><input type="number" min="0" value="1" formControlName="west_bound_right"></td>
                   <td class="west-rotation">{{(capxStateService.masterParameters$ | async)!.west_bound_right}}</td>
                   <td class="west-rotation">Pepch</td>
                   <td><img src="assets/capx/west-right-turn.png" /></td>
                 </tr>
                 <tr>
-                  <td class="west-rotation"><input type="number" value="1"></td>
+                  <td class="west-rotation"><input type="number" min="0" value="1" formControlName="west_bound_thru"></td>
                   <td class="west-rotation">{{(capxStateService.masterParameters$ | async)!.west_bound_thru}}</td>
                   <td class="west-rotation">Pepch</td>
                   <td><img src="assets/capx/west-thru.png" /></td>
                 </tr>
 
                 <tr>
-                  <td rowspan="2" class="west-rotation"><input type="number" value="1"></td>
+                  <td rowspan="2" class="west-rotation"><input type="number" min="0" value="1" formControlName="west_bound_left"></td>
                   <td class="west-rotation">{{(capxStateService.masterParameters$ | async)!.west_bound_left}}</td>
                   <td class="west-rotation">Pepch</td>
                   <td><img src="assets/capx/west-left-turn.png" /></td>
@@ -127,9 +127,9 @@
 
             <table>
               <tr>
-                <td colspan="2"><input type="number" value="1"></td>
-                <td><input type="number" value="0"></td>
-                <td><input type="number" value="1"></td>
+                <td colspan="2"><input type="number" min="0" value="1" formControlName="north_bound_left"></td>
+                <td><input type="number" value="0" formControlName="north_bound_thru"></td>
+                <td><input type="number" min="0" value="1" formControlName="north_bound_right"></td>
               </tr>
               <tr>
                 <td>{{(capxStateService.masterParameters$ | async)!.north_bound_u}}</td>

@@ -1,30 +1,12 @@
-import { CapxMasterParameters, CapxInputParameters } from './models/junction-capacity-analyser';
+import { CapxMasterParameters, CapxInputParameters, CapxConventionalJunctionParameters, CapxIntersectionAnalysisResultParameters } from './models/junction-capacity-analyser';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { round, max } from 'mathjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CapxStateService {
-
-  masterParameters$ = new BehaviorSubject<CapxMasterParameters>({
-    east_bound_u: 0,
-    east_bound_left: 0,
-    east_bound_thru: 0,
-    east_bound_right: 0,
-    west_bound_u: 0,
-    west_bound_left: 0,
-    west_bound_thru: 0,
-    west_bound_right: 0,
-    south_bound_u: 0,
-    south_bound_left: 0,
-    south_bound_thru: 0,
-    south_bound_right: 0,
-    north_bound_u: 0,
-    north_bound_left: 0,
-    north_bound_thru: 0,
-    north_bound_right: 0
-  });
 
   inputParameters$ = new BehaviorSubject<CapxInputParameters>({
     east_bound_u: 0,
@@ -58,8 +40,57 @@ export class CapxStateService {
     critical_lane_volume: 1600
   });
 
+
+  masterParameters$ = new BehaviorSubject<CapxMasterParameters>({
+    east_bound_u: 0,
+    east_bound_left: 0,
+    east_bound_thru: 0,
+    east_bound_right: 0,
+    west_bound_u: 0,
+    west_bound_left: 0,
+    west_bound_thru: 0,
+    west_bound_right: 0,
+    south_bound_u: 0,
+    south_bound_left: 0,
+    south_bound_thru: 0,
+    south_bound_right: 0,
+    north_bound_u: 0,
+    north_bound_left: 0,
+    north_bound_thru: 0,
+    north_bound_right: 0
+  });
+
+  conventionalJunctionParameters$ = new BehaviorSubject<CapxConventionalJunctionParameters>({
+    east_bound_left: 1,
+    east_bound_thru: 1,
+    east_bound_right: 1,
+    west_bound_left: 1,
+    west_bound_thru: 1,
+    west_bound_right: 1,
+    south_bound_left: 1,
+    south_bound_thru: 1,
+    south_bound_right: 1,
+    north_bound_left: 1,
+    north_bound_thru: 1,
+    north_bound_right: 1
+  });
+
+  conventionalJunctionResult$ = new BehaviorSubject<CapxIntersectionAnalysisResultParameters>({
+    zone1_north_clv: null,
+    zone1_north_vc: null,
+    zone2_south_clv: null,
+    zone2_south_vc: null,
+    zone3_east_clv: null,
+    zone3_east_vc: null,
+    zone4_west_clv: null,
+    zone4_west_vc: null,
+    zone5_center_clv: 0,
+    zone5_center_vc: 0
+  });
+
   constructor() {
     this.solve();
+    this.solveConventionalJunction();
   }
 
   public updateInputParameters(params: CapxInputParameters) {
@@ -101,6 +132,35 @@ export class CapxStateService {
       north_bound_left,
       north_bound_thru,
       north_bound_right,
+    });
+  }
+
+
+  public updateConventionalJunctionParameters(params: CapxConventionalJunctionParameters) {
+    this.conventionalJunctionParameters$.next(params);
+    this.solveConventionalJunction();
+  }
+
+  private solveConventionalJunction() {
+    const inputParameters = this.inputParameters$.value;
+    const masterParameters = this.masterParameters$.value;
+    const junctionParameters = this.conventionalJunctionParameters$.value;
+    const zone5_center_clv = max(
+      (((masterParameters.east_bound_u/inputParameters.adjustment_factor_u + masterParameters.east_bound_left / inputParameters.adjustment_factor_u)/junctionParameters.east_bound_left)
+      + max(masterParameters.west_bound_thru/junctionParameters.west_bound_thru, round(max(0,masterParameters.west_bound_right/inputParameters.adjustment_factor_right_turn/junctionParameters.west_bound_right-masterParameters.south_bound_left/inputParameters.adjustment_factor_left_turn/junctionParameters.south_bound_left),0)))
+    );
+    const zone5_center_vc = round(zone5_center_clv / inputParameters.critical_lane_volume, 2);
+    this.conventionalJunctionResult$.next({
+      zone1_north_clv: null,
+      zone1_north_vc: null,
+      zone2_south_clv: null,
+      zone2_south_vc: null,
+      zone3_east_clv: null,
+      zone3_east_vc: null,
+      zone4_west_clv: null,
+      zone4_west_vc: null,
+      zone5_center_clv: round(zone5_center_clv, 2),
+      zone5_center_vc
     });
   }
 
