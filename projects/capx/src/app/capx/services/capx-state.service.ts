@@ -85,7 +85,8 @@ export class CapxStateService {
     zone4_west_clv: null,
     zone4_west_vc: null,
     zone5_center_clv: 0,
-    zone5_center_vc: 0
+    zone5_center_vc: 0,
+    all_vc: 0
   });
 
   constructor() {
@@ -146,9 +147,13 @@ export class CapxStateService {
     const masterParameters = this.masterParameters$.value;
     const junctionParameters = this.conventionalJunctionParameters$.value;
     const zone5_center_clv = max(
-      (((masterParameters.east_bound_u/inputParameters.adjustment_factor_u + masterParameters.east_bound_left / inputParameters.adjustment_factor_u)/junctionParameters.east_bound_left)
-      + max(masterParameters.west_bound_thru/junctionParameters.west_bound_thru, round(max(0,masterParameters.west_bound_right/inputParameters.adjustment_factor_right_turn/junctionParameters.west_bound_right-masterParameters.south_bound_left/inputParameters.adjustment_factor_left_turn/junctionParameters.south_bound_left),0)))
-    );
+      (masterParameters.east_bound_left/inputParameters.adjustment_factor_left_turn+masterParameters.east_bound_u/inputParameters.adjustment_factor_u)/junctionParameters.east_bound_left + max(masterParameters.west_bound_thru/junctionParameters.west_bound_thru, round(max(0,masterParameters.west_bound_right/inputParameters.adjustment_factor_right_turn/junctionParameters.west_bound_right-masterParameters.south_bound_left/inputParameters.adjustment_factor_left_turn/junctionParameters.south_bound_left),0)),
+      (masterParameters.west_bound_left/inputParameters.adjustment_factor_left_turn+masterParameters.west_bound_u/inputParameters.adjustment_factor_u)/junctionParameters.west_bound_left +max(masterParameters.east_bound_thru/junctionParameters.east_bound_thru, round(max(0,masterParameters.east_bound_right/inputParameters.adjustment_factor_right_turn/junctionParameters.east_bound_right-masterParameters.north_bound_left/inputParameters.adjustment_factor_left_turn/junctionParameters.north_bound_left),0))
+      ) +
+      max(
+      (masterParameters.north_bound_left/inputParameters.adjustment_factor_left_turn+masterParameters.north_bound_u/inputParameters.adjustment_factor_u)/inputParameters.adjustment_factor_left_turn/junctionParameters.north_bound_left + max(masterParameters.south_bound_thru/junctionParameters.south_bound_thru, round(max(0,masterParameters.south_bound_right/inputParameters.adjustment_factor_right_turn/junctionParameters.south_bound_right-masterParameters.east_bound_left/inputParameters.adjustment_factor_left_turn/junctionParameters.east_bound_left),0)),
+      (masterParameters.south_bound_left/inputParameters.adjustment_factor_left_turn+masterParameters.south_bound_u/inputParameters.adjustment_factor_u)/inputParameters.adjustment_factor_left_turn/junctionParameters.south_bound_left +max(masterParameters.north_bound_thru/junctionParameters.north_bound_thru, round(max(0,masterParameters.north_bound_right/inputParameters.adjustment_factor_right_turn/junctionParameters.north_bound_right-masterParameters.west_bound_left/inputParameters.adjustment_factor_left_turn/junctionParameters.west_bound_left),0))
+      );
     const zone5_center_vc = round(zone5_center_clv / inputParameters.critical_lane_volume, 2);
     this.conventionalJunctionResult$.next({
       zone1_north_clv: null,
@@ -159,9 +164,9 @@ export class CapxStateService {
       zone3_east_vc: null,
       zone4_west_clv: null,
       zone4_west_vc: null,
-      zone5_center_clv: round(zone5_center_clv, 2),
-      zone5_center_vc
+      zone5_center_clv: round(zone5_center_clv),
+      zone5_center_vc,
+      all_vc: zone5_center_vc
     });
   }
-
 }

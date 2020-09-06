@@ -55,7 +55,14 @@
             "styles": [
               "projects/capx/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "mathjs",
+              "complex.js",
+              "fraction.js",
+              "decimal.js",
+              "typed-function"
+           ]
           },
           "configurations": {
             "production": {

@@ -76,4 +76,5 @@ export interface CapxIntersectionAnalysisResultParameters {
   zone4_west_vc: number | null;
   zone5_center_clv: number | null;
   zone5_center_vc: number | null;
+  all_vc: number;
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { CapxStateService } from '../../services/capx-state.service';
 
 @Component({
   selector: 'capx-junction-analysis-score-results',
@@ -8,7 +9,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class JunctionAnalysisScoreResultsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public capxStateService: CapxStateService) { }
 
   ngOnInit(): void {
   }
