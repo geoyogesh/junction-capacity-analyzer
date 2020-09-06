@@ -1,3 +1,4 @@
+import { CapxAnalysisRank } from './models/junction-capacity-analyser';
 // tslint:disable: variable-name
 // tslint:disable: max-line-length
 
@@ -69,7 +70,7 @@ export class CapxStateService {
 
 
     all_vc: null
-  }
+  };
 
   inputParameters$ = new BehaviorSubject<CapxInputParameters>({
     east_bound_u: 0,
@@ -102,6 +103,47 @@ export class CapxStateService {
     truck_adjustment_factor: 2,
     critical_lane_volume: 1600
   });
+
+  analysis_rank_default: CapxAnalysisRank = {
+    // Intersections
+    conventionalJunction: null,
+    conventionalSharedRightTurnLeftTurnJunction: null,
+    fullDisplacedLeftTurnIntersectionJunction: null,
+    medianUTurnIntersectionEastWestJunction: null,
+    medianUTurnIntersectionNorthSouthJunction: null,
+    partialDisplacedLeftTurnIntersectionEastWestJunction: null,
+    partialDisplacedLeftTurnIntersectionNorthSouthJunction: null,
+    partialMedianUTurnIntersectionEastWestJunction: null,
+    partialMedianUTurnIntersectionNorthSouthJunction: null,
+    restrictedCrossingUTurnIntersectionEastWestJunction: null,
+    restrictedCrossingUTurnIntersectionNorthSouthJunction: null,
+    quadrantRoadwayIntersectionNorthEastJunction: null,
+    quadrantRoadwayIntersectionNorthWestJunction: null,
+    quadrantRoadwayIntersectionSouthEastJunction: null,
+    quadrantRoadwayIntersectionSouthWestJunction: null,
+
+    // Interchange
+    displacedLeftTurnInterchangeEastWestJunction: null,
+    displacedLeftTurnInterchangeNorthSouthJunction: null,
+    doubleCrossoverDiamondInterchangeEastWestJunction: null,
+    doubleCrossoverDiamondInterchangeNorthSouthJunction: null,
+    partialCloverleafEastWestJunction: null,
+    partialCloverleafNorthSouthJunction: null,
+    singlePointInterchangeEastWestJunction: null,
+    singlePointInterchangeNorthSouthJunction: null,
+    traditionalDiamondEastWestJunction: null,
+    traditionalDiamondNorthSouthJunction: null,
+
+
+    // Roundabouts
+    fiftyICDMiniRoundaboutJunction: null,
+    oneNorthSouthxOneEastWestRoundaboutJunctionn: null,
+    oneNorthSouthxTwoEastWestLaneRoundaboutJunction: null,
+    seventyFiveICDMiniRoundaboutJunction: null,
+    threeNorthSouthxThreeEastWestLaneRoundaboutJunction: null,
+    twoNorthSouthxOneEastWestLaneRoundaboutJunction: null,
+    twoNorthSouthxTwoEastWestLaneRoundaboutJunction: null
+  };
 
 
   masterParameters$ = new BehaviorSubject<CapxMasterParameters>({
@@ -178,6 +220,8 @@ export class CapxStateService {
   twoNorthSouthxOneEastWestLaneRoundaboutJunctionResult$ = new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result);
   twoNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ = new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result);
 
+
+  rank$ = new BehaviorSubject<CapxAnalysisRank>(this.analysis_rank_default);
 
 
   constructor() {

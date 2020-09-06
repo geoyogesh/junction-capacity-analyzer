@@ -45,7 +45,7 @@ Capacity Analysis for Planning of Junctions
     <td>{{(capxStateService.conventionalJunctionResult$ | async)!.zone5_center_clv | handleNullValue}}</td>
     <td>{{(capxStateService.conventionalJunctionResult$ | async)!.zone5_center_vc | handleNullValue}}</td>
     <td>{{(capxStateService.conventionalJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
-    <td>14</td>
+    <td>{{(capxStateService.rank$ | async)!.conventionalJunction | handleNullValue}}</td>
   </tr>
   <tr>
     <td>2</td>
@@ -62,7 +62,7 @@ Capacity Analysis for Planning of Junctions
     <td>{{(capxStateService.conventionalSharedRightTurnLeftTurnJunctionResult$ | async)!.zone5_center_clv | handleNullValue}}</td>
     <td>{{(capxStateService.conventionalSharedRightTurnLeftTurnJunctionResult$ | async)!.zone5_center_vc | handleNullValue}}</td>
     <td>{{(capxStateService.conventionalSharedRightTurnLeftTurnJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
-    <td>12</td>
+    <td>{{(capxStateService.rank$ | async)!.conventionalSharedRightTurnLeftTurnJunction | handleNullValue}}</td>
   </tr>
   <tr>
     <td>3.1</td>
@@ -79,7 +79,7 @@ Capacity Analysis for Planning of Junctions
     <td>{{(capxStateService.quadrantRoadwayIntersectionSouthWestJunctionResult$ | async)!.zone5_center_clv | handleNullValue}}</td>
     <td>{{(capxStateService.quadrantRoadwayIntersectionSouthWestJunctionResult$ | async)!.zone5_center_vc | handleNullValue}}</td>
     <td>{{(capxStateService.quadrantRoadwayIntersectionSouthWestJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
-    <td>12</td>
+    <td>{{(capxStateService.rank$ | async)!.quadrantRoadwayIntersectionSouthWestJunction | handleNullValue}}</td>
   </tr>
   <tr>
     <td>3.2</td>
@@ -95,7 +95,7 @@ Capacity Analysis for Planning of Junctions
     <td>{{(capxStateService.quadrantRoadwayIntersectionNorthEastJunctionResult$ | async)!.zone5_center_clv | handleNullValue}}</td>
     <td>{{(capxStateService.quadrantRoadwayIntersectionNorthEastJunctionResult$ | async)!.zone5_center_vc | handleNullValue}}</td>
     <td>{{(capxStateService.quadrantRoadwayIntersectionNorthEastJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
-    <td>14</td>
+    <td>{{(capxStateService.rank$ | async)!.quadrantRoadwayIntersectionNorthEastJunction | handleNullValue}}</td>
   </tr>
   <tr>
     <td>3.3</td>
@@ -111,7 +111,7 @@ Capacity Analysis for Planning of Junctions
     <td>{{(capxStateService.quadrantRoadwayIntersectionSouthEastJunctionResult$ | async)!.zone5_center_clv | handleNullValue}}</td>
     <td>{{(capxStateService.quadrantRoadwayIntersectionSouthEastJunctionResult$ | async)!.zone5_center_vc | handleNullValue}}</td>
     <td>{{(capxStateService.quadrantRoadwayIntersectionSouthEastJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
-    <td>14</td>
+    <td>{{(capxStateService.rank$ | async)!.quadrantRoadwayIntersectionSouthEastJunction | handleNullValue}}</td>
   </tr>
   <tr>
     <td>3.4</td>
@@ -127,7 +127,7 @@ Capacity Analysis for Planning of Junctions
     <td>{{(capxStateService.quadrantRoadwayIntersectionNorthWestJunctionResult$ | async)!.zone5_center_clv | handleNullValue}}</td>
     <td>{{(capxStateService.quadrantRoadwayIntersectionNorthWestJunctionResult$ | async)!.zone5_center_vc | handleNullValue}}</td>
     <td>{{(capxStateService.quadrantRoadwayIntersectionNorthWestJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
-    <td>14</td>
+    <td>{{(capxStateService.rank$ | async)!.quadrantRoadwayIntersectionNorthWestJunction | handleNullValue}}</td>
   </tr>
   <tr>
     <td>4.1</td>
@@ -144,7 +144,7 @@ Capacity Analysis for Planning of Junctions
     <td>{{(capxStateService.partialDisplacedLeftTurnIntersectionNorthSouthJunctionResult$ | async)!.zone5_center_clv | handleNullValue}}</td>
     <td>{{(capxStateService.partialDisplacedLeftTurnIntersectionNorthSouthJunctionResult$ | async)!.zone5_center_vc | handleNullValue}}</td>
     <td>{{(capxStateService.partialDisplacedLeftTurnIntersectionNorthSouthJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
-    <td>14</td>
+    <td>{{(capxStateService.rank$ | async)!.partialDisplacedLeftTurnIntersectionNorthSouthJunction | handleNullValue}}</td>
   </tr>
   <tr>
     <td>4.2</td>
@@ -160,7 +160,7 @@ Capacity Analysis for Planning of Junctions
     <td>{{(capxStateService.partialDisplacedLeftTurnIntersectionEastWestJunctionResult$ | async)!.zone5_center_clv | handleNullValue}}</td>
     <td>{{(capxStateService.partialDisplacedLeftTurnIntersectionEastWestJunctionResult$ | async)!.zone5_center_vc | handleNullValue}}</td>
     <td>{{(capxStateService.partialDisplacedLeftTurnIntersectionEastWestJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
-    <td>14</td>
+    <td>{{(capxStateService.rank$ | async)!.partialDisplacedLeftTurnIntersectionEastWestJunction | handleNullValue}}</td>
   </tr>
   <tr>
     <td>5</td>
@@ -177,7 +177,7 @@ Capacity Analysis for Planning of Junctions
     <td>{{(capxStateService.fullDisplacedLeftTurnIntersectionJunctionResult$ | async)!.zone5_center_clv | handleNullValue}}</td>
     <td>{{(capxStateService.fullDisplacedLeftTurnIntersectionJunctionResult$ | async)!.zone5_center_vc | handleNullValue}}</td>
     <td>{{(capxStateService.fullDisplacedLeftTurnIntersectionJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
-    <td>14</td>
+    <td>{{(capxStateService.rank$ | async)!.fullDisplacedLeftTurnIntersectionJunction | handleNullValue}}</td>
   </tr>
 
   <tr>
@@ -195,7 +195,7 @@ Capacity Analysis for Planning of Junctions
     <td>{{(capxStateService.restrictedCrossingUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone5_center_clv | handleNullValue}}</td>
     <td>{{(capxStateService.restrictedCrossingUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone5_center_vc | handleNullValue}}</td>
     <td>{{(capxStateService.restrictedCrossingUTurnIntersectionNorthSouthJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
-    <td>14</td>
+    <td>{{(capxStateService.rank$ | async)!.restrictedCrossingUTurnIntersectionNorthSouthJunction | handleNullValue}}</td>
   </tr>
 
   <tr>
@@ -212,7 +212,7 @@ Capacity Analysis for Planning of Junctions
     <td>{{(capxStateService.restrictedCrossingUTurnIntersectionEastWestJunctionResult$ | async)!.zone5_center_clv | handleNullValue}}</td>
     <td>{{(capxStateService.restrictedCrossingUTurnIntersectionEastWestJunctionResult$ | async)!.zone5_center_vc | handleNullValue}}</td>
     <td>{{(capxStateService.restrictedCrossingUTurnIntersectionEastWestJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
-    <td>15</td>
+    <td>{{(capxStateService.rank$ | async)!.restrictedCrossingUTurnIntersectionEastWestJunction | handleNullValue}}</td>
   </tr>
 
   <tr>
@@ -230,7 +230,7 @@ Capacity Analysis for Planning of Junctions
     <td>{{(capxStateService.medianUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone5_center_clv | handleNullValue}}</td>
     <td>{{(capxStateService.medianUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone5_center_vc | handleNullValue}}</td>
     <td>{{(capxStateService.medianUTurnIntersectionNorthSouthJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
-    <td>13</td>
+    <td>{{(capxStateService.rank$ | async)!.medianUTurnIntersectionNorthSouthJunction | handleNullValue}}</td>
   </tr>
 
   <tr>
@@ -247,7 +247,7 @@ Capacity Analysis for Planning of Junctions
     <td>{{(capxStateService.medianUTurnIntersectionEastWestJunctionResult$ | async)!.zone5_center_clv | handleNullValue}}</td>
     <td>{{(capxStateService.medianUTurnIntersectionEastWestJunctionResult$ | async)!.zone5_center_vc | handleNullValue}}</td>
     <td>{{(capxStateService.medianUTurnIntersectionEastWestJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
-    <td>11</td>
+    <td>{{(capxStateService.rank$ | async)!.medianUTurnIntersectionEastWestJunction | handleNullValue}}</td>
   </tr>
 
   <tr>
@@ -265,7 +265,7 @@ Capacity Analysis for Planning of Junctions
     <td>{{(capxStateService.partialMedianUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone5_center_clv | handleNullValue}}</td>
     <td>{{(capxStateService.partialMedianUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone5_center_vc | handleNullValue}}</td>
     <td>{{(capxStateService.partialMedianUTurnIntersectionNorthSouthJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
-    <td>9</td>
+    <td>{{(capxStateService.rank$ | async)!.partialMedianUTurnIntersectionNorthSouthJunction | handleNullValue}}</td>
   </tr>
 
   <tr>
@@ -282,7 +282,7 @@ Capacity Analysis for Planning of Junctions
     <td>{{(capxStateService.partialMedianUTurnIntersectionEastWestJunctionResult$ | async)!.zone5_center_clv | handleNullValue}}</td>
     <td>{{(capxStateService.partialMedianUTurnIntersectionEastWestJunctionResult$ | async)!.zone5_center_vc | handleNullValue}}</td>
     <td>{{(capxStateService.partialMedianUTurnIntersectionEastWestJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
-    <td>9</td>
+    <td>{{(capxStateService.rank$ | async)!.partialMedianUTurnIntersectionEastWestJunction | handleNullValue}}</td>
   </tr>
 
 </table>
@@ -334,7 +334,7 @@ Capacity Analysis for Planning of Junctions
     <td>{{(capxStateService.fiftyICDMiniRoundaboutJunctionResult$ | async)!.zone4_west_lane2 | handleNullValue}}</td>
     <td>{{(capxStateService.fiftyICDMiniRoundaboutJunctionResult$ | async)!.zone4_west_lane3 | handleNullValue}}</td>
     <td>{{(capxStateService.fiftyICDMiniRoundaboutJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
-    <td>7</td>
+    <td>{{(capxStateService.rank$ | async)!.fiftyICDMiniRoundaboutJunction | handleNullValue}}</td>
   </tr>
   <tr>
     <td>9.2</td>
@@ -352,7 +352,7 @@ Capacity Analysis for Planning of Junctions
     <td>{{(capxStateService.seventyFiveICDMiniRoundaboutJunctionResult$ | async)!.zone4_west_lane2 | handleNullValue}}</td>
     <td>{{(capxStateService.seventyFiveICDMiniRoundaboutJunctionResult$ | async)!.zone4_west_lane3 | handleNullValue}}</td>
     <td>{{(capxStateService.seventyFiveICDMiniRoundaboutJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
-    <td>7</td>
+    <td>{{(capxStateService.rank$ | async)!.seventyFiveICDMiniRoundaboutJunction | handleNullValue}}</td>
   </tr>
   <tr>
     <td>9.3</td>
@@ -370,7 +370,7 @@ Capacity Analysis for Planning of Junctions
     <td>{{(capxStateService.oneNorthSouthxOneEastWestRoundaboutJunctionnResult$ | async)!.zone4_west_lane2 | handleNullValue}}</td>
     <td>{{(capxStateService.oneNorthSouthxOneEastWestRoundaboutJunctionnResult$ | async)!.zone4_west_lane3 | handleNullValue}}</td>
     <td>{{(capxStateService.oneNorthSouthxOneEastWestRoundaboutJunctionnResult$ | async)!.all_vc | handleNullValue}}</td>
-    <td>7</td>
+    <td>{{(capxStateService.rank$ | async)!.oneNorthSouthxOneEastWestRoundaboutJunctionn | handleNullValue}}</td>
   </tr>
   <tr>
     <td>9.4</td>
@@ -388,7 +388,7 @@ Capacity Analysis for Planning of Junctions
     <td>{{(capxStateService.oneNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.zone4_west_lane2 | handleNullValue}}</td>
     <td>{{(capxStateService.oneNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.zone4_west_lane3 | handleNullValue}}</td>
     <td>{{(capxStateService.oneNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
-    <td>7</td>
+    <td>{{(capxStateService.rank$ | async)!.oneNorthSouthxTwoEastWestLaneRoundaboutJunction | handleNullValue}}</td>
   </tr>
   <tr>
     <td>9.5</td>
@@ -406,7 +406,7 @@ Capacity Analysis for Planning of Junctions
     <td>{{(capxStateService.twoNorthSouthxOneEastWestLaneRoundaboutJunctionResult$ | async)!.zone4_west_lane2 | handleNullValue}}</td>
     <td>{{(capxStateService.twoNorthSouthxOneEastWestLaneRoundaboutJunctionResult$ | async)!.zone4_west_lane3 | handleNullValue}}</td>
     <td>{{(capxStateService.twoNorthSouthxOneEastWestLaneRoundaboutJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
-    <td>7</td>
+    <td>{{(capxStateService.rank$ | async)!.twoNorthSouthxOneEastWestLaneRoundaboutJunction | handleNullValue}}</td>
   </tr>
   <tr>
     <td>9.6</td>
@@ -424,7 +424,7 @@ Capacity Analysis for Planning of Junctions
     <td>{{(capxStateService.twoNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.zone4_west_lane2 | handleNullValue}}</td>
     <td>{{(capxStateService.twoNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.zone4_west_lane3 | handleNullValue}}</td>
     <td>{{(capxStateService.twoNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
-    <td>7</td>
+    <td>{{(capxStateService.rank$ | async)!.twoNorthSouthxTwoEastWestLaneRoundaboutJunction | handleNullValue}}</td>
   </tr>
   <tr>
     <td>9.7</td>
@@ -442,7 +442,7 @@ Capacity Analysis for Planning of Junctions
     <td>{{(capxStateService.threeNorthSouthxThreeEastWestLaneRoundaboutJunctionResult$ | async)!.zone4_west_lane2 | handleNullValue}}</td>
     <td>{{(capxStateService.threeNorthSouthxThreeEastWestLaneRoundaboutJunctionResult$ | async)!.zone4_west_lane3 | handleNullValue}}</td>
     <td>{{(capxStateService.threeNorthSouthxThreeEastWestLaneRoundaboutJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
-    <td>7</td>
+    <td>{{(capxStateService.rank$ | async)!.threeNorthSouthxThreeEastWestLaneRoundaboutJunction | handleNullValue}}</td>
   </tr>
 </table>
 
@@ -497,7 +497,7 @@ Capacity Analysis for Planning of Junctions
     <td>{{(capxStateService.traditionalDiamondNorthSouthJunctionResult$ | async)!.zone6_right_merge_clv | handleNullValue}}</td>
     <td>{{(capxStateService.traditionalDiamondNorthSouthJunctionResult$ | async)!.zone6_right_merge_vc | handleNullValue}}</td>
     <td>{{(capxStateService.traditionalDiamondNorthSouthJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
-    <td>7</td>
+    <td>{{(capxStateService.rank$ | async)!.traditionalDiamondNorthSouthJunction | handleNullValue}}</td>
   </tr>
   <tr>
     <td>10.2</td>
@@ -515,7 +515,7 @@ Capacity Analysis for Planning of Junctions
     <td>{{(capxStateService.traditionalDiamondEastWestJunctionResult$ | async)!.zone6_right_merge_clv | handleNullValue}}</td>
     <td>{{(capxStateService.traditionalDiamondEastWestJunctionResult$ | async)!.zone6_right_merge_vc | handleNullValue}}</td>
     <td>{{(capxStateService.traditionalDiamondEastWestJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
-    <td>7</td>
+    <td>{{(capxStateService.rank$ | async)!.traditionalDiamondEastWestJunction | handleNullValue}}</td>
   </tr>
   <tr>
     <td>11.1</td>
@@ -534,7 +534,7 @@ Capacity Analysis for Planning of Junctions
     <td>{{(capxStateService.partialCloverleafNorthSouthJunctionResult$ | async)!.zone6_right_merge_clv | handleNullValue}}</td>
     <td>{{(capxStateService.partialCloverleafNorthSouthJunctionResult$ | async)!.zone6_right_merge_vc | handleNullValue}}</td>
     <td>{{(capxStateService.partialCloverleafNorthSouthJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
-    <td>7</td>
+    <td>{{(capxStateService.rank$ | async)!.partialCloverleafNorthSouthJunction | handleNullValue}}</td>
   </tr>
   <tr>
     <td>11.2</td>
@@ -552,7 +552,7 @@ Capacity Analysis for Planning of Junctions
     <td>{{(capxStateService.partialCloverleafEastWestJunctionResult$ | async)!.zone6_right_merge_clv | handleNullValue}}</td>
     <td>{{(capxStateService.partialCloverleafEastWestJunctionResult$ | async)!.zone6_right_merge_vc | handleNullValue}}</td>
     <td>{{(capxStateService.partialCloverleafEastWestJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
-    <td>7</td>
+    <td>{{(capxStateService.rank$ | async)!.partialCloverleafEastWestJunction | handleNullValue}}</td>
   </tr>
   <tr>
     <td>13.1</td>
@@ -571,7 +571,7 @@ Capacity Analysis for Planning of Junctions
     <td>{{(capxStateService.displacedLeftTurnInterchangeNorthSouthJunctionResult$ | async)!.zone6_right_merge_clv | handleNullValue}}</td>
     <td>{{(capxStateService.displacedLeftTurnInterchangeNorthSouthJunctionResult$ | async)!.zone6_right_merge_vc | handleNullValue}}</td>
     <td>{{(capxStateService.displacedLeftTurnInterchangeNorthSouthJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
-    <td>7</td>
+    <td>{{(capxStateService.rank$ | async)!.displacedLeftTurnInterchangeNorthSouthJunction | handleNullValue}}</td>
   </tr>
   <tr>
     <td>13.2</td>
@@ -589,7 +589,7 @@ Capacity Analysis for Planning of Junctions
     <td>{{(capxStateService.displacedLeftTurnInterchangeEastWestJunctionResult$ | async)!.zone6_right_merge_clv | handleNullValue}}</td>
     <td>{{(capxStateService.displacedLeftTurnInterchangeEastWestJunctionResult$ | async)!.zone6_right_merge_vc | handleNullValue}}</td>
     <td>{{(capxStateService.displacedLeftTurnInterchangeEastWestJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
-    <td>7</td>
+    <td>{{(capxStateService.rank$ | async)!.displacedLeftTurnInterchangeEastWestJunction | handleNullValue}}</td>
   </tr>
   <tr>
     <td>14.1</td>
@@ -608,7 +608,7 @@ Capacity Analysis for Planning of Junctions
     <td>{{(capxStateService.doubleCrossoverDiamondInterchangeNorthSouthJunctionResult$ | async)!.zone6_right_merge_clv | handleNullValue}}</td>
     <td>{{(capxStateService.doubleCrossoverDiamondInterchangeNorthSouthJunctionResult$ | async)!.zone6_right_merge_vc | handleNullValue}}</td>
     <td>{{(capxStateService.doubleCrossoverDiamondInterchangeNorthSouthJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
-    <td>7</td>
+    <td>{{(capxStateService.rank$ | async)!.doubleCrossoverDiamondInterchangeNorthSouthJunction | handleNullValue}}</td>
   </tr>
   <tr>
     <td>14.2</td>
@@ -626,7 +626,7 @@ Capacity Analysis for Planning of Junctions
     <td>{{(capxStateService.doubleCrossoverDiamondInterchangeEastWestJunctionResult$ | async)!.zone6_right_merge_clv | handleNullValue}}</td>
     <td>{{(capxStateService.doubleCrossoverDiamondInterchangeEastWestJunctionResult$ | async)!.zone6_right_merge_vc | handleNullValue}}</td>
     <td>{{(capxStateService.doubleCrossoverDiamondInterchangeEastWestJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
-    <td>7</td>
+    <td>{{(capxStateService.rank$ | async)!.doubleCrossoverDiamondInterchangeEastWestJunction | handleNullValue}}</td>
   </tr>
   <tr>
     <td>15.1</td>
@@ -645,7 +645,7 @@ Capacity Analysis for Planning of Junctions
     <td>{{(capxStateService.singlePointInterchangeNorthSouthJunctionResult$ | async)!.zone6_right_merge_clv | handleNullValue}}</td>
     <td>{{(capxStateService.singlePointInterchangeNorthSouthJunctionResult$ | async)!.zone6_right_merge_vc | handleNullValue}}</td>
     <td>{{(capxStateService.singlePointInterchangeNorthSouthJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
-    <td>7</td>
+    <td>{{(capxStateService.rank$ | async)!.singlePointInterchangeNorthSouthJunction | handleNullValue}}</td>
   </tr>
   <tr>
     <td>15.2</td>
@@ -663,6 +663,6 @@ Capacity Analysis for Planning of Junctions
     <td>{{(capxStateService.singlePointInterchangeEastWestJunctionResult$ | async)!.zone6_right_merge_clv | handleNullValue}}</td>
     <td>{{(capxStateService.singlePointInterchangeEastWestJunctionResult$ | async)!.zone6_right_merge_vc | handleNullValue}}</td>
     <td>{{(capxStateService.singlePointInterchangeEastWestJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
-    <td>7</td>
+    <td>{{(capxStateService.rank$ | async)!.singlePointInterchangeEastWestJunction | handleNullValue}}</td>
   </tr>
 </table>
