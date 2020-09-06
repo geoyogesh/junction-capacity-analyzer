@@ -1,36 +1,17 @@
 import { CapxStateService } from './../../services/capx-state.service';
-import { JunctionCapacityAnalyser, CapxMasterParameters } from './../../services/models/junction-capacity-analyser';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'capx-junction-analysis-parameters',
   templateUrl: './junction-analysis-parameters.component.html',
-  styleUrls: ['./junction-analysis-parameters.component.scss']
+  styleUrls: ['./junction-analysis-parameters.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class JunctionAnalysisParametersComponent implements OnInit, OnDestroy {
 
-  masterParameters$ = new BehaviorSubject<CapxMasterParameters>({
-    east_bound_u: 0,
-    east_bound_left: 0,
-    east_bound_thru: 0,
-    east_bound_right: 0,
-    west_bound_u: 0,
-    west_bound_left: 0,
-    west_bound_thru: 0,
-    west_bound_right: 0,
-    south_bound_u: 0,
-    south_bound_left: 0,
-    south_bound_thru: 0,
-    south_bound_right: 0,
-    north_bound_u: 0,
-    north_bound_left: 0,
-    north_bound_thru: 0,
-    north_bound_right: 0
-  });
-
-  constructor(private fb: FormBuilder, private capxStateService: CapxStateService) { }
+  constructor(private fb: FormBuilder, public capxStateService: CapxStateService) { }
 
   form: FormGroup = this.fb.group({
     east_bound_u: [null, Validators.required],
@@ -66,18 +47,13 @@ export class JunctionAnalysisParametersComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.form.valueChanges.subscribe(value => {
-      this.capxStateService.analyser.updateInputParameters(value);
-      this.capxStateService.analyser.solve();
-      this.masterParameters$.next(this.capxStateService.analyser.capxMasterParameters);
+      this.capxStateService.updateInputParameters(value);
     });
 
-    this.form.setValue(this.capxStateService.analyser.capxInputParameters, {onlySelf: true, emitEvent: false});
-    this.masterParameters$.next(this.capxStateService.analyser.capxMasterParameters);
+    this.form.setValue(this.capxStateService.inputParameters$.value, {onlySelf: true, emitEvent: false});
   }
 
   ngOnDestroy(): void {
-    this.masterParameters$.complete();
-    this.masterParameters$.unsubscribe();
   }
 
 }
