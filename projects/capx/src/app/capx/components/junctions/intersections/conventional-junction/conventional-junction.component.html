@@ -24,10 +24,10 @@
                 <td>Pepch</td>
               </tr>
               <tr>
-                <td><input type="text" value="730"></td>
-                <td><input type="text" value="1220"></td>
-                <td><input type="text" value="225"></td>
-                <td><input type="text" value="0"></td>
+                <td>{{(capxStateService.masterParameters$ | async)!.south_bound_u}}</td>
+                <td>{{(capxStateService.masterParameters$ | async)!.south_bound_left}}</td>
+                <td>{{(capxStateService.masterParameters$ | async)!.south_bound_thru}}</td>
+                <td>{{(capxStateService.masterParameters$ | async)!.south_bound_right}}</td>
               </tr>
               <tr>
                 <td><input type="text" value="1"></td>
@@ -47,27 +47,27 @@
                 <tr>
                   <td><img src="assets/capx/east-u-turn.png" /></td>
                   <td class="east-rotation">Pepch</td>
-                  <td class="east-rotation"><input type="text" value="730"></td>
+                  <td class="east-rotation">{{(capxStateService.masterParameters$ | async)!.east_bound_u}}</td>
                   <td class="east-rotation"><input type="text" value="1"></td>
                 </tr>
                 <tr>
                   <td><img src="assets/capx/east-left-turn.png" /></td>
                   <td class="east-rotation">Pepch</td>
-                  <td class="east-rotation"><input type="text" value="1220"></td>
+                  <td class="east-rotation">{{(capxStateService.masterParameters$ | async)!.east_bound_left}}</td>
                   <td class="east-rotation"><input type="text" value="1"></td>
                 </tr>
 
                 <tr>
                   <td><img src="assets/capx/east-thru.png" /></td>
                   <td class="east-rotation">Pepch</td>
-                  <td class="east-rotation"><input type="text" value="225"></td>
+                  <td class="east-rotation">{{(capxStateService.masterParameters$ | async)!.east_bound_thru}}</td>
                   <td class="east-rotation"><input type="text" value="1"></td>
                 </tr>
 
                 <tr>
                   <td><img src="assets/capx/east-right-turn.png" /></td>
                   <td class="east-rotation">Pepch</td>
-                  <td class="east-rotation"><input type="text" value="0"></td>
+                  <td class="east-rotation">{{(capxStateService.masterParameters$ | async)!.east_bound_right}}</td>
                   <td class="east-rotation"><input type="text" value="1"></td>
                 </tr>
               </table>
@@ -94,27 +94,27 @@
               <table>
                 <tr>
                   <td class="west-rotation"><input type="text" value="1"></td>
-                  <td class="west-rotation"><input type="text" value="730"></td>
+                  <td class="west-rotation">{{(capxStateService.masterParameters$ | async)!.west_bound_right}}</td>
                   <td class="west-rotation">Pepch</td>
                   <td><img src="assets/capx/west-right-turn.png" /></td>
                 </tr>
                 <tr>
                   <td class="west-rotation"><input type="text" value="1"></td>
-                  <td class="west-rotation"><input type="text" value="1220"></td>
+                  <td class="west-rotation">{{(capxStateService.masterParameters$ | async)!.west_bound_thru}}</td>
                   <td class="west-rotation">Pepch</td>
                   <td><img src="assets/capx/west-thru.png" /></td>
                 </tr>
 
                 <tr>
                   <td class="west-rotation"><input type="text" value="1"></td>
-                  <td class="west-rotation"><input type="text" value="225"></td>
+                  <td class="west-rotation">{{(capxStateService.masterParameters$ | async)!.west_bound_left}}</td>
                   <td class="west-rotation">Pepch</td>
                   <td><img src="assets/capx/west-left-turn.png" /></td>
                 </tr>
 
                 <tr>
                   <td class="west-rotation"><input type="text" value="1"></td>
-                  <td class="west-rotation"><input type="text" value="0"></td>
+                  <td class="west-rotation">{{(capxStateService.masterParameters$ | async)!.west_bound_u}}</td>
                   <td class="west-rotation">Pepch</td>
                   <td><img src="assets/capx/west-u-turn.png" /></td>
                 </tr>
@@ -136,10 +136,10 @@
                 <td><input type="text" value="1"></td>
               </tr>
               <tr>
-                <td><input type="text" value="730"></td>
-                <td><input type="text" value="1220"></td>
-                <td><input type="text" value="225"></td>
-                <td><input type="text" value="0"></td>
+                <td>{{(capxStateService.masterParameters$ | async)!.north_bound_u}}</td>
+                <td>{{(capxStateService.masterParameters$ | async)!.north_bound_left}}</td>
+                <td>{{(capxStateService.masterParameters$ | async)!.north_bound_thru}}</td>
+                <td>{{(capxStateService.masterParameters$ | async)!.north_bound_right}}</td>
               </tr>
               <tr>
                 <td>Pepch</td>

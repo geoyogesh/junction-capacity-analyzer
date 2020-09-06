@@ -9,7 +9,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class ConventionalJunctionComponent implements OnInit {
 
-  constructor(private capxStateService: CapxStateService) { }
+  constructor(public capxStateService: CapxStateService) { }
 
   ngOnInit(): void {
   }
