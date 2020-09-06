@@ -40,6 +40,7 @@ import { SinglePointInterchangeEastWestJunctionComponent } from './components/ju
 import { CriticalLaneVolumeSumComponent } from './components/common/critical-lane-volume-sum/critical-lane-volume-sum.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ConventionalDesignComponent } from './components/junctions/intersections/conventional-junction/conventional-design/conventional-design.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -83,7 +84,8 @@ import { ConventionalDesignComponent } from './components/junctions/intersection
   imports: [
     CommonModule,
     CapxRoutingModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ReactiveFormsModule
   ]
 })
 export class CapxModule { }

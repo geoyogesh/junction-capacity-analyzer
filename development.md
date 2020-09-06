@@ -53,3 +53,7 @@ ng generate component capx/components/common/CriticalLaneVolumeSum --prefix=capx
 ng generate component capx/components/junctions/conventional-junction/ConventionalDesign --prefix=capx --module=Capx
 ng generate component capx/components/junctions/conventional-junction/ConventionalConfiguration  --prefix=capx --module=Capx
 
+
+ng generate class capx/services/models/JunctionCapacityAnalyser
+
+ng generate service capx/services/CapxState 
