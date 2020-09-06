@@ -1,165 +1,167 @@
 <p>Conventional</p>
+<div fxLayout="column" fxLayoutAlign="space-around stretch" >
+  <capx-critical-lane-volume-sum></capx-critical-lane-volume-sum>
+  <div fxLayout="row" fxLayoutAlign=" stretch" fxLayoutGap="20px" style="padding:20px">
+    <div fxFlex fxFlex="50" fxLayout="column" fxLayoutAlign="space-around center">
+      <capx-conventional-design></capx-conventional-design>
+    </div>
+    <div fxFlex="50">
+      <table class="no-border">
+        <tr>
+          <td></td>
+          <td>
+            <table>
+              <tr>
+                <td><img src="assets/capx/north-left-turn.png" /></td>
+                <td><img src="assets/capx/north-thru.png" /></td>
+                <td><img src="assets/capx/north-right-turn.png" /></td>
+                <td><img src="assets/capx/north-u-turn.png" /></td>
+              </tr>
+              <tr>
+                <td>Pepch</td>
+                <td>Pepch</td>
+                <td>Pepch</td>
+                <td>Pepch</td>
+              </tr>
+              <tr>
+                <td><input type="text" value="730"></td>
+                <td><input type="text" value="1220"></td>
+                <td><input type="text" value="225"></td>
+                <td><input type="text" value="0"></td>
+              </tr>
+              <tr>
+                <td><input type="text" value="1"></td>
+                <td><input type="text" value="1"></td>
+                <td><input type="text" value="0"></td>
+                <td><input type="text" value="1"></td>
+              </tr>
+            </table>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
 
-<div fxLayout="row" fxLayoutAlign=" stretch">
-  <div fxFlex fxFlex="50" fxLayout="column" fxLayoutAlign="space-around center">
-    <capx-critical-lane-volume-sum></capx-critical-lane-volume-sum>
-    <capx-conventional-design style="display: block; height: 400px; width: 400px"></capx-conventional-design>
+            <div>
+              <table>
+                <tr>
+                  <td><img src="assets/capx/east-u-turn.png" /></td>
+                  <td class="east-rotation">Pepch</td>
+                  <td class="east-rotation"><input type="text" value="730"></td>
+                  <td class="east-rotation"><input type="text" value="1"></td>
+                </tr>
+                <tr>
+                  <td><img src="assets/capx/east-left-turn.png" /></td>
+                  <td class="east-rotation">Pepch</td>
+                  <td class="east-rotation"><input type="text" value="1220"></td>
+                  <td class="east-rotation"><input type="text" value="1"></td>
+                </tr>
+
+                <tr>
+                  <td><img src="assets/capx/east-thru.png" /></td>
+                  <td class="east-rotation">Pepch</td>
+                  <td class="east-rotation"><input type="text" value="225"></td>
+                  <td class="east-rotation"><input type="text" value="1"></td>
+                </tr>
+
+                <tr>
+                  <td><img src="assets/capx/east-right-turn.png" /></td>
+                  <td class="east-rotation">Pepch</td>
+                  <td class="east-rotation"><input type="text" value="0"></td>
+                  <td class="east-rotation"><input type="text" value="1"></td>
+                </tr>
+              </table>
+            </div>
+
+
+          </td>
+          <td>
+
+            <div>
+              <table>
+                <tr>
+                  <td>Zone 5</td>
+                </tr>
+                <tr>
+                  <td>1136</td>
+                </tr>
+              </table>
+            </div>
+
+          </td>
+          <td>
+            <div>
+              <table>
+                <tr>
+                  <td class="west-rotation"><input type="text" value="1"></td>
+                  <td class="west-rotation"><input type="text" value="730"></td>
+                  <td class="west-rotation">Pepch</td>
+                  <td><img src="assets/capx/west-right-turn.png" /></td>
+                </tr>
+                <tr>
+                  <td class="west-rotation"><input type="text" value="1"></td>
+                  <td class="west-rotation"><input type="text" value="1220"></td>
+                  <td class="west-rotation">Pepch</td>
+                  <td><img src="assets/capx/west-thru.png" /></td>
+                </tr>
+
+                <tr>
+                  <td class="west-rotation"><input type="text" value="1"></td>
+                  <td class="west-rotation"><input type="text" value="225"></td>
+                  <td class="west-rotation">Pepch</td>
+                  <td><img src="assets/capx/west-left-turn.png" /></td>
+                </tr>
+
+                <tr>
+                  <td class="west-rotation"><input type="text" value="1"></td>
+                  <td class="west-rotation"><input type="text" value="0"></td>
+                  <td class="west-rotation">Pepch</td>
+                  <td><img src="assets/capx/west-u-turn.png" /></td>
+                </tr>
+              </table>
+            </div>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+
+            <table>
+              <tr>
+                <td><input type="text" value="1"></td>
+                <td><input type="text" value="1"></td>
+                <td><input type="text" value="0"></td>
+                <td><input type="text" value="1"></td>
+              </tr>
+              <tr>
+                <td><input type="text" value="730"></td>
+                <td><input type="text" value="1220"></td>
+                <td><input type="text" value="225"></td>
+                <td><input type="text" value="0"></td>
+              </tr>
+              <tr>
+                <td>Pepch</td>
+                <td>Pepch</td>
+                <td>Pepch</td>
+                <td>Pepch</td>
+              </tr>
+              <tr>
+                <td><img src="assets/capx/south-u-turn.png" /></td>
+                <td><img src="assets/capx/south-left-turn.png" /></td>
+                <td><img src="assets/capx/south-thru.png" /></td>
+                <td><img src="assets/capx/south-right-turn.png" /></td>
+              </tr>
+            </table>
+
+
+          </td>
+          <td></td>
+        </tr>
+      </table>
+
+    </div>
   </div>
-  <div fxFlex="50">
-    <table class="no-border">
-      <tr>
-        <td></td>
-        <td>
-          <table>
-            <tr>
-              <td><img src="assets/capx/north-left-turn.png" /></td>
-              <td><img src="assets/capx/north-thru.png" /></td>
-              <td><img src="assets/capx/north-right-turn.png" /></td>
-              <td><img src="assets/capx/north-u-turn.png" /></td>
-            </tr>
-            <tr>
-              <td>Pepch</td>
-              <td>Pepch</td>
-              <td>Pepch</td>
-              <td>Pepch</td>
-            </tr>
-            <tr>
-              <td><input type="text" value="730"></td>
-              <td><input type="text" value="1220"></td>
-              <td><input type="text" value="225"></td>
-              <td><input type="text" value="0"></td>
-            </tr>
-            <tr>
-              <td><input type="text" value="1"></td>
-              <td><input type="text" value="1"></td>
-              <td><input type="text" value="0"></td>
-              <td><input type="text" value="1"></td>
-            </tr>
-          </table>
-        </td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>
 
-          <div>
-            <table>
-              <tr>
-                <td><img src="assets/capx/east-u-turn.png" /></td>
-                <td class="east-rotation">Pepch</td>
-                <td class="east-rotation"><input type="text" value="730"></td>
-                <td class="east-rotation"><input type="text" value="1"></td>
-              </tr>
-              <tr>
-                <td><img src="assets/capx/east-left-turn.png" /></td>
-                <td class="east-rotation">Pepch</td>
-                <td class="east-rotation"><input type="text" value="1220"></td>
-                <td class="east-rotation"><input type="text" value="1"></td>
-              </tr>
-
-              <tr>
-                <td><img src="assets/capx/east-thru.png" /></td>
-                <td class="east-rotation">Pepch</td>
-                <td class="east-rotation"><input type="text" value="225"></td>
-                <td class="east-rotation"><input type="text" value="1"></td>
-              </tr>
-
-              <tr>
-                <td><img src="assets/capx/east-right-turn.png" /></td>
-                <td class="east-rotation">Pepch</td>
-                <td class="east-rotation"><input type="text" value="0"></td>
-                <td class="east-rotation"><input type="text" value="1"></td>
-              </tr>
-            </table>
-          </div>
-
-
-        </td>
-        <td>
-
-          <div>
-            <table>
-              <tr>
-                Zone 5
-              </tr>
-              <tr>
-                1136
-              </tr>
-            </table>
-          </div>
-
-        </td>
-        <td>
-          <div>
-            <table>
-              <tr>
-                <td class="west-rotation"><input type="text" value="1"></td>
-                <td class="west-rotation"><input type="text" value="730"></td>
-                <td class="west-rotation">Pepch</td>
-                <td><img src="assets/capx/west-right-turn.png" /></td>
-              </tr>
-              <tr>
-                <td class="west-rotation"><input type="text" value="1"></td>
-                <td class="west-rotation"><input type="text" value="1220"></td>
-                <td class="west-rotation">Pepch</td>
-                <td><img src="assets/capx/west-thru.png" /></td>
-              </tr>
-
-              <tr>
-                <td class="west-rotation"><input type="text" value="1"></td>
-                <td class="west-rotation"><input type="text" value="225"></td>
-                <td class="west-rotation">Pepch</td>
-                <td><img src="assets/capx/west-left-turn.png" /></td>
-              </tr>
-
-              <tr>
-                <td class="west-rotation"><input type="text" value="1"></td>
-                <td class="west-rotation"><input type="text" value="0"></td>
-                <td class="west-rotation">Pepch</td>
-                <td><img src="assets/capx/west-u-turn.png" /></td>
-              </tr>
-            </table>
-          </div>
-
-
-        </td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>
-
-          <table>
-            <tr>
-              <td><input type="text" value="1"></td>
-              <td><input type="text" value="1"></td>
-              <td><input type="text" value="0"></td>
-              <td><input type="text" value="1"></td>
-            </tr>
-            <tr>
-              <td><input type="text" value="730"></td>
-              <td><input type="text" value="1220"></td>
-              <td><input type="text" value="225"></td>
-              <td><input type="text" value="0"></td>
-            </tr>
-            <tr>
-              <td>Pepch</td>
-              <td>Pepch</td>
-              <td>Pepch</td>
-              <td>Pepch</td>
-            </tr>
-            <tr>
-              <td><img src="assets/capx/south-u-turn.png" /></td>
-              <td><img src="assets/capx/south-left-turn.png" /></td>
-              <td><img src="assets/capx/south-thru.png" /></td>
-              <td><img src="assets/capx/south-right-turn.png" /></td>
-            </tr>
-          </table>
-
-
-        </td>
-        <td></td>
-      </tr>
-    </table>
-
-  </div>
 </div>
