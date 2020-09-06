@@ -1,4 +1,13 @@
-import { CapxMasterParameters, CapxInputParameters, CapxConventionalJunctionParameters, CapxIntersectionAnalysisResultParameters } from './models/junction-capacity-analyser';
+// tslint:disable: variable-name
+// tslint:disable: max-line-length
+
+import { CapxRoundaboutsAnalysisResultParameters } from './models/junction-capacity-analyser';
+import {
+  CapxMasterParameters,
+  CapxInputParameters,
+  CapxConventionalJunctionParameters,
+  CapxIntersectionAnalysisResultParameters,
+  CapxInterchangeAnalysisResultParameters } from './models/junction-capacity-analyser';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { round, max } from 'mathjs';
@@ -7,6 +16,60 @@ import { round, max } from 'mathjs';
   providedIn: 'root'
 })
 export class CapxStateService {
+
+  intersection_default_result: CapxIntersectionAnalysisResultParameters = {
+    zone1_north_clv: null,
+    zone1_north_vc: null,
+    zone2_south_clv: null,
+    zone2_south_vc: null,
+    zone3_east_clv: null,
+    zone3_east_vc: null,
+    zone4_west_clv: null,
+    zone4_west_vc: null,
+    zone5_center_clv: null,
+    zone5_center_vc: null,
+    all_vc: null
+  };
+
+  roundabout_default_result: CapxRoundaboutsAnalysisResultParameters = {
+    zone1_north_lane1: null,
+    zone1_north_lane2: null,
+    zone1_north_lane3: null,
+
+    zone3_east_lane1: null,
+    zone3_east_lane2: null,
+    zone3_east_lane3: null,
+
+    zone2_south_lane1: null,
+    zone2_south_lane2: null,
+    zone2_south_lane3: null,
+
+
+    zone4_west_lane1: null,
+    zone4_west_lane2: null,
+    zone4_west_lane3: null,
+
+    all_vc: null,
+  };
+
+  interchange_default_result: CapxInterchangeAnalysisResultParameters = {
+    zone1_right_merge_clv: null,
+    zone1_right_merge_vc: null,
+    zone2_left_merge_clv: null,
+    zone2_left_merge_vc: null,
+    zone3_ctr1_clv: null,
+    zone3_ctr1_vc: null,
+    zone4_ctr2_clv: null,
+    zone4_ctr2_vc: null,
+
+    zone5_left_merge_clv: null,
+    zone5_left_merge_vc: null,
+    zone6_right_merge_clv: null,
+    zone6_right_merge_vc: null,
+
+
+    all_vc: null
+  }
 
   inputParameters$ = new BehaviorSubject<CapxInputParameters>({
     east_bound_u: 0,
@@ -75,19 +138,47 @@ export class CapxStateService {
     north_bound_right: 1
   });
 
-  conventionalJunctionResult$ = new BehaviorSubject<CapxIntersectionAnalysisResultParameters>({
-    zone1_north_clv: null,
-    zone1_north_vc: null,
-    zone2_south_clv: null,
-    zone2_south_vc: null,
-    zone3_east_clv: null,
-    zone3_east_vc: null,
-    zone4_west_clv: null,
-    zone4_west_vc: null,
-    zone5_center_clv: 0,
-    zone5_center_vc: 0,
-    all_vc: 0
-  });
+  // Intersections
+  conventionalJunctionResult$ = new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result);
+  conventionalSharedRightTurnLeftTurnJunctionResult$ = new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result);
+  fullDisplacedLeftTurnIntersectionJunctionResult$ = new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result);
+  medianUTurnIntersectionEastWestJunctionResult$ = new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result);
+  medianUTurnIntersectionNorthSouthJunctionResult$ = new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result);
+  partialDisplacedLeftTurnIntersectionEastWestJunctionResult$ = new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result);
+  partialDisplacedLeftTurnIntersectionNorthSouthJunctionResult$ = new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result);
+  partialMedianUTurnIntersectionEastWestJunctionResult$ = new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result);
+  partialMedianUTurnIntersectionNorthSouthJunctionResult$ = new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result);
+  restrictedCrossingUTurnIntersectionEastWestJunctionResult$ = new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result);
+  restrictedCrossingUTurnIntersectionNorthSouthJunctionResult$ = new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result);
+  quadrantRoadwayIntersectionNorthEastJunctionResult$ = new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result);
+  quadrantRoadwayIntersectionNorthWestJunctionResult$ = new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result);
+  quadrantRoadwayIntersectionSouthEastJunctionResult$ = new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result);
+  quadrantRoadwayIntersectionSouthWestJunctionResult$ = new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result);
+
+
+  // Interchange
+  displacedLeftTurnInterchangeEastWestJunctionResult$ = new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result);
+  displacedLeftTurnInterchangeNorthSouthJunctionResult$ = new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result);
+  doubleCrossoverDiamondInterchangeEastWestJunctionResult$ = new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result);
+  doubleCrossoverDiamondInterchangeNorthSouthJunctionResult$ = new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result);
+  partialCloverleafEastWestJunctionResult$ = new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result);
+  partialCloverleafNorthSouthJunctionResult$ = new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result);
+  singlePointInterchangeEastWestJunctionResult$ = new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result);
+  singlePointInterchangeNorthSouthJunctionResult$ = new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result);
+  traditionalDiamondEastWestJunctionResult$ = new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result);
+  traditionalDiamondNorthSouthJunctionResult$ = new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result);
+
+
+  // Roundabouts
+  fiftyICDMiniRoundaboutJunctionResult$ = new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result);
+  oneNorthSouthxOneEastWestRoundaboutJunctionnResult$ = new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result);
+  oneNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ = new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result);
+  seventyFiveICDMiniRoundaboutJunctionResult$ = new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result);
+  threeNorthSouthxThreeEastWestLaneRoundaboutJunctionResult$ = new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result);
+  twoNorthSouthxOneEastWestLaneRoundaboutJunctionResult$ = new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result);
+  twoNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ = new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result);
+
+
 
   constructor() {
     this.solve();

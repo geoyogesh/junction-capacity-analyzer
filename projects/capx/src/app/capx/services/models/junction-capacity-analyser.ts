@@ -76,5 +76,47 @@ export interface CapxIntersectionAnalysisResultParameters {
   zone4_west_vc: number | null;
   zone5_center_clv: number | null;
   zone5_center_vc: number | null;
-  all_vc: number;
+  all_vc: number | null;
+}
+
+
+export interface CapxRoundaboutsAnalysisResultParameters {
+  zone1_north_lane1: number | null;
+  zone1_north_lane2: number | null;
+  zone1_north_lane3: number | null;
+
+  zone3_east_lane1: number | null;
+  zone3_east_lane2: number | null;
+  zone3_east_lane3: number | null;
+
+  zone2_south_lane1: number | null;
+  zone2_south_lane2: number | null;
+  zone2_south_lane3: number | null;
+
+
+  zone4_west_lane1: number | null;
+  zone4_west_lane2: number | null;
+  zone4_west_lane3: number | null;
+
+  all_vc: number | null;
+}
+
+
+export interface CapxInterchangeAnalysisResultParameters {
+  zone1_right_merge_clv: number | null;
+  zone1_right_merge_vc: number | null;
+  zone2_left_merge_clv: number | null;
+  zone2_left_merge_vc: number | null;
+  zone3_ctr1_clv: number | null;
+  zone3_ctr1_vc: number | null;
+  zone4_ctr2_clv: number | null;
+  zone4_ctr2_vc: number | null;
+
+  zone5_left_merge_clv: number | null;
+  zone5_left_merge_vc: number | null;
+  zone6_right_merge_clv: number | null;
+  zone6_right_merge_vc: number | null;
+
+
+  all_vc: number | null;
 }

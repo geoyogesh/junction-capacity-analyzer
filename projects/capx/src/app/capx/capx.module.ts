@@ -7,10 +7,10 @@ import { JunctionAnalysisParametersComponent } from './components/junction-analy
 import { JunctionAnalysisScoreResultsComponent } from './components/junction-analysis-score-results/junction-analysis-score-results.component';
 import { ConventionalJunctionComponent } from './components/junctions/intersections/conventional-junction/conventional-junction.component';
 import { ConventionalSharedRightTurnLeftTurnJunctionComponent } from './components/junctions/intersections/conventional-shared-right-turn-left-turn-junction/conventional-shared-right-turn-left-turn-junction.component';
-import { QuadrantRoadwayIntersectionSouthWestJunctionComponent } from './components/junctions/interchanges/quadrant-roadway-intersection-south-west-junction/quadrant-roadway-intersection-south-west-junction.component';
-import { QuadrantRoadwayIntersectionNorthEastJunctionComponent } from './components/junctions/interchanges/quadrant-roadway-intersection-north-east-junction/quadrant-roadway-intersection-north-east-junction.component';
-import { QuadrantRoadwayIntersectionSouthEastJunctionComponent } from './components/junctions/interchanges/quadrant-roadway-intersection-south-east-junction/quadrant-roadway-intersection-south-east-junction.component';
-import { QuadrantRoadwayIntersectionNorthWestJunctionComponent } from './components/junctions/interchanges/quadrant-roadway-intersection-north-west-junction/quadrant-roadway-intersection-north-west-junction.component';
+import { QuadrantRoadwayIntersectionSouthWestJunctionComponent } from './components/junctions/intersections/quadrant-roadway-intersection-south-west-junction/quadrant-roadway-intersection-south-west-junction.component';
+import { QuadrantRoadwayIntersectionNorthEastJunctionComponent } from './components/junctions/intersections/quadrant-roadway-intersection-north-east-junction/quadrant-roadway-intersection-north-east-junction.component';
+import { QuadrantRoadwayIntersectionSouthEastJunctionComponent } from './components/junctions/intersections/quadrant-roadway-intersection-south-east-junction/quadrant-roadway-intersection-south-east-junction.component';
+import { QuadrantRoadwayIntersectionNorthWestJunctionComponent } from './components/junctions/intersections/quadrant-roadway-intersection-north-west-junction/quadrant-roadway-intersection-north-west-junction.component';
 import { PartialDisplacedLeftTurnIntersectionNorthSouthJunctionComponent } from './components/junctions/intersections/partial-displaced-left-turn-intersection-north-south-junction/partial-displaced-left-turn-intersection-north-south-junction.component';
 import { PartialDisplacedLeftTurnIntersectionEastWestJunctionComponent } from './components/junctions/intersections/partial-displaced-left-turn-intersection-east-west-junction/partial-displaced-left-turn-intersection-east-west-junction.component';
 import { FullDisplacedLeftTurnIntersectionJunctionComponent } from './components/junctions/intersections/full-displaced-left-turn-intersection-junction/full-displaced-left-turn-intersection-junction.component';
@@ -41,6 +41,7 @@ import { CriticalLaneVolumeSumComponent } from './components/common/critical-lan
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ConventionalDesignComponent } from './components/junctions/intersections/conventional-junction/conventional-design/conventional-design.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HandleNullValuePipe } from '../capx/pipes/handle-null-value.pipe';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,8 @@ import { ReactiveFormsModule } from '@angular/forms';
      SinglePointInterchangeNorthSouthJunctionComponent,
      SinglePointInterchangeEastWestJunctionComponent,
      CriticalLaneVolumeSumComponent,
-     ConventionalDesignComponent],
+     ConventionalDesignComponent,
+     HandleNullValuePipe],
   imports: [
     CommonModule,
     CapxRoutingModule,
