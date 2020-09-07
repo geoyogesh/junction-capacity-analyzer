@@ -23,6 +23,23 @@ table {
         background-color: yellow;
       }
 
+      &.suggestion{
+        background-color: orange;
+      }
+
+      &.title {
+        background-color: #002060;
+        color: #fff;
+      }
+
+      &.column {
+        background-color: #C5D9F1;
+      }
+
+      &.readonly {
+        background-color: #DCE6F1;
+      }
+
       input {
         text-align: center;
         max-width: 46px;

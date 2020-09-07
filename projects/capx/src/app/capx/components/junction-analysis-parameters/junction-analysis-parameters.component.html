@@ -2,23 +2,23 @@
 
   <table [formGroup]="form">
     <tr>
-      <td colspan="7">Traffic Volume Demand</td>
+      <td colspan="7" class="title">Traffic Volume Demand</td>
     </tr>
     <tr>
-      <td rowspan="2"></td>
-      <td colspan="4">Volume (Veh/hr)</td>
-      <td colspan="2">Percent (%)</td>
+      <td rowspan="2" class="column"></td>
+      <td colspan="4" class="column">Volume (Veh/hr)</td>
+      <td colspan="2" class="column">Percent (%)</td>
     </tr>
     <tr>
       <td>U-Turn <br /> <img src="assets/capx/south-u-turn.png" /></td>
       <td>Left <br /> <img src="assets/capx/south-left-turn.png" /></td>
       <td>Thru <br /> <img src="assets/capx/south-thru.png" /></td>
       <td>Right <br /> <img src="assets/capx/south-right-turn.png" /></td>
-      <td>Truck</td>
-      <td>Volume Growth</td>
+      <td class="column">Truck</td>
+      <td class="column">Volume Growth</td>
     </tr>
     <tr>
-      <td>Eastbound</td>
+      <td class="column">Eastbound</td>
       <td class="editable"><input type="number" value="0" formControlName="east_bound_u"></td>
       <td class="editable"><input type="number" value="630" formControlName="east_bound_left"></td>
       <td class="editable"><input type="number" value="0" formControlName="east_bound_thru"></td>
@@ -29,7 +29,7 @@
           placeholder='0.00' step="0.01">%</td>
     </tr>
     <tr>
-      <td>Westbound</td>
+      <td class="column">Westbound</td>
       <td class="editable"><input type="number" value="0" formControlName="west_bound_u"></td>
       <td class="editable"><input type="number" value="173" formControlName="west_bound_left"></td>
       <td class="editable"><input type="number" value="0" formControlName="west_bound_thru"></td>
@@ -40,7 +40,7 @@
           placeholder='0.00' step="0.01">%</td>
     </tr>
     <tr>
-      <td>Southbound</td>
+      <td class="column">Southbound</td>
       <td class="editable"><input type="number" value="0" formControlName="south_bound_u"></td>
       <td class="editable"><input type="number" value="225" formControlName="south_bound_left"></td>
       <td class="editable"><input type="number" value="1220" formControlName="south_bound_thru"></td>
@@ -51,7 +51,7 @@
           placeholder='0.00' step="0.01">%</td>
     </tr>
     <tr>
-      <td>Northbound</td>
+      <td class="column">Northbound</td>
       <td class="editable"><input type="number" value="0" formControlName="north_bound_u"></td>
       <td class="editable"><input type="number" value="420" formControlName="north_bound_left"></td>
       <td class="editable"><input type="number" value="1645" formControlName="north_bound_thru"></td>
@@ -62,7 +62,7 @@
           placeholder='0.00' step="0.01">%</td>
     </tr>
     <tr>
-      <td>Adjustment Factor</td>
+      <td class="column">Adjustment Factor</td>
       <td class="editable"><input type="number" value="0.80"></td>
       <td class="editable"><input type="number" value="0.95"></td>
       <td>-</td>
@@ -71,21 +71,21 @@
       <td>-</td>
     </tr>
     <tr>
-      <td>Suggested</td>
-      <td>0.80</td>
-      <td>0.95</td>
+      <td class="column">Suggested</td>
+      <td class="suggestion">0.80</td>
+      <td class="suggestion">0.95</td>
       <td>-</td>
-      <td>0.85</td>
+      <td class="suggestion">0.85</td>
       <td>-</td>
       <td>-</td>
     </tr>
     <tr>
-      <td colspan="4">Truck to PCE Factor</td>
-      <td colspan="2">Suggested = 2.00</td>
+      <td colspan="4" class="column">Truck to PCE Factor</td>
+      <td colspan="2" class="suggestion">Suggested = 2.00</td>
       <td class="editable"><input type="number" value="2.00"></td>
     </tr>
     <tr>
-      <td colspan="4">Critical Lane Volume</td>
+      <td colspan="4" class="column">Critical Lane Volume</td>
       <td colspan="3" class="editable"><input type="number" value="1600"></td>
     </tr>
   </table>
@@ -93,11 +93,11 @@
 
   <table>
     <tr>
-      <td colspan="5">Equivalent Pasenger Car Volume</td>
+      <td colspan="5" class="title">Equivalent Pasenger Car Volume</td>
     </tr>
     <tr>
-      <td rowspan="2"></td>
-      <td colspan="4">Volume (Veh/hr)</td>
+      <td rowspan="2" class="column"></td>
+      <td colspan="4" class="column">Volume (Veh/hr)</td>
     </tr>
     <tr>
       <td>U-Turn <br /> <img src="assets/capx/south-u-turn.png" /></td>
@@ -106,32 +106,32 @@
       <td>Right <br /> <img src="assets/capx/south-right-turn.png" /></td>
     </tr>
     <tr>
-      <td>Eastbound</td>
-      <td>{{(capxStateService.masterParameters$ | async)!.east_bound_u}}</td>
-      <td>{{(capxStateService.masterParameters$ | async)!.east_bound_left}}</td>
-      <td>{{(capxStateService.masterParameters$ | async)!.east_bound_thru}}</td>
-      <td>{{(capxStateService.masterParameters$ | async)!.east_bound_right}}</td>
+      <td class="column">Eastbound</td>
+      <td class="readonly">{{(capxStateService.masterParameters$ | async)!.east_bound_u}}</td>
+      <td class="readonly">{{(capxStateService.masterParameters$ | async)!.east_bound_left}}</td>
+      <td class="readonly">{{(capxStateService.masterParameters$ | async)!.east_bound_thru}}</td>
+      <td class="readonly">{{(capxStateService.masterParameters$ | async)!.east_bound_right}}</td>
     </tr>
     <tr>
-      <td>Westbound</td>
-      <td>{{(capxStateService.masterParameters$ | async)!.west_bound_u}}</td>
-      <td>{{(capxStateService.masterParameters$ | async)!.west_bound_left}}</td>
-      <td>{{(capxStateService.masterParameters$ | async)!.west_bound_thru}}</td>
-      <td>{{(capxStateService.masterParameters$ | async)!.west_bound_right}}</td>
+      <td class="column">Westbound</td>
+      <td class="readonly">{{(capxStateService.masterParameters$ | async)!.west_bound_u}}</td>
+      <td class="readonly">{{(capxStateService.masterParameters$ | async)!.west_bound_left}}</td>
+      <td class="readonly">{{(capxStateService.masterParameters$ | async)!.west_bound_thru}}</td>
+      <td class="readonly">{{(capxStateService.masterParameters$ | async)!.west_bound_right}}</td>
     </tr>
     <tr>
-      <td>Southbound</td>
-      <td>{{(capxStateService.masterParameters$ | async)!.south_bound_u}}</td>
-      <td>{{(capxStateService.masterParameters$ | async)!.south_bound_left}}</td>
-      <td>{{(capxStateService.masterParameters$ | async)!.south_bound_thru}}</td>
-      <td>{{(capxStateService.masterParameters$ | async)!.south_bound_right}}</td>
+      <td class="column">Southbound</td>
+      <td class="readonly">{{(capxStateService.masterParameters$ | async)!.south_bound_u}}</td>
+      <td class="readonly">{{(capxStateService.masterParameters$ | async)!.south_bound_left}}</td>
+      <td class="readonly">{{(capxStateService.masterParameters$ | async)!.south_bound_thru}}</td>
+      <td class="readonly">{{(capxStateService.masterParameters$ | async)!.south_bound_right}}</td>
     </tr>
     <tr>
-      <td>Northbound</td>
-      <td>{{(capxStateService.masterParameters$ | async)!.north_bound_u}}</td>
-      <td>{{(capxStateService.masterParameters$ | async)!.north_bound_left}}</td>
-      <td>{{(capxStateService.masterParameters$ | async)!.north_bound_thru}}</td>
-      <td>{{(capxStateService.masterParameters$ | async)!.north_bound_right}}</td>
+      <td class="column">Northbound</td>
+      <td class="readonly">{{(capxStateService.masterParameters$ | async)!.north_bound_u}}</td>
+      <td class="readonly">{{(capxStateService.masterParameters$ | async)!.north_bound_left}}</td>
+      <td class="readonly">{{(capxStateService.masterParameters$ | async)!.north_bound_thru}}</td>
+      <td class="readonly">{{(capxStateService.masterParameters$ | async)!.north_bound_right}}</td>
     </tr>
   </table>
 </div>
