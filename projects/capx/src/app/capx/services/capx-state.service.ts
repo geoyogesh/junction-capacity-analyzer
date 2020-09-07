@@ -10,26 +10,33 @@ import {
   CapxIntersectionAnalysisResultParameters,
   CapxInterchangeAnalysisResultParameters } from './models/junction-capacity-analyser';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, observable } from 'rxjs';
 import { round, max } from 'mathjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CapxStateService {
+  default_color = '#666';
 
   intersection_default_result: CapxIntersectionAnalysisResultParameters = {
     zone1_north_clv: null,
     zone1_north_vc: null,
+    zone1_north_color: this.default_color,
     zone2_south_clv: null,
     zone2_south_vc: null,
+    zone2_south_color: this.default_color,
     zone3_east_clv: null,
     zone3_east_vc: null,
+    zone3_east_color: this.default_color,
     zone4_west_clv: null,
     zone4_west_vc: null,
+    zone4_west_color: this.default_color,
     zone5_center_clv: null,
     zone5_center_vc: null,
-    all_vc: null
+    zone5_center_color: this.default_color,
+    all_vc: null,
+    all_vc_color: this.default_color,
   };
 
   roundabout_default_result: CapxRoundaboutsAnalysisResultParameters = {
@@ -145,6 +152,13 @@ export class CapxStateService {
     twoNorthSouthxTwoEastWestLaneRoundaboutJunction: null
   };
 
+  clv_range_text$ = new BehaviorSubject<Map<number, string>>(new Map([
+    [1, ' - '],
+    [2, ' - '],
+    [3, ' - '],
+    [4, ' - '],
+  ]));
+
 
   masterParameters$ = new BehaviorSubject<CapxMasterParameters>({
     east_bound_u: 0,
@@ -234,7 +248,19 @@ export class CapxStateService {
     this.solve();
   }
 
+
   private solve() {
+
+    // update range text
+    const clv = this.inputParameters$.value.critical_lane_volume;
+    this.clv_range_text$.next(new Map([
+      [1, clv !== null ? `< ${round(0.75 * this.inputParameters$.value.critical_lane_volume)}` : ' - '],
+      [2, clv !== null ? `${round(0.75 * clv)} - ${round(0.875 * clv) - 1}` : ' - '],
+      [3, clv !== null ? `${round(0.875 * clv)} < ${round(clv) - 1}` : ' - '],
+      [4, clv !== null ? `>= ${round(clv)}` : ' - '],
+    ]));
+
+
     const east_bound_u =  Math.round((this.inputParameters$.value.east_bound_u * (1 - this.inputParameters$.value.east_bound_truck_percent) + this.inputParameters$.value.east_bound_u * this.inputParameters$.value.east_bound_truck_percent * this.inputParameters$.value.truck_adjustment_factor) * (1 + this.inputParameters$.value.east_bound_growth_factor));
     const east_bound_left =  Math.round((this.inputParameters$.value.east_bound_left * (1 - this.inputParameters$.value.east_bound_truck_percent) + this.inputParameters$.value.east_bound_left * this.inputParameters$.value.east_bound_truck_percent * this.inputParameters$.value.truck_adjustment_factor) * (1 + this.inputParameters$.value.east_bound_growth_factor));
     const east_bound_thru =  Math.round((this.inputParameters$.value.east_bound_thru * (1 - this.inputParameters$.value.east_bound_truck_percent) + this.inputParameters$.value.east_bound_thru * this.inputParameters$.value.east_bound_truck_percent * this.inputParameters$.value.truck_adjustment_factor) * (1 + this.inputParameters$.value.east_bound_growth_factor));
@@ -282,26 +308,56 @@ export class CapxStateService {
     const masterParameters = this.masterParameters$.value;
     const junctionParameters = this.conventionalJunctionParameters$.value;
     const zone5_center_clv = max(
-      (masterParameters.east_bound_left/inputParameters.adjustment_factor_left_turn+masterParameters.east_bound_u/inputParameters.adjustment_factor_u)/junctionParameters.east_bound_left + max(masterParameters.west_bound_thru/junctionParameters.west_bound_thru, round(max(0,masterParameters.west_bound_right/inputParameters.adjustment_factor_right_turn/junctionParameters.west_bound_right-masterParameters.south_bound_left/inputParameters.adjustment_factor_left_turn/junctionParameters.south_bound_left),0)),
-      (masterParameters.west_bound_left/inputParameters.adjustment_factor_left_turn+masterParameters.west_bound_u/inputParameters.adjustment_factor_u)/junctionParameters.west_bound_left +max(masterParameters.east_bound_thru/junctionParameters.east_bound_thru, round(max(0,masterParameters.east_bound_right/inputParameters.adjustment_factor_right_turn/junctionParameters.east_bound_right-masterParameters.north_bound_left/inputParameters.adjustment_factor_left_turn/junctionParameters.north_bound_left),0))
+      (masterParameters.east_bound_left / inputParameters.adjustment_factor_left_turn + masterParameters.east_bound_u / inputParameters.adjustment_factor_u) / junctionParameters.east_bound_left + max(masterParameters.west_bound_thru / junctionParameters.west_bound_thru, round(max(0, masterParameters.west_bound_right / inputParameters.adjustment_factor_right_turn / junctionParameters.west_bound_right - masterParameters.south_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.south_bound_left), 0)),
+      (masterParameters.west_bound_left / inputParameters.adjustment_factor_left_turn + masterParameters.west_bound_u / inputParameters.adjustment_factor_u) / junctionParameters.west_bound_left + max(masterParameters.east_bound_thru / junctionParameters.east_bound_thru, round(max(0, masterParameters.east_bound_right / inputParameters.adjustment_factor_right_turn / junctionParameters.east_bound_right - masterParameters.north_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.north_bound_left), 0))
       ) +
       max(
-      (masterParameters.north_bound_left/inputParameters.adjustment_factor_left_turn+masterParameters.north_bound_u/inputParameters.adjustment_factor_u)/inputParameters.adjustment_factor_left_turn/junctionParameters.north_bound_left + max(masterParameters.south_bound_thru/junctionParameters.south_bound_thru, round(max(0,masterParameters.south_bound_right/inputParameters.adjustment_factor_right_turn/junctionParameters.south_bound_right-masterParameters.east_bound_left/inputParameters.adjustment_factor_left_turn/junctionParameters.east_bound_left),0)),
-      (masterParameters.south_bound_left/inputParameters.adjustment_factor_left_turn+masterParameters.south_bound_u/inputParameters.adjustment_factor_u)/inputParameters.adjustment_factor_left_turn/junctionParameters.south_bound_left +max(masterParameters.north_bound_thru/junctionParameters.north_bound_thru, round(max(0,masterParameters.north_bound_right/inputParameters.adjustment_factor_right_turn/junctionParameters.north_bound_right-masterParameters.west_bound_left/inputParameters.adjustment_factor_left_turn/junctionParameters.west_bound_left),0))
+      (masterParameters.north_bound_left / inputParameters.adjustment_factor_left_turn + masterParameters.north_bound_u / inputParameters.adjustment_factor_u)/inputParameters.adjustment_factor_left_turn/junctionParameters.north_bound_left + max(masterParameters.south_bound_thru / junctionParameters.south_bound_thru, round(max(0, masterParameters.south_bound_right / inputParameters.adjustment_factor_right_turn / junctionParameters.south_bound_right - masterParameters.east_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.east_bound_left), 0)),
+      (masterParameters.south_bound_left / inputParameters.adjustment_factor_left_turn + masterParameters.south_bound_u / inputParameters.adjustment_factor_u)/inputParameters.adjustment_factor_left_turn/junctionParameters.south_bound_left + max(masterParameters.north_bound_thru / junctionParameters.north_bound_thru, round(max(0, masterParameters.north_bound_right / inputParameters.adjustment_factor_right_turn / junctionParameters.north_bound_right - masterParameters.west_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.west_bound_left), 0))
       );
     const zone5_center_vc = round(zone5_center_clv / inputParameters.critical_lane_volume, 2);
     this.conventionalJunctionResult$.next({
       zone1_north_clv: null,
       zone1_north_vc: null,
+      zone1_north_color: this.getClvRangeColor(null),
       zone2_south_clv: null,
       zone2_south_vc: null,
+      zone2_south_color: this.getClvRangeColor(null),
       zone3_east_clv: null,
       zone3_east_vc: null,
+      zone3_east_color: this.getClvRangeColor(null),
       zone4_west_clv: null,
       zone4_west_vc: null,
+      zone4_west_color: this.getClvRangeColor(null),
       zone5_center_clv: round(zone5_center_clv),
       zone5_center_vc,
-      all_vc: zone5_center_vc
+      zone5_center_color: this.getClvRangeColor(zone5_center_clv),
+      all_vc: zone5_center_vc,
+      all_vc_color: this.getClvRangeColor(zone5_center_clv),
     });
+  }
+
+  private getClvRangeColor(zone_all_vlc: number | null) {
+    // update range text
+    const clv = this.inputParameters$.value.critical_lane_volume;
+    if (zone_all_vlc === null || clv === null) {
+      return this.default_color;
+    }
+
+    if (zone_all_vlc < round(0.75 * clv)) {
+      return '#FFFF00';
+    }
+    else if (zone_all_vlc >= round(0.75 * clv) && zone_all_vlc <= round(0.875 * clv) - 1) {
+      return '#FFFF00';
+    }
+    else if (zone_all_vlc >= round(0.875 * clv) && zone_all_vlc <= round(clv) - 1) {
+      return '#FFA500';
+    }
+    else if (zone_all_vlc >= round(clv)) {
+      return '#FF0000';
+    }
+    else {
+      return '#666';
+    }
   }
 }

@@ -42,6 +42,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ConventionalDesignComponent } from './components/junctions/intersections/conventional-junction/conventional-design/conventional-design.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HandleNullValuePipe } from '../capx/pipes/handle-null-value.pipe';
+import { ClvStylePipe } from '../capx/pipes/clv-style.pipe';
+import { VcStylePipe } from '../capx/pipes/vc-style.pipe';
 
 @NgModule({
   declarations: [
@@ -82,7 +84,9 @@ import { HandleNullValuePipe } from '../capx/pipes/handle-null-value.pipe';
      SinglePointInterchangeEastWestJunctionComponent,
      CriticalLaneVolumeSumComponent,
      ConventionalDesignComponent,
-     HandleNullValuePipe],
+     HandleNullValuePipe,
+     ClvStylePipe,
+     VcStylePipe],
   imports: [
     CommonModule,
     CapxRoutingModule,

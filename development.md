@@ -59,3 +59,7 @@ ng generate class capx/services/models/JunctionCapacityAnalyser
 ng generate service capx/services/CapxState 
 
 ng generate pipe capx/pipes/HandleNullValue --module=Capx
+
+
+ng generate pipe capx/pipes/ClvStyle --module=Capx
+ng generate pipe capx/pipes/VcStyle --module=Capx

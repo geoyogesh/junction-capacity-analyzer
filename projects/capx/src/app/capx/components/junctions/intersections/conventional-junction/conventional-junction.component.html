@@ -1,6 +1,6 @@
 <p>Conventional</p>
 <div fxLayout="column" fxLayoutAlign="space-around stretch" >
-  <capx-critical-lane-volume-sum vc="{{(capxStateService.conventionalJunctionResult$ | async)!.zone5_center_vc}}"></capx-critical-lane-volume-sum>
+  <capx-critical-lane-volume-sum vc="{{(capxStateService.conventionalJunctionResult$ | async)!.zone5_center_vc}}" vc_color="{{(capxStateService.conventionalJunctionResult$ | async)!.zone5_center_color}}"></capx-critical-lane-volume-sum>
   <div fxLayout="row" fxLayoutAlign=" stretch" fxLayoutGap="20px" style="padding:20px">
     <div fxFlex fxFlex="50" fxLayout="column" fxLayoutAlign="space-around center">
       <capx-conventional-design></capx-conventional-design>
@@ -71,7 +71,7 @@
                   <td>Zone 5</td>
                 </tr>
                 <tr>
-                  <td>{{(capxStateService.conventionalJunctionResult$ | async)!.zone5_center_clv}}</td>
+                  <td [ngStyle]="{'background-color': (capxStateService.conventionalJunctionResult$ | async)!.zone5_center_color}">{{(capxStateService.conventionalJunctionResult$ | async)!.zone5_center_clv}}</td>
                 </tr>
               </table>
             </div>

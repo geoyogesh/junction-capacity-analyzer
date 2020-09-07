@@ -1,4 +1,6 @@
+import { round } from 'mathjs';
 import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
+import { CapxStateService } from '../../../services/capx-state.service';
 
 @Component({
   selector: 'capx-critical-lane-volume-sum',
@@ -8,11 +10,12 @@ import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core
 })
 export class CriticalLaneVolumeSumComponent implements OnInit {
 
-  @Input() vc: any = null;
+  @Input() vc: string | null = null;
 
-  constructor() { }
+  @Input() vc_color: string | null = null;
+
+  constructor(public capxStateService: CapxStateService) { }
 
   ngOnInit(): void {
   }
-
 }

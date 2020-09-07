@@ -1,15 +1,15 @@
 <table>
   <tr>
-    <td colspan="4" style="text-align: center;">Critical Lane Volume Sum</td>
+    <td colspan="4" class="column">Critical Lane Volume Sum</td>
   </tr>
   <tr>
-    <td style="text-align: center;">&lt; 1200</td>
-    <td style="text-align: center;">1200 - 1399</td>
-    <td style="text-align: center;">1400 - 1599</td>
-    <td style="text-align: center;">&gt;= 1600</td>
+    <td style="background-color: white;">{{(capxStateService.clv_range_text$ | async)!.get(1)}}</td>
+    <td style="background-color: yellow;">{{(capxStateService.clv_range_text$ | async)!.get(2)}}</td>
+    <td style="background-color: orange;">{{(capxStateService.clv_range_text$ | async)!.get(3)}}</td>
+    <td style="background-color: red;">{{(capxStateService.clv_range_text$ | async)!.get(4)}}</td>
   </tr>
   <tr>
-    <td colspan="2" style="text-align: center;">VOLUME / CAPACITY RATIO:</td>
-    <td colspan="2" style="text-align: center;">{{vc}}</td>
+    <td colspan="2" class="column">V/C Ratio:</td>
+    <td colspan="2" [ngStyle]="{'background-color': vc_color}">{{vc}}</td>
   </tr>
 </table>
