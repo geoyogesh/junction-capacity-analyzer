@@ -1,47 +1,87 @@
-<capx-junction-analysis-parameters></capx-junction-analysis-parameters>
+<div class="main-container">
+  <header class="header header-6">
+    <div class="branding"><a routerlink="/" class="logo-and-title" href="/"><span
+          class="clr-icon clarity-logo"></span><span class="title">Capacity Analysis for Planning of
+          Junctions</span></a></div>
+  </header>
+  <div class="content-container">
+    <nav class="sidenav">
+      <section class="sidenav-content">
+        <a class="nav-link" [routerLink]="['/inputs']" routerLinkActive="active">Inputs</a>
+        <a class="nav-link" [routerLink]="['/results']" routerLinkActive="active">Results</a>
+        <section class="nav-group collapsible">
+          <input id="intersections-links" type="checkbox">
+          <label for="intersections-links">Intersections</label>
+          <ul class="nav-list">
+            <li><a class="nav-link" [routerLink]="['/conventional']" routerLinkActive="active">Conventional</a></li>
+            <li><a class="nav-link" [routerLink]="['/conventional-shared-right-turn-left-turn']"
+                routerLinkActive="active">Conventional Shared RT LN</a></li>
+            <li><a class="nav-link" [routerLink]="['/quadrant-roadway-intersection-south-west']"
+                routerLinkActive="active">Quadrant Roadway Intersection (S-W)</a></li>
+            <li><a class="nav-link" [routerLink]="['/quadrant-roadway-intersection-north-east']"
+                routerLinkActive="active">Quadrant Roadway Intersection (N-E)</a></li>
+            <li><a class="nav-link" [routerLink]="['/quadrant-roadway-intersection-south-east']"
+                routerLinkActive="active">Quadrant Roadway Intersection (S-E)</a></li>
+            <li><a class="nav-link" [routerLink]="['/quadrant-roadway-intersection-north-west']"
+                routerLinkActive="active">Quadrant Roadway Intersection (N-W)</a></li>
+            <li><a class="nav-link" [routerLink]="['/partial-displaced-left-turn-intersection-north-south']"
+                routerLinkActive="active">Partial Displaced Left Turn Intersection (N-S)</a></li>
+            <li><a class="nav-link" [routerLink]="['/partial-displaced-left-turn-intersection-east-west']"
+                routerLinkActive="active">Partial Displaced Left Turn Intersection (E-W)</a></li>
+            <li><a class="nav-link" [routerLink]="['/full-displaced-left-turn-intersection']"
+                routerLinkActive="active">Full Displaced Left Turn Intersection</a></li>
+            <li><a class="nav-link" [routerLink]="['/restricted-crossing-uturn-intersection-north-south']"
+                routerLinkActive="active">Restricted Crossing U-Turn Intersection (N-S)</a></li>
+            <li><a class="nav-link" [routerLink]="['/restricted-crossing-uturn-intersection-east-west']"
+                routerLinkActive="active">Restricted Crossing U-Turn Intersection (E-W)</a></li>
+            <li><a class="nav-link" [routerLink]="['/median-uturn-intersection-north-south']"
+                routerLinkActive="active">Median U-Turn Intersection (N-S)</a></li>
+            <li><a class="nav-link" [routerLink]="['/median-uturn-intersection-east-west']"
+                routerLinkActive="active">Median U-Turn Intersection (E-W)</a></li>
+            <li><a class="nav-link" [routerLink]="['/partial-median-uturn-intersection-north-south']"
+                routerLinkActive="active">Partial Median U-Turn Intersection (N-S)</a></li>
+            <li><a class="nav-link" [routerLink]="['/partial-median-uturn-intersection-east-west']"
+                routerLinkActive="active">Partial Median U-Turn Intersection (E-W)</a></li>
 
-<capx-junction-analysis-score-results></capx-junction-analysis-score-results>
+          </ul>
+        </section>
 
-<capx-conventional-junction></capx-conventional-junction>
 
-<capx-conventional-shared-right-turn-left-turn-junction></capx-conventional-shared-right-turn-left-turn-junction>
+        <section class="nav-group collapsible">
+          <input id="roundabouts-links" type="checkbox">
+          <label for="roundabouts-links">Roundabouts</label>
+          <ul class="nav-list">
+            <li><a class="nav-link" [routerLink]="['/fifty-icdmini-roundabout']" routerLinkActive="active">50' ICD Mini-Roundabout</a></li>
+            <li><a class="nav-link" [routerLink]="['/seventy-five-icdmini-roundabout']" routerLinkActive="active">75' ICD Mini-Roundabout</a></li>
+            <li><a class="nav-link" [routerLink]="['/one-north-southx-one-east-west-roundabout']" routerLinkActive="active">1 NS x 1 EW Roundabout</a></li>
+            <li><a class="nav-link" [routerLink]="['/one-north-southx-two-east-west-lane-roundabout']" routerLinkActive="active">1 NS x 2 EW Lane Roundabout</a></li>
+            <li><a class="nav-link" [routerLink]="['/two-north-southx-one-east-west-lane-roundabout']" routerLinkActive="active">2 NS x 1 EW Lane Roundabout</a></li>
+            <li><a class="nav-link" [routerLink]="['/two-north-southx-two-east-west-lane-roundabout']" routerLinkActive="active">2 NS x 2 EW Lane Roundabout</a></li>
+            <li><a class="nav-link" [routerLink]="['/three-north-southx-three-east-west-lane-roundabout']" routerLinkActive="active">3 NS x 3 EW Lane Roundabout</a></li>
+          </ul>
+        </section>
 
-<capx-quadrant-roadway-intersection-south-west-junction></capx-quadrant-roadway-intersection-south-west-junction>
+        <section class="nav-group collapsible">
+          <input id="interchanges-links" type="checkbox">
+          <label for="interchanges-links">Interchanges</label>
+          <ul class="nav-list">
+            <li><a class="nav-link" [routerLink]="['/traditional-diamond-north-south']" routerLinkActive="active">Traditional Diamond (N-S)</a></li>
+            <li><a class="nav-link" [routerLink]="['/traditional-diamond-east-west']" routerLinkActive="active">Traditional Diamond (E-W)</a></li>
+            <li><a class="nav-link" [routerLink]="['/partial-cloverleaf-north-south']" routerLinkActive="active">Partial Cloverleaf (N-S)</a></li>
+            <li><a class="nav-link" [routerLink]="['/partial-cloverleaf-east-west']" routerLinkActive="active">Partial Cloverleaf (E-W)</a></li>
+            <li><a class="nav-link" [routerLink]="['/displaced-left-turn-interchange-north-south']" routerLinkActive="active">Displaced Left Turn Interchange (N-S)</a></li>
+            <li><a class="nav-link" [routerLink]="['/displaced-left-turn-interchange-east-west']" routerLinkActive="active">Displaced Left Turn Interchange (E-W)</a></li>
+            <li><a class="nav-link" [routerLink]="['/double-crossover-diamond-interchange-north-south']" routerLinkActive="active">Double Crossover Diamond Interchange (N-S)</a></li>
+            <li><a class="nav-link" [routerLink]="['/double-crossover-diamond-interchange-east-west']" routerLinkActive="active">Double Crossover Diamond Interchange (E-W)</a></li>
+            <li><a class="nav-link" [routerLink]="['/single-point-interchange-north-south']" routerLinkActive="active">Single Point Interchange (N-S)</a></li>
+            <li><a class="nav-link" [routerLink]="['/single-point-interchange-east-west']" routerLinkActive="active">Single Point Interchange (E-W)</a></li>
+          </ul>
+        </section>
+      </section>
+    </nav>
+    <div class="content-area">
 
-<capx-quadrant-roadway-intersection-north-east-junction></capx-quadrant-roadway-intersection-north-east-junction>
-
-<capx-quadrant-roadway-intersection-south-east-junction></capx-quadrant-roadway-intersection-south-east-junction>
-
-<capx-quadrant-roadway-intersection-north-west-junction></capx-quadrant-roadway-intersection-north-west-junction>
-
-<capx-partial-displaced-left-turn-intersection-north-south-junction></capx-partial-displaced-left-turn-intersection-north-south-junction>
-
-<capx-partial-displaced-left-turn-intersection-east-west-junction></capx-partial-displaced-left-turn-intersection-east-west-junction>
-<capx-full-displaced-left-turn-intersection-junction></capx-full-displaced-left-turn-intersection-junction>
-<capx-restricted-crossing-uturn-intersection-north-south-junction></capx-restricted-crossing-uturn-intersection-north-south-junction>
-<capx-restricted-crossing-uturn-intersection-east-west-junction></capx-restricted-crossing-uturn-intersection-east-west-junction>
-<capx-median-uturn-intersection-north-south-junction></capx-median-uturn-intersection-north-south-junction>
-<capx-median-uturn-intersection-east-west-junction></capx-median-uturn-intersection-east-west-junction>
-<capx-partial-median-uturn-intersection-north-south-junction></capx-partial-median-uturn-intersection-north-south-junction>
-<capx-partial-median-uturn-intersection-east-west-junction></capx-partial-median-uturn-intersection-east-west-junction>
-
-<capx-fifty-icdmini-roundabout-junction></capx-fifty-icdmini-roundabout-junction>
-<capx-seventy-five-icdmini-roundabout-junction></capx-seventy-five-icdmini-roundabout-junction>
-<capx-one-north-southx-one-east-west-roundabout-junction></capx-one-north-southx-one-east-west-roundabout-junction>
-
-<capx-one-north-southx-two-east-west-lane-roundabout-junction></capx-one-north-southx-two-east-west-lane-roundabout-junction>
-<capx-two-north-southx-one-east-west-lane-roundabout-junction></capx-two-north-southx-one-east-west-lane-roundabout-junction>
-<capx-two-north-southx-two-east-west-lane-roundabout-junction></capx-two-north-southx-two-east-west-lane-roundabout-junction>
-<capx-three-north-southx-three-east-west-lane-roundabout-junction></capx-three-north-southx-three-east-west-lane-roundabout-junction>
-
-<capx-traditional-diamond-north-south-junction></capx-traditional-diamond-north-south-junction>
-<capx-traditional-diamond-east-west-junction></capx-traditional-diamond-east-west-junction>
-<capx-partial-cloverleaf-north-south-junction></capx-partial-cloverleaf-north-south-junction>
-<capx-partial-cloverleaf-east-west-junction></capx-partial-cloverleaf-east-west-junction>
-<capx-displaced-left-turn-interchange-north-south-junction></capx-displaced-left-turn-interchange-north-south-junction>
-<capx-displaced-left-turn-interchange-east-west-junction></capx-displaced-left-turn-interchange-east-west-junction>
-<capx-double-crossover-diamond-interchange-north-south-junction></capx-double-crossover-diamond-interchange-north-south-junction>
-<capx-double-crossover-diamond-interchange-east-west-junction></capx-double-crossover-diamond-interchange-east-west-junction>
-
-<capx-single-point-interchange-north-south-junction></capx-single-point-interchange-north-south-junction>
-<capx-single-point-interchange-east-west-junction></capx-single-point-interchange-east-west-junction>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

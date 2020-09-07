@@ -53,16 +53,22 @@
               "projects/capx/src/assets"
             ],
             "styles": [
+              "node_modules/@clr/icons/clr-icons.min.css",
+              "node_modules/@clr/ui/clr-ui.min.css",
               "projects/capx/src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js",
+              "node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js",
+              "node_modules/@clr/icons/clr-icons.min.js"
+            ],
             "allowedCommonJsDependencies": [
               "mathjs",
               "complex.js",
               "fraction.js",
               "decimal.js",
               "typed-function"
-           ]
+            ]
           },
           "configurations": {
             "production": {
@@ -155,6 +161,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "capx"
 }

@@ -44,6 +44,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HandleNullValuePipe } from '../capx/pipes/handle-null-value.pipe';
 import { ClvStylePipe } from '../capx/pipes/clv-style.pipe';
 import { VcStylePipe } from '../capx/pipes/vc-style.pipe';
+import { ClarityModule } from '@clr/angular';
 
 @NgModule({
   declarations: [
@@ -91,7 +92,8 @@ import { VcStylePipe } from '../capx/pipes/vc-style.pipe';
     CommonModule,
     CapxRoutingModule,
     FlexLayoutModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ClarityModule,
   ]
 })
 export class CapxModule { }
