@@ -17,12 +17,17 @@ table {
     td {
       border: 1px solid black;
       text-align: center;
-      padding: 5px;
+      padding: 2px;
+
+      &.editable{
+        background-color: yellow;
+      }
 
       input {
         text-align: center;
         max-width: 46px;
         border: 0px;
+        background-color: transparent;
 
         &.text-right {
           text-align: right;
