@@ -7,6 +7,15 @@ This project is free to use for personal, non profit research and free open-sour
 
 [http://jcapacityanalyzer.com.s3-website-us-east-1.amazonaws.com/](http://jcapacityanalyzer.com.s3-website-us-east-1.amazonaws.com/)
 
+
+## Task List
+- [x] develop basic application with one junction type
+- [x] update the ui
+- [x] deploy to public url and setup ci/cd pipeline
+- [ ] include all junction types
+- [ ] include dynamic junction drawing
+
+
 ## User Guide
 
 1. Go to Input and input the yellow boxes
@@ -17,8 +26,6 @@ This project is free to use for personal, non profit research and free open-sour
 ![Inputt](readme-images/conventinal-junction-configuration.PNG)
 1. review the results
 ![Inputt](readme-images/results.PNG)
-
-
 
 
 ## Credits
