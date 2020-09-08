@@ -26,6 +26,10 @@ jobs:
         run: |
           pwd
           ls
+      - name: build project
+        run: |
+          npm install
+          npm run ng build
         
       - name: Run a one-line script
         run: echo Hello, world!
