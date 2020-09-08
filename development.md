@@ -63,3 +63,5 @@ ng generate pipe capx/pipes/HandleNullValue --module=Capx
 
 ng generate pipe capx/pipes/ClvStyle --module=Capx
 ng generate pipe capx/pipes/VcStyle --module=Capx
+
+ng generate component capx/components/Credits  --prefix=capx --module=Capx

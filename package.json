@@ -34,6 +34,7 @@
     "@angular-devkit/build-angular": "~0.1000.8",
     "@angular/cli": "~10.0.0",
     "@angular/compiler-cli": "~10.0.0",
+    "@jefiozie/ngx-aws-deploy": "^2.0.1",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/mathjs": "^6.0.5",

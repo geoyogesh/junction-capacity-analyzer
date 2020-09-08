@@ -1,3 +1,4 @@
+import { CreditsComponent } from './components/credits/credits.component';
 import { DisplacedLeftTurnInterchangeNorthSouthJunctionComponent } from './components/junctions/interchanges/displaced-left-turn-interchange-north-south-junction/displaced-left-turn-interchange-north-south-junction.component';
 import { PartialMedianUTurnIntersectionNorthSouthJunctionComponent } from './components/junctions/intersections/partial-median-uturn-intersection-north-south-junction/partial-median-uturn-intersection-north-south-junction.component';
 import { MedianUTurnIntersectionNorthSouthJunctionComponent } from './components/junctions/intersections/median-uturn-intersection-north-south-junction/median-uturn-intersection-north-south-junction.component';
@@ -42,6 +43,7 @@ const routes: Routes = [
     path: '', component: AnalysisComponent,
     children: [
       { path: '', redirectTo: 'inputs', pathMatch: 'full' },
+      { path: 'credits', component: CreditsComponent },
       { path: 'inputs', component: JunctionAnalysisParametersComponent },
       { path: 'results', component: JunctionAnalysisScoreResultsComponent },
 

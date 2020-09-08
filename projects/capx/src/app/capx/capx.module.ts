@@ -45,6 +45,7 @@ import { HandleNullValuePipe } from '../capx/pipes/handle-null-value.pipe';
 import { ClvStylePipe } from '../capx/pipes/clv-style.pipe';
 import { VcStylePipe } from '../capx/pipes/vc-style.pipe';
 import { ClarityModule } from '@clr/angular';
+import { CreditsComponent } from '../capx/components/credits/credits.component';
 
 @NgModule({
   declarations: [
@@ -87,7 +88,8 @@ import { ClarityModule } from '@clr/angular';
      ConventionalDesignComponent,
      HandleNullValuePipe,
      ClvStylePipe,
-     VcStylePipe],
+     VcStylePipe,
+     CreditsComponent],
   imports: [
     CommonModule,
     CapxRoutingModule,
