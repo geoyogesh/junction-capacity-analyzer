@@ -1,21 +1,6 @@
 
-.header .branding .clarity-logo {
-  background-image: url(https://clarity.design/clarity-logo.ac17fe42c3c97e7a861f.svg);
-  margin-right: .55rem;
-  min-width: none;
-  height: 1.8rem;
-  width: 1.8rem;
-}
-
-.header .branding .title, header .branding .title {
-  color: #fafafa;
-  color: var(--clr-header-title-color,#fafafa);
-  font-weight: 400;
-  font-weight: var(--clr-header-title-font-weight,400);
-  font-size: .8rem;
-  letter-spacing: .01em;
-  line-height: 3rem;
-  text-decoration: none;
+.clr-vertical-nav {
+  width: 15rem;
 }
 
 table {

@@ -1,84 +1,110 @@
 <div class="main-container">
   <header class="header header-6">
-    <div class="branding"><a routerlink="/" class="logo-and-title" href="/"><span
-          class="clr-icon clarity-logo"></span><span class="title">Capacity Analysis for Planning of
-          Junctions</span></a></div>
+          <div class="branding">
+            <a [routerLink]="['/']" class="nav-link">
+                <clr-icon shape="vm-bug"></clr-icon>
+                <span class="title">Capacity Analysis for Planning of
+                  Junctions</span>
+            </a>
+        </div>
   </header>
   <div class="content-container">
-    <nav class="sidenav">
-      <section class="sidenav-content">
-        <a class="nav-link" [routerLink]="['/inputs']" routerLinkActive="active">Inputs</a>
-        <a class="nav-link" [routerLink]="['/results']" routerLinkActive="active">Results</a>
-        <section class="nav-group collapsible">
-          <input id="intersections-links" type="checkbox">
-          <label for="intersections-links">Intersections</label>
-          <ul class="nav-list">
-            <li><a class="nav-link" [routerLink]="['/conventional']" routerLinkActive="active">Conventional</a></li>
-            <li><a class="nav-link" [routerLink]="['/conventional-shared-right-turn-left-turn']"
-                routerLinkActive="active">Conventional Shared RT LN</a></li>
-            <li><a class="nav-link" [routerLink]="['/quadrant-roadway-intersection-south-west']"
-                routerLinkActive="active">Quadrant Roadway Intersection (S-W)</a></li>
-            <li><a class="nav-link" [routerLink]="['/quadrant-roadway-intersection-north-east']"
-                routerLinkActive="active">Quadrant Roadway Intersection (N-E)</a></li>
-            <li><a class="nav-link" [routerLink]="['/quadrant-roadway-intersection-south-east']"
-                routerLinkActive="active">Quadrant Roadway Intersection (S-E)</a></li>
-            <li><a class="nav-link" [routerLink]="['/quadrant-roadway-intersection-north-west']"
-                routerLinkActive="active">Quadrant Roadway Intersection (N-W)</a></li>
-            <li><a class="nav-link" [routerLink]="['/partial-displaced-left-turn-intersection-north-south']"
-                routerLinkActive="active">Partial Displaced Left Turn Intersection (N-S)</a></li>
-            <li><a class="nav-link" [routerLink]="['/partial-displaced-left-turn-intersection-east-west']"
-                routerLinkActive="active">Partial Displaced Left Turn Intersection (E-W)</a></li>
-            <li><a class="nav-link" [routerLink]="['/full-displaced-left-turn-intersection']"
-                routerLinkActive="active">Full Displaced Left Turn Intersection</a></li>
-            <li><a class="nav-link" [routerLink]="['/restricted-crossing-uturn-intersection-north-south']"
-                routerLinkActive="active">Restricted Crossing U-Turn Intersection (N-S)</a></li>
-            <li><a class="nav-link" [routerLink]="['/restricted-crossing-uturn-intersection-east-west']"
-                routerLinkActive="active">Restricted Crossing U-Turn Intersection (E-W)</a></li>
-            <li><a class="nav-link" [routerLink]="['/median-uturn-intersection-north-south']"
-                routerLinkActive="active">Median U-Turn Intersection (N-S)</a></li>
-            <li><a class="nav-link" [routerLink]="['/median-uturn-intersection-east-west']"
-                routerLinkActive="active">Median U-Turn Intersection (E-W)</a></li>
-            <li><a class="nav-link" [routerLink]="['/partial-median-uturn-intersection-north-south']"
-                routerLinkActive="active">Partial Median U-Turn Intersection (N-S)</a></li>
-            <li><a class="nav-link" [routerLink]="['/partial-median-uturn-intersection-east-west']"
-                routerLinkActive="active">Partial Median U-Turn Intersection (E-W)</a></li>
+    <clr-vertical-nav [clrVerticalNavCollapsible]="true" class="nav-trigger--bottom">
+      <a clrVerticalNavLink [routerLink]="['/inputs']" routerLinkActive="active">
+        <clr-icon clrVerticalNavIcon shape="user"></clr-icon>
+        Inputs
+      </a>
+      <a clrVerticalNavLink [routerLink]="['/results']" routerLinkActive="active">
+        <clr-icon clrVerticalNavIcon shape="bolt"></clr-icon>
+        Results
+      </a>
+      <div class="nav-divider"></div>
+      <clr-vertical-nav-group routerLinkActive="active">
+        Intersections
+        <clr-vertical-nav-group-children>
+          <a clrVerticalNavLink [routerLink]="['/conventional']" routerLinkActive="active">Conventional</a>
+          <a clrVerticalNavLink [routerLink]="['/conventional-shared-right-turn-left-turn']"
+            routerLinkActive="active">Conventional Shared RT LN</a>
+          <a clrVerticalNavLink [routerLink]="['/quadrant-roadway-intersection-south-west']"
+            routerLinkActive="active">Quadrant (S-W)</a>
+          <a clrVerticalNavLink [routerLink]="['/quadrant-roadway-intersection-north-east']"
+            routerLinkActive="active">Quadrant (N-E)</a>
+          <a clrVerticalNavLink [routerLink]="['/quadrant-roadway-intersection-south-east']"
+            routerLinkActive="active">Quadrant (S-E)</a>
+          <a clrVerticalNavLink [routerLink]="['/quadrant-roadway-intersection-north-west']"
+            routerLinkActive="active">Quadrant (N-W)</a>
+          <a clrVerticalNavLink [routerLink]="['/partial-displaced-left-turn-intersection-north-south']"
+            routerLinkActive="active">Partial Displaced Left Turn (N-S)</a>
+          <a clrVerticalNavLink [routerLink]="['/partial-displaced-left-turn-intersection-east-west']"
+            routerLinkActive="active">Partial Displaced Left Turn (E-W)</a>
+          <a clrVerticalNavLink [routerLink]="['/full-displaced-left-turn-intersection']" routerLinkActive="active">Full
+            Displaced Left Turn </a>
+          <a clrVerticalNavLink [routerLink]="['/restricted-crossing-uturn-intersection-north-south']"
+            routerLinkActive="active">Restricted Crossing U-Turn (N-S)</a>
+          <a clrVerticalNavLink [routerLink]="['/restricted-crossing-uturn-intersection-east-west']"
+            routerLinkActive="active">Restricted Crossing U-Turn (E-W)</a>
+          <a clrVerticalNavLink [routerLink]="['/median-uturn-intersection-north-south']"
+            routerLinkActive="active">Median U-Turn (N-S)</a>
+          <a clrVerticalNavLink [routerLink]="['/median-uturn-intersection-east-west']" routerLinkActive="active">Median
+            U-Turn (E-W)</a>
+          <a clrVerticalNavLink [routerLink]="['/partial-median-uturn-intersection-north-south']"
+            routerLinkActive="active">Partial Median U-Turn (N-S)</a>
+          <a clrVerticalNavLink [routerLink]="['/partial-median-uturn-intersection-east-west']"
+            routerLinkActive="active">Partial Median U-Turn (E-W)</a>
+        </clr-vertical-nav-group-children>
+      </clr-vertical-nav-group>
 
-          </ul>
-        </section>
+
+      <clr-vertical-nav-group routerLinkActive="active">
+        Roundabouts
+        <clr-vertical-nav-group-children>
+          <a clrVerticalNavLink [routerLink]="['/fifty-icdmini-roundabout']" routerLinkActive="active">50' ICD
+            Mini-Roundabout</a>
+          <a clrVerticalNavLink [routerLink]="['/seventy-five-icdmini-roundabout']" routerLinkActive="active">75'
+            ICD Mini-Roundabout</a>
+          <a clrVerticalNavLink [routerLink]="['/one-north-southx-one-east-west-roundabout']"
+            routerLinkActive="active">1 NS x 1 EW Roundabout</a>
+          <a clrVerticalNavLink [routerLink]="['/one-north-southx-two-east-west-lane-roundabout']"
+            routerLinkActive="active">1 NS x 2 EW Lane Roundabout</a>
+          <a clrVerticalNavLink [routerLink]="['/two-north-southx-one-east-west-lane-roundabout']"
+            routerLinkActive="active">2 NS x 1 EW Lane Roundabout</a>
+          <a clrVerticalNavLink [routerLink]="['/two-north-southx-two-east-west-lane-roundabout']"
+            routerLinkActive="active">2 NS x 2 EW Lane Roundabout</a>
+          <a clrVerticalNavLink [routerLink]="['/three-north-southx-three-east-west-lane-roundabout']"
+            routerLinkActive="active">3 NS x 3 EW Lane Roundabout</a>
+        </clr-vertical-nav-group-children>
+      </clr-vertical-nav-group>
+
+      <clr-vertical-nav-group routerLinkActive="active">
+        Interchanges
+        <clr-vertical-nav-group-children>
+          <a clrVerticalNavLink [routerLink]="['/traditional-diamond-north-south']"
+            routerLinkActive="active">Traditional Diamond (N-S)</a>
+          <a clrVerticalNavLink [routerLink]="['/traditional-diamond-east-west']" routerLinkActive="active">Traditional
+            Diamond (E-W)</a>
+          <a clrVerticalNavLink [routerLink]="['/partial-cloverleaf-north-south']" routerLinkActive="active">Partial
+            Cloverleaf (N-S)</a>
+          <a clrVerticalNavLink [routerLink]="['/partial-cloverleaf-east-west']" routerLinkActive="active">Partial
+            Cloverleaf (E-W)</a>
+          <a clrVerticalNavLink [routerLink]="['/displaced-left-turn-interchange-north-south']"
+            routerLinkActive="active">Displaced Left Turn (N-S)</a>
+          <a clrVerticalNavLink [routerLink]="['/displaced-left-turn-interchange-east-west']"
+            routerLinkActive="active">Displaced Left Turn (E-W)</a>
+          <a clrVerticalNavLink [routerLink]="['/double-crossover-diamond-interchange-north-south']"
+            routerLinkActive="active">Double Crossover Diamond (N-S)</a>
+          <a clrVerticalNavLink [routerLink]="['/double-crossover-diamond-interchange-east-west']"
+            routerLinkActive="active">Double Crossover Diamond (E-W)</a>
+          <a clrVerticalNavLink [routerLink]="['/single-point-interchange-north-south']"
+            routerLinkActive="active">Single Point (N-S)</a>
+          <a clrVerticalNavLink [routerLink]="['/single-point-interchange-east-west']" routerLinkActive="active">Single
+            Point (E-W)</a>
+        </clr-vertical-nav-group-children>
+      </clr-vertical-nav-group>
 
 
-        <section class="nav-group collapsible">
-          <input id="roundabouts-links" type="checkbox">
-          <label for="roundabouts-links">Roundabouts</label>
-          <ul class="nav-list">
-            <li><a class="nav-link" [routerLink]="['/fifty-icdmini-roundabout']" routerLinkActive="active">50' ICD Mini-Roundabout</a></li>
-            <li><a class="nav-link" [routerLink]="['/seventy-five-icdmini-roundabout']" routerLinkActive="active">75' ICD Mini-Roundabout</a></li>
-            <li><a class="nav-link" [routerLink]="['/one-north-southx-one-east-west-roundabout']" routerLinkActive="active">1 NS x 1 EW Roundabout</a></li>
-            <li><a class="nav-link" [routerLink]="['/one-north-southx-two-east-west-lane-roundabout']" routerLinkActive="active">1 NS x 2 EW Lane Roundabout</a></li>
-            <li><a class="nav-link" [routerLink]="['/two-north-southx-one-east-west-lane-roundabout']" routerLinkActive="active">2 NS x 1 EW Lane Roundabout</a></li>
-            <li><a class="nav-link" [routerLink]="['/two-north-southx-two-east-west-lane-roundabout']" routerLinkActive="active">2 NS x 2 EW Lane Roundabout</a></li>
-            <li><a class="nav-link" [routerLink]="['/three-north-southx-three-east-west-lane-roundabout']" routerLinkActive="active">3 NS x 3 EW Lane Roundabout</a></li>
-          </ul>
-        </section>
-
-        <section class="nav-group collapsible">
-          <input id="interchanges-links" type="checkbox">
-          <label for="interchanges-links">Interchanges</label>
-          <ul class="nav-list">
-            <li><a class="nav-link" [routerLink]="['/traditional-diamond-north-south']" routerLinkActive="active">Traditional Diamond (N-S)</a></li>
-            <li><a class="nav-link" [routerLink]="['/traditional-diamond-east-west']" routerLinkActive="active">Traditional Diamond (E-W)</a></li>
-            <li><a class="nav-link" [routerLink]="['/partial-cloverleaf-north-south']" routerLinkActive="active">Partial Cloverleaf (N-S)</a></li>
-            <li><a class="nav-link" [routerLink]="['/partial-cloverleaf-east-west']" routerLinkActive="active">Partial Cloverleaf (E-W)</a></li>
-            <li><a class="nav-link" [routerLink]="['/displaced-left-turn-interchange-north-south']" routerLinkActive="active">Displaced Left Turn Interchange (N-S)</a></li>
-            <li><a class="nav-link" [routerLink]="['/displaced-left-turn-interchange-east-west']" routerLinkActive="active">Displaced Left Turn Interchange (E-W)</a></li>
-            <li><a class="nav-link" [routerLink]="['/double-crossover-diamond-interchange-north-south']" routerLinkActive="active">Double Crossover Diamond Interchange (N-S)</a></li>
-            <li><a class="nav-link" [routerLink]="['/double-crossover-diamond-interchange-east-west']" routerLinkActive="active">Double Crossover Diamond Interchange (E-W)</a></li>
-            <li><a class="nav-link" [routerLink]="['/single-point-interchange-north-south']" routerLinkActive="active">Single Point Interchange (N-S)</a></li>
-            <li><a class="nav-link" [routerLink]="['/single-point-interchange-east-west']" routerLinkActive="active">Single Point Interchange (E-W)</a></li>
-          </ul>
-        </section>
-      </section>
-    </nav>
+      <div class="nav-divider"></div>
+      <a clrVerticalNavLink routerLink="./credit" routerLinkActive="active">Credit</a>
+    </clr-vertical-nav>
     <div class="content-area">
 
       <router-outlet></router-outlet>
