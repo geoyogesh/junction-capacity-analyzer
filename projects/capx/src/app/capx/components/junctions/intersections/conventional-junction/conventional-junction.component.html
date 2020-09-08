@@ -28,10 +28,10 @@
                       <td><img src="assets/capx/south-u-turn.png" /></td>
                     </tr>
                     <tr>
-                      <td class="readonly"><div>Pepch <br/> {{(capxStateService.masterParameters$ | async)!.south_bound_u}}</div></td>
-                      <td class="readonly"><div>Pepch <br/> {{(capxStateService.masterParameters$ | async)!.south_bound_left}}</div></td>
-                      <td class="readonly"><div>Pepch <br/> {{(capxStateService.masterParameters$ | async)!.south_bound_thru}}</div></td>
-                      <td class="readonly"><div>Pepch <br/> {{(capxStateService.masterParameters$ | async)!.south_bound_right}}</div></td>
+                      <td class="readonly"><div>PEPCH <br/> {{(capxStateService.masterParameters$ | async)!.south_bound_u}}</div></td>
+                      <td class="readonly"><div>PEPCH <br/> {{(capxStateService.masterParameters$ | async)!.south_bound_left}}</div></td>
+                      <td class="readonly"><div>PEPCH <br/> {{(capxStateService.masterParameters$ | async)!.south_bound_thru}}</div></td>
+                      <td class="readonly"><div>PEPCH <br/> {{(capxStateService.masterParameters$ | async)!.south_bound_right}}</div></td>
                     </tr>
                     <tr>
                       <td class="editable"><div><input type="number" min="0" value="1" formControlName="south_bound_left"></div></td>
@@ -49,23 +49,23 @@
                     <table>
                       <tr>
                         <td><img src="assets/capx/east-u-turn.png" /></td>
-                        <td class="readonly"><div class="east-rotation">{{(capxStateService.masterParameters$ | async)!.east_bound_u}} <br/> Pepch</div></td>
+                        <td class="readonly"><div class="east-rotation">{{(capxStateService.masterParameters$ | async)!.east_bound_u}} <br/> PEPCH</div></td>
                         <td rowspan="2" class="editable"><div class="east-rotation"><input type="number" min="0" value="1" formControlName="east_bound_left"></div></td>
                       </tr>
                       <tr>
                         <td><img src="assets/capx/east-left-turn.png" /></td>
-                        <td class="readonly"><div class="east-rotation">{{(capxStateService.masterParameters$ | async)!.east_bound_left}} <br/> Pepch</div></td>
+                        <td class="readonly"><div class="east-rotation">{{(capxStateService.masterParameters$ | async)!.east_bound_left}} <br/> PEPCH</div></td>
                       </tr>
 
                       <tr>
                         <td><img src="assets/capx/east-thru.png" /></td>
-                        <td class="readonly"><div class="east-rotation">{{(capxStateService.masterParameters$ | async)!.east_bound_thru}} <br/> Pepch</div></td>
+                        <td class="readonly"><div class="east-rotation">{{(capxStateService.masterParameters$ | async)!.east_bound_thru}} <br/> PEPCH</div></td>
                         <td class="editable"><div class="east-rotation"><input type="number" min="0" value="1" formControlName="east_bound_thru"></div></td>
                       </tr>
 
                       <tr>
                         <td><img src="assets/capx/east-right-turn.png" /></td>
-                        <td class="readonly"><div class="east-rotation">{{(capxStateService.masterParameters$ | async)!.east_bound_right}} <br/> Pepch</div></td>
+                        <td class="readonly"><div class="east-rotation">{{(capxStateService.masterParameters$ | async)!.east_bound_right}} <br/> PEPCH</div></td>
                         <td class="editable"><div class="east-rotation"><input type="number" min="0" value="1" formControlName="east_bound_right"></div></td>
                       </tr>
                     </table>
@@ -92,23 +92,23 @@
                     <table>
                       <tr>
                         <td class="editable"><div class="west-rotation"><input type="number" min="0" value="1" formControlName="west_bound_right"></div></td>
-                        <td class="readonly"><div class="west-rotation">Pepch <br/> {{(capxStateService.masterParameters$ | async)!.west_bound_right}}</div></td>
+                        <td class="readonly"><div class="west-rotation">PEPCH <br/> {{(capxStateService.masterParameters$ | async)!.west_bound_right}}</div></td>
                         <td><img src="assets/capx/west-right-turn.png" /></td>
                       </tr>
                       <tr>
                         <td class="editable"><div class="west-rotation"><input type="number" min="0" value="1" formControlName="west_bound_thru"></div></td>
-                        <td class="readonly"><div class="west-rotation">Pepch <br/> {{(capxStateService.masterParameters$ | async)!.west_bound_thru}}</div></td>
+                        <td class="readonly"><div class="west-rotation">PEPCH <br/> {{(capxStateService.masterParameters$ | async)!.west_bound_thru}}</div></td>
                         <td><img src="assets/capx/west-thru.png" /></td>
                       </tr>
 
                       <tr>
                         <td rowspan="2" class="editable"><div class="west-rotation"><input type="number" min="0" value="1" formControlName="west_bound_left"></div></td>
-                        <td class="readonly"><div class="west-rotation">Pepch <br/> {{(capxStateService.masterParameters$ | async)!.west_bound_left}}</div></td>
+                        <td class="readonly"><div class="west-rotation">PEPCH <br/> {{(capxStateService.masterParameters$ | async)!.west_bound_left}}</div></td>
                         <td><img src="assets/capx/west-left-turn.png" /></td>
                       </tr>
 
                       <tr>
-                        <td class="readonly"><div class="west-rotation">Pepch <br/> {{(capxStateService.masterParameters$ | async)!.west_bound_u}}</div></td>
+                        <td class="readonly"><div class="west-rotation">PEPCH <br/> {{(capxStateService.masterParameters$ | async)!.west_bound_u}}</div></td>
                         <td><img src="assets/capx/west-u-turn.png" /></td>
                       </tr>
                     </table>
@@ -128,10 +128,10 @@
                       <td class="editable"><input type="number" min="0" value="1" formControlName="north_bound_right"></td>
                     </tr>
                     <tr>
-                      <td class="readonly">{{(capxStateService.masterParameters$ | async)!.north_bound_u}} <br/> Pepch</td>
-                      <td class="readonly">{{(capxStateService.masterParameters$ | async)!.north_bound_left}} <br/> Pepch</td>
-                      <td class="readonly">{{(capxStateService.masterParameters$ | async)!.north_bound_thru}} <br/> Pepch</td>
-                      <td class="readonly">{{(capxStateService.masterParameters$ | async)!.north_bound_right}} <br/> Pepch</td>
+                      <td class="readonly">{{(capxStateService.masterParameters$ | async)!.north_bound_u}} <br/> PEPCH</td>
+                      <td class="readonly">{{(capxStateService.masterParameters$ | async)!.north_bound_left}} <br/> PEPCH</td>
+                      <td class="readonly">{{(capxStateService.masterParameters$ | async)!.north_bound_thru}} <br/> PEPCH</td>
+                      <td class="readonly">{{(capxStateService.masterParameters$ | async)!.north_bound_right}} <br/> PEPCH</td>
                     </tr>
                     <tr>
                       <td><img src="assets/capx/north-u-turn.png" /></td>
