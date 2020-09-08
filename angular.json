@@ -167,7 +167,7 @@
             "production": {
               "configuration": "production",
               "region": "us-east-1",
-              "bucket": "capx"
+              "bucket": "jcapacityanalyzer.com"
             }
           }
         }
