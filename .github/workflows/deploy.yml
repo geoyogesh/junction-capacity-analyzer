@@ -29,7 +29,7 @@ jobs:
       - name: build project
         run: |
           npm install
-          npm run ng build
+          npm run ng deploy
         
       - name: Run a one-line script
         run: echo Hello, world!
