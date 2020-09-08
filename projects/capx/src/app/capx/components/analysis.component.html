@@ -1,12 +1,12 @@
 <div class="main-container">
   <header class="header header-6">
-          <div class="branding">
-            <a [routerLink]="['/']" class="nav-link">
-                <clr-icon shape="vm-bug"></clr-icon>
-                <span class="title">Capacity Analysis for Planning of
-                  Junctions</span>
-            </a>
-        </div>
+    <div class="branding">
+      <a [routerLink]="['/']" class="nav-link">
+        <clr-icon shape="vm-bug"></clr-icon>
+        <span class="title">Capacity Analysis for Planning of
+          Junctions</span>
+      </a>
+    </div>
   </header>
   <div class="content-container">
     <clr-vertical-nav [clrVerticalNavCollapsible]="true" class="nav-trigger--bottom">
@@ -14,11 +14,7 @@
         <clr-icon clrVerticalNavIcon shape="user"></clr-icon>
         Inputs
       </a>
-      <a clrVerticalNavLink [routerLink]="['/results']" routerLinkActive="active">
-        <clr-icon clrVerticalNavIcon shape="bolt"></clr-icon>
-        Results
-      </a>
-      <div class="nav-divider"></div>
+
       <clr-vertical-nav-group routerLinkActive="active">
         Intersections
         <clr-vertical-nav-group-children>
@@ -101,7 +97,10 @@
         </clr-vertical-nav-group-children>
       </clr-vertical-nav-group>
 
-
+      <a clrVerticalNavLink [routerLink]="['/results']" routerLinkActive="active">
+        <clr-icon clrVerticalNavIcon shape="bolt"></clr-icon>
+        Results
+      </a>
       <div class="nav-divider"></div>
       <a clrVerticalNavLink routerLink="./credit" routerLinkActive="active">Credit</a>
     </clr-vertical-nav>

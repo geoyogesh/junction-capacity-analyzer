@@ -44,6 +44,11 @@ table {
         background-color: #DCE6F1;
       }
 
+      img {
+        width: 20px;
+        height: 20px;
+      }
+
       input {
         text-align: center;
         max-width: 55px;
@@ -63,5 +68,29 @@ table {
         transform: rotate(90deg);
       }
     }
+  }
+}
+
+.junction-content{
+  width: 100%;
+  height: calc(100vh - 10rem);
+}
+
+.centered-parent {
+  display: grid;
+}
+
+.centered-child {
+  display: block;
+  margin: auto;
+}
+
+
+table.small-content-tbl {
+  width: max-content;
+  margin: auto;
+
+  td {
+    padding: 5px;
   }
 }
