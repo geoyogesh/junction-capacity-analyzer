@@ -27,7 +27,7 @@ Tool | Link
 ------------ | -------------
 CAPX | [https://www.fhwa.dot.gov/software/research/operations/cap-x/](https://www.fhwa.dot.gov/software/research/operations/cap-x/)
 Angular | [https://angular.io/](https://angular.io/)
-Clarity | [https://clarity.design/](https://clarity.design/)
+Clarity Design System| [https://clarity.design/](https://clarity.design/)
 Angular Flex Layout | [https://github.com/angular/flex-layout](https://github.com/angular/flex-layout)
 MathJs | [https://mathjs.org/](https://mathjs.org/)
 rxjs | [https://rxjs-dev.firebaseapp.com/](https://rxjs-dev.firebaseapp.com/)
