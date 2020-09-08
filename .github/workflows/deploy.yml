@@ -22,16 +22,13 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
-      - name: set environment
-        with:
-          NG_DEPLOY_AWS_ACCESS_KEY_ID: ${{ secrets.NG_DEPLOY_AWS_ACCESS_KEY_ID }}
-          NG_DEPLOY_AWS_SECRET_ACCESS_KEY: ${{ secrets.NG_DEPLOY_AWS_SECRET_ACCESS_KEY }}
+      - name: build project
+        shell: bash
         env: 
           NG_DEPLOY_AWS_ACCESS_KEY_ID: ${{ secrets.NG_DEPLOY_AWS_ACCESS_KEY_ID }}
           NG_DEPLOY_AWS_SECRET_ACCESS_KEY: ${{ secrets.NG_DEPLOY_AWS_SECRET_ACCESS_KEY }}
-  
-      - name: build project
         run: |
           npm install
           npm run ng deploy
+        
   
