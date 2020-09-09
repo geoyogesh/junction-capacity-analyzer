@@ -61,15 +61,31 @@
 
   .bg1 {
     background-color: #ffffb2;
+
+    &.active {
+      border: 2px solid darken(#ffffb2, 40%);
+    }
   }
   .bg2 {
     background-color: #fecc5c;
+
+    &.active {
+      border: 2px solid darken(#fecc5c, 30%);
+    }
   }
   .bg3 {
     background-color: #fd8d3c;
+
+    &.active {
+      border: 2px solid darken(#fd8d3c, 20%);
+    }
   }
   .bg4 {
     background-color: #e31a1c;
+
+    &.active {
+      border: 2px solid darken(#e31a1c, 10%);
+    }
   }
 
 
@@ -95,5 +111,7 @@
 
   .active {
     transform: scale(1, 1.5);
+    border-left-width: 2px;
+    border-right-width: 2px;
   }
 }
