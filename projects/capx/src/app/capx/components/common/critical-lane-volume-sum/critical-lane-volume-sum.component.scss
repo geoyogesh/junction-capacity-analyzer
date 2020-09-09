@@ -1,6 +1,92 @@
-:host
-{
+:host {
   position: absolute;
-  right: 25px;
-  top: 70px;
+  right: 30px;
+  top: 61px;
+}
+
+:host {
+  .border--gray-light {
+    border-color: #ccc !important;
+  }
+  .px12 {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  .py12 {
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+  }
+  .round-t {
+    border-radius: 4px 4px 0 0 !important;
+  }
+  .border {
+    border-style: solid;
+    border-width: 1px;
+  }
+
+  .shadow-darken10,
+  .shadow-darken10-on-active.is-active,
+  .shadow-darken10-on-active.is-active:hover,
+  .shadow-darken10-on-hover:hover {
+    -webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1) !important;
+  }
+  .w240 {
+    width: 355px !important;
+  }
+
+  .round {
+    border-radius: 4px !important;
+  }
+  .txt-s {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .mb6 {
+    margin-bottom: 6px !important;
+  }
+  .block,
+  .clearfix::after {
+    display: block !important;
+  }
+
+  .grid {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -ms-flex-wrap: wrap !important;
+    flex-wrap: wrap !important;
+  }
+
+  .bg-green-faint {
+    background-color: #d4edda;
+  }
+  .bg-green-light {
+    background-color: #72c781;
+  }
+  .bg-green {
+    background-color: #01aa46;
+  }
+  .bg-green-dark {
+    background-color: #006427;
+  }
+  .h12 {
+    height: 12px !important;
+  }
+  .col {
+    display: block;
+    max-width: 100%;
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -ms-flex-negative: 1;
+    flex-shrink: 1;
+  }
+
+  .align-center {
+    text-align: center !important;
+  }
 }

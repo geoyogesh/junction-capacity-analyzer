@@ -1,15 +1,16 @@
-<table>
-  <tr>
-    <td colspan="4" class="column">Critical Lane Volume Sum</td>
-  </tr>
-  <tr>
-    <td style="background-color: white;">{{(capxStateService.clv_range_text$ | async)!.get(1)}}</td>
-    <td style="background-color: yellow;">{{(capxStateService.clv_range_text$ | async)!.get(2)}}</td>
-    <td style="background-color: orange;">{{(capxStateService.clv_range_text$ | async)!.get(3)}}</td>
-    <td style="background-color: red;">{{(capxStateService.clv_range_text$ | async)!.get(4)}}</td>
-  </tr>
-  <tr>
-    <td colspan="2" class="column">V/C Ratio:</td>
-    <td colspan="2" [ngStyle]="{'background-color': vc_color}">{{vc}}</td>
-  </tr>
-</table>
+<div class="px12 py12 round-t"><div class="w240 round shadow-darken10 px12 py12 txt-s">
+  <strong class="block mb6">Critical Lane Volume Sum</strong>
+  <div class="grid mb6">
+    <div class="col bg-green-faint h12"></div>
+    <div class="col bg-green-light h12" style="background-color: yellow;"></div>
+    <div class="col bg-green h12" style="background-color: orange;"></div>
+    <div class="col bg-green-dark h12" style="background-color: red;"></div>
+  </div>
+  <div class="grid txt-xs">
+    <div class="col align-center">{{(capxStateService.clv_range_text$ | async)!.get(1)}}</div>
+    <div class="col align-center">{{(capxStateService.clv_range_text$ | async)!.get(2)}}</div>
+    <div class="col align-center">{{(capxStateService.clv_range_text$ | async)!.get(3)}}</div>
+    <div class="col align-center">{{(capxStateService.clv_range_text$ | async)!.get(4)}}</div>
+  </div>
+  <span class="block mb6" style="text-align: center;margin-top: 5px;">V/C: <span [ngStyle]="{'color': vc_color}">{{vc}}</span></span>
+</div></div>

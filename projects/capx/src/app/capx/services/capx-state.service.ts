@@ -345,7 +345,7 @@ export class CapxStateService {
     }
 
     if (zone_all_vlc < round(0.75 * clv)) {
-      return '#FFFFFF';
+      return '#d4edda';
     }
     else if (zone_all_vlc >= round(0.75 * clv) && zone_all_vlc <= round(0.875 * clv) - 1) {
       return '#FFFF00';
