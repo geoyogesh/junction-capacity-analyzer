@@ -22,21 +22,15 @@ export class CapxStateService {
   intersection_default_result: CapxIntersectionAnalysisResultParameters = {
     zone1_north_clv: null,
     zone1_north_vc: null,
-    zone1_north_color: this.default_color,
     zone2_south_clv: null,
     zone2_south_vc: null,
-    zone2_south_color: this.default_color,
     zone3_east_clv: null,
     zone3_east_vc: null,
-    zone3_east_color: this.default_color,
     zone4_west_clv: null,
     zone4_west_vc: null,
-    zone4_west_color: this.default_color,
     zone5_center_clv: null,
     zone5_center_vc: null,
-    zone5_center_color: this.default_color,
-    all_vc: null,
-    all_vc_color: this.default_color,
+    all_vc: null
   };
 
   roundabout_default_result: CapxRoundaboutsAnalysisResultParameters = {
@@ -319,21 +313,15 @@ export class CapxStateService {
     this.conventionalJunctionResult$.next({
       zone1_north_clv: null,
       zone1_north_vc: null,
-      zone1_north_color: this.getClvRangeColor(null),
       zone2_south_clv: null,
       zone2_south_vc: null,
-      zone2_south_color: this.getClvRangeColor(null),
       zone3_east_clv: null,
       zone3_east_vc: null,
-      zone3_east_color: this.getClvRangeColor(null),
       zone4_west_clv: null,
       zone4_west_vc: null,
-      zone4_west_color: this.getClvRangeColor(null),
       zone5_center_clv: round(zone5_center_clv),
       zone5_center_vc,
-      zone5_center_color: this.getClvRangeColor(zone5_center_clv),
-      all_vc: zone5_center_vc,
-      all_vc_color: this.getClvRangeColor(zone5_center_clv),
+      all_vc: zone5_center_vc
     });
   }
 
@@ -345,19 +333,19 @@ export class CapxStateService {
     }
 
     if (zone_all_vlc < round(0.75 * clv)) {
-      return '#d4edda';
+      return '#ffffb2';
     }
     else if (zone_all_vlc >= round(0.75 * clv) && zone_all_vlc <= round(0.875 * clv) - 1) {
-      return '#FFFF00';
+      return '#fecc5c';
     }
     else if (zone_all_vlc >= round(0.875 * clv) && zone_all_vlc <= round(clv) - 1) {
-      return '#FFA500';
+      return '#fd8d3c';
     }
     else if (zone_all_vlc >= round(clv)) {
-      return '#FF0000';
+      return '#e31a1c';
     }
     else {
-      return '#666';
+      return this.default_color;
     }
   }
 

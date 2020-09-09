@@ -68,21 +68,15 @@ export interface CapxConventionalJunctionParameters {
 export interface CapxIntersectionAnalysisResultParameters {
   zone1_north_clv: number | null;
   zone1_north_vc: number | null;
-  zone1_north_color: string;
   zone2_south_clv: number | null;
   zone2_south_vc: number | null;
-  zone2_south_color: string;
   zone3_east_clv: number | null;
   zone3_east_vc: number | null;
-  zone3_east_color: string;
   zone4_west_clv: number | null;
   zone4_west_vc: number | null;
-  zone4_west_color: string;
   zone5_center_clv: number | null;
   zone5_center_vc: number | null;
-  zone5_center_color: string;
   all_vc: number | null;
-  all_vc_color: string;
 }
 
 export interface CapxRoundaboutsAnalysisResultParameters {
