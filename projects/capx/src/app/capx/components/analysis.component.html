@@ -14,6 +14,13 @@
         Inputs
       </a>
 
+      <a clrVerticalNavLink [routerLink]="['/results']" routerLinkActive="active">
+        <clr-icon clrVerticalNavIcon shape="bolt"></clr-icon>
+        Results
+      </a>
+
+      <div class="nav-divider"></div>
+
       <clr-vertical-nav-group routerLinkActive="active">
         Intersections
         <clr-vertical-nav-group-children>
@@ -96,10 +103,7 @@
         </clr-vertical-nav-group-children>
       </clr-vertical-nav-group>
 
-      <a clrVerticalNavLink [routerLink]="['/results']" routerLinkActive="active">
-        <clr-icon clrVerticalNavIcon shape="bolt"></clr-icon>
-        Results
-      </a>
+
       <div class="nav-divider"></div>
       <a clrVerticalNavLink [routerLink]="['/credits']" routerLinkActive="active">Credits</a>
     </clr-vertical-nav>

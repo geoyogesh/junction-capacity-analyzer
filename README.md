@@ -23,12 +23,13 @@ This project is free to use for personal, non profit research and free open-sour
 
 1. Go to Input and input the blue boxes
 ![Inputt](readme-images/input.PNG)
-1. Go to junction and view the design
-![Inputt](readme-images/conventinal-junction-design.PNG)
-1. Navigate to configuration section of the junction and update lane information in yellow boxes
-![Inputt](readme-images/conventinal-junction-configuration.PNG)
 1. review the results
 ![Inputt](readme-images/results.PNG)
+1. Select a junction to review the design
+![Inputt](readme-images/conventinal-junction-design.PNG)
+1. Navigate to configuration section of the junction and update lane information in blue boxes
+![Inputt](readme-images/conventinal-junction-configuration.PNG)
+
 
 ## Credits
 

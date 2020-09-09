@@ -2,6 +2,42 @@
   width: 15rem;
 }
 
+.nav {
+  &:focus {
+    outline: 0;
+  }
+  .nav-item:focus {
+    outline: 0;
+  }
+}
+
+button:focus {
+  outline: 0;
+}
+
+
+// scrollbar
+/* The emerging W3C standard
+   that is currently Firefox-only */
+   * {
+    scrollbar-width: thin;
+    scrollbar-color: #666 hsl(198, 0%, 80%);
+  }
+
+  /* Works on Chrome/Edge/Safari */
+  *::-webkit-scrollbar {
+    width: 14px;
+  }
+  *::-webkit-scrollbar-track {
+    background: hsl(198, 0%, 80%);
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: #666;
+    border-radius: 20px;
+    border: 3px solid hsl(198, 0%, 80%);
+  }
+
+
 table {
   border-collapse: collapse;
 
@@ -127,3 +163,9 @@ table.small-content-tbl {
     padding: 5px;
   }
 }
+
+
+.back-to-results-text {
+  padding-right: 5px;
+}
+
