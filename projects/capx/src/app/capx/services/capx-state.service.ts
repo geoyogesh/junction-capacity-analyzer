@@ -337,7 +337,7 @@ export class CapxStateService {
     });
   }
 
-  private getClvRangeColor(zone_all_vlc: number | null) {
+  public getClvRangeColor(zone_all_vlc: number | null): string {
     // update range text
     const clv = this.inputParameters$.value.critical_lane_volume;
     if (zone_all_vlc === null || clv === null) {
@@ -358,6 +358,31 @@ export class CapxStateService {
     }
     else {
       return '#666';
+    }
+  }
+
+  public getCurrentClvRange(zone_all_vlc: string | number | null): number | null {
+    // update range text
+    console.log(zone_all_vlc);
+    const clv = this.inputParameters$.value.critical_lane_volume;
+    if (zone_all_vlc === null || clv === null) {
+      return null;
+    }
+
+    if (zone_all_vlc < round(0.75 * clv)) {
+      return 1;
+    }
+    else if (zone_all_vlc >= round(0.75 * clv) && zone_all_vlc <= round(0.875 * clv) - 1) {
+      return 2;
+    }
+    else if (zone_all_vlc >= round(0.875 * clv) && zone_all_vlc <= round(clv) - 1) {
+      return 3;
+    }
+    else if (zone_all_vlc >= round(clv)) {
+      return 4;
+    }
+    else {
+      return null;
     }
   }
 }

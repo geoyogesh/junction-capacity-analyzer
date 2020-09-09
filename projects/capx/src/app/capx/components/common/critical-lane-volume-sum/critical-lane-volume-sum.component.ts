@@ -10,9 +10,9 @@ import { CapxStateService } from '../../../services/capx-state.service';
 })
 export class CriticalLaneVolumeSumComponent implements OnInit {
 
-  @Input() vc: string | null = null;
+  @Input() vc: number | null = null;
 
-  @Input() vc_color: string | null = null;
+  @Input() clv: number | null = null;
 
   constructor(public capxStateService: CapxStateService) { }
 

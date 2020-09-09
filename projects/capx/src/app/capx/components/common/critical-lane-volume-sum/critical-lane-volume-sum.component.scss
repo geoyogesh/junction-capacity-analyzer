@@ -13,8 +13,8 @@
     padding-right: 10px !important;
   }
   .py12 {
-    padding-top: 4px !important;
-    padding-bottom: 4px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
   }
   .round-t {
     border-radius: 4px 4px 0 0 !important;
@@ -48,7 +48,7 @@
   }
   .block,
   .clearfix::after {
-    display: block !important;
+    display: block;
   }
 
   .grid {
@@ -84,9 +84,14 @@
     flex-grow: 1;
     -ms-flex-negative: 1;
     flex-shrink: 1;
+    transition: transform 0.3s linear;
   }
 
   .align-center {
     text-align: center !important;
+  }
+
+  .active {
+    transform: scale(1, 1.5);
   }
 }

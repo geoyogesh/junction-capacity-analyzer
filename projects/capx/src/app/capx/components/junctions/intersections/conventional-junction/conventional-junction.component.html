@@ -1,6 +1,6 @@
 
 
-<capx-critical-lane-volume-sum vc="{{(capxStateService.conventionalJunctionResult$ | async)!.zone5_center_vc}}" vc_color="{{(capxStateService.conventionalJunctionResult$ | async)!.zone5_center_color}}"></capx-critical-lane-volume-sum>
+<capx-critical-lane-volume-sum [vc]="(capxStateService.conventionalJunctionResult$ | async)!.zone5_center_vc" [clv]="(capxStateService.conventionalJunctionResult$ | async)!.zone5_center_clv"></capx-critical-lane-volume-sum>
 <div fxLayout="column" fxLayoutAlign="space-around stretch" >
   <p class="p2">Conventional Intersection</p>
   <clr-tabs fxFlex>
@@ -81,7 +81,7 @@
                         <td>Zone 5</td>
                       </tr>
                       <tr>
-                        <td [ngStyle]="{'background-color': (capxStateService.conventionalJunctionResult$ | async)!.zone5_center_color}">{{(capxStateService.conventionalJunctionResult$ | async)!.zone5_center_clv}}</td>
+                        <td [ngStyle]="{'background-color': (capxStateService.getClvRangeColor((capxStateService.conventionalJunctionResult$ | async)!.zone5_center_clv))}">{{(capxStateService.conventionalJunctionResult$ | async)!.zone5_center_clv}}</td>
                       </tr>
                     </table>
                   </div>
