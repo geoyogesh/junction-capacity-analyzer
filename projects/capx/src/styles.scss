@@ -1,10 +1,24 @@
-
 .clr-vertical-nav {
   width: 15rem;
 }
 
 table {
   border-collapse: collapse;
+
+  &.config-table {
+    & > tr {
+      border: 0.05rem solid #e8e8e8;
+      border-color: var(--clr-tablerow-bordercolor, #e8e8e8);
+      border-width: var(--clr-table-borderwidth, 0.05rem);
+
+      & > td {
+        border: 0.05rem solid #e8e8e8;
+        border-color: var(--clr-tablerow-bordercolor, #e8e8e8);
+        border-width: var(--clr-table-borderwidth, 0.05rem);
+      }
+    }
+  }
+
   &.no-border {
     & > tr {
       border: 0;
@@ -16,32 +30,49 @@ table {
     }
   }
   tr {
-    border: 1px solid black;
-
     td {
-      border: 1px solid black;
       text-align: center;
       padding: 2px;
+      border: 0.05rem solid #e8e8e8;
+      border-color: var(--clr-tablerow-bordercolor, #e8e8e8);
+      border-width: var(--clr-table-borderwidth, 0.05rem);
 
-      &.editable{
-        background-color: yellow;
+      &.editable {
+        background-color: hsl(198, 83%, 94%);
       }
 
-      &.suggestion{
-        background-color: orange;
+      &.suggestion {
+        //background-color: hsl(198, 0%, 87%);
       }
 
       &.title {
-        background-color: #002060;
-        color: #fff;
+        color: #666;
+        color: var(--clr-p2-color, #666);
+        font-weight: 500;
+        font-weight: var(--clr-p2-font-weight, 500);
+        font-size: 0.65rem;
+        letter-spacing: normal;
+        line-height: 1.2rem;
+        margin-top: 1.2rem;
+        margin-bottom: 0;
       }
 
       &.column {
-        background-color: #C5D9F1;
+        color: #666;
+        color: var(--clr-thead-color, #666);
+        font-size: 0.55rem;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        background-color: #fafafa;
+        background-color: var(--clr-thead-bgcolor, #fafafa);
+        vertical-align: bottom;
+        border-bottom: 0.05rem solid #ccc;
+        border-bottom-color: var(--clr-table-border-color, #ccc);
+        border-bottom-width: var(--clr-table-borderwidth, 0.05rem);
       }
 
       &.readonly {
-        background-color: #DCE6F1;
+        //background-color: hsl(198, 0%, 87%);
       }
 
       img {
@@ -55,23 +86,26 @@ table {
         border: 0px;
         background-color: transparent;
 
+        color: #000;
+        color: var(--clr-forms-text-color, #000);
+
         &.text-right {
           text-align: right;
         }
       }
 
-      .west-rotation{
+      .west-rotation {
         transform: rotate(90deg);
       }
 
-      .east-rotation{
+      .east-rotation {
         transform: rotate(90deg);
       }
     }
   }
 }
 
-.junction-content{
+.junction-content {
   width: 100%;
   height: calc(100vh - 10rem);
 }
@@ -84,7 +118,6 @@ table {
   display: block;
   margin: auto;
 }
-
 
 table.small-content-tbl {
   width: max-content;

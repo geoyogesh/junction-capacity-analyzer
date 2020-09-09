@@ -21,7 +21,7 @@ This project is free to use for personal, non profit research and free open-sour
 
 ## User Guide
 
-1. Go to Input and input the yellow boxes
+1. Go to Input and input the blue boxes
 ![Inputt](readme-images/input.PNG)
 1. Go to junction and view the design
 ![Inputt](readme-images/conventinal-junction-design.PNG)
