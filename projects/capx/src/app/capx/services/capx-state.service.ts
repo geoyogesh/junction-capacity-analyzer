@@ -291,6 +291,156 @@ export class CapxStateService {
     });
   }
 
+  private updateRank() {
+    // intersection rank
+    const intersection_ranks = [];
+    const intersection_rank_map = new Map<number, string[]>();
+
+    const intersection_values: Array<[CapxIntersectionAnalysisResultParameters, string]> = [
+      [this.conventionalJunctionResult$.value, 'conventionalJunction'],
+      [this.conventionalSharedRightTurnLeftTurnJunctionResult$.value, 'conventionalSharedRightTurnLeftTurnJunction'],
+      [this.fullDisplacedLeftTurnIntersectionJunctionResult$.value, 'fullDisplacedLeftTurnIntersectionJunction'],
+      [this.medianUTurnIntersectionEastWestJunctionResult$.value, 'medianUTurnIntersectionEastWestJunction'],
+      [this.medianUTurnIntersectionNorthSouthJunctionResult$.value, 'medianUTurnIntersectionNorthSouthJunction'],
+      [this.partialDisplacedLeftTurnIntersectionEastWestJunctionResult$.value, 'partialDisplacedLeftTurnIntersectionEastWestJunction'],
+      [this.partialDisplacedLeftTurnIntersectionNorthSouthJunctionResult$.value, 'partialDisplacedLeftTurnIntersectionNorthSouthJunction'],
+      [this.partialMedianUTurnIntersectionEastWestJunctionResult$.value, 'partialMedianUTurnIntersectionEastWestJunction'],
+      [this.partialMedianUTurnIntersectionNorthSouthJunctionResult$.value, 'partialMedianUTurnIntersectionNorthSouthJunction'],
+      [this.restrictedCrossingUTurnIntersectionEastWestJunctionResult$.value, 'restrictedCrossingUTurnIntersectionEastWestJunction'],
+      [this.restrictedCrossingUTurnIntersectionNorthSouthJunctionResult$.value, 'restrictedCrossingUTurnIntersectionNorthSouthJunction'],
+      [this.quadrantRoadwayIntersectionNorthEastJunctionResult$.value, 'quadrantRoadwayIntersectionNorthEastJunction'],
+      [this.quadrantRoadwayIntersectionNorthWestJunctionResult$.value, 'quadrantRoadwayIntersectionNorthWestJunction'],
+      [this.quadrantRoadwayIntersectionSouthEastJunctionResult$.value, 'quadrantRoadwayIntersectionSouthEastJunction'],
+      [this.quadrantRoadwayIntersectionSouthWestJunctionResult$.value, 'quadrantRoadwayIntersectionSouthWestJunction'],
+    ];
+
+    for (const tp of intersection_values) {
+      const [value, name] = tp;
+
+      if (value.all_vc === null) {
+        continue;
+      }
+
+      intersection_ranks.push(value.all_vc);
+
+      if (intersection_rank_map.has(value.all_vc)) {
+        intersection_rank_map.get(value.all_vc)?.push(name);
+      } else {
+        intersection_rank_map.set(value.all_vc, [name]);
+      }
+    }
+
+    intersection_ranks.sort();
+
+    console.log(intersection_ranks);
+
+
+
+    // roundabouts rank
+    const roundabout_ranks = [];
+    const roundabout_rank_map = new Map<number, string[]>();
+
+    const roundabout_values: Array<[CapxRoundaboutsAnalysisResultParameters, string]> = [
+      [this.fiftyICDMiniRoundaboutJunctionResult$.value, 'fiftyICDMiniRoundaboutJunction'],
+      [this.oneNorthSouthxOneEastWestRoundaboutJunctionnResult$.value, 'oneNorthSouthxOneEastWestRoundaboutJunctionn'],
+      [this.oneNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$.value, 'oneNorthSouthxTwoEastWestLaneRoundaboutJunction'],
+      [this.seventyFiveICDMiniRoundaboutJunctionResult$.value, 'seventyFiveICDMiniRoundaboutJunction'],
+      [this.threeNorthSouthxThreeEastWestLaneRoundaboutJunctionResult$.value, 'threeNorthSouthxThreeEastWestLaneRoundaboutJunction'],
+      [this.twoNorthSouthxOneEastWestLaneRoundaboutJunctionResult$.value, 'twoNorthSouthxOneEastWestLaneRoundaboutJunction'],
+      [this.twoNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$.value, 'twoNorthSouthxTwoEastWestLaneRoundaboutJunction'],
+    ];
+
+    for (const tp of roundabout_values) {
+      const [value, name] = tp;
+
+      if (value.all_vc === null) {
+        continue;
+      }
+
+      roundabout_ranks.push(value.all_vc);
+
+      if (roundabout_rank_map.has(value.all_vc)) {
+        roundabout_rank_map.get(value.all_vc)?.push(name);
+      } else {
+        roundabout_rank_map.set(value.all_vc, [name]);
+      }
+    }
+
+    roundabout_ranks.sort();
+
+
+    // interchanges rank
+    const interchange_ranks = [];
+    const interchange_rank_map = new Map<number, string[]>();
+
+    const interchange_values: Array<[CapxInterchangeAnalysisResultParameters, string]> = [
+      [this.displacedLeftTurnInterchangeEastWestJunctionResult$.value, 'displacedLeftTurnInterchangeEastWestJunction'],
+      [this.displacedLeftTurnInterchangeNorthSouthJunctionResult$.value, 'displacedLeftTurnInterchangeNorthSouthJunction'],
+      [this.doubleCrossoverDiamondInterchangeEastWestJunctionResult$.value, 'doubleCrossoverDiamondInterchangeEastWestJunction'],
+      [this.doubleCrossoverDiamondInterchangeNorthSouthJunctionResult$.value, 'doubleCrossoverDiamondInterchangeNorthSouthJunction'],
+      [this.partialCloverleafEastWestJunctionResult$.value, 'partialCloverleafEastWestJunction'],
+      [this.partialCloverleafNorthSouthJunctionResult$.value, 'partialCloverleafNorthSouthJunction'],
+      [this.singlePointInterchangeEastWestJunctionResult$.value, 'singlePointInterchangeEastWestJunction'],
+      [this.singlePointInterchangeNorthSouthJunctionResult$.value, 'singlePointInterchangeNorthSouthJunction'],
+      [this.traditionalDiamondEastWestJunctionResult$.value, 'traditionalDiamondEastWestJunction'],
+      [this.traditionalDiamondNorthSouthJunctionResult$.value, 'traditionalDiamondNorthSouthJunction'],
+    ];
+
+    for (const tp of interchange_values) {
+      const [value, name] = tp;
+
+      if (value.all_vc === null) {
+        continue;
+      }
+
+      interchange_ranks.push(value.all_vc);
+
+      if (interchange_rank_map.has(value.all_vc)) {
+        interchange_rank_map.get(value.all_vc)?.push(name);
+      } else {
+        interchange_rank_map.set(value.all_vc, [name]);
+      }
+    }
+    interchange_ranks.sort();
+
+    const inter_ranks: { [key: string]: number; } = {};
+
+    for (let i = 0; i < interchange_ranks.length; i++) {
+      const score = interchange_ranks[i];
+      const keys = interchange_rank_map.get(score);
+      if (keys) {
+        for (const key of keys) {
+          inter_ranks[key] = i;
+        }
+      }
+    }
+
+    for (let i = 0; i < roundabout_ranks.length; i++) {
+      const score = roundabout_ranks[i];
+      const keys = roundabout_rank_map.get(score);
+      if (keys) {
+        for (const key of keys) {
+          inter_ranks[key] = i;
+        }
+      }
+    }
+
+    for (let i = 0; i < intersection_ranks.length; i++) {
+      const score = intersection_ranks[i];
+      const keys = intersection_rank_map.get(score);
+      if (keys) {
+        for (const key of keys) {
+          inter_ranks[key] = i;
+        }
+      }
+    }
+
+    console.log(inter_ranks);
+    const final_ranks: CapxAnalysisRank = Object.assign(this.analysis_rank_default, inter_ranks);
+    console.log(final_ranks);
+    this.rank$.next(final_ranks);
+  }
+
 
   public updateConventionalJunctionParameters(params: CapxConventionalJunctionParameters) {
     this.conventionalJunctionParameters$.next(params);
@@ -323,6 +473,8 @@ export class CapxStateService {
       zone5_center_vc,
       all_vc: zone5_center_vc
     });
+
+    this.updateRank();
   }
 
   public getClvRangeColor(zone_all_vlc: number | null): string {

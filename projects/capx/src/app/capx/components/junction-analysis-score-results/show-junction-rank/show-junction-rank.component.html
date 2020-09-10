@@ -1,0 +1,10 @@
+<ng-container *ngIf="rank !== null">
+  <div class="progress" fxLayout="row" fxLayoutAlign="space-between center">
+    <progress [max]="total" [value]="total - rank!"></progress>
+    <span style="width: 10px;">{{(rank! + 1) | handleNullValue}}</span>
+  </div>
+</ng-container>
+<ng-container *ngIf="rank === null">
+  -
+</ng-container>
+

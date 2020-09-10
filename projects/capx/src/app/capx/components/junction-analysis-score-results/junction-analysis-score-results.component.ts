@@ -9,6 +9,9 @@ import { CapxStateService } from '../../services/capx-state.service';
 })
 export class JunctionAnalysisScoreResultsComponent implements OnInit {
 
+  intersectionTotal = 15;
+  roundaboutTotal = 7;
+  interchangeTotal = 10;
   constructor(public capxStateService: CapxStateService) { }
 
   ngOnInit(): void {

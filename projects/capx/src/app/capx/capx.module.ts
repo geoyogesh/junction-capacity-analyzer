@@ -46,6 +46,7 @@ import { ClvStylePipe } from '../capx/pipes/clv-style.pipe';
 import { VcStylePipe } from '../capx/pipes/vc-style.pipe';
 import { ClarityModule } from '@clr/angular';
 import { CreditsComponent } from '../capx/components/credits/credits.component';
+import { ShowJunctionRankComponent } from '../capx/components/junction-analysis-score-results/show-junction-rank/show-junction-rank.component';
 
 @NgModule({
   declarations: [
@@ -89,7 +90,8 @@ import { CreditsComponent } from '../capx/components/credits/credits.component';
      HandleNullValuePipe,
      ClvStylePipe,
      VcStylePipe,
-     CreditsComponent],
+     CreditsComponent,
+     ShowJunctionRankComponent],
   imports: [
     CommonModule,
     CapxRoutingModule,

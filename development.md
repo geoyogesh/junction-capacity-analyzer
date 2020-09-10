@@ -65,3 +65,6 @@ ng generate pipe capx/pipes/ClvStyle --module=Capx
 ng generate pipe capx/pipes/VcStyle --module=Capx
 
 ng generate component capx/components/Credits  --prefix=capx --module=Capx
+
+
+ng generate component capx/components/junction-analysis-score-results/ShowJunctionRank --prefix=capx --module=Capx
