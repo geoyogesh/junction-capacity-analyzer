@@ -1,4 +1,3 @@
-import { round } from 'mathjs';
 import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 import { CapxStateService } from '../../../services/capx-state.service';
 

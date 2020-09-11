@@ -1,7 +1,6 @@
 import { CapxStateService } from './../../services/capx-state.service';
 import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'capx-junction-analysis-parameters',

@@ -237,13 +237,13 @@ export class CapxStateService {
     this.solveConventionalJunction();
   }
 
-  public updateInputParameters(params: CapxInputParameters) {
+  public updateInputParameters(params: CapxInputParameters): void {
     this.inputParameters$.next(params);
     this.solve();
   }
 
 
-  private solve() {
+  private solve(): void {
 
     // update range text
     const clv = this.inputParameters$.value.critical_lane_volume;
@@ -291,7 +291,7 @@ export class CapxStateService {
     });
   }
 
-  private updateRank() {
+  private updateRank(): void {
     // intersection rank
     const intersection_ranks = [];
     const intersection_rank_map = new Map<number, string[]>();
@@ -442,12 +442,12 @@ export class CapxStateService {
   }
 
 
-  public updateConventionalJunctionParameters(params: CapxConventionalJunctionParameters) {
+  public updateConventionalJunctionParameters(params: CapxConventionalJunctionParameters): void {
     this.conventionalJunctionParameters$.next(params);
     this.solveConventionalJunction();
   }
 
-  private solveConventionalJunction() {
+  private solveConventionalJunction(): void {
     const inputParameters = this.inputParameters$.value;
     const masterParameters = this.masterParameters$.value;
     const junctionParameters = this.conventionalJunctionParameters$.value;
@@ -456,8 +456,8 @@ export class CapxStateService {
       (masterParameters.west_bound_left / inputParameters.adjustment_factor_left_turn + masterParameters.west_bound_u / inputParameters.adjustment_factor_u) / junctionParameters.west_bound_left + max(masterParameters.east_bound_thru / junctionParameters.east_bound_thru, round(max(0, masterParameters.east_bound_right / inputParameters.adjustment_factor_right_turn / junctionParameters.east_bound_right - masterParameters.north_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.north_bound_left), 0))
       ) +
       max(
-      (masterParameters.north_bound_left / inputParameters.adjustment_factor_left_turn + masterParameters.north_bound_u / inputParameters.adjustment_factor_u)/inputParameters.adjustment_factor_left_turn/junctionParameters.north_bound_left + max(masterParameters.south_bound_thru / junctionParameters.south_bound_thru, round(max(0, masterParameters.south_bound_right / inputParameters.adjustment_factor_right_turn / junctionParameters.south_bound_right - masterParameters.east_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.east_bound_left), 0)),
-      (masterParameters.south_bound_left / inputParameters.adjustment_factor_left_turn + masterParameters.south_bound_u / inputParameters.adjustment_factor_u)/inputParameters.adjustment_factor_left_turn/junctionParameters.south_bound_left + max(masterParameters.north_bound_thru / junctionParameters.north_bound_thru, round(max(0, masterParameters.north_bound_right / inputParameters.adjustment_factor_right_turn / junctionParameters.north_bound_right - masterParameters.west_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.west_bound_left), 0))
+      (masterParameters.north_bound_left / inputParameters.adjustment_factor_left_turn + masterParameters.north_bound_u / inputParameters.adjustment_factor_u) / inputParameters.adjustment_factor_left_turn / junctionParameters.north_bound_left + max(masterParameters.south_bound_thru / junctionParameters.south_bound_thru, round(max(0, masterParameters.south_bound_right / inputParameters.adjustment_factor_right_turn / junctionParameters.south_bound_right - masterParameters.east_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.east_bound_left), 0)),
+      (masterParameters.south_bound_left / inputParameters.adjustment_factor_left_turn + masterParameters.south_bound_u / inputParameters.adjustment_factor_u) / inputParameters.adjustment_factor_left_turn / junctionParameters.south_bound_left + max(masterParameters.north_bound_thru / junctionParameters.north_bound_thru, round(max(0, masterParameters.north_bound_right / inputParameters.adjustment_factor_right_turn / junctionParameters.north_bound_right - masterParameters.west_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.west_bound_left), 0))
       );
     const zone5_center_vc = round(zone5_center_clv / inputParameters.critical_lane_volume, 2);
     this.conventionalJunctionResult$.next({
