@@ -82,7 +82,7 @@
                         <td>Zone 5</td>
                       </tr>
                       <tr>
-                        <td [ngStyle]="{'background-color': (capxStateService.getClvRangeColor((capxStateService.conventionalJunctionResult$ | async)!.zone5_center_clv))}">{{(capxStateService.conventionalJunctionResult$ | async)!.zone5_center_clv}}</td>
+                        <td [ngStyle]="{'color': 'black', 'background-color': (capxStateService.getClvRangeColor((capxStateService.conventionalJunctionResult$ | async)!.zone5_center_clv))}">{{(capxStateService.conventionalJunctionResult$ | async)!.zone5_center_clv}}</td>
                       </tr>
                     </table>
                   </div>
