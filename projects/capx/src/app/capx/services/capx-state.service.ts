@@ -1,4 +1,4 @@
-import { CapxAnalysisRank } from './models/junction-capacity-analyser';
+import { CapxAnalysisRank, Junction, JunctionTypes } from './models/junction-capacity-analyser';
 // tslint:disable: variable-name
 // tslint:disable: max-line-length
 
@@ -17,6 +17,9 @@ import { round, max } from 'mathjs';
   providedIn: 'root'
 })
 export class CapxStateService {
+
+  state: Map<string, Junction> = new Map();
+
   default_color = '#666';
 
   intersection_default_result: CapxIntersectionAnalysisResultParameters = {
@@ -233,6 +236,244 @@ export class CapxStateService {
 
 
   constructor() {
+
+    //#region intersection
+    this.state.set(
+      'conventional', {
+        title: 'Conventional Intersection',
+        type: JunctionTypes.Intersection,
+        result: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result)
+      }
+    );
+    this.state.set(
+      'conventional-shared-right-turn-left-turn', {
+        title: 'Conventional Shared RT LN',
+        type: JunctionTypes.Intersection,
+        result: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result)
+      }
+    );
+    this.state.set(
+      'quadrant-roadway-intersection-south-west', {
+        title: 'Quadrant Roadway Intersection (S-W)',
+        type: JunctionTypes.Intersection,
+        result: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result)
+      }
+    );
+    this.state.set(
+      'quadrant-roadway-intersection-north-east', {
+        title: 'Quadrant Roadway Intersection (N-E)',
+        type: JunctionTypes.Intersection,
+        result: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result)
+      }
+    );
+    this.state.set(
+      'quadrant-roadway-intersection-south-east', {
+        title: 'Quadrant Roadway Intersection (S-E)',
+        type: JunctionTypes.Intersection,
+        result: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result)
+      }
+    );
+    this.state.set(
+      'quadrant-roadway-intersection-north-west', {
+        title: 'Quadrant Roadway Intersection (N-W)',
+        type: JunctionTypes.Intersection,
+        result: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result)
+      }
+    );
+    this.state.set(
+      'partial-displaced-left-turn-intersection-north-south', {
+        title: 'Partial Displaced Left Turn Intersection (N-S)',
+        type: JunctionTypes.Intersection,
+        result: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result)
+      }
+    );
+    this.state.set(
+      'partial-displaced-left-turn-intersection-east-west', {
+        title: 'Partial Displaced Left Turn Intersection (E-W)',
+        type: JunctionTypes.Intersection,
+        result: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result)
+      }
+    );
+
+    this.state.set(
+      'full-displaced-left-turn-intersection', {
+        title: 'Full Displaced Left Turn Intersection',
+        type: JunctionTypes.Intersection,
+        result: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result)
+      }
+    );
+
+    this.state.set(
+      'restricted-crossing-uturn-intersection-north-south', {
+        title: 'Restricted Crossing U-Turn Intersection (N-S)',
+        type: JunctionTypes.Intersection,
+        result: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result)
+      }
+    );
+    this.state.set(
+      'restricted-crossing-uturn-intersection-east-west', {
+        title: 'Restricted Crossing U-Turn Intersection (E-W)',
+        type: JunctionTypes.Intersection,
+        result: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result)
+      }
+    );
+
+    this.state.set(
+      'median-uturn-intersection-north-south', {
+        title: 'Median U-Turn Intersection (N-S)',
+        type: JunctionTypes.Intersection,
+        result: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result)
+      }
+    );
+    this.state.set(
+      'median-uturn-intersection-east-west', {
+        title: 'Median U-Turn Intersection (E-W)',
+        type: JunctionTypes.Intersection,
+        result: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result)
+      }
+    );
+
+    this.state.set(
+      'partial-median-uturn-intersection-north-south', {
+        title: 'Partial Median U-Turn Intersection (N-S)',
+        type: JunctionTypes.Intersection,
+        result: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result)
+      }
+    );
+    this.state.set(
+      'partial-median-uturn-intersection-east-west', {
+        title: 'Partial Median U-Turn Intersection (E-W)',
+        type: JunctionTypes.Intersection,
+        result: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result)
+      }
+    );
+    //#endregion
+    //#region interchange
+    this.state.set(
+      'traditional-diamond-north-south', {
+        title: 'Traditional Diamond (N-S)',
+        type: JunctionTypes.Interchange,
+        result: new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result)
+      }
+    );
+    this.state.set(
+      'traditional-diamond-east-west', {
+        title: 'Traditional Diamond (E-W)',
+        type: JunctionTypes.Interchange,
+        result: new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result)
+      }
+    );
+    this.state.set(
+      'partial-cloverleaf-north-south', {
+        title: 'Partial Cloverleaf (N-S)',
+        type: JunctionTypes.Interchange,
+        result: new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result)
+      }
+    );
+    this.state.set(
+      'partial-cloverleaf-east-west', {
+        title: 'Partial Cloverleaf (E-W)',
+        type: JunctionTypes.Interchange,
+        result: new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result)
+      }
+    );
+
+    this.state.set(
+      'displaced-left-turn-interchange-north-south', {
+        title: 'Displaced Left Turn Interchange (N-S)',
+        type: JunctionTypes.Interchange,
+        result: new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result)
+      }
+    );
+    this.state.set(
+      'displaced-left-turn-interchange-east-west', {
+        title: 'Displaced Left Turn Interchange (E-W)',
+        type: JunctionTypes.Interchange,
+        result: new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result)
+      }
+    );
+    this.state.set(
+      'double-crossover-diamond-interchange-north-south', {
+        title: 'Double Crossover Diamond Interchange (N-S)',
+        type: JunctionTypes.Interchange,
+        result: new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result)
+      }
+    );
+    this.state.set(
+      'double-crossover-diamond-interchange-east-west', {
+        title: 'Double Crossover Diamond Interchange (E-W)',
+        type: JunctionTypes.Interchange,
+        result: new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result)
+      }
+    );
+    this.state.set(
+      'single-point-interchange-north-south', {
+        title: 'Single Point Interchange (N-S)',
+        type: JunctionTypes.Interchange,
+        result: new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result)
+      }
+    );
+    this.state.set(
+      'single-point-interchange-east-west', {
+        title: 'Single Point Interchange (E-W)',
+        type: JunctionTypes.Interchange,
+        result: new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result)
+      }
+    );
+    //#endregion
+    //#region roundabout
+    this.state.set(
+      'fifty-icdmini-roundabout', {
+        title: '50\' ICD Mini-Roundabout',
+        type: JunctionTypes.Interchange,
+        result: new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result)
+      }
+    );
+    this.state.set(
+      'seventy-five-icdmini-roundabout', {
+        title: '75\' ICD Mini-Roundabout',
+        type: JunctionTypes.Interchange,
+        result: new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result)
+      }
+    );
+    this.state.set(
+      'one-north-southx-one-east-west-roundabout', {
+        title: '1 NS x 1 EW Roundabout',
+        type: JunctionTypes.Interchange,
+        result: new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result)
+      }
+    );
+    this.state.set(
+      'one-north-southx-two-east-west-lane-roundabout', {
+        title: '1 NS x 2 EW Lane Roundabout',
+        type: JunctionTypes.Interchange,
+        result: new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result)
+      }
+    );
+    this.state.set(
+      'two-north-southx-one-east-west-lane-roundabout', {
+        title: '2 NS x 1 EW Lane Roundabout',
+        type: JunctionTypes.Interchange,
+        result: new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result)
+      }
+    );
+    this.state.set(
+      'two-north-southx-two-east-west-lane-roundabout', {
+        title: '2 NS x 2 EW Lane Roundabout',
+        type: JunctionTypes.Interchange,
+        result: new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result)
+      }
+    );
+    this.state.set(
+      'three-north-southx-three-east-west-lane-roundabout', {
+        title: '3 NS x 3 EW Lane Roundabout',
+        type: JunctionTypes.Interchange,
+        result: new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result)
+      }
+    );
+    //#endregion
+
+
     this.solve();
     this.solveConventionalJunction();
   }
@@ -526,3 +767,6 @@ export class CapxStateService {
     }
   }
 }
+
+
+

@@ -1,3 +1,5 @@
+import { BehaviorSubject } from 'rxjs';
+
 export interface CapxInputParameters {
   east_bound_u: number;
   east_bound_left: number;
@@ -161,4 +163,19 @@ export interface CapxAnalysisRank {
   twoNorthSouthxOneEastWestLaneRoundaboutJunction: number | null;
   twoNorthSouthxTwoEastWestLaneRoundaboutJunction: number | null;
 
+}
+
+
+export interface Junction {
+  title: string;
+  type: JunctionTypes;
+  result: BehaviorSubject<CapxIntersectionAnalysisResultParameters> |
+  BehaviorSubject<CapxInterchangeAnalysisResultParameters> |
+  BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>
+}
+
+export enum JunctionTypes {
+  Intersection,
+  Interchange,
+  Roundabout
 }
