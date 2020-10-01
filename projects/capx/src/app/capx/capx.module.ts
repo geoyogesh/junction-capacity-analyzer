@@ -39,7 +39,7 @@ import { SinglePointInterchangeNorthSouthJunctionComponent } from './components/
 import { SinglePointInterchangeEastWestJunctionComponent } from './components/junctions/interchanges/single-point-interchange-east-west-junction/single-point-interchange-east-west-junction.component';
 import { CriticalLaneVolumeSumComponent } from './components/common/critical-lane-volume-sum/critical-lane-volume-sum.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { ConventionalDesignComponent } from './components/junctions/intersections/conventional-junction/conventional-design/conventional-design.component';
+import { ConventionalDesignComponent } from './components/junctions/intersections/conventional-junction/design/conventional-design.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HandleNullValuePipe } from '../capx/pipes/handle-null-value.pipe';
 import { ClvStylePipe } from '../capx/pipes/clv-style.pipe';

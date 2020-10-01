@@ -68,3 +68,35 @@ ng generate component capx/components/Credits  --prefix=capx --module=Capx
 
 
 ng generate component capx/components/junction-analysis-score-results/ShowJunctionRank --prefix=capx --module=Capx
+
+
+ng generate component capx/components/junctions/intersections/conventional-shared-right-turn-left-turn-junction/design/ConventionalSharedRightTurnLeftTurnDesign --prefix=capx --module=Capx
+
+ng generate component capx/components/junctions/intersections/full-displaced-left-turn-intersection-junction/design/FullDisplacedLeftTurnIntersectionDesign --prefix=capx --module=Capx
+
+ng generate component capx/components/junctions/intersections/median-uturn-intersection-east-west-junction/design/FullDisplacedLeftTurnIntersectionDesign --prefix=capx --module=Capx
+
+ng generate component capx/components/junctions/intersections/median-uturn-intersection-north-south-junction/design/MedianUTurnIntersectionNorthSouthDesign --prefix=capx --module=Capx
+
+ng generate component capx/components/junctions/intersections/partial-displaced-left-turn-intersection-east-west-junction/design/PartialDisplacedLeftTurnIntersectionEastWestDesign --prefix=capx --module=Capx
+
+ng generate component capx/components/junctions/intersections/partial-displaced-left-turn-intersection-north-south-junction/design/PartialDisplacedLeftTurnIntersectionNorthSouthDesign --prefix=capx --module=Capx
+
+
+ng generate component capx/components/junctions/intersections/partial-median-uturn-intersection-east-west-junction/design/PartialMedianUTurnIntersectionEastWestDesign --prefix=capx --module=Capx
+
+ng generate component capx/components/junctions/intersections/partial-median-uturn-intersection-north-south-junction/design/PartialMedianUTurnIntersectionNorthSouthDesign --prefix=capx --module=Capx
+
+ng generate component capx/components/junctions/intersections/quadrant-roadway-intersection-north-east-junction/design/QuadrantRoadwayIntersectionNorthEastDesign --prefix=capx --module=Capx
+
+ng generate component capx/components/junctions/intersections/quadrant-roadway-intersection-north-west-junction/design/QuadrantRoadwayIntersectionNorthWestDesign --prefix=capx --module=Capx
+
+
+ng generate component capx/components/junctions/intersections/quadrant-roadway-intersection-south-east-junction/design/QuadrantRoadwayIntersectionSouthEastDesign --prefix=capx --module=Capx
+
+ng generate component capx/components/junctions/intersections/quadrant-roadway-intersection-south-west-junction/design/QuadrantRoadwayIntersectionSouthWestDesign --prefix=capx --module=Capx
+
+
+ng generate component capx/components/junctions/intersections/restricted-crossing-uturn-intersection-east-west-junction/design/RestrictedCrossingUTurnIntersectionEastWestDesign --prefix=capx --module=Capx
+
+ng generate component capx/components/junctions/intersections/restricted-crossing-uturn-intersection-north-south-junction/design/RestrictedCrossingUTurnIntersectionNorthSouthDesign --prefix=capx --module=Capx
