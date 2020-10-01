@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'capx-two-north-southx-one-east-west-lane-roundabout-junction',
   templateUrl: './two-north-southx-one-east-west-lane-roundabout-junction.component.html',
-  styleUrls: ['./two-north-southx-one-east-west-lane-roundabout-junction.component.scss']
+  styleUrls: ['./two-north-southx-one-east-west-lane-roundabout-junction.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TwoNorthSouthxOneEastWestLaneRoundaboutJunctionComponent implements OnInit {
 

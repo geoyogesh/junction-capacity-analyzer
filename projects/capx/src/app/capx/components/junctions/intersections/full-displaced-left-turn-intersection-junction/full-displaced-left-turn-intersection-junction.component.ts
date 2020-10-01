@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'capx-full-displaced-left-turn-intersection-junction',
   templateUrl: './full-displaced-left-turn-intersection-junction.component.html',
-  styleUrls: ['./full-displaced-left-turn-intersection-junction.component.scss']
+  styleUrls: ['./full-displaced-left-turn-intersection-junction.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FullDisplacedLeftTurnIntersectionJunctionComponent implements OnInit {
 

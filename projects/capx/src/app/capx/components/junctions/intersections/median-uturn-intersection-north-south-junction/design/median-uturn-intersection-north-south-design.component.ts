@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'capx-median-uturn-intersection-north-south-design',
   templateUrl: './median-uturn-intersection-north-south-design.component.html',
-  styleUrls: ['./median-uturn-intersection-north-south-design.component.scss']
+  styleUrls: ['./median-uturn-intersection-north-south-design.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MedianUTurnIntersectionNorthSouthDesignComponent implements OnInit {
 

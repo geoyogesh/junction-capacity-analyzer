@@ -77,6 +77,39 @@ import { SeventyFiveICDMiniRoundaboutDesignComponent } from '../capx/components/
 import { ThreeNorthSouthxThreeEastWestLaneRoundaboutDesignComponent } from '../capx/components/junctions/roundabouts/three-north-southx-three-east-west-lane-roundabout-junction/design/three-north-southx-three-east-west-lane-roundabout-design.component';
 import { TwoNorthSouthxOneEastWestLaneRoundaboutDesignComponent } from '../capx/components/junctions/roundabouts/two-north-southx-one-east-west-lane-roundabout-junction/design/two-north-southx-one-east-west-lane-roundabout-design.component';
 import { TwoNorthSouthxTwoEastWestLaneRoundaboutJunctionDesignComponent } from '../capx/components/junctions/roundabouts/two-north-southx-two-east-west-lane-roundabout-junction/design/two-north-southx-two-east-west-lane-roundabout-junction-design.component';
+import { ConventionalConfigurationComponent } from '../capx/components/junctions/intersections/conventional-junction/configuration/conventional-configuration.component';
+import { ConventionalSharedRightTurnLeftTurnConfigurationComponent } from '../capx/components/junctions/intersections/conventional-shared-right-turn-left-turn-junction/configuration/conventional-shared-right-turn-left-turn-configuration.component';
+import { FullDisplacedLeftTurnIntersectionConfigurationComponent } from '../capx/components/junctions/intersections/full-displaced-left-turn-intersection-junction/configuration/full-displaced-left-turn-intersection-configuration.component';
+import { MedianUTurnIntersectionNorthSouthConfigurationComponent } from '../capx/components/junctions/intersections/median-uturn-intersection-north-south-junction/configuration/median-uturn-intersection-north-south-configuration.component';
+import { PartialDisplacedLeftTurnIntersectionEastWestConfigurationComponent } from '../capx/components/junctions/intersections/partial-displaced-left-turn-intersection-east-west-junction/configuration/partial-displaced-left-turn-intersection-east-west-configuration.component';
+import { PartialDisplacedLeftTurnIntersectionNorthSouthConfigurationComponent } from '../capx/components/junctions/intersections/partial-displaced-left-turn-intersection-north-south-junction/configuration/partial-displaced-left-turn-intersection-north-south-configuration.component';
+import { PartialMedianUTurnIntersectionEastWestConfigurationComponent } from '../capx/components/junctions/intersections/partial-median-uturn-intersection-east-west-junction/configuration/partial-median-uturn-intersection-east-west-configuration.component';
+import { PartialMedianUTurnIntersectionNorthSouthConfigurationComponent } from '../capx/components/junctions/intersections/partial-median-uturn-intersection-north-south-junction/configuration/partial-median-uturn-intersection-north-south-configuration.component';
+import { QuadrantRoadwayIntersectionNorthEastConfigurationComponent } from '../capx/components/junctions/intersections/quadrant-roadway-intersection-north-east-junction/configuration/quadrant-roadway-intersection-north-east-configuration.component';
+import { QuadrantRoadwayIntersectionNorthWestConfigurationComponent } from '../capx/components/junctions/intersections/quadrant-roadway-intersection-north-west-junction/configuration/quadrant-roadway-intersection-north-west-configuration.component';
+import { QuadrantRoadwayIntersectionSouthEastConfigurationComponent } from '../capx/components/junctions/intersections/quadrant-roadway-intersection-south-east-junction/configuration/quadrant-roadway-intersection-south-east-configuration.component';
+import { QuadrantRoadwayIntersectionSouthWestConfigurationComponent } from '../capx/components/junctions/intersections/quadrant-roadway-intersection-south-west-junction/configuration/quadrant-roadway-intersection-south-west-configuration.component';
+import { RestrictedCrossingUTurnIntersectionEastWestConfigurationComponent } from '../capx/components/junctions/intersections/restricted-crossing-uturn-intersection-east-west-junction/configuration/restricted-crossing-uturn-intersection-east-west-configuration.component';
+import { RestrictedCrossingUTurnIntersectionNorthSouthConfigurationComponent } from '../capx/components/junctions/intersections/restricted-crossing-uturn-intersection-north-south-junction/configuration/restricted-crossing-uturn-intersection-north-south-configuration.component';
+import { DisplacedLeftTurnInterchangeEastWestConfigurationComponent } from '../capx/components/junctions/interchanges/displaced-left-turn-interchange-east-west-junction/configuration/displaced-left-turn-interchange-east-west-configuration.component';
+import { DisplacedLeftTurnInterchangeNorthSouthConfigurationComponent } from '../capx/components/junctions/interchanges/displaced-left-turn-interchange-north-south-junction/configuration/displaced-left-turn-interchange-north-south-configuration.component';
+import { DoubleCrossoverDiamondInterchangeEastWestConfigurationComponent } from '../capx/components/junctions/interchanges/double-crossover-diamond-interchange-east-west-junction/configuration/double-crossover-diamond-interchange-east-west-configuration.component';
+import { DoubleCrossoverDiamondInterchangeNorthSouthConfigurationComponent } from '../capx/components/junctions/interchanges/double-crossover-diamond-interchange-north-south-junction/configuration/double-crossover-diamond-interchange-north-south-configuration.component';
+import { PartialCloverleafEastWestConfigurationComponent } from '../capx/components/junctions/interchanges/partial-cloverleaf-east-west-junction/configuration/partial-cloverleaf-east-west-configuration.component';
+import { PartialCloverleafNorthSouthConfigurationComponent } from '../capx/components/junctions/interchanges/partial-cloverleaf-north-south-junction/configuration/partial-cloverleaf-north-south-configuration.component';
+import { SinglePointInterchangeEastWestConfigurationComponent } from '../capx/components/junctions/interchanges/single-point-interchange-east-west-junction/configuration/single-point-interchange-east-west-configuration.component';
+import { SinglePointInterchangeNorthSouthConfigurationComponent } from '../capx/components/junctions/interchanges/single-point-interchange-north-south-junction/configuration/single-point-interchange-north-south-configuration.component';
+import { TraditionalDiamondEastWestConfigurationComponent } from '../capx/components/junctions/interchanges/traditional-diamond-east-west-junction/configuration/traditional-diamond-east-west-configuration.component';
+import { TraditionalDiamondNorthSouthConfigurationComponent } from '../capx/components/junctions/interchanges/traditional-diamond-north-south-junction/configuration/traditional-diamond-north-south-configuration.component';
+import { FiftyICDMiniRoundaboutConfigurationComponent } from '../capx/components/junctions/roundabouts/fifty-icdmini-roundabout-junction/configuration/fifty-icdmini-roundabout-configuration.component';
+import { OneNorthSouthxOneEastWestRoundaboutConfigurationComponent } from '../capx/components/junctions/roundabouts/one-north-southx-one-east-west-roundabout-junction/configuration/one-north-southx-one-east-west-roundabout-configuration.component';
+import { OneNorthSouthxTwoEastWestLaneRoundaboutConfigurationComponent } from '../capx/components/junctions/roundabouts/one-north-southx-two-east-west-lane-roundabout-junction/configuration/one-north-southx-two-east-west-lane-roundabout-configuration.component';
+import { SeventyFiveICDMiniRoundaboutConfigurationComponent } from '../capx/components/junctions/roundabouts/seventy-five-icdmini-roundabout-junction/configuration/seventy-five-icdmini-roundabout-configuration.component';
+import { ThreeNorthSouthxThreeEastWestLaneRoundaboutConfigurationComponent } from '../capx/components/junctions/roundabouts/three-north-southx-three-east-west-lane-roundabout-junction/configuration/three-north-southx-three-east-west-lane-roundabout-configuration.component';
+import { TwoNorthSouthxOneEastWestLaneRoundaboutConfigurationComponent } from '../capx/components/junctions/roundabouts/two-north-southx-one-east-west-lane-roundabout-junction/configuration/two-north-southx-one-east-west-lane-roundabout-configuration.component';
+import { TwoNorthSouthxTwoEastWestLaneRoundaboutJunctionConfigurationComponent } from '../capx/components/junctions/roundabouts/two-north-southx-two-east-west-lane-roundabout-junction/configuration/two-north-southx-two-east-west-lane-roundabout-junction-configuration.component';
+import { JunctionComponent } from '../capx/components/junctions/junction.component';
+import {PortalModule} from '@angular/cdk/portal';
 
 @NgModule({
   declarations: [
@@ -151,13 +184,46 @@ import { TwoNorthSouthxTwoEastWestLaneRoundaboutJunctionDesignComponent } from '
      SeventyFiveICDMiniRoundaboutDesignComponent,
      ThreeNorthSouthxThreeEastWestLaneRoundaboutDesignComponent,
      TwoNorthSouthxOneEastWestLaneRoundaboutDesignComponent,
-     TwoNorthSouthxTwoEastWestLaneRoundaboutJunctionDesignComponent],
+     TwoNorthSouthxTwoEastWestLaneRoundaboutJunctionDesignComponent,
+     ConventionalConfigurationComponent,
+     ConventionalSharedRightTurnLeftTurnConfigurationComponent,
+     FullDisplacedLeftTurnIntersectionConfigurationComponent,
+     MedianUTurnIntersectionNorthSouthConfigurationComponent,
+     PartialDisplacedLeftTurnIntersectionEastWestConfigurationComponent,
+     PartialDisplacedLeftTurnIntersectionNorthSouthConfigurationComponent,
+     PartialMedianUTurnIntersectionEastWestConfigurationComponent,
+     PartialMedianUTurnIntersectionNorthSouthConfigurationComponent,
+     QuadrantRoadwayIntersectionNorthEastConfigurationComponent,
+     QuadrantRoadwayIntersectionNorthWestConfigurationComponent,
+     QuadrantRoadwayIntersectionSouthEastConfigurationComponent,
+     QuadrantRoadwayIntersectionSouthWestConfigurationComponent,
+     RestrictedCrossingUTurnIntersectionEastWestConfigurationComponent,
+     RestrictedCrossingUTurnIntersectionNorthSouthConfigurationComponent,
+     DisplacedLeftTurnInterchangeEastWestConfigurationComponent,
+     DisplacedLeftTurnInterchangeNorthSouthConfigurationComponent,
+     DoubleCrossoverDiamondInterchangeEastWestConfigurationComponent,
+     DoubleCrossoverDiamondInterchangeNorthSouthConfigurationComponent,
+     PartialCloverleafEastWestConfigurationComponent,
+     PartialCloverleafNorthSouthConfigurationComponent,
+     SinglePointInterchangeEastWestConfigurationComponent,
+     SinglePointInterchangeNorthSouthConfigurationComponent,
+     TraditionalDiamondEastWestConfigurationComponent,
+     TraditionalDiamondNorthSouthConfigurationComponent,
+     FiftyICDMiniRoundaboutConfigurationComponent,
+     OneNorthSouthxOneEastWestRoundaboutConfigurationComponent,
+     OneNorthSouthxTwoEastWestLaneRoundaboutConfigurationComponent,
+     SeventyFiveICDMiniRoundaboutConfigurationComponent,
+     ThreeNorthSouthxThreeEastWestLaneRoundaboutConfigurationComponent,
+     TwoNorthSouthxOneEastWestLaneRoundaboutConfigurationComponent,
+     TwoNorthSouthxTwoEastWestLaneRoundaboutJunctionConfigurationComponent,
+     JunctionComponent],
   imports: [
     CommonModule,
     CapxRoutingModule,
     FlexLayoutModule,
     ReactiveFormsModule,
     ClarityModule,
+    PortalModule
   ]
 })
 export class CapxModule { }

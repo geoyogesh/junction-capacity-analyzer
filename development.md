@@ -142,3 +142,79 @@ ng generate component capx/components/junctions/roundabouts/two-north-southx-one
 
 ng generate component capx/components/junctions/roundabouts/two-north-southx-two-east-west-lane-roundabout-junction/design/TwoNorthSouthxTwoEastWestLaneRoundaboutJunctionDesign --prefix=capx --module=Capx
 
+## configuration
+ng generate component capx/components/junctions/intersections/conventional-junction/configuration/ConventionalConfiguration --prefix=capx --module=Capx --flat
+
+ng generate component capx/components/junctions/intersections/conventional-shared-right-turn-left-turn-junction/configuration/ConventionalSharedRightTurnLeftTurnConfiguration --prefix=capx --module=Capx --flat
+
+ng generate component capx/components/junctions/intersections/full-displaced-left-turn-intersection-junction/configuration/FullDisplacedLeftTurnIntersectionConfiguration --prefix=capx --module=Capx --flat
+
+ng generate component capx/components/junctions/intersections/median-uturn-intersection-east-west-junction/configuration/FullDisplacedLeftTurnIntersectionConfiguration --prefix=capx --module=Capx --flat
+
+ng generate component capx/components/junctions/intersections/median-uturn-intersection-north-south-junction/configuration/MedianUTurnIntersectionNorthSouthConfiguration --prefix=capx --module=Capx --flat
+
+ng generate component capx/components/junctions/intersections/partial-displaced-left-turn-intersection-east-west-junction/configuration/PartialDisplacedLeftTurnIntersectionEastWestConfiguration --prefix=capx --module=Capx --flat
+
+ng generate component capx/components/junctions/intersections/partial-displaced-left-turn-intersection-north-south-junction/configuration/PartialDisplacedLeftTurnIntersectionNorthSouthConfiguration --prefix=capx --module=Capx --flat
+
+
+ng generate component capx/components/junctions/intersections/partial-median-uturn-intersection-east-west-junction/configuration/PartialMedianUTurnIntersectionEastWestConfiguration --prefix=capx --module=Capx --flat
+
+ng generate component capx/components/junctions/intersections/partial-median-uturn-intersection-north-south-junction/configuration/PartialMedianUTurnIntersectionNorthSouthConfiguration --prefix=capx --module=Capx --flat
+
+ng generate component capx/components/junctions/intersections/quadrant-roadway-intersection-north-east-junction/configuration/QuadrantRoadwayIntersectionNorthEastConfiguration --prefix=capx --module=Capx --flat
+
+ng generate component capx/components/junctions/intersections/quadrant-roadway-intersection-north-west-junction/configuration/QuadrantRoadwayIntersectionNorthWestConfiguration --prefix=capx --module=Capx --flat
+
+
+ng generate component capx/components/junctions/intersections/quadrant-roadway-intersection-south-east-junction/configuration/QuadrantRoadwayIntersectionSouthEastConfiguration --prefix=capx --module=Capx --flat
+
+ng generate component capx/components/junctions/intersections/quadrant-roadway-intersection-south-west-junction/configuration/QuadrantRoadwayIntersectionSouthWestConfiguration --prefix=capx --module=Capx --flat
+
+
+ng generate component capx/components/junctions/intersections/restricted-crossing-uturn-intersection-east-west-junction/configuration/RestrictedCrossingUTurnIntersectionEastWestConfiguration --prefix=capx --module=Capx --flat
+
+ng generate component capx/components/junctions/intersections/restricted-crossing-uturn-intersection-north-south-junction/configuration/RestrictedCrossingUTurnIntersectionNorthSouthConfiguration --prefix=capx --module=Capx --flat
+
+
+ng generate component capx/components/junctions/interchanges/displaced-left-turn-interchange-east-west-junction/configuration/DisplacedLeftTurnInterchangeEastWestConfiguration --prefix=capx --module=Capx --flat
+
+ng generate component capx/components/junctions/interchanges/displaced-left-turn-interchange-north-south-junction/configuration/DisplacedLeftTurnInterchangeNorthSouthConfiguration --prefix=capx --module=Capx --flat
+
+
+ng generate component capx/components/junctions/interchanges/double-crossover-diamond-interchange-east-west-junction/configuration/DoubleCrossoverDiamondInterchangeEastWestConfiguration --prefix=capx --module=Capx --flat
+
+ng generate component capx/components/junctions/interchanges/double-crossover-diamond-interchange-north-south-junction/configuration/DoubleCrossoverDiamondInterchangeNorthSouthConfiguration --prefix=capx --module=Capx --flat
+
+ng generate component capx/components/junctions/interchanges/partial-cloverleaf-east-west-junction/configuration/PartialCloverleafEastWestConfiguration --prefix=capx --module=Capx --flat
+
+ng generate component capx/components/junctions/interchanges/partial-cloverleaf-north-south-junction/configuration/PartialCloverleafNorthSouthConfiguration --prefix=capx --module=Capx --flat
+
+ng generate component capx/components/junctions/interchanges/single-point-interchange-east-west-junction/configuration/SinglePointInterchangeEastWestConfiguration --prefix=capx --module=Capx --flat
+
+ng generate component capx/components/junctions/interchanges/single-point-interchange-north-south-junction/configuration/SinglePointInterchangeNorthSouthConfiguration --prefix=capx --module=Capx --flat
+
+
+ng generate component capx/components/junctions/interchanges/traditional-diamond-east-west-junction/configuration/TraditionalDiamondEastWestConfiguration --prefix=capx --module=Capx --flat
+
+ng generate component capx/components/junctions/interchanges/traditional-diamond-north-south-junction/configuration/TraditionalDiamondNorthSouthConfiguration --prefix=capx --module=Capx --flat
+
+
+ng generate component capx/components/junctions/roundabouts/fifty-icdmini-roundabout-junction/configuration/FiftyICDMiniRoundaboutConfiguration --prefix=capx --module=Capx --flat
+
+ng generate component capx/components/junctions/roundabouts/one-north-southx-one-east-west-roundabout-junction/configuration/OneNorthSouthxOneEastWestRoundaboutConfiguration --prefix=capx --module=Capx --flat
+
+ng generate component capx/components/junctions/roundabouts/one-north-southx-two-east-west-lane-roundabout-junction/configuration/OneNorthSouthxTwoEastWestLaneRoundaboutConfiguration --prefix=capx --module=Capx --flat
+
+ng generate component capx/components/junctions/roundabouts/seventy-five-icdmini-roundabout-junction/configuration/SeventyFiveICDMiniRoundaboutConfiguration --prefix=capx --module=Capx --flat
+
+ng generate component capx/components/junctions/roundabouts/three-north-southx-three-east-west-lane-roundabout-junction/configuration/ThreeNorthSouthxThreeEastWestLaneRoundaboutConfiguration --prefix=capx --module=Capx --flat
+
+ng generate component capx/components/junctions/roundabouts/two-north-southx-one-east-west-lane-roundabout-junction/configuration/TwoNorthSouthxOneEastWestLaneRoundaboutConfiguration --prefix=capx --module=Capx --flat
+
+
+ng generate component capx/components/junctions/roundabouts/two-north-southx-two-east-west-lane-roundabout-junction/configuration/TwoNorthSouthxTwoEastWestLaneRoundaboutJunctionConfiguration --prefix=capx --module=Capx --flat
+
+# viewer
+ng generate component capx/components/junctions/Junction --prefix=capx --module=Capx --flat
+

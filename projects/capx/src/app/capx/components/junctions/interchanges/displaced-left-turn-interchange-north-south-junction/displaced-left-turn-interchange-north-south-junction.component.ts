@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'capx-displaced-left-turn-interchange-north-south-junction',
   templateUrl: './displaced-left-turn-interchange-north-south-junction.component.html',
-  styleUrls: ['./displaced-left-turn-interchange-north-south-junction.component.scss']
+  styleUrls: ['./displaced-left-turn-interchange-north-south-junction.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DisplacedLeftTurnInterchangeNorthSouthJunctionComponent implements OnInit {
 
