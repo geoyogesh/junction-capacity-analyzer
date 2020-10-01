@@ -100,3 +100,45 @@ ng generate component capx/components/junctions/intersections/quadrant-roadway-i
 ng generate component capx/components/junctions/intersections/restricted-crossing-uturn-intersection-east-west-junction/design/RestrictedCrossingUTurnIntersectionEastWestDesign --prefix=capx --module=Capx
 
 ng generate component capx/components/junctions/intersections/restricted-crossing-uturn-intersection-north-south-junction/design/RestrictedCrossingUTurnIntersectionNorthSouthDesign --prefix=capx --module=Capx
+
+## interchanges
+
+ng generate component capx/components/junctions/interchanges/displaced-left-turn-interchange-east-west-junction/design/DisplacedLeftTurnInterchangeEastWestDesign --prefix=capx --module=Capx
+
+ng generate component capx/components/junctions/interchanges/displaced-left-turn-interchange-north-south-junction/design/DisplacedLeftTurnInterchangeNorthSouthDesign --prefix=capx --module=Capx
+
+
+ng generate component capx/components/junctions/interchanges/double-crossover-diamond-interchange-east-west-junction/design/DoubleCrossoverDiamondInterchangeEastWestDesign --prefix=capx --module=Capx
+
+ng generate component capx/components/junctions/interchanges/double-crossover-diamond-interchange-north-south-junction/design/DoubleCrossoverDiamondInterchangeNorthSouthDesign --prefix=capx --module=Capx
+
+ng generate component capx/components/junctions/interchanges/partial-cloverleaf-east-west-junction/design/PartialCloverleafEastWestDesign --prefix=capx --module=Capx
+
+ng generate component capx/components/junctions/interchanges/partial-cloverleaf-north-south-junction/design/PartialCloverleafNorthSouthDesign --prefix=capx --module=Capx
+
+ng generate component capx/components/junctions/interchanges/single-point-interchange-east-west-junction/design/SinglePointInterchangeEastWestDesign --prefix=capx --module=Capx
+
+ng generate component capx/components/junctions/interchanges/single-point-interchange-north-south-junction/design/SinglePointInterchangeNorthSouthDesign --prefix=capx --module=Capx
+
+
+ng generate component capx/components/junctions/interchanges/traditional-diamond-east-west-junction/design/TraditionalDiamondEastWestDesign --prefix=capx --module=Capx
+
+ng generate component capx/components/junctions/interchanges/traditional-diamond-north-south-junction/design/TraditionalDiamondNorthSouthDesign --prefix=capx --module=Capx
+
+## roundabout
+
+ng generate component capx/components/junctions/roundabouts/fifty-icdmini-roundabout-junction/design/FiftyICDMiniRoundaboutDesign --prefix=capx --module=Capx
+
+ng generate component capx/components/junctions/roundabouts/one-north-southx-one-east-west-roundabout-junction/design/OneNorthSouthxOneEastWestRoundaboutDesign --prefix=capx --module=Capx
+
+ng generate component capx/components/junctions/roundabouts/one-north-southx-two-east-west-lane-roundabout-junction/design/OneNorthSouthxTwoEastWestLaneRoundaboutDesign --prefix=capx --module=Capx
+
+ng generate component capx/components/junctions/roundabouts/seventy-five-icdmini-roundabout-junction/design/SeventyFiveICDMiniRoundaboutDesign --prefix=capx --module=Capx
+
+ng generate component capx/components/junctions/roundabouts/three-north-southx-three-east-west-lane-roundabout-junction/design/ThreeNorthSouthxThreeEastWestLaneRoundaboutDesign --prefix=capx --module=Capx
+
+ng generate component capx/components/junctions/roundabouts/two-north-southx-one-east-west-lane-roundabout-junction/design/TwoNorthSouthxOneEastWestLaneRoundaboutDesign --prefix=capx --module=Capx
+
+
+ng generate component capx/components/junctions/roundabouts/two-north-southx-two-east-west-lane-roundabout-junction/design/TwoNorthSouthxTwoEastWestLaneRoundaboutJunctionDesign --prefix=capx --module=Capx
+
