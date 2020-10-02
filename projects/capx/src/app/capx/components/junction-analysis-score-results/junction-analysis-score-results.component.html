@@ -34,7 +34,7 @@
           <tr>
             <td class="column">1</td>
             <td class="column">Conventional</td>
-            <td class="column"><a [routerLink]="['/conventional']">FULL</a></td>
+            <td class="column"><a [routerLink]="['/junctions/conventional']">FULL</a></td>
             <td>{{(capxStateService.conventionalJunctionResult$ | async)!.zone1_north_clv | handleNullValue}}</td>
             <td>{{(capxStateService.conventionalJunctionResult$ | async)!.zone1_north_vc | handleNullValue}}</td>
             <td>{{(capxStateService.conventionalJunctionResult$ | async)!.zone2_south_clv | handleNullValue}}</td>
@@ -53,7 +53,7 @@
           <tr>
             <td class="column">2</td>
             <td class="column">Conventional Shared RT LN</td>
-            <td class="column"><a [routerLink]="['/conventional-shared-right-turn-left-turn']">CSRL</a></td>
+            <td class="column"><a [routerLink]="['/junctions/conventional-shared-right-turn-left-turn']">CSRL</a></td>
             <td>{{(capxStateService.conventionalSharedRightTurnLeftTurnJunctionResult$ | async)!.zone1_north_clv | handleNullValue}}</td>
             <td>{{(capxStateService.conventionalSharedRightTurnLeftTurnJunctionResult$ | async)!.zone1_north_vc | handleNullValue}}</td>
             <td>{{(capxStateService.conventionalSharedRightTurnLeftTurnJunctionResult$ | async)!.zone2_south_clv | handleNullValue}}</td>
@@ -72,7 +72,7 @@
           <tr>
             <td class="column">3.1</td>
             <td rowspan="4" class="column">Quadrant Roadway</td>
-            <td class="column"><a [routerLink]="['/quadrant-roadway-intersection-south-west']">S-W</a></td>
+            <td class="column"><a [routerLink]="['/junctions/quadrant-roadway-intersection-south-west']">S-W</a></td>
             <td>{{(capxStateService.quadrantRoadwayIntersectionSouthWestJunctionResult$ | async)!.zone1_north_clv | handleNullValue}}</td>
             <td>{{(capxStateService.quadrantRoadwayIntersectionSouthWestJunctionResult$ | async)!.zone1_north_vc | handleNullValue}}</td>
             <td>{{(capxStateService.quadrantRoadwayIntersectionSouthWestJunctionResult$ | async)!.zone2_south_clv | handleNullValue}}</td>
@@ -90,7 +90,7 @@
           </tr>
           <tr>
             <td class="column">3.2</td>
-            <td class="column"><a [routerLink]="['/quadrant-roadway-intersection-north-east']">N-E</a></td>
+            <td class="column"><a [routerLink]="['/junctions/quadrant-roadway-intersection-north-east']">N-E</a></td>
             <td>{{(capxStateService.quadrantRoadwayIntersectionNorthEastJunctionResult$ | async)!.zone1_north_clv | handleNullValue}}</td>
             <td>{{(capxStateService.quadrantRoadwayIntersectionNorthEastJunctionResult$ | async)!.zone1_north_vc | handleNullValue}}</td>
             <td>{{(capxStateService.quadrantRoadwayIntersectionNorthEastJunctionResult$ | async)!.zone2_south_clv | handleNullValue}}</td>
@@ -108,7 +108,7 @@
           </tr>
           <tr>
             <td class="column">3.3</td>
-            <td class="column"><a [routerLink]="['/quadrant-roadway-intersection-south-east']">S-E</a></td>
+            <td class="column"><a [routerLink]="['/junctions/quadrant-roadway-intersection-south-east']">S-E</a></td>
             <td>{{(capxStateService.quadrantRoadwayIntersectionSouthEastJunctionResult$ | async)!.zone1_north_clv | handleNullValue}}</td>
             <td>{{(capxStateService.quadrantRoadwayIntersectionSouthEastJunctionResult$ | async)!.zone1_north_vc | handleNullValue}}</td>
             <td>{{(capxStateService.quadrantRoadwayIntersectionSouthEastJunctionResult$ | async)!.zone2_south_clv | handleNullValue}}</td>
@@ -126,7 +126,7 @@
           </tr>
           <tr>
             <td class="column">3.4</td>
-            <td class="column"><a [routerLink]="['/quadrant-roadway-intersection-north-west']">N-W</a></td>
+            <td class="column"><a [routerLink]="['/junctions/quadrant-roadway-intersection-north-west']">N-W</a></td>
             <td>{{(capxStateService.quadrantRoadwayIntersectionNorthWestJunctionResult$ | async)!.zone1_north_clv | handleNullValue}}</td>
             <td>{{(capxStateService.quadrantRoadwayIntersectionNorthWestJunctionResult$ | async)!.zone1_north_vc | handleNullValue}}</td>
             <td>{{(capxStateService.quadrantRoadwayIntersectionNorthWestJunctionResult$ | async)!.zone2_south_clv | handleNullValue}}</td>
@@ -145,7 +145,7 @@
           <tr>
             <td class="column">4.1</td>
             <td rowspan="2" class="column">Partial Displaced Left Turn </td>
-            <td class="column"><a [routerLink]="['/partial-displaced-left-turn-intersection-north-south']">N-S</a></td>
+            <td class="column"><a [routerLink]="['/junctions/partial-displaced-left-turn-intersection-north-south']">N-S</a></td>
             <td>{{(capxStateService.partialDisplacedLeftTurnIntersectionNorthSouthJunctionResult$ | async)!.zone1_north_clv | handleNullValue}}</td>
             <td>{{(capxStateService.partialDisplacedLeftTurnIntersectionNorthSouthJunctionResult$ | async)!.zone1_north_vc | handleNullValue}}</td>
             <td>{{(capxStateService.partialDisplacedLeftTurnIntersectionNorthSouthJunctionResult$ | async)!.zone2_south_clv | handleNullValue}}</td>
@@ -163,7 +163,7 @@
           </tr>
           <tr>
             <td class="column">4.2</td>
-            <td class="column"><a [routerLink]="['/partial-displaced-left-turn-intersection-east-west']">E-W</a></td>
+            <td class="column"><a [routerLink]="['/junctions/partial-displaced-left-turn-intersection-east-west']">E-W</a></td>
             <td>{{(capxStateService.partialDisplacedLeftTurnIntersectionEastWestJunctionResult$ | async)!.zone1_north_clv | handleNullValue}}</td>
             <td>{{(capxStateService.partialDisplacedLeftTurnIntersectionEastWestJunctionResult$ | async)!.zone1_north_vc | handleNullValue}}</td>
             <td>{{(capxStateService.partialDisplacedLeftTurnIntersectionEastWestJunctionResult$ | async)!.zone2_south_clv | handleNullValue}}</td>
@@ -182,7 +182,7 @@
           <tr>
             <td class="column">5</td>
             <td class="column">Displaced Left Turn</td>
-            <td class="column"><a [routerLink]="['/full-displaced-left-turn-intersection']">FULL</a></td>
+            <td class="column"><a [routerLink]="['/junctions/full-displaced-left-turn-intersection']">FULL</a></td>
             <td>{{(capxStateService.fullDisplacedLeftTurnIntersectionJunctionResult$ | async)!.zone1_north_clv | handleNullValue}}</td>
             <td>{{(capxStateService.fullDisplacedLeftTurnIntersectionJunctionResult$ | async)!.zone1_north_vc | handleNullValue}}</td>
             <td>{{(capxStateService.fullDisplacedLeftTurnIntersectionJunctionResult$ | async)!.zone2_south_clv | handleNullValue}}</td>
@@ -202,7 +202,7 @@
           <tr>
             <td class="column">6.1</td>
             <td rowspan="2" class="column">Restricted Crossing U-Turn</td>
-            <td class="column"><a [routerLink]="['/restricted-crossing-uturn-intersection-north-south']">N-S</a></td>
+            <td class="column"><a [routerLink]="['/junctions/restricted-crossing-uturn-intersection-north-south']">N-S</a></td>
             <td>{{(capxStateService.restrictedCrossingUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone1_north_clv | handleNullValue}}</td>
             <td>{{(capxStateService.restrictedCrossingUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone1_north_vc | handleNullValue}}</td>
             <td>{{(capxStateService.restrictedCrossingUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone2_south_clv | handleNullValue}}</td>
@@ -221,7 +221,7 @@
 
           <tr>
             <td class="column">6.2</td>
-            <td class="column"><a [routerLink]="['/restricted-crossing-uturn-intersection-east-west']">E-W</a></td>
+            <td class="column"><a [routerLink]="['/junctions/restricted-crossing-uturn-intersection-east-west']">E-W</a></td>
             <td>{{(capxStateService.restrictedCrossingUTurnIntersectionEastWestJunctionResult$ | async)!.zone1_north_clv | handleNullValue}}</td>
             <td>{{(capxStateService.restrictedCrossingUTurnIntersectionEastWestJunctionResult$ | async)!.zone1_north_vc | handleNullValue}}</td>
             <td>{{(capxStateService.restrictedCrossingUTurnIntersectionEastWestJunctionResult$ | async)!.zone2_south_clv | handleNullValue}}</td>
@@ -241,7 +241,7 @@
           <tr>
             <td class="column">7.1</td>
             <td rowspan="2" class="column">Median U-Turn</td>
-            <td  class="column"><a [routerLink]="['/median-uturn-intersection-north-south']">N-S</a></td>
+            <td  class="column"><a [routerLink]="['/junctions/median-uturn-intersection-north-south']">N-S</a></td>
             <td>{{(capxStateService.medianUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone1_north_clv | handleNullValue}}</td>
             <td>{{(capxStateService.medianUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone1_north_vc | handleNullValue}}</td>
             <td>{{(capxStateService.medianUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone2_south_clv | handleNullValue}}</td>
@@ -260,7 +260,7 @@
 
           <tr>
             <td class="column">7.2</td>
-            <td class="column"><a [routerLink]="['/median-uturn-intersection-east-west']">E-W</a></td>
+            <td class="column"><a [routerLink]="['/junctions/median-uturn-intersection-east-west']">E-W</a></td>
             <td>{{(capxStateService.medianUTurnIntersectionEastWestJunctionResult$ | async)!.zone1_north_clv | handleNullValue}}</td>
             <td>{{(capxStateService.medianUTurnIntersectionEastWestJunctionResult$ | async)!.zone1_north_vc | handleNullValue}}</td>
             <td>{{(capxStateService.medianUTurnIntersectionEastWestJunctionResult$ | async)!.zone2_south_clv | handleNullValue}}</td>
@@ -280,7 +280,7 @@
           <tr>
             <td class="column">8.1</td>
             <td rowspan="2" class="column">Partial Median U-Turn</td>
-            <td class="column"><a [routerLink]="['/partial-median-uturn-intersection-north-south']">N-S</a></td>
+            <td class="column"><a [routerLink]="['/junctions/partial-median-uturn-intersection-north-south']">N-S</a></td>
             <td>{{(capxStateService.partialMedianUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone1_north_clv | handleNullValue}}</td>
             <td>{{(capxStateService.partialMedianUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone1_north_vc | handleNullValue}}</td>
             <td>{{(capxStateService.partialMedianUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone2_south_clv | handleNullValue}}</td>
@@ -299,7 +299,7 @@
 
           <tr>
             <td class="column">8.2</td>
-            <td class="column"><a [routerLink]="['/partial-median-uturn-intersection-east-west']">E-W</a></td>
+            <td class="column"><a [routerLink]="['/junctions/partial-median-uturn-intersection-east-west']">E-W</a></td>
             <td>{{(capxStateService.partialMedianUTurnIntersectionEastWestJunctionResult$ | async)!.zone1_north_clv | handleNullValue}}</td>
             <td>{{(capxStateService.partialMedianUTurnIntersectionEastWestJunctionResult$ | async)!.zone1_north_vc | handleNullValue}}</td>
             <td>{{(capxStateService.partialMedianUTurnIntersectionEastWestJunctionResult$ | async)!.zone2_south_clv | handleNullValue}}</td>
@@ -349,7 +349,7 @@
           </tr>
           <tr>
             <td class="column">9.1</td>
-            <td class="column"><a [routerLink]="['/fifty-icdmini-roundabout']">50 ICD</a></td>
+            <td class="column"><a [routerLink]="['/junctions/fifty-icdmini-roundabout']">50 ICD</a></td>
             <td>{{(capxStateService.fiftyICDMiniRoundaboutJunctionResult$ | async)!.zone1_north_lane1 | handleNullValue}}</td>
             <td>{{(capxStateService.fiftyICDMiniRoundaboutJunctionResult$ | async)!.zone1_north_lane2 | handleNullValue}}</td>
             <td>{{(capxStateService.fiftyICDMiniRoundaboutJunctionResult$ | async)!.zone1_north_lane3 | handleNullValue}}</td>
@@ -369,7 +369,7 @@
           </tr>
           <tr>
             <td class="column">9.2</td>
-            <td class="column"><a [routerLink]="['/seventy-five-icdmini-roundabout']">75 ICD</a></td>
+            <td class="column"><a [routerLink]="['/junctions/seventy-five-icdmini-roundabout']">75 ICD</a></td>
             <td>{{(capxStateService.seventyFiveICDMiniRoundaboutJunctionResult$ | async)!.zone1_north_lane1 | handleNullValue}}</td>
             <td>{{(capxStateService.seventyFiveICDMiniRoundaboutJunctionResult$ | async)!.zone1_north_lane2 | handleNullValue}}</td>
             <td>{{(capxStateService.seventyFiveICDMiniRoundaboutJunctionResult$ | async)!.zone1_north_lane3 | handleNullValue}}</td>
@@ -389,7 +389,7 @@
           </tr>
           <tr>
             <td class="column">9.3</td>
-            <td class="column"><a [routerLink]="['one-north-southx-one-east-west-roundabout']">1 X 1</a></td>
+            <td class="column"><a [routerLink]="['/junctions/one-north-southx-one-east-west-roundabout']">1 X 1</a></td>
             <td>{{(capxStateService.oneNorthSouthxOneEastWestRoundaboutJunctionnResult$ | async)!.zone1_north_lane1 | handleNullValue}}</td>
             <td>{{(capxStateService.oneNorthSouthxOneEastWestRoundaboutJunctionnResult$ | async)!.zone1_north_lane2 | handleNullValue}}</td>
             <td>{{(capxStateService.oneNorthSouthxOneEastWestRoundaboutJunctionnResult$ | async)!.zone1_north_lane3 | handleNullValue}}</td>
@@ -409,7 +409,7 @@
           </tr>
           <tr>
             <td class="column">9.4</td>
-            <td class="column"><a [routerLink]="['/one-north-southx-two-east-west-lane-roundabout']">1 X 2</a></td>
+            <td class="column"><a [routerLink]="['/junctions/one-north-southx-two-east-west-lane-roundabout']">1 X 2</a></td>
             <td>{{(capxStateService.oneNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.zone1_north_lane1 | handleNullValue}}</td>
             <td>{{(capxStateService.oneNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.zone1_north_lane2 | handleNullValue}}</td>
             <td>{{(capxStateService.oneNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.zone1_north_lane3 | handleNullValue}}</td>
@@ -429,7 +429,7 @@
           </tr>
           <tr>
             <td class="column">9.5</td>
-            <td class="column"><a [routerLink]="['/two-north-southx-one-east-west-lane-roundabout']">2 X 1</a></td>
+            <td class="column"><a [routerLink]="['/junctions/two-north-southx-one-east-west-lane-roundabout']">2 X 1</a></td>
             <td>{{(capxStateService.twoNorthSouthxOneEastWestLaneRoundaboutJunctionResult$ | async)!.zone1_north_lane1 | handleNullValue}}</td>
             <td>{{(capxStateService.twoNorthSouthxOneEastWestLaneRoundaboutJunctionResult$ | async)!.zone1_north_lane2 | handleNullValue}}</td>
             <td>{{(capxStateService.twoNorthSouthxOneEastWestLaneRoundaboutJunctionResult$ | async)!.zone1_north_lane3 | handleNullValue}}</td>
@@ -449,7 +449,7 @@
           </tr>
           <tr>
             <td class="column">9.6</td>
-            <td class="column"><a [routerLink]="['/two-north-southx-two-east-west-lane-roundabout']">2 X 2</a></td>
+            <td class="column"><a [routerLink]="['/junctions/two-north-southx-two-east-west-lane-roundabout']">2 X 2</a></td>
             <td>{{(capxStateService.twoNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.zone1_north_lane1 | handleNullValue}}</td>
             <td>{{(capxStateService.twoNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.zone1_north_lane2 | handleNullValue}}</td>
             <td>{{(capxStateService.twoNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.zone1_north_lane3 | handleNullValue}}</td>
@@ -469,7 +469,7 @@
           </tr>
           <tr>
             <td class="column">9.7</td>
-            <td class="column"><a [routerLink]="['/three-north-southx-three-east-west-lane-roundabout']">3 X 3</a></td>
+            <td class="column"><a [routerLink]="['/junctions/three-north-southx-three-east-west-lane-roundabout']">3 X 3</a></td>
             <td>{{(capxStateService.threeNorthSouthxThreeEastWestLaneRoundaboutJunctionResult$ | async)!.zone1_north_lane1 | handleNullValue}}</td>
             <td>{{(capxStateService.threeNorthSouthxThreeEastWestLaneRoundaboutJunctionResult$ | async)!.zone1_north_lane2 | handleNullValue}}</td>
             <td>{{(capxStateService.threeNorthSouthxThreeEastWestLaneRoundaboutJunctionResult$ | async)!.zone1_north_lane3 | handleNullValue}}</td>
@@ -524,7 +524,7 @@
           <tr>
             <td class="column">10.1</td>
             <td rowspan="2" class="column">Diamond</td>
-            <td class="column"><a [routerLink]="['/traditional-diamond-north-south']">N-S</a></td>
+            <td class="column"><a [routerLink]="['/junctions/traditional-diamond-north-south']">N-S</a></td>
             <td>{{(capxStateService.traditionalDiamondNorthSouthJunctionResult$ | async)!.zone1_right_merge_clv | handleNullValue}}</td>
             <td>{{(capxStateService.traditionalDiamondNorthSouthJunctionResult$ | async)!.zone1_right_merge_vc | handleNullValue}}</td>
             <td>{{(capxStateService.traditionalDiamondNorthSouthJunctionResult$ | async)!.zone2_left_merge_clv | handleNullValue}}</td>
@@ -544,7 +544,7 @@
           </tr>
           <tr>
             <td class="column">10.2</td>
-            <td class="column"><a [routerLink]="['/traditional-diamond-east-west']">E-W</a></td>
+            <td class="column"><a [routerLink]="['/junctions/traditional-diamond-east-west']">E-W</a></td>
             <td>{{(capxStateService.traditionalDiamondEastWestJunctionResult$ | async)!.zone1_right_merge_clv | handleNullValue}}</td>
             <td>{{(capxStateService.traditionalDiamondEastWestJunctionResult$ | async)!.zone1_right_merge_vc | handleNullValue}}</td>
             <td>{{(capxStateService.traditionalDiamondEastWestJunctionResult$ | async)!.zone2_left_merge_clv | handleNullValue}}</td>
@@ -565,7 +565,7 @@
           <tr>
             <td class="column">11.1</td>
             <td rowspan="2" class="column">Partial Cloverleaf</td>
-            <td class="column"><a [routerLink]="['/partial-cloverleaf-north-south']">N-S</a></td>
+            <td class="column"><a [routerLink]="['/junctions/partial-cloverleaf-north-south']">N-S</a></td>
             <td>{{(capxStateService.partialCloverleafNorthSouthJunctionResult$ | async)!.zone1_right_merge_clv | handleNullValue}}</td>
             <td>{{(capxStateService.partialCloverleafNorthSouthJunctionResult$ | async)!.zone1_right_merge_vc | handleNullValue}}</td>
             <td>{{(capxStateService.partialCloverleafNorthSouthJunctionResult$ | async)!.zone2_left_merge_clv | handleNullValue}}</td>
@@ -585,7 +585,7 @@
           </tr>
           <tr>
             <td class="column">11.2</td>
-            <td class="column"><a [routerLink]="['/partial-cloverleaf-east-west']">E-W</a></td>
+            <td class="column"><a [routerLink]="['/junctions/partial-cloverleaf-east-west']">E-W</a></td>
             <td>{{(capxStateService.partialCloverleafEastWestJunctionResult$ | async)!.zone1_right_merge_clv | handleNullValue}}</td>
             <td>{{(capxStateService.partialCloverleafEastWestJunctionResult$ | async)!.zone1_right_merge_vc | handleNullValue}}</td>
             <td>{{(capxStateService.partialCloverleafEastWestJunctionResult$ | async)!.zone2_left_merge_clv | handleNullValue}}</td>
@@ -606,7 +606,7 @@
           <tr>
             <td class="column">13.1</td>
             <td rowspan="2" class="column">Displaced Left Turn </td>
-            <td class="column"><a [routerLink]="['/displaced-left-turn-interchange-north-south']">N-S</a></td>
+            <td class="column"><a [routerLink]="['/junctions/displaced-left-turn-interchange-north-south']">N-S</a></td>
             <td>{{(capxStateService.displacedLeftTurnInterchangeNorthSouthJunctionResult$ | async)!.zone1_right_merge_clv | handleNullValue}}</td>
             <td>{{(capxStateService.displacedLeftTurnInterchangeNorthSouthJunctionResult$ | async)!.zone1_right_merge_vc | handleNullValue}}</td>
             <td>{{(capxStateService.displacedLeftTurnInterchangeNorthSouthJunctionResult$ | async)!.zone2_left_merge_clv | handleNullValue}}</td>
@@ -626,7 +626,7 @@
           </tr>
           <tr>
             <td class="column">13.2</td>
-            <td class="column"><a [routerLink]="['/displaced-left-turn-interchange-east-west']">E-W</a></td>
+            <td class="column"><a [routerLink]="['/junctions/displaced-left-turn-interchange-east-west']">E-W</a></td>
             <td>{{(capxStateService.displacedLeftTurnInterchangeEastWestJunctionResult$ | async)!.zone1_right_merge_clv | handleNullValue}}</td>
             <td>{{(capxStateService.displacedLeftTurnInterchangeEastWestJunctionResult$ | async)!.zone1_right_merge_vc | handleNullValue}}</td>
             <td>{{(capxStateService.displacedLeftTurnInterchangeEastWestJunctionResult$ | async)!.zone2_left_merge_clv | handleNullValue}}</td>
@@ -647,7 +647,7 @@
           <tr>
             <td class="column">14.1</td>
             <td rowspan="2" class="column">Double Crossover Diamond</td>
-            <td class="column"><a [routerLink]="['/double-crossover-diamond-interchange-north-south']">N-S</a></td>
+            <td class="column"><a [routerLink]="['/junctions/double-crossover-diamond-interchange-north-south']">N-S</a></td>
             <td>{{(capxStateService.doubleCrossoverDiamondInterchangeNorthSouthJunctionResult$ | async)!.zone1_right_merge_clv | handleNullValue}}</td>
             <td>{{(capxStateService.doubleCrossoverDiamondInterchangeNorthSouthJunctionResult$ | async)!.zone1_right_merge_vc | handleNullValue}}</td>
             <td>{{(capxStateService.doubleCrossoverDiamondInterchangeNorthSouthJunctionResult$ | async)!.zone2_left_merge_clv | handleNullValue}}</td>
@@ -667,7 +667,7 @@
           </tr>
           <tr>
             <td class="column">14.2</td>
-            <td class="column"><a [routerLink]="['/double-crossover-diamond-interchange-east-west']">E-W</a></td>
+            <td class="column"><a [routerLink]="['/junctions/double-crossover-diamond-interchange-east-west']">E-W</a></td>
             <td>{{(capxStateService.doubleCrossoverDiamondInterchangeEastWestJunctionResult$ | async)!.zone1_right_merge_clv | handleNullValue}}</td>
             <td>{{(capxStateService.doubleCrossoverDiamondInterchangeEastWestJunctionResult$ | async)!.zone1_right_merge_vc | handleNullValue}}</td>
             <td>{{(capxStateService.doubleCrossoverDiamondInterchangeEastWestJunctionResult$ | async)!.zone2_left_merge_clv | handleNullValue}}</td>
@@ -688,7 +688,7 @@
           <tr>
             <td class="column">15.1</td>
             <td rowspan="2" class="column">Single Point</td>
-            <td class="column"><a [routerLink]="['/single-point-interchange-north-south']">N-S</a></td>
+            <td class="column"><a [routerLink]="['/junctions/single-point-interchange-north-south']">N-S</a></td>
             <td>{{(capxStateService.singlePointInterchangeNorthSouthJunctionResult$ | async)!.zone1_right_merge_clv | handleNullValue}}</td>
             <td>{{(capxStateService.singlePointInterchangeNorthSouthJunctionResult$ | async)!.zone1_right_merge_vc | handleNullValue}}</td>
             <td>{{(capxStateService.singlePointInterchangeNorthSouthJunctionResult$ | async)!.zone2_left_merge_clv | handleNullValue}}</td>
@@ -708,7 +708,7 @@
           </tr>
           <tr>
             <td class="column">15.2</td>
-            <td class="column"><a [routerLink]="['/single-point-interchange-east-west']">E-W</a></td>
+            <td class="column"><a [routerLink]="['/junctions/single-point-interchange-east-west']">E-W</a></td>
             <td>{{(capxStateService.singlePointInterchangeEastWestJunctionResult$ | async)!.zone1_right_merge_clv | handleNullValue}}</td>
             <td>{{(capxStateService.singlePointInterchangeEastWestJunctionResult$ | async)!.zone1_right_merge_vc | handleNullValue}}</td>
             <td>{{(capxStateService.singlePointInterchangeEastWestJunctionResult$ | async)!.zone2_left_merge_clv | handleNullValue}}</td>

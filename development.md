@@ -74,7 +74,7 @@ ng generate component capx/components/junctions/intersections/conventional-share
 
 ng generate component capx/components/junctions/intersections/full-displaced-left-turn-intersection-junction/design/FullDisplacedLeftTurnIntersectionDesign --prefix=capx --module=Capx
 
-ng generate component capx/components/junctions/intersections/median-uturn-intersection-east-west-junction/design/FullDisplacedLeftTurnIntersectionDesign --prefix=capx --module=Capx
+ng generate component capx/components/junctions/intersections/median-uturn-intersection-east-west-junction/design/MedianUTurnIntersectionEastWestDesign --prefix=capx --module=Capx
 
 ng generate component capx/components/junctions/intersections/median-uturn-intersection-north-south-junction/design/MedianUTurnIntersectionNorthSouthDesign --prefix=capx --module=Capx
 
@@ -149,7 +149,7 @@ ng generate component capx/components/junctions/intersections/conventional-share
 
 ng generate component capx/components/junctions/intersections/full-displaced-left-turn-intersection-junction/configuration/FullDisplacedLeftTurnIntersectionConfiguration --prefix=capx --module=Capx --flat
 
-ng generate component capx/components/junctions/intersections/median-uturn-intersection-east-west-junction/configuration/FullDisplacedLeftTurnIntersectionConfiguration --prefix=capx --module=Capx --flat
+ng generate component capx/components/junctions/intersections/median-uturn-intersection-east-west-junction/configuration/MedianUTurnIntersectionEastWestConfiguration --prefix=capx --module=Capx --flat
 
 ng generate component capx/components/junctions/intersections/median-uturn-intersection-north-south-junction/configuration/MedianUTurnIntersectionNorthSouthConfiguration --prefix=capx --module=Capx --flat
 
