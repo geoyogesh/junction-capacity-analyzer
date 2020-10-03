@@ -84,13 +84,11 @@ export class JunctionComponent implements OnInit, OnDestroy {
 
   subscriptions = [];
 
-  // tslint:disable-next-line: no-any
-  design$: BehaviorSubject<any> = new BehaviorSubject(null);
-  // tslint:disable-next-line: no-any
-  configuration$: BehaviorSubject<any> = new BehaviorSubject(null);
+  design$: BehaviorSubject<ComponentPortal<any>> = new BehaviorSubject(null);
+  configuration$: BehaviorSubject<ComponentPortal<any>> = new BehaviorSubject(null);
   title$: BehaviorSubject<string> = new BehaviorSubject('');
-  vc$: BehaviorSubject<any> = new BehaviorSubject(null);
-  clv$: BehaviorSubject<any> = new BehaviorSubject(null);
+  vc$: BehaviorSubject<number> = new BehaviorSubject(null);
+  clv$: BehaviorSubject<number> = new BehaviorSubject(null);
   ngOnInit(): void {
     const junctionName = this.route.snapshot.paramMap.get('id');
     if (junctionName !== null && this.capxStateService.state.has(junctionName)) {
