@@ -1,4 +1,6 @@
-import { CapxAnalysisRank, Junction, JunctionTypes } from './models/junction-capacity-analyser';
+import { Junction, JunctionTypes } from './models/junction-capacity-analyser';
+import { Junctions } from './models/junctions';
+
 // tslint:disable: variable-name
 // tslint:disable: max-line-length
 
@@ -10,7 +12,7 @@ import {
   CapxIntersectionAnalysisResultParameters,
   CapxInterchangeAnalysisResultParameters } from './models/junction-capacity-analyser';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { round, max } from 'mathjs';
 
 @Injectable({
@@ -108,47 +110,6 @@ export class CapxStateService {
     critical_lane_volume: 1600
   });
 
-  analysis_rank_default: CapxAnalysisRank = {
-    // Intersections
-    conventionalJunction: null,
-    conventionalSharedRightTurnLeftTurnJunction: null,
-    fullDisplacedLeftTurnIntersectionJunction: null,
-    medianUTurnIntersectionEastWestJunction: null,
-    medianUTurnIntersectionNorthSouthJunction: null,
-    partialDisplacedLeftTurnIntersectionEastWestJunction: null,
-    partialDisplacedLeftTurnIntersectionNorthSouthJunction: null,
-    partialMedianUTurnIntersectionEastWestJunction: null,
-    partialMedianUTurnIntersectionNorthSouthJunction: null,
-    restrictedCrossingUTurnIntersectionEastWestJunction: null,
-    restrictedCrossingUTurnIntersectionNorthSouthJunction: null,
-    quadrantRoadwayIntersectionNorthEastJunction: null,
-    quadrantRoadwayIntersectionNorthWestJunction: null,
-    quadrantRoadwayIntersectionSouthEastJunction: null,
-    quadrantRoadwayIntersectionSouthWestJunction: null,
-
-    // Interchange
-    displacedLeftTurnInterchangeEastWestJunction: null,
-    displacedLeftTurnInterchangeNorthSouthJunction: null,
-    doubleCrossoverDiamondInterchangeEastWestJunction: null,
-    doubleCrossoverDiamondInterchangeNorthSouthJunction: null,
-    partialCloverleafEastWestJunction: null,
-    partialCloverleafNorthSouthJunction: null,
-    singlePointInterchangeEastWestJunction: null,
-    singlePointInterchangeNorthSouthJunction: null,
-    traditionalDiamondEastWestJunction: null,
-    traditionalDiamondNorthSouthJunction: null,
-
-
-    // Roundabouts
-    fiftyICDMiniRoundaboutJunction: null,
-    oneNorthSouthxOneEastWestRoundaboutJunctionn: null,
-    oneNorthSouthxTwoEastWestLaneRoundaboutJunction: null,
-    seventyFiveICDMiniRoundaboutJunction: null,
-    threeNorthSouthxThreeEastWestLaneRoundaboutJunction: null,
-    twoNorthSouthxOneEastWestLaneRoundaboutJunction: null,
-    twoNorthSouthxTwoEastWestLaneRoundaboutJunction: null
-  };
-
   clv_range_text$ = new BehaviorSubject<Map<number, string>>(new Map([
     [1, ' - '],
     [2, ' - '],
@@ -191,284 +152,307 @@ export class CapxStateService {
     north_bound_right: 1
   });
 
-  // Intersections
-  conventionalJunctionResult$ = new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result);
-  conventionalSharedRightTurnLeftTurnJunctionResult$ = new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result);
-  fullDisplacedLeftTurnIntersectionJunctionResult$ = new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result);
-  medianUTurnIntersectionEastWestJunctionResult$ = new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result);
-  medianUTurnIntersectionNorthSouthJunctionResult$ = new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result);
-  partialDisplacedLeftTurnIntersectionEastWestJunctionResult$ = new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result);
-  partialDisplacedLeftTurnIntersectionNorthSouthJunctionResult$ = new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result);
-  partialMedianUTurnIntersectionEastWestJunctionResult$ = new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result);
-  partialMedianUTurnIntersectionNorthSouthJunctionResult$ = new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result);
-  restrictedCrossingUTurnIntersectionEastWestJunctionResult$ = new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result);
-  restrictedCrossingUTurnIntersectionNorthSouthJunctionResult$ = new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result);
-  quadrantRoadwayIntersectionNorthEastJunctionResult$ = new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result);
-  quadrantRoadwayIntersectionNorthWestJunctionResult$ = new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result);
-  quadrantRoadwayIntersectionSouthEastJunctionResult$ = new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result);
-  quadrantRoadwayIntersectionSouthWestJunctionResult$ = new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result);
-
-
-  // Interchange
-  displacedLeftTurnInterchangeEastWestJunctionResult$ = new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result);
-  displacedLeftTurnInterchangeNorthSouthJunctionResult$ = new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result);
-  doubleCrossoverDiamondInterchangeEastWestJunctionResult$ = new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result);
-  doubleCrossoverDiamondInterchangeNorthSouthJunctionResult$ = new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result);
-  partialCloverleafEastWestJunctionResult$ = new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result);
-  partialCloverleafNorthSouthJunctionResult$ = new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result);
-  singlePointInterchangeEastWestJunctionResult$ = new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result);
-  singlePointInterchangeNorthSouthJunctionResult$ = new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result);
-  traditionalDiamondEastWestJunctionResult$ = new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result);
-  traditionalDiamondNorthSouthJunctionResult$ = new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result);
-
-
-  // Roundabouts
-  fiftyICDMiniRoundaboutJunctionResult$ = new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result);
-  oneNorthSouthxOneEastWestRoundaboutJunctionnResult$ = new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result);
-  oneNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ = new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result);
-  seventyFiveICDMiniRoundaboutJunctionResult$ = new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result);
-  threeNorthSouthxThreeEastWestLaneRoundaboutJunctionResult$ = new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result);
-  twoNorthSouthxOneEastWestLaneRoundaboutJunctionResult$ = new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result);
-  twoNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ = new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result);
-
-
-  rank$ = new BehaviorSubject<CapxAnalysisRank>(this.analysis_rank_default);
+  rank$ = new BehaviorSubject<Map<string, number | null>>(new Map());
 
 
   constructor() {
 
     //#region intersection
     this.state.set(
-      'conventional', {
+      Junctions.ConventionalIntersection, {
         title: 'Conventional Intersection',
         type: JunctionTypes.Intersection,
-        result: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result)
+        intersectionResult: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result),
+        interchangeResult: null,
+        roundaboutResult: null
       }
     );
     this.state.set(
-      'conventional-shared-right-turn-left-turn', {
+      Junctions.ConventionalSharedRTLN, {
         title: 'Conventional Shared RT LN',
         type: JunctionTypes.Intersection,
-        result: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result)
+        intersectionResult: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result),
+        interchangeResult: null,
+        roundaboutResult: null
       }
     );
     this.state.set(
-      'quadrant-roadway-intersection-south-west', {
+      Junctions.QuadrantRoadwayIntersectionSouthWest, {
         title: 'Quadrant Roadway Intersection (S-W)',
         type: JunctionTypes.Intersection,
-        result: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result)
+        intersectionResult: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result),
+        interchangeResult: null,
+        roundaboutResult: null
       }
     );
     this.state.set(
-      'quadrant-roadway-intersection-north-east', {
+      Junctions.QuadrantRoadwayIntersectionNorthEast, {
         title: 'Quadrant Roadway Intersection (N-E)',
         type: JunctionTypes.Intersection,
-        result: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result)
+        intersectionResult: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result),
+        interchangeResult: null,
+        roundaboutResult: null
       }
     );
     this.state.set(
-      'quadrant-roadway-intersection-south-east', {
+      Junctions.QuadrantRoadwayIntersectionSouthEast, {
         title: 'Quadrant Roadway Intersection (S-E)',
         type: JunctionTypes.Intersection,
-        result: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result)
+        intersectionResult: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result),
+        interchangeResult: null,
+        roundaboutResult: null
       }
     );
     this.state.set(
-      'quadrant-roadway-intersection-north-west', {
+      Junctions.QuadrantRoadwayIntersectionNorthWest, {
         title: 'Quadrant Roadway Intersection (N-W)',
         type: JunctionTypes.Intersection,
-        result: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result)
+        intersectionResult: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result),
+        interchangeResult: null,
+        roundaboutResult: null
       }
     );
     this.state.set(
-      'partial-displaced-left-turn-intersection-north-south', {
+      Junctions.PartialDisplacedLeftTurnIntersectionNorthSouth, {
         title: 'Partial Displaced Left Turn Intersection (N-S)',
         type: JunctionTypes.Intersection,
-        result: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result)
+        intersectionResult: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result),
+        interchangeResult: null,
+        roundaboutResult: null
       }
     );
     this.state.set(
-      'partial-displaced-left-turn-intersection-east-west', {
+      Junctions.PartialDisplacedLeftTurnIntersectionEastWest, {
         title: 'Partial Displaced Left Turn Intersection (E-W)',
         type: JunctionTypes.Intersection,
-        result: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result)
+        intersectionResult: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result),
+        interchangeResult: null,
+        roundaboutResult: null
       }
     );
 
     this.state.set(
-      'full-displaced-left-turn-intersection', {
+      Junctions.FullDisplacedLeftTurnIntersection, {
         title: 'Full Displaced Left Turn Intersection',
         type: JunctionTypes.Intersection,
-        result: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result)
+        intersectionResult: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result),
+        interchangeResult: null,
+        roundaboutResult: null
       }
     );
 
     this.state.set(
-      'restricted-crossing-uturn-intersection-north-south', {
+      Junctions.RestrictedCrossingUTurnIntersectionNorthSouth, {
         title: 'Restricted Crossing U-Turn Intersection (N-S)',
         type: JunctionTypes.Intersection,
-        result: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result)
+        intersectionResult: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result),
+        interchangeResult: null,
+        roundaboutResult: null
       }
     );
     this.state.set(
-      'restricted-crossing-uturn-intersection-east-west', {
+      Junctions.RestrictedCrossingUTurnIntersectionEastWest, {
         title: 'Restricted Crossing U-Turn Intersection (E-W)',
         type: JunctionTypes.Intersection,
-        result: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result)
+        intersectionResult: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result),
+        interchangeResult: null,
+        roundaboutResult: null
       }
     );
 
     this.state.set(
-      'median-uturn-intersection-north-south', {
+      Junctions.MedianUTurnIntersectionNorthSouth, {
         title: 'Median U-Turn Intersection (N-S)',
         type: JunctionTypes.Intersection,
-        result: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result)
+        intersectionResult: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result),
+        interchangeResult: null,
+        roundaboutResult: null
       }
     );
     this.state.set(
-      'median-uturn-intersection-east-west', {
+      Junctions.MedianUTurnIntersectionEastWest, {
         title: 'Median U-Turn Intersection (E-W)',
         type: JunctionTypes.Intersection,
-        result: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result)
+        intersectionResult: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result),
+        interchangeResult: null,
+        roundaboutResult: null
       }
     );
 
     this.state.set(
-      'partial-median-uturn-intersection-north-south', {
+      Junctions.PartialMedianUTurnIntersectionNorthSouth, {
         title: 'Partial Median U-Turn Intersection (N-S)',
         type: JunctionTypes.Intersection,
-        result: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result)
+        intersectionResult: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result),
+        interchangeResult: null,
+        roundaboutResult: null
       }
     );
     this.state.set(
-      'partial-median-uturn-intersection-east-west', {
+      Junctions.PartialMedianUTurnIntersectionEastWest, {
         title: 'Partial Median U-Turn Intersection (E-W)',
         type: JunctionTypes.Intersection,
-        result: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result)
+        intersectionResult: new BehaviorSubject<CapxIntersectionAnalysisResultParameters>(this.intersection_default_result),
+        interchangeResult: null,
+        roundaboutResult: null
       }
     );
     //#endregion
     //#region interchange
     this.state.set(
-      'traditional-diamond-north-south', {
+      Junctions.TraditionalDiamondNorthSouth, {
         title: 'Traditional Diamond (N-S)',
         type: JunctionTypes.Interchange,
-        result: new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result)
+        intersectionResult: null,
+        interchangeResult: new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result),
+        roundaboutResult: null
       }
     );
     this.state.set(
-      'traditional-diamond-east-west', {
+      Junctions.TraditionalDiamondEastWest, {
         title: 'Traditional Diamond (E-W)',
         type: JunctionTypes.Interchange,
-        result: new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result)
+        intersectionResult: null,
+        interchangeResult: new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result),
+        roundaboutResult: null
       }
     );
     this.state.set(
-      'partial-cloverleaf-north-south', {
+      Junctions.PartialCloverleafNorthSouth, {
         title: 'Partial Cloverleaf (N-S)',
         type: JunctionTypes.Interchange,
-        result: new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result)
+        intersectionResult: null,
+        interchangeResult: new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result),
+        roundaboutResult: null
       }
     );
     this.state.set(
-      'partial-cloverleaf-east-west', {
+      Junctions.PartialCloverleafEastWest, {
         title: 'Partial Cloverleaf (E-W)',
         type: JunctionTypes.Interchange,
-        result: new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result)
+        intersectionResult: null,
+        interchangeResult: new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result),
+        roundaboutResult: null
       }
     );
 
     this.state.set(
-      'displaced-left-turn-interchange-north-south', {
+      Junctions.DisplacedLeftTurnInterchangeNorthSouth, {
         title: 'Displaced Left Turn Interchange (N-S)',
         type: JunctionTypes.Interchange,
-        result: new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result)
+        intersectionResult: null,
+        interchangeResult: new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result),
+        roundaboutResult: null
       }
     );
     this.state.set(
-      'displaced-left-turn-interchange-east-west', {
+      Junctions.DisplacedLeftTurnInterchangeEastWest, {
         title: 'Displaced Left Turn Interchange (E-W)',
         type: JunctionTypes.Interchange,
-        result: new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result)
+        intersectionResult: null,
+        interchangeResult: new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result),
+        roundaboutResult: null
       }
     );
     this.state.set(
-      'double-crossover-diamond-interchange-north-south', {
+      Junctions.DoubleCrossoverDiamondInterchangeNorthSouth, {
         title: 'Double Crossover Diamond Interchange (N-S)',
         type: JunctionTypes.Interchange,
-        result: new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result)
+        intersectionResult: null,
+        interchangeResult: new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result),
+        roundaboutResult: null
       }
     );
     this.state.set(
-      'double-crossover-diamond-interchange-east-west', {
+      Junctions.DoubleCrossoverDiamondInterchangeEastWest, {
         title: 'Double Crossover Diamond Interchange (E-W)',
         type: JunctionTypes.Interchange,
-        result: new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result)
+        intersectionResult: null,
+        interchangeResult: new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result),
+        roundaboutResult: null
       }
     );
     this.state.set(
-      'single-point-interchange-north-south', {
+      Junctions.SinglePointInterchangeNorthSouth, {
         title: 'Single Point Interchange (N-S)',
         type: JunctionTypes.Interchange,
-        result: new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result)
+        intersectionResult: null,
+        interchangeResult: new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result),
+        roundaboutResult: null
       }
     );
     this.state.set(
-      'single-point-interchange-east-west', {
+      Junctions.SinglePointInterchangeEastWest, {
         title: 'Single Point Interchange (E-W)',
         type: JunctionTypes.Interchange,
-        result: new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result)
+        intersectionResult: null,
+        interchangeResult: new BehaviorSubject<CapxInterchangeAnalysisResultParameters>(this.interchange_default_result),
+        roundaboutResult: null
       }
     );
     //#endregion
     //#region roundabout
     this.state.set(
-      'fifty-icdmini-roundabout', {
+      Junctions.FiftyICDMiniRoundabout, {
         title: '50\' ICD Mini-Roundabout',
-        type: JunctionTypes.Interchange,
-        result: new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result)
+        type: JunctionTypes.Roundabout,
+        intersectionResult: null,
+        interchangeResult: null,
+        roundaboutResult: new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result)
       }
     );
     this.state.set(
-      'seventy-five-icdmini-roundabout', {
+      Junctions.SecentyFiveICDMiniRoundabout, {
         title: '75\' ICD Mini-Roundabout',
-        type: JunctionTypes.Interchange,
-        result: new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result)
+        type: JunctionTypes.Roundabout,
+        intersectionResult: null,
+        interchangeResult: null,
+        roundaboutResult: new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result)
       }
     );
     this.state.set(
-      'one-north-southx-one-east-west-roundabout', {
+      Junctions.OneNorthSouthxOneEastWestRoundabout, {
         title: '1 NS x 1 EW Roundabout',
-        type: JunctionTypes.Interchange,
-        result: new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result)
+        type: JunctionTypes.Roundabout,
+        intersectionResult: null,
+        interchangeResult: null,
+        roundaboutResult: new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result)
       }
     );
     this.state.set(
-      'one-north-southx-two-east-west-lane-roundabout', {
+      Junctions.OneNorthSouthxTwoEastWestLaneRoundabout, {
         title: '1 NS x 2 EW Lane Roundabout',
-        type: JunctionTypes.Interchange,
-        result: new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result)
+        type: JunctionTypes.Roundabout,
+        intersectionResult: null,
+        interchangeResult: null,
+        roundaboutResult: new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result)
       }
     );
     this.state.set(
-      'two-north-southx-one-east-west-lane-roundabout', {
+      Junctions.TwoNorthSouthxOneEastWestLaneRoundabout, {
         title: '2 NS x 1 EW Lane Roundabout',
-        type: JunctionTypes.Interchange,
-        result: new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result)
+        type: JunctionTypes.Roundabout,
+        intersectionResult: null,
+        interchangeResult: null,
+        roundaboutResult: new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result)
       }
     );
     this.state.set(
-      'two-north-southx-two-east-west-lane-roundabout', {
+      Junctions.TwoNorthSouthxTwoEastWestLaneRoundabout, {
         title: '2 NS x 2 EW Lane Roundabout',
-        type: JunctionTypes.Interchange,
-        result: new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result)
+        type: JunctionTypes.Roundabout,
+        intersectionResult: null,
+        interchangeResult: null,
+        roundaboutResult: new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result)
       }
     );
     this.state.set(
-      'three-north-southx-three-east-west-lane-roundabout', {
+      Junctions.ThreeNorthSouthxThreeEastWestLaneRoundabout, {
         title: '3 NS x 3 EW Lane Roundabout',
-        type: JunctionTypes.Interchange,
-        result: new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result)
+        type: JunctionTypes.Roundabout,
+        intersectionResult: null,
+        interchangeResult: null,
+        roundaboutResult: new BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>(this.roundabout_default_result)
       }
     );
     //#endregion
@@ -537,23 +521,14 @@ export class CapxStateService {
     const intersection_ranks = [];
     const intersection_rank_map = new Map<number, string[]>();
 
-    const intersection_values: Array<[CapxIntersectionAnalysisResultParameters, string]> = [
-      [this.conventionalJunctionResult$.value, 'conventionalJunction'],
-      [this.conventionalSharedRightTurnLeftTurnJunctionResult$.value, 'conventionalSharedRightTurnLeftTurnJunction'],
-      [this.fullDisplacedLeftTurnIntersectionJunctionResult$.value, 'fullDisplacedLeftTurnIntersectionJunction'],
-      [this.medianUTurnIntersectionEastWestJunctionResult$.value, 'medianUTurnIntersectionEastWestJunction'],
-      [this.medianUTurnIntersectionNorthSouthJunctionResult$.value, 'medianUTurnIntersectionNorthSouthJunction'],
-      [this.partialDisplacedLeftTurnIntersectionEastWestJunctionResult$.value, 'partialDisplacedLeftTurnIntersectionEastWestJunction'],
-      [this.partialDisplacedLeftTurnIntersectionNorthSouthJunctionResult$.value, 'partialDisplacedLeftTurnIntersectionNorthSouthJunction'],
-      [this.partialMedianUTurnIntersectionEastWestJunctionResult$.value, 'partialMedianUTurnIntersectionEastWestJunction'],
-      [this.partialMedianUTurnIntersectionNorthSouthJunctionResult$.value, 'partialMedianUTurnIntersectionNorthSouthJunction'],
-      [this.restrictedCrossingUTurnIntersectionEastWestJunctionResult$.value, 'restrictedCrossingUTurnIntersectionEastWestJunction'],
-      [this.restrictedCrossingUTurnIntersectionNorthSouthJunctionResult$.value, 'restrictedCrossingUTurnIntersectionNorthSouthJunction'],
-      [this.quadrantRoadwayIntersectionNorthEastJunctionResult$.value, 'quadrantRoadwayIntersectionNorthEastJunction'],
-      [this.quadrantRoadwayIntersectionNorthWestJunctionResult$.value, 'quadrantRoadwayIntersectionNorthWestJunction'],
-      [this.quadrantRoadwayIntersectionSouthEastJunctionResult$.value, 'quadrantRoadwayIntersectionSouthEastJunction'],
-      [this.quadrantRoadwayIntersectionSouthWestJunctionResult$.value, 'quadrantRoadwayIntersectionSouthWestJunction'],
-    ];
+    const intersection_values: Array<[CapxIntersectionAnalysisResultParameters, string]> = [];
+
+    for (const junctionTitle of this.state.keys()) {
+      const junction = this.state.get(junctionTitle) as Junction;
+      if (junction.type === JunctionTypes.Intersection) {
+        intersection_values.push([junction.intersectionResult.value, junctionTitle]);
+      }
+    }
 
     for (const tp of intersection_values) {
       const [value, name] = tp;
@@ -581,15 +556,14 @@ export class CapxStateService {
     const roundabout_ranks = [];
     const roundabout_rank_map = new Map<number, string[]>();
 
-    const roundabout_values: Array<[CapxRoundaboutsAnalysisResultParameters, string]> = [
-      [this.fiftyICDMiniRoundaboutJunctionResult$.value, 'fiftyICDMiniRoundaboutJunction'],
-      [this.oneNorthSouthxOneEastWestRoundaboutJunctionnResult$.value, 'oneNorthSouthxOneEastWestRoundaboutJunctionn'],
-      [this.oneNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$.value, 'oneNorthSouthxTwoEastWestLaneRoundaboutJunction'],
-      [this.seventyFiveICDMiniRoundaboutJunctionResult$.value, 'seventyFiveICDMiniRoundaboutJunction'],
-      [this.threeNorthSouthxThreeEastWestLaneRoundaboutJunctionResult$.value, 'threeNorthSouthxThreeEastWestLaneRoundaboutJunction'],
-      [this.twoNorthSouthxOneEastWestLaneRoundaboutJunctionResult$.value, 'twoNorthSouthxOneEastWestLaneRoundaboutJunction'],
-      [this.twoNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$.value, 'twoNorthSouthxTwoEastWestLaneRoundaboutJunction'],
-    ];
+    const roundabout_values: Array<[CapxRoundaboutsAnalysisResultParameters, string]> = [];
+
+    for (const junctionTitle of this.state.keys()) {
+      const junction = this.state.get(junctionTitle) as Junction;
+      if (junction.type === JunctionTypes.Roundabout) {
+        roundabout_values.push([junction.roundaboutResult.value, junctionTitle]);
+      }
+    }
 
     for (const tp of roundabout_values) {
       const [value, name] = tp;
@@ -614,18 +588,13 @@ export class CapxStateService {
     const interchange_ranks = [];
     const interchange_rank_map = new Map<number, string[]>();
 
-    const interchange_values: Array<[CapxInterchangeAnalysisResultParameters, string]> = [
-      [this.displacedLeftTurnInterchangeEastWestJunctionResult$.value, 'displacedLeftTurnInterchangeEastWestJunction'],
-      [this.displacedLeftTurnInterchangeNorthSouthJunctionResult$.value, 'displacedLeftTurnInterchangeNorthSouthJunction'],
-      [this.doubleCrossoverDiamondInterchangeEastWestJunctionResult$.value, 'doubleCrossoverDiamondInterchangeEastWestJunction'],
-      [this.doubleCrossoverDiamondInterchangeNorthSouthJunctionResult$.value, 'doubleCrossoverDiamondInterchangeNorthSouthJunction'],
-      [this.partialCloverleafEastWestJunctionResult$.value, 'partialCloverleafEastWestJunction'],
-      [this.partialCloverleafNorthSouthJunctionResult$.value, 'partialCloverleafNorthSouthJunction'],
-      [this.singlePointInterchangeEastWestJunctionResult$.value, 'singlePointInterchangeEastWestJunction'],
-      [this.singlePointInterchangeNorthSouthJunctionResult$.value, 'singlePointInterchangeNorthSouthJunction'],
-      [this.traditionalDiamondEastWestJunctionResult$.value, 'traditionalDiamondEastWestJunction'],
-      [this.traditionalDiamondNorthSouthJunctionResult$.value, 'traditionalDiamondNorthSouthJunction'],
-    ];
+    const interchange_values: Array<[CapxInterchangeAnalysisResultParameters, string]> = [];
+    for (const junctionTitle of this.state.keys()) {
+      const junction = this.state.get(junctionTitle) as Junction;
+      if (junction.type === JunctionTypes.Interchange) {
+        interchange_values.push([junction.interchangeResult.value, junctionTitle]);
+      }
+    }
 
     for (const tp of interchange_values) {
       const [value, name] = tp;
@@ -644,14 +613,17 @@ export class CapxStateService {
     }
     interchange_ranks.sort();
 
-    const inter_ranks: { [key: string]: number; } = {};
+    const inter_ranks: Map<string, number | null> = new Map<string, number | null>();
+    for (const junctionName of this.state.keys()) {
+      inter_ranks.set(junctionName, null);
+    }
 
     for (let i = 0; i < interchange_ranks.length; i++) {
       const score = interchange_ranks[i];
       const keys = interchange_rank_map.get(score);
       if (keys) {
         for (const key of keys) {
-          inter_ranks[key] = i;
+          inter_ranks.set(key, i);
         }
       }
     }
@@ -661,7 +633,7 @@ export class CapxStateService {
       const keys = roundabout_rank_map.get(score);
       if (keys) {
         for (const key of keys) {
-          inter_ranks[key] = i;
+          inter_ranks.set(key, i);
         }
       }
     }
@@ -671,15 +643,13 @@ export class CapxStateService {
       const keys = intersection_rank_map.get(score);
       if (keys) {
         for (const key of keys) {
-          inter_ranks[key] = i;
+          inter_ranks.set(key, i);
         }
       }
     }
 
     console.log(inter_ranks);
-    const final_ranks: CapxAnalysisRank = Object.assign(this.analysis_rank_default, inter_ranks);
-    console.log(final_ranks);
-    this.rank$.next(final_ranks);
+    this.rank$.next(inter_ranks);
   }
 
 
@@ -701,7 +671,7 @@ export class CapxStateService {
       (masterParameters.south_bound_left / inputParameters.adjustment_factor_left_turn + masterParameters.south_bound_u / inputParameters.adjustment_factor_u) / inputParameters.adjustment_factor_left_turn / junctionParameters.south_bound_left + max(masterParameters.north_bound_thru / junctionParameters.north_bound_thru, round(max(0, masterParameters.north_bound_right / inputParameters.adjustment_factor_right_turn / junctionParameters.north_bound_right - masterParameters.west_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.west_bound_left), 0))
       );
     const zone5_center_vc = round(zone5_center_clv / inputParameters.critical_lane_volume, 2);
-    this.conventionalJunctionResult$.next({
+    (this.state.get('conventional')?.intersectionResult as BehaviorSubject<CapxIntersectionAnalysisResultParameters>).next({
       zone1_north_clv: null,
       zone1_north_vc: null,
       zone2_south_clv: null,

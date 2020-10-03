@@ -35,167 +35,167 @@
             <td class="column">1</td>
             <td class="column">Conventional</td>
             <td class="column"><a [routerLink]="['/junctions/conventional']">FULL</a></td>
-            <td>{{(capxStateService.conventionalJunctionResult$ | async)!.zone1_north_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.conventionalJunctionResult$ | async)!.zone1_north_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.conventionalJunctionResult$ | async)!.zone2_south_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.conventionalJunctionResult$ | async)!.zone2_south_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.conventionalJunctionResult$ | async)!.zone3_east_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.conventionalJunctionResult$ | async)!.zone3_east_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.conventionalJunctionResult$ | async)!.zone4_west_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.conventionalJunctionResult$ | async)!.zone4_west_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.conventionalJunctionResult$ | async)!.zone5_center_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.conventionalJunctionResult$ | async)!.zone5_center_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.conventionalJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.ConventionalIntersection).intersectionResult | async)!.zone1_north_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.ConventionalIntersection).intersectionResult | async)!.zone1_north_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.ConventionalIntersection).intersectionResult | async)!.zone2_south_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.ConventionalIntersection).intersectionResult | async)!.zone2_south_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.ConventionalIntersection).intersectionResult | async)!.zone3_east_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.ConventionalIntersection).intersectionResult | async)!.zone3_east_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.ConventionalIntersection).intersectionResult | async)!.zone4_west_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.ConventionalIntersection).intersectionResult | async)!.zone4_west_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.ConventionalIntersection).intersectionResult | async)!.zone5_center_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.ConventionalIntersection).intersectionResult | async)!.zone5_center_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.ConventionalIntersection).intersectionResult | async)!.all_vc | handleNullValue}}</td>
             <td>
-              <capx-show-junction-rank [total]="intersectionTotal" [rank]="(capxStateService.rank$ | async)!.conventionalJunction"></capx-show-junction-rank>
+              <capx-show-junction-rank [total]="intersectionTotal" [rank]="(capxStateService.rank$ | async)!.get(junctions.ConventionalIntersection)"></capx-show-junction-rank>
             </td>
           </tr>
           <tr>
             <td class="column">2</td>
             <td class="column">Conventional Shared RT LN</td>
             <td class="column"><a [routerLink]="['/junctions/conventional-shared-right-turn-left-turn']">CSRL</a></td>
-            <td>{{(capxStateService.conventionalSharedRightTurnLeftTurnJunctionResult$ | async)!.zone1_north_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.conventionalSharedRightTurnLeftTurnJunctionResult$ | async)!.zone1_north_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.conventionalSharedRightTurnLeftTurnJunctionResult$ | async)!.zone2_south_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.conventionalSharedRightTurnLeftTurnJunctionResult$ | async)!.zone2_south_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.conventionalSharedRightTurnLeftTurnJunctionResult$ | async)!.zone3_east_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.conventionalSharedRightTurnLeftTurnJunctionResult$ | async)!.zone3_east_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.conventionalSharedRightTurnLeftTurnJunctionResult$ | async)!.zone4_west_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.conventionalSharedRightTurnLeftTurnJunctionResult$ | async)!.zone4_west_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.conventionalSharedRightTurnLeftTurnJunctionResult$ | async)!.zone5_center_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.conventionalSharedRightTurnLeftTurnJunctionResult$ | async)!.zone5_center_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.conventionalSharedRightTurnLeftTurnJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.ConventionalSharedRTLN).intersectionResult | async)!.zone1_north_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.ConventionalSharedRTLN).intersectionResult | async)!.zone1_north_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.ConventionalSharedRTLN).intersectionResult | async)!.zone2_south_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.ConventionalSharedRTLN).intersectionResult | async)!.zone2_south_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.ConventionalSharedRTLN).intersectionResult | async)!.zone3_east_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.ConventionalSharedRTLN).intersectionResult | async)!.zone3_east_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.ConventionalSharedRTLN).intersectionResult | async)!.zone4_west_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.ConventionalSharedRTLN).intersectionResult | async)!.zone4_west_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.ConventionalSharedRTLN).intersectionResult | async)!.zone5_center_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.ConventionalSharedRTLN).intersectionResult | async)!.zone5_center_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.ConventionalSharedRTLN).intersectionResult | async)!.all_vc | handleNullValue}}</td>
             <td>
-              <capx-show-junction-rank [total]="intersectionTotal" [rank]="(capxStateService.rank$ | async)!.conventionalSharedRightTurnLeftTurnJunction"></capx-show-junction-rank>
+              <capx-show-junction-rank [total]="intersectionTotal" [rank]="(capxStateService.rank$ | async)!.get(junctions.ConventionalSharedRTLN)"></capx-show-junction-rank>
             </td>
           </tr>
           <tr>
             <td class="column">3.1</td>
             <td rowspan="4" class="column">Quadrant Roadway</td>
             <td class="column"><a [routerLink]="['/junctions/quadrant-roadway-intersection-south-west']">S-W</a></td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionSouthWestJunctionResult$ | async)!.zone1_north_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionSouthWestJunctionResult$ | async)!.zone1_north_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionSouthWestJunctionResult$ | async)!.zone2_south_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionSouthWestJunctionResult$ | async)!.zone2_south_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionSouthWestJunctionResult$ | async)!.zone3_east_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionSouthWestJunctionResult$ | async)!.zone3_east_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionSouthWestJunctionResult$ | async)!.zone4_west_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionSouthWestJunctionResult$ | async)!.zone4_west_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionSouthWestJunctionResult$ | async)!.zone5_center_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionSouthWestJunctionResult$ | async)!.zone5_center_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionSouthWestJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionSouthWest).intersectionResult | async)!.zone1_north_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionSouthWest).intersectionResult | async)!.zone1_north_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionSouthWest).intersectionResult| async)!.zone2_south_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionSouthWest).intersectionResult | async)!.zone2_south_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionSouthWest).intersectionResult | async)!.zone3_east_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionSouthWest).intersectionResult | async)!.zone3_east_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionSouthWest).intersectionResult | async)!.zone4_west_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionSouthWest).intersectionResult | async)!.zone4_west_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionSouthWest).intersectionResult | async)!.zone5_center_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionSouthWest).intersectionResult | async)!.zone5_center_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionSouthWest).intersectionResult | async)!.all_vc | handleNullValue}}</td>
             <td>
-              <capx-show-junction-rank [total]="intersectionTotal" [rank]="(capxStateService.rank$ | async)!.quadrantRoadwayIntersectionSouthWestJunction"></capx-show-junction-rank>
+              <capx-show-junction-rank [total]="intersectionTotal" [rank]="(capxStateService.rank$ | async)!.get(junctions.QuadrantRoadwayIntersectionSouthWest)"></capx-show-junction-rank>
             </td>
           </tr>
           <tr>
             <td class="column">3.2</td>
             <td class="column"><a [routerLink]="['/junctions/quadrant-roadway-intersection-north-east']">N-E</a></td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionNorthEastJunctionResult$ | async)!.zone1_north_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionNorthEastJunctionResult$ | async)!.zone1_north_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionNorthEastJunctionResult$ | async)!.zone2_south_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionNorthEastJunctionResult$ | async)!.zone2_south_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionNorthEastJunctionResult$ | async)!.zone3_east_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionNorthEastJunctionResult$ | async)!.zone3_east_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionNorthEastJunctionResult$ | async)!.zone4_west_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionNorthEastJunctionResult$ | async)!.zone4_west_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionNorthEastJunctionResult$ | async)!.zone5_center_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionNorthEastJunctionResult$ | async)!.zone5_center_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionNorthEastJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionNorthEast).intersectionResult | async)!.zone1_north_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionNorthEast).intersectionResult | async)!.zone1_north_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionNorthEast).intersectionResult | async)!.zone2_south_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionNorthEast).intersectionResult | async)!.zone2_south_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionNorthEast).intersectionResult | async)!.zone3_east_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionNorthEast).intersectionResult | async)!.zone3_east_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionNorthEast).intersectionResult | async)!.zone4_west_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionNorthEast).intersectionResult | async)!.zone4_west_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionNorthEast).intersectionResult | async)!.zone5_center_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionNorthEast).intersectionResult | async)!.zone5_center_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionNorthEast).intersectionResult | async)!.all_vc | handleNullValue}}</td>
             <td>
-              <capx-show-junction-rank [total]="intersectionTotal" [rank]="(capxStateService.rank$ | async)!.quadrantRoadwayIntersectionNorthEastJunction"></capx-show-junction-rank>
+              <capx-show-junction-rank [total]="intersectionTotal" [rank]="(capxStateService.rank$ | async)!.get(junctions.QuadrantRoadwayIntersectionNorthEast)"></capx-show-junction-rank>
             </td>
           </tr>
           <tr>
             <td class="column">3.3</td>
             <td class="column"><a [routerLink]="['/junctions/quadrant-roadway-intersection-south-east']">S-E</a></td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionSouthEastJunctionResult$ | async)!.zone1_north_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionSouthEastJunctionResult$ | async)!.zone1_north_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionSouthEastJunctionResult$ | async)!.zone2_south_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionSouthEastJunctionResult$ | async)!.zone2_south_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionSouthEastJunctionResult$ | async)!.zone3_east_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionSouthEastJunctionResult$ | async)!.zone3_east_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionSouthEastJunctionResult$ | async)!.zone4_west_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionSouthEastJunctionResult$ | async)!.zone4_west_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionSouthEastJunctionResult$ | async)!.zone5_center_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionSouthEastJunctionResult$ | async)!.zone5_center_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionSouthEastJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionSouthEast).intersectionResult | async)!.zone1_north_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionSouthEast).intersectionResult | async)!.zone1_north_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionSouthEast).intersectionResult | async)!.zone2_south_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionSouthEast).intersectionResult | async)!.zone2_south_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionSouthEast).intersectionResult | async)!.zone3_east_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionSouthEast).intersectionResult | async)!.zone3_east_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionSouthEast).intersectionResult | async)!.zone4_west_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionSouthEast).intersectionResult | async)!.zone4_west_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionSouthEast).intersectionResult | async)!.zone5_center_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionSouthEast).intersectionResult | async)!.zone5_center_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionSouthEast).intersectionResult | async)!.all_vc | handleNullValue}}</td>
             <td>
-              <capx-show-junction-rank [total]="intersectionTotal" [rank]="(capxStateService.rank$ | async)!.quadrantRoadwayIntersectionSouthEastJunction"></capx-show-junction-rank>
+              <capx-show-junction-rank [total]="intersectionTotal" [rank]="(capxStateService.rank$ | async)!.get(junctions.QuadrantRoadwayIntersectionSouthEast)"></capx-show-junction-rank>
             </td>
           </tr>
           <tr>
             <td class="column">3.4</td>
             <td class="column"><a [routerLink]="['/junctions/quadrant-roadway-intersection-north-west']">N-W</a></td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionNorthWestJunctionResult$ | async)!.zone1_north_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionNorthWestJunctionResult$ | async)!.zone1_north_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionNorthWestJunctionResult$ | async)!.zone2_south_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionNorthWestJunctionResult$ | async)!.zone2_south_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionNorthWestJunctionResult$ | async)!.zone3_east_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionNorthWestJunctionResult$ | async)!.zone3_east_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionNorthWestJunctionResult$ | async)!.zone4_west_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionNorthWestJunctionResult$ | async)!.zone4_west_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionNorthWestJunctionResult$ | async)!.zone5_center_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionNorthWestJunctionResult$ | async)!.zone5_center_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.quadrantRoadwayIntersectionNorthWestJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionNorthWest).intersectionResult | async)!.zone1_north_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionNorthWest).intersectionResult | async)!.zone1_north_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionNorthWest).intersectionResult | async)!.zone2_south_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionNorthWest).intersectionResult | async)!.zone2_south_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionNorthWest).intersectionResult | async)!.zone3_east_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionNorthWest).intersectionResult | async)!.zone3_east_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionNorthWest).intersectionResult | async)!.zone4_west_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionNorthWest).intersectionResult | async)!.zone4_west_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionNorthWest).intersectionResult | async)!.zone5_center_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionNorthWest).intersectionResult | async)!.zone5_center_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.QuadrantRoadwayIntersectionNorthWest).intersectionResult | async)!.all_vc | handleNullValue}}</td>
             <td>
-              <capx-show-junction-rank [total]="intersectionTotal" [rank]="(capxStateService.rank$ | async)!.quadrantRoadwayIntersectionNorthWestJunction"></capx-show-junction-rank>
+              <capx-show-junction-rank [total]="intersectionTotal" [rank]="(capxStateService.rank$ | async)!.get(junctions.QuadrantRoadwayIntersectionNorthWest)"></capx-show-junction-rank>
             </td>
           </tr>
           <tr>
             <td class="column">4.1</td>
             <td rowspan="2" class="column">Partial Displaced Left Turn </td>
             <td class="column"><a [routerLink]="['/junctions/partial-displaced-left-turn-intersection-north-south']">N-S</a></td>
-            <td>{{(capxStateService.partialDisplacedLeftTurnIntersectionNorthSouthJunctionResult$ | async)!.zone1_north_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.partialDisplacedLeftTurnIntersectionNorthSouthJunctionResult$ | async)!.zone1_north_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.partialDisplacedLeftTurnIntersectionNorthSouthJunctionResult$ | async)!.zone2_south_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.partialDisplacedLeftTurnIntersectionNorthSouthJunctionResult$ | async)!.zone2_south_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.partialDisplacedLeftTurnIntersectionNorthSouthJunctionResult$ | async)!.zone3_east_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.partialDisplacedLeftTurnIntersectionNorthSouthJunctionResult$ | async)!.zone3_east_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.partialDisplacedLeftTurnIntersectionNorthSouthJunctionResult$ | async)!.zone4_west_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.partialDisplacedLeftTurnIntersectionNorthSouthJunctionResult$ | async)!.zone4_west_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.partialDisplacedLeftTurnIntersectionNorthSouthJunctionResult$ | async)!.zone5_center_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.partialDisplacedLeftTurnIntersectionNorthSouthJunctionResult$ | async)!.zone5_center_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.partialDisplacedLeftTurnIntersectionNorthSouthJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialDisplacedLeftTurnIntersectionNorthSouth).intersectionResult | async)!.zone1_north_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialDisplacedLeftTurnIntersectionNorthSouth).intersectionResult | async)!.zone1_north_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialDisplacedLeftTurnIntersectionNorthSouth).intersectionResult | async)!.zone2_south_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialDisplacedLeftTurnIntersectionNorthSouth).intersectionResult | async)!.zone2_south_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialDisplacedLeftTurnIntersectionNorthSouth).intersectionResult | async)!.zone3_east_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialDisplacedLeftTurnIntersectionNorthSouth).intersectionResult | async)!.zone3_east_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialDisplacedLeftTurnIntersectionNorthSouth).intersectionResult | async)!.zone4_west_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialDisplacedLeftTurnIntersectionNorthSouth).intersectionResult | async)!.zone4_west_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialDisplacedLeftTurnIntersectionNorthSouth).intersectionResult | async)!.zone5_center_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialDisplacedLeftTurnIntersectionNorthSouth).intersectionResult | async)!.zone5_center_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialDisplacedLeftTurnIntersectionNorthSouth).intersectionResult | async)!.all_vc | handleNullValue}}</td>
             <td>
-              <capx-show-junction-rank [total]="intersectionTotal" [rank]="(capxStateService.rank$ | async)!.partialDisplacedLeftTurnIntersectionNorthSouthJunction"></capx-show-junction-rank>
+              <capx-show-junction-rank [total]="intersectionTotal" [rank]="(capxStateService.rank$ | async)!.get(junctions.PartialDisplacedLeftTurnIntersectionNorthSouth)"></capx-show-junction-rank>
             </td>
           </tr>
           <tr>
             <td class="column">4.2</td>
             <td class="column"><a [routerLink]="['/junctions/partial-displaced-left-turn-intersection-east-west']">E-W</a></td>
-            <td>{{(capxStateService.partialDisplacedLeftTurnIntersectionEastWestJunctionResult$ | async)!.zone1_north_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.partialDisplacedLeftTurnIntersectionEastWestJunctionResult$ | async)!.zone1_north_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.partialDisplacedLeftTurnIntersectionEastWestJunctionResult$ | async)!.zone2_south_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.partialDisplacedLeftTurnIntersectionEastWestJunctionResult$ | async)!.zone2_south_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.partialDisplacedLeftTurnIntersectionEastWestJunctionResult$ | async)!.zone3_east_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.partialDisplacedLeftTurnIntersectionEastWestJunctionResult$ | async)!.zone3_east_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.partialDisplacedLeftTurnIntersectionEastWestJunctionResult$ | async)!.zone4_west_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.partialDisplacedLeftTurnIntersectionEastWestJunctionResult$ | async)!.zone4_west_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.partialDisplacedLeftTurnIntersectionEastWestJunctionResult$ | async)!.zone5_center_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.partialDisplacedLeftTurnIntersectionEastWestJunctionResult$ | async)!.zone5_center_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.partialDisplacedLeftTurnIntersectionEastWestJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialDisplacedLeftTurnIntersectionEastWest).intersectionResult | async)!.zone1_north_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialDisplacedLeftTurnIntersectionEastWest).intersectionResult | async)!.zone1_north_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialDisplacedLeftTurnIntersectionEastWest).intersectionResult | async)!.zone2_south_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialDisplacedLeftTurnIntersectionEastWest).intersectionResult | async)!.zone2_south_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialDisplacedLeftTurnIntersectionEastWest).intersectionResult | async)!.zone3_east_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialDisplacedLeftTurnIntersectionEastWest).intersectionResult | async)!.zone3_east_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialDisplacedLeftTurnIntersectionEastWest).intersectionResult | async)!.zone4_west_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialDisplacedLeftTurnIntersectionEastWest).intersectionResult | async)!.zone4_west_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialDisplacedLeftTurnIntersectionEastWest).intersectionResult | async)!.zone5_center_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialDisplacedLeftTurnIntersectionEastWest).intersectionResult | async)!.zone5_center_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialDisplacedLeftTurnIntersectionEastWest).intersectionResult | async)!.all_vc | handleNullValue}}</td>
             <td>
-              <capx-show-junction-rank [total]="intersectionTotal" [rank]="(capxStateService.rank$ | async)!.partialDisplacedLeftTurnIntersectionEastWestJunction"></capx-show-junction-rank>
+              <capx-show-junction-rank [total]="intersectionTotal" [rank]="(capxStateService.rank$ | async)!.get(junctions.PartialDisplacedLeftTurnIntersectionEastWest)"></capx-show-junction-rank>
             </td>
           </tr>
           <tr>
             <td class="column">5</td>
             <td class="column">Displaced Left Turn</td>
             <td class="column"><a [routerLink]="['/junctions/full-displaced-left-turn-intersection']">FULL</a></td>
-            <td>{{(capxStateService.fullDisplacedLeftTurnIntersectionJunctionResult$ | async)!.zone1_north_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.fullDisplacedLeftTurnIntersectionJunctionResult$ | async)!.zone1_north_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.fullDisplacedLeftTurnIntersectionJunctionResult$ | async)!.zone2_south_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.fullDisplacedLeftTurnIntersectionJunctionResult$ | async)!.zone2_south_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.fullDisplacedLeftTurnIntersectionJunctionResult$ | async)!.zone3_east_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.fullDisplacedLeftTurnIntersectionJunctionResult$ | async)!.zone3_east_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.fullDisplacedLeftTurnIntersectionJunctionResult$ | async)!.zone4_west_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.fullDisplacedLeftTurnIntersectionJunctionResult$ | async)!.zone4_west_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.fullDisplacedLeftTurnIntersectionJunctionResult$ | async)!.zone5_center_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.fullDisplacedLeftTurnIntersectionJunctionResult$ | async)!.zone5_center_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.fullDisplacedLeftTurnIntersectionJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.FullDisplacedLeftTurnIntersection).intersectionResult | async)!.zone1_north_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.FullDisplacedLeftTurnIntersection).intersectionResult | async)!.zone1_north_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.FullDisplacedLeftTurnIntersection).intersectionResult | async)!.zone2_south_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.FullDisplacedLeftTurnIntersection).intersectionResult | async)!.zone2_south_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.FullDisplacedLeftTurnIntersection).intersectionResult | async)!.zone3_east_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.FullDisplacedLeftTurnIntersection).intersectionResult | async)!.zone3_east_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.FullDisplacedLeftTurnIntersection).intersectionResult | async)!.zone4_west_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.FullDisplacedLeftTurnIntersection).intersectionResult | async)!.zone4_west_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.FullDisplacedLeftTurnIntersection).intersectionResult | async)!.zone5_center_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.FullDisplacedLeftTurnIntersection).intersectionResult | async)!.zone5_center_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.FullDisplacedLeftTurnIntersection).intersectionResult | async)!.all_vc | handleNullValue}}</td>
             <td>
-              <capx-show-junction-rank [total]="intersectionTotal" [rank]="(capxStateService.rank$ | async)!.fullDisplacedLeftTurnIntersectionJunction"></capx-show-junction-rank>
+              <capx-show-junction-rank [total]="intersectionTotal" [rank]="(capxStateService.rank$ | async)!.get(junctions.FullDisplacedLeftTurnIntersection)"></capx-show-junction-rank>
             </td>
           </tr>
 
@@ -203,38 +203,38 @@
             <td class="column">6.1</td>
             <td rowspan="2" class="column">Restricted Crossing U-Turn</td>
             <td class="column"><a [routerLink]="['/junctions/restricted-crossing-uturn-intersection-north-south']">N-S</a></td>
-            <td>{{(capxStateService.restrictedCrossingUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone1_north_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.restrictedCrossingUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone1_north_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.restrictedCrossingUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone2_south_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.restrictedCrossingUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone2_south_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.restrictedCrossingUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone3_east_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.restrictedCrossingUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone3_east_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.restrictedCrossingUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone4_west_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.restrictedCrossingUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone4_west_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.restrictedCrossingUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone5_center_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.restrictedCrossingUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone5_center_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.restrictedCrossingUTurnIntersectionNorthSouthJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.RestrictedCrossingUTurnIntersectionNorthSouth).intersectionResult | async)!.zone1_north_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.RestrictedCrossingUTurnIntersectionNorthSouth).intersectionResult | async)!.zone1_north_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.RestrictedCrossingUTurnIntersectionNorthSouth).intersectionResult | async)!.zone2_south_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.RestrictedCrossingUTurnIntersectionNorthSouth).intersectionResult | async)!.zone2_south_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.RestrictedCrossingUTurnIntersectionNorthSouth).intersectionResult | async)!.zone3_east_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.RestrictedCrossingUTurnIntersectionNorthSouth).intersectionResult | async)!.zone3_east_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.RestrictedCrossingUTurnIntersectionNorthSouth).intersectionResult | async)!.zone4_west_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.RestrictedCrossingUTurnIntersectionNorthSouth).intersectionResult | async)!.zone4_west_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.RestrictedCrossingUTurnIntersectionNorthSouth).intersectionResult | async)!.zone5_center_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.RestrictedCrossingUTurnIntersectionNorthSouth).intersectionResult | async)!.zone5_center_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.RestrictedCrossingUTurnIntersectionNorthSouth).intersectionResult | async)!.all_vc | handleNullValue}}</td>
             <td>
-              <capx-show-junction-rank [total]="intersectionTotal" [rank]="(capxStateService.rank$ | async)!.restrictedCrossingUTurnIntersectionNorthSouthJunction"></capx-show-junction-rank>
+              <capx-show-junction-rank [total]="intersectionTotal" [rank]="(capxStateService.rank$ | async)!.get(junctions.RestrictedCrossingUTurnIntersectionNorthSouth)"></capx-show-junction-rank>
             </td>
           </tr>
 
           <tr>
             <td class="column">6.2</td>
             <td class="column"><a [routerLink]="['/junctions/restricted-crossing-uturn-intersection-east-west']">E-W</a></td>
-            <td>{{(capxStateService.restrictedCrossingUTurnIntersectionEastWestJunctionResult$ | async)!.zone1_north_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.restrictedCrossingUTurnIntersectionEastWestJunctionResult$ | async)!.zone1_north_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.restrictedCrossingUTurnIntersectionEastWestJunctionResult$ | async)!.zone2_south_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.restrictedCrossingUTurnIntersectionEastWestJunctionResult$ | async)!.zone2_south_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.restrictedCrossingUTurnIntersectionEastWestJunctionResult$ | async)!.zone3_east_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.restrictedCrossingUTurnIntersectionEastWestJunctionResult$ | async)!.zone3_east_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.restrictedCrossingUTurnIntersectionEastWestJunctionResult$ | async)!.zone4_west_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.restrictedCrossingUTurnIntersectionEastWestJunctionResult$ | async)!.zone4_west_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.restrictedCrossingUTurnIntersectionEastWestJunctionResult$ | async)!.zone5_center_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.restrictedCrossingUTurnIntersectionEastWestJunctionResult$ | async)!.zone5_center_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.restrictedCrossingUTurnIntersectionEastWestJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.RestrictedCrossingUTurnIntersectionEastWest).intersectionResult | async)!.zone1_north_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.RestrictedCrossingUTurnIntersectionEastWest).intersectionResult | async)!.zone1_north_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.RestrictedCrossingUTurnIntersectionEastWest).intersectionResult | async)!.zone2_south_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.RestrictedCrossingUTurnIntersectionEastWest).intersectionResult | async)!.zone2_south_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.RestrictedCrossingUTurnIntersectionEastWest).intersectionResult | async)!.zone3_east_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.RestrictedCrossingUTurnIntersectionEastWest).intersectionResult | async)!.zone3_east_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.RestrictedCrossingUTurnIntersectionEastWest).intersectionResult | async)!.zone4_west_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.RestrictedCrossingUTurnIntersectionEastWest).intersectionResult | async)!.zone4_west_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.RestrictedCrossingUTurnIntersectionEastWest).intersectionResult | async)!.zone5_center_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.RestrictedCrossingUTurnIntersectionEastWest).intersectionResult | async)!.zone5_center_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.RestrictedCrossingUTurnIntersectionEastWest).intersectionResult | async)!.all_vc | handleNullValue}}</td>
             <td>
-              <capx-show-junction-rank [total]="intersectionTotal" [rank]="(capxStateService.rank$ | async)!.restrictedCrossingUTurnIntersectionEastWestJunction"></capx-show-junction-rank>
+              <capx-show-junction-rank [total]="intersectionTotal" [rank]="(capxStateService.rank$ | async)!.get(junctions.RestrictedCrossingUTurnIntersectionEastWest)"></capx-show-junction-rank>
             </td>
           </tr>
 
@@ -242,38 +242,38 @@
             <td class="column">7.1</td>
             <td rowspan="2" class="column">Median U-Turn</td>
             <td  class="column"><a [routerLink]="['/junctions/median-uturn-intersection-north-south']">N-S</a></td>
-            <td>{{(capxStateService.medianUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone1_north_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.medianUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone1_north_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.medianUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone2_south_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.medianUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone2_south_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.medianUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone3_east_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.medianUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone3_east_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.medianUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone4_west_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.medianUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone4_west_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.medianUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone5_center_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.medianUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone5_center_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.medianUTurnIntersectionNorthSouthJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.MedianUTurnIntersectionNorthSouth).intersectionResult | async)!.zone1_north_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.MedianUTurnIntersectionNorthSouth).intersectionResult | async)!.zone1_north_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.MedianUTurnIntersectionNorthSouth).intersectionResult | async)!.zone2_south_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.MedianUTurnIntersectionNorthSouth).intersectionResult | async)!.zone2_south_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.MedianUTurnIntersectionNorthSouth).intersectionResult | async)!.zone3_east_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.MedianUTurnIntersectionNorthSouth).intersectionResult | async)!.zone3_east_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.MedianUTurnIntersectionNorthSouth).intersectionResult | async)!.zone4_west_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.MedianUTurnIntersectionNorthSouth).intersectionResult | async)!.zone4_west_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.MedianUTurnIntersectionNorthSouth).intersectionResult | async)!.zone5_center_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.MedianUTurnIntersectionNorthSouth).intersectionResult | async)!.zone5_center_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.MedianUTurnIntersectionNorthSouth).intersectionResult | async)!.all_vc | handleNullValue}}</td>
             <td>
-              <capx-show-junction-rank [total]="intersectionTotal" [rank]="(capxStateService.rank$ | async)!.medianUTurnIntersectionNorthSouthJunction"></capx-show-junction-rank>
+              <capx-show-junction-rank [total]="intersectionTotal" [rank]="(capxStateService.rank$ | async)!.get(junctions.MedianUTurnIntersectionNorthSouth)"></capx-show-junction-rank>
             </td>
           </tr>
 
           <tr>
             <td class="column">7.2</td>
             <td class="column"><a [routerLink]="['/junctions/median-uturn-intersection-east-west']">E-W</a></td>
-            <td>{{(capxStateService.medianUTurnIntersectionEastWestJunctionResult$ | async)!.zone1_north_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.medianUTurnIntersectionEastWestJunctionResult$ | async)!.zone1_north_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.medianUTurnIntersectionEastWestJunctionResult$ | async)!.zone2_south_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.medianUTurnIntersectionEastWestJunctionResult$ | async)!.zone2_south_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.medianUTurnIntersectionEastWestJunctionResult$ | async)!.zone3_east_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.medianUTurnIntersectionEastWestJunctionResult$ | async)!.zone3_east_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.medianUTurnIntersectionEastWestJunctionResult$ | async)!.zone4_west_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.medianUTurnIntersectionEastWestJunctionResult$ | async)!.zone4_west_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.medianUTurnIntersectionEastWestJunctionResult$ | async)!.zone5_center_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.medianUTurnIntersectionEastWestJunctionResult$ | async)!.zone5_center_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.medianUTurnIntersectionEastWestJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.MedianUTurnIntersectionEastWest).intersectionResult | async)!.zone1_north_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.MedianUTurnIntersectionEastWest).intersectionResult | async)!.zone1_north_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.MedianUTurnIntersectionEastWest).intersectionResult | async)!.zone2_south_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.MedianUTurnIntersectionEastWest).intersectionResult | async)!.zone2_south_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.MedianUTurnIntersectionEastWest).intersectionResult | async)!.zone3_east_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.MedianUTurnIntersectionEastWest).intersectionResult | async)!.zone3_east_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.MedianUTurnIntersectionEastWest).intersectionResult | async)!.zone4_west_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.MedianUTurnIntersectionEastWest).intersectionResult | async)!.zone4_west_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.MedianUTurnIntersectionEastWest).intersectionResult | async)!.zone5_center_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.MedianUTurnIntersectionEastWest).intersectionResult | async)!.zone5_center_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.MedianUTurnIntersectionEastWest).intersectionResult | async)!.all_vc | handleNullValue}}</td>
             <td>
-              <capx-show-junction-rank [total]="intersectionTotal" [rank]="(capxStateService.rank$ | async)!.medianUTurnIntersectionEastWestJunction"></capx-show-junction-rank>
+              <capx-show-junction-rank [total]="intersectionTotal" [rank]="(capxStateService.rank$ | async)!.get(junctions.MedianUTurnIntersectionEastWest)"></capx-show-junction-rank>
             </td>
           </tr>
 
@@ -281,38 +281,38 @@
             <td class="column">8.1</td>
             <td rowspan="2" class="column">Partial Median U-Turn</td>
             <td class="column"><a [routerLink]="['/junctions/partial-median-uturn-intersection-north-south']">N-S</a></td>
-            <td>{{(capxStateService.partialMedianUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone1_north_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.partialMedianUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone1_north_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.partialMedianUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone2_south_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.partialMedianUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone2_south_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.partialMedianUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone3_east_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.partialMedianUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone3_east_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.partialMedianUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone4_west_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.partialMedianUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone4_west_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.partialMedianUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone5_center_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.partialMedianUTurnIntersectionNorthSouthJunctionResult$ | async)!.zone5_center_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.partialMedianUTurnIntersectionNorthSouthJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialMedianUTurnIntersectionNorthSouth).intersectionResult | async)!.zone1_north_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialMedianUTurnIntersectionNorthSouth).intersectionResult | async)!.zone1_north_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialMedianUTurnIntersectionNorthSouth).intersectionResult | async)!.zone2_south_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialMedianUTurnIntersectionNorthSouth).intersectionResult | async)!.zone2_south_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialMedianUTurnIntersectionNorthSouth).intersectionResult | async)!.zone3_east_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialMedianUTurnIntersectionNorthSouth).intersectionResult | async)!.zone3_east_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialMedianUTurnIntersectionNorthSouth).intersectionResult | async)!.zone4_west_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialMedianUTurnIntersectionNorthSouth).intersectionResult | async)!.zone4_west_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialMedianUTurnIntersectionNorthSouth).intersectionResult | async)!.zone5_center_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialMedianUTurnIntersectionNorthSouth).intersectionResult | async)!.zone5_center_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialMedianUTurnIntersectionNorthSouth).intersectionResult | async)!.all_vc | handleNullValue}}</td>
             <td>
-              <capx-show-junction-rank [total]="intersectionTotal" [rank]="(capxStateService.rank$ | async)!.partialMedianUTurnIntersectionNorthSouthJunction"></capx-show-junction-rank>
+              <capx-show-junction-rank [total]="intersectionTotal" [rank]="(capxStateService.rank$ | async)!.get(junctions.PartialMedianUTurnIntersectionNorthSouth)"></capx-show-junction-rank>
             </td>
           </tr>
 
           <tr>
             <td class="column">8.2</td>
             <td class="column"><a [routerLink]="['/junctions/partial-median-uturn-intersection-east-west']">E-W</a></td>
-            <td>{{(capxStateService.partialMedianUTurnIntersectionEastWestJunctionResult$ | async)!.zone1_north_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.partialMedianUTurnIntersectionEastWestJunctionResult$ | async)!.zone1_north_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.partialMedianUTurnIntersectionEastWestJunctionResult$ | async)!.zone2_south_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.partialMedianUTurnIntersectionEastWestJunctionResult$ | async)!.zone2_south_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.partialMedianUTurnIntersectionEastWestJunctionResult$ | async)!.zone3_east_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.partialMedianUTurnIntersectionEastWestJunctionResult$ | async)!.zone3_east_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.partialMedianUTurnIntersectionEastWestJunctionResult$ | async)!.zone4_west_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.partialMedianUTurnIntersectionEastWestJunctionResult$ | async)!.zone4_west_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.partialMedianUTurnIntersectionEastWestJunctionResult$ | async)!.zone5_center_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.partialMedianUTurnIntersectionEastWestJunctionResult$ | async)!.zone5_center_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.partialMedianUTurnIntersectionEastWestJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialMedianUTurnIntersectionEastWest).intersectionResult | async)!.zone1_north_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialMedianUTurnIntersectionEastWest).intersectionResult | async)!.zone1_north_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialMedianUTurnIntersectionEastWest).intersectionResult | async)!.zone2_south_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialMedianUTurnIntersectionEastWest).intersectionResult | async)!.zone2_south_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialMedianUTurnIntersectionEastWest).intersectionResult | async)!.zone3_east_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialMedianUTurnIntersectionEastWest).intersectionResult | async)!.zone3_east_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialMedianUTurnIntersectionEastWest).intersectionResult | async)!.zone4_west_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialMedianUTurnIntersectionEastWest).intersectionResult | async)!.zone4_west_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialMedianUTurnIntersectionEastWest).intersectionResult | async)!.zone5_center_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialMedianUTurnIntersectionEastWest).intersectionResult | async)!.zone5_center_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialMedianUTurnIntersectionEastWest).intersectionResult | async)!.all_vc | handleNullValue}}</td>
             <td>
-              <capx-show-junction-rank [total]="intersectionTotal" [rank]="(capxStateService.rank$ | async)!.partialMedianUTurnIntersectionEastWestJunction"></capx-show-junction-rank>
+              <capx-show-junction-rank [total]="intersectionTotal" [rank]="(capxStateService.rank$ | async)!.get(junctions.PartialMedianUTurnIntersectionEastWest)"></capx-show-junction-rank>
             </td>
           </tr>
 
@@ -350,141 +350,141 @@
           <tr>
             <td class="column">9.1</td>
             <td class="column"><a [routerLink]="['/junctions/fifty-icdmini-roundabout']">50 ICD</a></td>
-            <td>{{(capxStateService.fiftyICDMiniRoundaboutJunctionResult$ | async)!.zone1_north_lane1 | handleNullValue}}</td>
-            <td>{{(capxStateService.fiftyICDMiniRoundaboutJunctionResult$ | async)!.zone1_north_lane2 | handleNullValue}}</td>
-            <td>{{(capxStateService.fiftyICDMiniRoundaboutJunctionResult$ | async)!.zone1_north_lane3 | handleNullValue}}</td>
-            <td>{{(capxStateService.fiftyICDMiniRoundaboutJunctionResult$ | async)!.zone2_south_lane1 | handleNullValue}}</td>
-            <td>{{(capxStateService.fiftyICDMiniRoundaboutJunctionResult$ | async)!.zone2_south_lane2 | handleNullValue}}</td>
-            <td>{{(capxStateService.fiftyICDMiniRoundaboutJunctionResult$ | async)!.zone2_south_lane3 | handleNullValue}}</td>
-            <td>{{(capxStateService.fiftyICDMiniRoundaboutJunctionResult$ | async)!.zone3_east_lane1 | handleNullValue}}</td>
-            <td>{{(capxStateService.fiftyICDMiniRoundaboutJunctionResult$ | async)!.zone3_east_lane2 | handleNullValue}}</td>
-            <td>{{(capxStateService.fiftyICDMiniRoundaboutJunctionResult$ | async)!.zone3_east_lane3 | handleNullValue}}</td>
-            <td>{{(capxStateService.fiftyICDMiniRoundaboutJunctionResult$ | async)!.zone4_west_lane1 | handleNullValue}}</td>
-            <td>{{(capxStateService.fiftyICDMiniRoundaboutJunctionResult$ | async)!.zone4_west_lane2 | handleNullValue}}</td>
-            <td>{{(capxStateService.fiftyICDMiniRoundaboutJunctionResult$ | async)!.zone4_west_lane3 | handleNullValue}}</td>
-            <td>{{(capxStateService.fiftyICDMiniRoundaboutJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.FiftyICDMiniRoundabout).roundaboutResult | async)!.zone1_north_lane1 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.FiftyICDMiniRoundabout).roundaboutResult | async)!.zone1_north_lane2 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.FiftyICDMiniRoundabout).roundaboutResult | async)!.zone1_north_lane3 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.FiftyICDMiniRoundabout).roundaboutResult | async)!.zone2_south_lane1 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.FiftyICDMiniRoundabout).roundaboutResult | async)!.zone2_south_lane2 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.FiftyICDMiniRoundabout).roundaboutResult | async)!.zone2_south_lane3 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.FiftyICDMiniRoundabout).roundaboutResult | async)!.zone3_east_lane1 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.FiftyICDMiniRoundabout).roundaboutResult | async)!.zone3_east_lane2 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.FiftyICDMiniRoundabout).roundaboutResult | async)!.zone3_east_lane3 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.FiftyICDMiniRoundabout).roundaboutResult | async)!.zone4_west_lane1 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.FiftyICDMiniRoundabout).roundaboutResult | async)!.zone4_west_lane2 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.FiftyICDMiniRoundabout).roundaboutResult | async)!.zone4_west_lane3 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.FiftyICDMiniRoundabout).roundaboutResult | async)!.all_vc | handleNullValue}}</td>
             <td>
-              <capx-show-junction-rank [total]="roundaboutTotal" [rank]="(capxStateService.rank$ | async)!.fiftyICDMiniRoundaboutJunction"></capx-show-junction-rank>
+              <capx-show-junction-rank [total]="roundaboutTotal" [rank]="(capxStateService.rank$ | async)!.get(junctions.FiftyICDMiniRoundabout)"></capx-show-junction-rank>
             </td>
           </tr>
           <tr>
             <td class="column">9.2</td>
             <td class="column"><a [routerLink]="['/junctions/seventy-five-icdmini-roundabout']">75 ICD</a></td>
-            <td>{{(capxStateService.seventyFiveICDMiniRoundaboutJunctionResult$ | async)!.zone1_north_lane1 | handleNullValue}}</td>
-            <td>{{(capxStateService.seventyFiveICDMiniRoundaboutJunctionResult$ | async)!.zone1_north_lane2 | handleNullValue}}</td>
-            <td>{{(capxStateService.seventyFiveICDMiniRoundaboutJunctionResult$ | async)!.zone1_north_lane3 | handleNullValue}}</td>
-            <td>{{(capxStateService.seventyFiveICDMiniRoundaboutJunctionResult$ | async)!.zone2_south_lane1 | handleNullValue}}</td>
-            <td>{{(capxStateService.seventyFiveICDMiniRoundaboutJunctionResult$ | async)!.zone2_south_lane2 | handleNullValue}}</td>
-            <td>{{(capxStateService.seventyFiveICDMiniRoundaboutJunctionResult$ | async)!.zone2_south_lane3 | handleNullValue}}</td>
-            <td>{{(capxStateService.seventyFiveICDMiniRoundaboutJunctionResult$ | async)!.zone3_east_lane1 | handleNullValue}}</td>
-            <td>{{(capxStateService.seventyFiveICDMiniRoundaboutJunctionResult$ | async)!.zone3_east_lane2 | handleNullValue}}</td>
-            <td>{{(capxStateService.seventyFiveICDMiniRoundaboutJunctionResult$ | async)!.zone3_east_lane3 | handleNullValue}}</td>
-            <td>{{(capxStateService.seventyFiveICDMiniRoundaboutJunctionResult$ | async)!.zone4_west_lane1 | handleNullValue}}</td>
-            <td>{{(capxStateService.seventyFiveICDMiniRoundaboutJunctionResult$ | async)!.zone4_west_lane2 | handleNullValue}}</td>
-            <td>{{(capxStateService.seventyFiveICDMiniRoundaboutJunctionResult$ | async)!.zone4_west_lane3 | handleNullValue}}</td>
-            <td>{{(capxStateService.seventyFiveICDMiniRoundaboutJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SecentyFiveICDMiniRoundabout).roundaboutResult | async)!.zone1_north_lane1 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SecentyFiveICDMiniRoundabout).roundaboutResult | async)!.zone1_north_lane2 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SecentyFiveICDMiniRoundabout).roundaboutResult | async)!.zone1_north_lane3 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SecentyFiveICDMiniRoundabout).roundaboutResult | async)!.zone2_south_lane1 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SecentyFiveICDMiniRoundabout).roundaboutResult | async)!.zone2_south_lane2 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SecentyFiveICDMiniRoundabout).roundaboutResult | async)!.zone2_south_lane3 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SecentyFiveICDMiniRoundabout).roundaboutResult | async)!.zone3_east_lane1 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SecentyFiveICDMiniRoundabout).roundaboutResult | async)!.zone3_east_lane2 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SecentyFiveICDMiniRoundabout).roundaboutResult | async)!.zone3_east_lane3 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SecentyFiveICDMiniRoundabout).roundaboutResult | async)!.zone4_west_lane1 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SecentyFiveICDMiniRoundabout).roundaboutResult | async)!.zone4_west_lane2 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SecentyFiveICDMiniRoundabout).roundaboutResult | async)!.zone4_west_lane3 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SecentyFiveICDMiniRoundabout).roundaboutResult | async)!.all_vc | handleNullValue}}</td>
             <td>
-              <capx-show-junction-rank [total]="roundaboutTotal" [rank]="(capxStateService.rank$ | async)!.seventyFiveICDMiniRoundaboutJunction"></capx-show-junction-rank>
+              <capx-show-junction-rank [total]="roundaboutTotal" [rank]="(capxStateService.rank$ | async)!.get(junctions.SecentyFiveICDMiniRoundabout)"></capx-show-junction-rank>
             </td>
           </tr>
           <tr>
             <td class="column">9.3</td>
             <td class="column"><a [routerLink]="['/junctions/one-north-southx-one-east-west-roundabout']">1 X 1</a></td>
-            <td>{{(capxStateService.oneNorthSouthxOneEastWestRoundaboutJunctionnResult$ | async)!.zone1_north_lane1 | handleNullValue}}</td>
-            <td>{{(capxStateService.oneNorthSouthxOneEastWestRoundaboutJunctionnResult$ | async)!.zone1_north_lane2 | handleNullValue}}</td>
-            <td>{{(capxStateService.oneNorthSouthxOneEastWestRoundaboutJunctionnResult$ | async)!.zone1_north_lane3 | handleNullValue}}</td>
-            <td>{{(capxStateService.oneNorthSouthxOneEastWestRoundaboutJunctionnResult$ | async)!.zone2_south_lane1 | handleNullValue}}</td>
-            <td>{{(capxStateService.oneNorthSouthxOneEastWestRoundaboutJunctionnResult$ | async)!.zone2_south_lane2 | handleNullValue}}</td>
-            <td>{{(capxStateService.oneNorthSouthxOneEastWestRoundaboutJunctionnResult$ | async)!.zone2_south_lane3 | handleNullValue}}</td>
-            <td>{{(capxStateService.oneNorthSouthxOneEastWestRoundaboutJunctionnResult$ | async)!.zone3_east_lane1 | handleNullValue}}</td>
-            <td>{{(capxStateService.oneNorthSouthxOneEastWestRoundaboutJunctionnResult$ | async)!.zone3_east_lane2 | handleNullValue}}</td>
-            <td>{{(capxStateService.oneNorthSouthxOneEastWestRoundaboutJunctionnResult$ | async)!.zone3_east_lane3 | handleNullValue}}</td>
-            <td>{{(capxStateService.oneNorthSouthxOneEastWestRoundaboutJunctionnResult$ | async)!.zone4_west_lane1 | handleNullValue}}</td>
-            <td>{{(capxStateService.oneNorthSouthxOneEastWestRoundaboutJunctionnResult$ | async)!.zone4_west_lane2 | handleNullValue}}</td>
-            <td>{{(capxStateService.oneNorthSouthxOneEastWestRoundaboutJunctionnResult$ | async)!.zone4_west_lane3 | handleNullValue}}</td>
-            <td>{{(capxStateService.oneNorthSouthxOneEastWestRoundaboutJunctionnResult$ | async)!.all_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.OneNorthSouthxOneEastWestRoundabout).roundaboutResult | async)!.zone1_north_lane1 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.OneNorthSouthxOneEastWestRoundabout).roundaboutResult | async)!.zone1_north_lane2 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.OneNorthSouthxOneEastWestRoundabout).roundaboutResult | async)!.zone1_north_lane3 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.OneNorthSouthxOneEastWestRoundabout).roundaboutResult | async)!.zone2_south_lane1 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.OneNorthSouthxOneEastWestRoundabout).roundaboutResult | async)!.zone2_south_lane2 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.OneNorthSouthxOneEastWestRoundabout).roundaboutResult | async)!.zone2_south_lane3 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.OneNorthSouthxOneEastWestRoundabout).roundaboutResult | async)!.zone3_east_lane1 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.OneNorthSouthxOneEastWestRoundabout).roundaboutResult | async)!.zone3_east_lane2 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.OneNorthSouthxOneEastWestRoundabout).roundaboutResult | async)!.zone3_east_lane3 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.OneNorthSouthxOneEastWestRoundabout).roundaboutResult | async)!.zone4_west_lane1 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.OneNorthSouthxOneEastWestRoundabout).roundaboutResult | async)!.zone4_west_lane2 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.OneNorthSouthxOneEastWestRoundabout).roundaboutResult | async)!.zone4_west_lane3 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.OneNorthSouthxOneEastWestRoundabout).roundaboutResult | async)!.all_vc | handleNullValue}}</td>
             <td>
-              <capx-show-junction-rank [total]="roundaboutTotal" [rank]="(capxStateService.rank$ | async)!.oneNorthSouthxOneEastWestRoundaboutJunctionn"></capx-show-junction-rank>
+              <capx-show-junction-rank [total]="roundaboutTotal" [rank]="(capxStateService.rank$ | async)!.get(junctions.OneNorthSouthxOneEastWestRoundabout)"></capx-show-junction-rank>
             </td>
           </tr>
           <tr>
             <td class="column">9.4</td>
             <td class="column"><a [routerLink]="['/junctions/one-north-southx-two-east-west-lane-roundabout']">1 X 2</a></td>
-            <td>{{(capxStateService.oneNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.zone1_north_lane1 | handleNullValue}}</td>
-            <td>{{(capxStateService.oneNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.zone1_north_lane2 | handleNullValue}}</td>
-            <td>{{(capxStateService.oneNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.zone1_north_lane3 | handleNullValue}}</td>
-            <td>{{(capxStateService.oneNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.zone2_south_lane1 | handleNullValue}}</td>
-            <td>{{(capxStateService.oneNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.zone2_south_lane2 | handleNullValue}}</td>
-            <td>{{(capxStateService.oneNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.zone2_south_lane3 | handleNullValue}}</td>
-            <td>{{(capxStateService.oneNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.zone3_east_lane1 | handleNullValue}}</td>
-            <td>{{(capxStateService.oneNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.zone3_east_lane2 | handleNullValue}}</td>
-            <td>{{(capxStateService.oneNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.zone3_east_lane3 | handleNullValue}}</td>
-            <td>{{(capxStateService.oneNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.zone4_west_lane1 | handleNullValue}}</td>
-            <td>{{(capxStateService.oneNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.zone4_west_lane2 | handleNullValue}}</td>
-            <td>{{(capxStateService.oneNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.zone4_west_lane3 | handleNullValue}}</td>
-            <td>{{(capxStateService.oneNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.OneNorthSouthxTwoEastWestLaneRoundabout).roundaboutResult | async)!.zone1_north_lane1 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.OneNorthSouthxTwoEastWestLaneRoundabout).roundaboutResult | async)!.zone1_north_lane2 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.OneNorthSouthxTwoEastWestLaneRoundabout).roundaboutResult | async)!.zone1_north_lane3 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.OneNorthSouthxTwoEastWestLaneRoundabout).roundaboutResult | async)!.zone2_south_lane1 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.OneNorthSouthxTwoEastWestLaneRoundabout).roundaboutResult | async)!.zone2_south_lane2 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.OneNorthSouthxTwoEastWestLaneRoundabout).roundaboutResult | async)!.zone2_south_lane3 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.OneNorthSouthxTwoEastWestLaneRoundabout).roundaboutResult | async)!.zone3_east_lane1 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.OneNorthSouthxTwoEastWestLaneRoundabout).roundaboutResult | async)!.zone3_east_lane2 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.OneNorthSouthxTwoEastWestLaneRoundabout).roundaboutResult | async)!.zone3_east_lane3 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.OneNorthSouthxTwoEastWestLaneRoundabout).roundaboutResult | async)!.zone4_west_lane1 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.OneNorthSouthxTwoEastWestLaneRoundabout).roundaboutResult | async)!.zone4_west_lane2 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.OneNorthSouthxTwoEastWestLaneRoundabout).roundaboutResult | async)!.zone4_west_lane3 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.OneNorthSouthxTwoEastWestLaneRoundabout).roundaboutResult | async)!.all_vc | handleNullValue}}</td>
             <td>
-              <capx-show-junction-rank [total]="roundaboutTotal" [rank]="(capxStateService.rank$ | async)!.oneNorthSouthxTwoEastWestLaneRoundaboutJunction"></capx-show-junction-rank>
+              <capx-show-junction-rank [total]="roundaboutTotal" [rank]="(capxStateService.rank$ | async)!.get(junctions.OneNorthSouthxTwoEastWestLaneRoundabout)"></capx-show-junction-rank>
             </td>
           </tr>
           <tr>
             <td class="column">9.5</td>
             <td class="column"><a [routerLink]="['/junctions/two-north-southx-one-east-west-lane-roundabout']">2 X 1</a></td>
-            <td>{{(capxStateService.twoNorthSouthxOneEastWestLaneRoundaboutJunctionResult$ | async)!.zone1_north_lane1 | handleNullValue}}</td>
-            <td>{{(capxStateService.twoNorthSouthxOneEastWestLaneRoundaboutJunctionResult$ | async)!.zone1_north_lane2 | handleNullValue}}</td>
-            <td>{{(capxStateService.twoNorthSouthxOneEastWestLaneRoundaboutJunctionResult$ | async)!.zone1_north_lane3 | handleNullValue}}</td>
-            <td>{{(capxStateService.twoNorthSouthxOneEastWestLaneRoundaboutJunctionResult$ | async)!.zone2_south_lane1 | handleNullValue}}</td>
-            <td>{{(capxStateService.twoNorthSouthxOneEastWestLaneRoundaboutJunctionResult$ | async)!.zone2_south_lane2 | handleNullValue}}</td>
-            <td>{{(capxStateService.twoNorthSouthxOneEastWestLaneRoundaboutJunctionResult$ | async)!.zone2_south_lane3 | handleNullValue}}</td>
-            <td>{{(capxStateService.twoNorthSouthxOneEastWestLaneRoundaboutJunctionResult$ | async)!.zone3_east_lane1 | handleNullValue}}</td>
-            <td>{{(capxStateService.twoNorthSouthxOneEastWestLaneRoundaboutJunctionResult$ | async)!.zone3_east_lane2 | handleNullValue}}</td>
-            <td>{{(capxStateService.twoNorthSouthxOneEastWestLaneRoundaboutJunctionResult$ | async)!.zone3_east_lane3 | handleNullValue}}</td>
-            <td>{{(capxStateService.twoNorthSouthxOneEastWestLaneRoundaboutJunctionResult$ | async)!.zone4_west_lane1 | handleNullValue}}</td>
-            <td>{{(capxStateService.twoNorthSouthxOneEastWestLaneRoundaboutJunctionResult$ | async)!.zone4_west_lane2 | handleNullValue}}</td>
-            <td>{{(capxStateService.twoNorthSouthxOneEastWestLaneRoundaboutJunctionResult$ | async)!.zone4_west_lane3 | handleNullValue}}</td>
-            <td>{{(capxStateService.twoNorthSouthxOneEastWestLaneRoundaboutJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TwoNorthSouthxOneEastWestLaneRoundabout).roundaboutResult | async)!.zone1_north_lane1 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TwoNorthSouthxOneEastWestLaneRoundabout).roundaboutResult | async)!.zone1_north_lane2 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TwoNorthSouthxOneEastWestLaneRoundabout).roundaboutResult | async)!.zone1_north_lane3 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TwoNorthSouthxOneEastWestLaneRoundabout).roundaboutResult | async)!.zone2_south_lane1 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TwoNorthSouthxOneEastWestLaneRoundabout).roundaboutResult | async)!.zone2_south_lane2 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TwoNorthSouthxOneEastWestLaneRoundabout).roundaboutResult | async)!.zone2_south_lane3 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TwoNorthSouthxOneEastWestLaneRoundabout).roundaboutResult | async)!.zone3_east_lane1 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TwoNorthSouthxOneEastWestLaneRoundabout).roundaboutResult | async)!.zone3_east_lane2 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TwoNorthSouthxOneEastWestLaneRoundabout).roundaboutResult | async)!.zone3_east_lane3 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TwoNorthSouthxOneEastWestLaneRoundabout).roundaboutResult | async)!.zone4_west_lane1 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TwoNorthSouthxOneEastWestLaneRoundabout).roundaboutResult | async)!.zone4_west_lane2 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TwoNorthSouthxOneEastWestLaneRoundabout).roundaboutResult | async)!.zone4_west_lane3 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TwoNorthSouthxOneEastWestLaneRoundabout).roundaboutResult | async)!.all_vc | handleNullValue}}</td>
             <td>
-              <capx-show-junction-rank [total]="roundaboutTotal" [rank]="(capxStateService.rank$ | async)!.twoNorthSouthxOneEastWestLaneRoundaboutJunction"></capx-show-junction-rank>
+              <capx-show-junction-rank [total]="roundaboutTotal" [rank]="(capxStateService.rank$ | async)!.get(junctions.TwoNorthSouthxOneEastWestLaneRoundabout)"></capx-show-junction-rank>
             </td>
           </tr>
           <tr>
             <td class="column">9.6</td>
             <td class="column"><a [routerLink]="['/junctions/two-north-southx-two-east-west-lane-roundabout']">2 X 2</a></td>
-            <td>{{(capxStateService.twoNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.zone1_north_lane1 | handleNullValue}}</td>
-            <td>{{(capxStateService.twoNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.zone1_north_lane2 | handleNullValue}}</td>
-            <td>{{(capxStateService.twoNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.zone1_north_lane3 | handleNullValue}}</td>
-            <td>{{(capxStateService.twoNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.zone2_south_lane1 | handleNullValue}}</td>
-            <td>{{(capxStateService.twoNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.zone2_south_lane2 | handleNullValue}}</td>
-            <td>{{(capxStateService.twoNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.zone2_south_lane3 | handleNullValue}}</td>
-            <td>{{(capxStateService.twoNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.zone3_east_lane1 | handleNullValue}}</td>
-            <td>{{(capxStateService.twoNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.zone3_east_lane2 | handleNullValue}}</td>
-            <td>{{(capxStateService.twoNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.zone3_east_lane3 | handleNullValue}}</td>
-            <td>{{(capxStateService.twoNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.zone4_west_lane1 | handleNullValue}}</td>
-            <td>{{(capxStateService.twoNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.zone4_west_lane2 | handleNullValue}}</td>
-            <td>{{(capxStateService.twoNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.zone4_west_lane3 | handleNullValue}}</td>
-            <td>{{(capxStateService.twoNorthSouthxTwoEastWestLaneRoundaboutJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TwoNorthSouthxTwoEastWestLaneRoundabout).roundaboutResult | async)!.zone1_north_lane1 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TwoNorthSouthxTwoEastWestLaneRoundabout).roundaboutResult | async)!.zone1_north_lane2 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TwoNorthSouthxTwoEastWestLaneRoundabout).roundaboutResult | async)!.zone1_north_lane3 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TwoNorthSouthxTwoEastWestLaneRoundabout).roundaboutResult | async)!.zone2_south_lane1 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TwoNorthSouthxTwoEastWestLaneRoundabout).roundaboutResult | async)!.zone2_south_lane2 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TwoNorthSouthxTwoEastWestLaneRoundabout).roundaboutResult | async)!.zone2_south_lane3 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TwoNorthSouthxTwoEastWestLaneRoundabout).roundaboutResult | async)!.zone3_east_lane1 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TwoNorthSouthxTwoEastWestLaneRoundabout).roundaboutResult | async)!.zone3_east_lane2 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TwoNorthSouthxTwoEastWestLaneRoundabout).roundaboutResult | async)!.zone3_east_lane3 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TwoNorthSouthxTwoEastWestLaneRoundabout).roundaboutResult | async)!.zone4_west_lane1 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TwoNorthSouthxTwoEastWestLaneRoundabout).roundaboutResult | async)!.zone4_west_lane2 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TwoNorthSouthxTwoEastWestLaneRoundabout).roundaboutResult | async)!.zone4_west_lane3 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TwoNorthSouthxTwoEastWestLaneRoundabout).roundaboutResult | async)!.all_vc | handleNullValue}}</td>
             <td>
-              <capx-show-junction-rank [total]="roundaboutTotal" [rank]="(capxStateService.rank$ | async)!.twoNorthSouthxTwoEastWestLaneRoundaboutJunction"></capx-show-junction-rank>
+              <capx-show-junction-rank [total]="roundaboutTotal" [rank]="(capxStateService.rank$ | async)!.get(junctions.TwoNorthSouthxTwoEastWestLaneRoundabout)"></capx-show-junction-rank>
             </td>
           </tr>
           <tr>
             <td class="column">9.7</td>
             <td class="column"><a [routerLink]="['/junctions/three-north-southx-three-east-west-lane-roundabout']">3 X 3</a></td>
-            <td>{{(capxStateService.threeNorthSouthxThreeEastWestLaneRoundaboutJunctionResult$ | async)!.zone1_north_lane1 | handleNullValue}}</td>
-            <td>{{(capxStateService.threeNorthSouthxThreeEastWestLaneRoundaboutJunctionResult$ | async)!.zone1_north_lane2 | handleNullValue}}</td>
-            <td>{{(capxStateService.threeNorthSouthxThreeEastWestLaneRoundaboutJunctionResult$ | async)!.zone1_north_lane3 | handleNullValue}}</td>
-            <td>{{(capxStateService.threeNorthSouthxThreeEastWestLaneRoundaboutJunctionResult$ | async)!.zone2_south_lane1 | handleNullValue}}</td>
-            <td>{{(capxStateService.threeNorthSouthxThreeEastWestLaneRoundaboutJunctionResult$ | async)!.zone2_south_lane2 | handleNullValue}}</td>
-            <td>{{(capxStateService.threeNorthSouthxThreeEastWestLaneRoundaboutJunctionResult$ | async)!.zone2_south_lane3 | handleNullValue}}</td>
-            <td>{{(capxStateService.threeNorthSouthxThreeEastWestLaneRoundaboutJunctionResult$ | async)!.zone3_east_lane1 | handleNullValue}}</td>
-            <td>{{(capxStateService.threeNorthSouthxThreeEastWestLaneRoundaboutJunctionResult$ | async)!.zone3_east_lane2 | handleNullValue}}</td>
-            <td>{{(capxStateService.threeNorthSouthxThreeEastWestLaneRoundaboutJunctionResult$ | async)!.zone3_east_lane3 | handleNullValue}}</td>
-            <td>{{(capxStateService.threeNorthSouthxThreeEastWestLaneRoundaboutJunctionResult$ | async)!.zone4_west_lane1 | handleNullValue}}</td>
-            <td>{{(capxStateService.threeNorthSouthxThreeEastWestLaneRoundaboutJunctionResult$ | async)!.zone4_west_lane2 | handleNullValue}}</td>
-            <td>{{(capxStateService.threeNorthSouthxThreeEastWestLaneRoundaboutJunctionResult$ | async)!.zone4_west_lane3 | handleNullValue}}</td>
-            <td>{{(capxStateService.threeNorthSouthxThreeEastWestLaneRoundaboutJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.ThreeNorthSouthxThreeEastWestLaneRoundabout).roundaboutResult | async)!.zone1_north_lane1 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.ThreeNorthSouthxThreeEastWestLaneRoundabout).roundaboutResult | async)!.zone1_north_lane2 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.ThreeNorthSouthxThreeEastWestLaneRoundabout).roundaboutResult | async)!.zone1_north_lane3 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.ThreeNorthSouthxThreeEastWestLaneRoundabout).roundaboutResult | async)!.zone2_south_lane1 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.ThreeNorthSouthxThreeEastWestLaneRoundabout).roundaboutResult | async)!.zone2_south_lane2 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.ThreeNorthSouthxThreeEastWestLaneRoundabout).roundaboutResult | async)!.zone2_south_lane3 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.ThreeNorthSouthxThreeEastWestLaneRoundabout).roundaboutResult | async)!.zone3_east_lane1 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.ThreeNorthSouthxThreeEastWestLaneRoundabout).roundaboutResult | async)!.zone3_east_lane2 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.ThreeNorthSouthxThreeEastWestLaneRoundabout).roundaboutResult | async)!.zone3_east_lane3 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.ThreeNorthSouthxThreeEastWestLaneRoundabout).roundaboutResult | async)!.zone4_west_lane1 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.ThreeNorthSouthxThreeEastWestLaneRoundabout).roundaboutResult | async)!.zone4_west_lane2 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.ThreeNorthSouthxThreeEastWestLaneRoundabout).roundaboutResult | async)!.zone4_west_lane3 | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.ThreeNorthSouthxThreeEastWestLaneRoundabout).roundaboutResult | async)!.all_vc | handleNullValue}}</td>
             <td>
-              <capx-show-junction-rank [total]="roundaboutTotal" [rank]="(capxStateService.rank$ | async)!.threeNorthSouthxThreeEastWestLaneRoundaboutJunction"></capx-show-junction-rank>
+              <capx-show-junction-rank [total]="roundaboutTotal" [rank]="(capxStateService.rank$ | async)!.get(junctions.ThreeNorthSouthxThreeEastWestLaneRoundabout)"></capx-show-junction-rank>
             </td>
           </tr>
         </table>
@@ -525,205 +525,205 @@
             <td class="column">10.1</td>
             <td rowspan="2" class="column">Diamond</td>
             <td class="column"><a [routerLink]="['/junctions/traditional-diamond-north-south']">N-S</a></td>
-            <td>{{(capxStateService.traditionalDiamondNorthSouthJunctionResult$ | async)!.zone1_right_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.traditionalDiamondNorthSouthJunctionResult$ | async)!.zone1_right_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.traditionalDiamondNorthSouthJunctionResult$ | async)!.zone2_left_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.traditionalDiamondNorthSouthJunctionResult$ | async)!.zone2_left_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.traditionalDiamondNorthSouthJunctionResult$ | async)!.zone3_ctr1_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.traditionalDiamondNorthSouthJunctionResult$ | async)!.zone3_ctr1_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.traditionalDiamondNorthSouthJunctionResult$ | async)!.zone4_ctr2_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.traditionalDiamondNorthSouthJunctionResult$ | async)!.zone4_ctr2_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.traditionalDiamondNorthSouthJunctionResult$ | async)!.zone5_left_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.traditionalDiamondNorthSouthJunctionResult$ | async)!.zone5_left_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.traditionalDiamondNorthSouthJunctionResult$ | async)!.zone6_right_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.traditionalDiamondNorthSouthJunctionResult$ | async)!.zone6_right_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.traditionalDiamondNorthSouthJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TraditionalDiamondNorthSouth).interchangeResult | async)!.zone1_right_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TraditionalDiamondNorthSouth).interchangeResult | async)!.zone1_right_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TraditionalDiamondNorthSouth).interchangeResult | async)!.zone2_left_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TraditionalDiamondNorthSouth).interchangeResult | async)!.zone2_left_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TraditionalDiamondNorthSouth).interchangeResult | async)!.zone3_ctr1_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TraditionalDiamondNorthSouth).interchangeResult | async)!.zone3_ctr1_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TraditionalDiamondNorthSouth).interchangeResult | async)!.zone4_ctr2_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TraditionalDiamondNorthSouth).interchangeResult | async)!.zone4_ctr2_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TraditionalDiamondNorthSouth).interchangeResult | async)!.zone5_left_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TraditionalDiamondNorthSouth).interchangeResult | async)!.zone5_left_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TraditionalDiamondNorthSouth).interchangeResult | async)!.zone6_right_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TraditionalDiamondNorthSouth).interchangeResult | async)!.zone6_right_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TraditionalDiamondNorthSouth).interchangeResult | async)!.all_vc | handleNullValue}}</td>
             <td>
-              <capx-show-junction-rank [total]="interchangeTotal" [rank]="(capxStateService.rank$ | async)!.traditionalDiamondNorthSouthJunction"></capx-show-junction-rank>
+              <capx-show-junction-rank [total]="interchangeTotal" [rank]="(capxStateService.rank$ | async)!.get(junctions.TraditionalDiamondNorthSouth)"></capx-show-junction-rank>
             </td>
           </tr>
           <tr>
             <td class="column">10.2</td>
             <td class="column"><a [routerLink]="['/junctions/traditional-diamond-east-west']">E-W</a></td>
-            <td>{{(capxStateService.traditionalDiamondEastWestJunctionResult$ | async)!.zone1_right_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.traditionalDiamondEastWestJunctionResult$ | async)!.zone1_right_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.traditionalDiamondEastWestJunctionResult$ | async)!.zone2_left_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.traditionalDiamondEastWestJunctionResult$ | async)!.zone2_left_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.traditionalDiamondEastWestJunctionResult$ | async)!.zone3_ctr1_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.traditionalDiamondEastWestJunctionResult$ | async)!.zone3_ctr1_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.traditionalDiamondEastWestJunctionResult$ | async)!.zone4_ctr2_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.traditionalDiamondEastWestJunctionResult$ | async)!.zone4_ctr2_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.traditionalDiamondEastWestJunctionResult$ | async)!.zone5_left_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.traditionalDiamondEastWestJunctionResult$ | async)!.zone5_left_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.traditionalDiamondEastWestJunctionResult$ | async)!.zone6_right_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.traditionalDiamondEastWestJunctionResult$ | async)!.zone6_right_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.traditionalDiamondEastWestJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TraditionalDiamondEastWest).interchangeResult | async)!.zone1_right_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TraditionalDiamondEastWest).interchangeResult | async)!.zone1_right_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TraditionalDiamondEastWest).interchangeResult | async)!.zone2_left_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TraditionalDiamondEastWest).interchangeResult | async)!.zone2_left_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TraditionalDiamondEastWest).interchangeResult | async)!.zone3_ctr1_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TraditionalDiamondEastWest).interchangeResult | async)!.zone3_ctr1_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TraditionalDiamondEastWest).interchangeResult | async)!.zone4_ctr2_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TraditionalDiamondEastWest).interchangeResult | async)!.zone4_ctr2_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TraditionalDiamondEastWest).interchangeResult | async)!.zone5_left_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TraditionalDiamondEastWest).interchangeResult | async)!.zone5_left_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TraditionalDiamondEastWest).interchangeResult | async)!.zone6_right_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TraditionalDiamondEastWest).interchangeResult | async)!.zone6_right_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.TraditionalDiamondEastWest).interchangeResult | async)!.all_vc | handleNullValue}}</td>
             <td>
-              <capx-show-junction-rank [total]="interchangeTotal" [rank]="(capxStateService.rank$ | async)!.traditionalDiamondEastWestJunction"></capx-show-junction-rank>
+              <capx-show-junction-rank [total]="interchangeTotal" [rank]="(capxStateService.rank$ | async)!.get(junctions.TraditionalDiamondEastWest)"></capx-show-junction-rank>
             </td>
           </tr>
           <tr>
             <td class="column">11.1</td>
             <td rowspan="2" class="column">Partial Cloverleaf</td>
             <td class="column"><a [routerLink]="['/junctions/partial-cloverleaf-north-south']">N-S</a></td>
-            <td>{{(capxStateService.partialCloverleafNorthSouthJunctionResult$ | async)!.zone1_right_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.partialCloverleafNorthSouthJunctionResult$ | async)!.zone1_right_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.partialCloverleafNorthSouthJunctionResult$ | async)!.zone2_left_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.partialCloverleafNorthSouthJunctionResult$ | async)!.zone2_left_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.partialCloverleafNorthSouthJunctionResult$ | async)!.zone3_ctr1_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.partialCloverleafNorthSouthJunctionResult$ | async)!.zone3_ctr1_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.partialCloverleafNorthSouthJunctionResult$ | async)!.zone4_ctr2_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.partialCloverleafNorthSouthJunctionResult$ | async)!.zone4_ctr2_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.partialCloverleafNorthSouthJunctionResult$ | async)!.zone5_left_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.partialCloverleafNorthSouthJunctionResult$ | async)!.zone5_left_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.partialCloverleafNorthSouthJunctionResult$ | async)!.zone6_right_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.partialCloverleafNorthSouthJunctionResult$ | async)!.zone6_right_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.partialCloverleafNorthSouthJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialCloverleafNorthSouth).interchangeResult | async)!.zone1_right_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialCloverleafNorthSouth).interchangeResult | async)!.zone1_right_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialCloverleafNorthSouth).interchangeResult | async)!.zone2_left_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialCloverleafNorthSouth).interchangeResult | async)!.zone2_left_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialCloverleafNorthSouth).interchangeResult | async)!.zone3_ctr1_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialCloverleafNorthSouth).interchangeResult | async)!.zone3_ctr1_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialCloverleafNorthSouth).interchangeResult | async)!.zone4_ctr2_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialCloverleafNorthSouth).interchangeResult | async)!.zone4_ctr2_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialCloverleafNorthSouth).interchangeResult | async)!.zone5_left_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialCloverleafNorthSouth).interchangeResult | async)!.zone5_left_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialCloverleafNorthSouth).interchangeResult | async)!.zone6_right_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialCloverleafNorthSouth).interchangeResult | async)!.zone6_right_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialCloverleafNorthSouth).interchangeResult | async)!.all_vc | handleNullValue}}</td>
             <td>
-              <capx-show-junction-rank [total]="interchangeTotal" [rank]="(capxStateService.rank$ | async)!.partialCloverleafNorthSouthJunction"></capx-show-junction-rank>
+              <capx-show-junction-rank [total]="interchangeTotal" [rank]="(capxStateService.rank$ | async)!.get(junctions.PartialCloverleafNorthSouth)"></capx-show-junction-rank>
             </td>
           </tr>
           <tr>
             <td class="column">11.2</td>
             <td class="column"><a [routerLink]="['/junctions/partial-cloverleaf-east-west']">E-W</a></td>
-            <td>{{(capxStateService.partialCloverleafEastWestJunctionResult$ | async)!.zone1_right_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.partialCloverleafEastWestJunctionResult$ | async)!.zone1_right_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.partialCloverleafEastWestJunctionResult$ | async)!.zone2_left_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.partialCloverleafEastWestJunctionResult$ | async)!.zone2_left_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.partialCloverleafEastWestJunctionResult$ | async)!.zone3_ctr1_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.partialCloverleafEastWestJunctionResult$ | async)!.zone3_ctr1_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.partialCloverleafEastWestJunctionResult$ | async)!.zone4_ctr2_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.partialCloverleafEastWestJunctionResult$ | async)!.zone4_ctr2_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.partialCloverleafEastWestJunctionResult$ | async)!.zone5_left_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.partialCloverleafEastWestJunctionResult$ | async)!.zone5_left_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.partialCloverleafEastWestJunctionResult$ | async)!.zone6_right_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.partialCloverleafEastWestJunctionResult$ | async)!.zone6_right_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.partialCloverleafEastWestJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialCloverleafEastWest).interchangeResult | async)!.zone1_right_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialCloverleafEastWest).interchangeResult | async)!.zone1_right_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialCloverleafEastWest).interchangeResult | async)!.zone2_left_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialCloverleafEastWest).interchangeResult | async)!.zone2_left_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialCloverleafEastWest).interchangeResult | async)!.zone3_ctr1_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialCloverleafEastWest).interchangeResult | async)!.zone3_ctr1_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialCloverleafEastWest).interchangeResult | async)!.zone4_ctr2_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialCloverleafEastWest).interchangeResult | async)!.zone4_ctr2_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialCloverleafEastWest).interchangeResult | async)!.zone5_left_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialCloverleafEastWest).interchangeResult | async)!.zone5_left_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialCloverleafEastWest).interchangeResult | async)!.zone6_right_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialCloverleafEastWest).interchangeResult | async)!.zone6_right_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.PartialCloverleafEastWest).interchangeResult | async)!.all_vc | handleNullValue}}</td>
             <td>
-              <capx-show-junction-rank [total]="interchangeTotal" [rank]="(capxStateService.rank$ | async)!.partialCloverleafEastWestJunction"></capx-show-junction-rank>
+              <capx-show-junction-rank [total]="interchangeTotal" [rank]="(capxStateService.rank$ | async)!.get(junctions.PartialCloverleafEastWest)"></capx-show-junction-rank>
             </td>
           </tr>
           <tr>
             <td class="column">13.1</td>
             <td rowspan="2" class="column">Displaced Left Turn </td>
             <td class="column"><a [routerLink]="['/junctions/displaced-left-turn-interchange-north-south']">N-S</a></td>
-            <td>{{(capxStateService.displacedLeftTurnInterchangeNorthSouthJunctionResult$ | async)!.zone1_right_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.displacedLeftTurnInterchangeNorthSouthJunctionResult$ | async)!.zone1_right_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.displacedLeftTurnInterchangeNorthSouthJunctionResult$ | async)!.zone2_left_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.displacedLeftTurnInterchangeNorthSouthJunctionResult$ | async)!.zone2_left_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.displacedLeftTurnInterchangeNorthSouthJunctionResult$ | async)!.zone3_ctr1_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.displacedLeftTurnInterchangeNorthSouthJunctionResult$ | async)!.zone3_ctr1_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.displacedLeftTurnInterchangeNorthSouthJunctionResult$ | async)!.zone4_ctr2_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.displacedLeftTurnInterchangeNorthSouthJunctionResult$ | async)!.zone4_ctr2_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.displacedLeftTurnInterchangeNorthSouthJunctionResult$ | async)!.zone5_left_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.displacedLeftTurnInterchangeNorthSouthJunctionResult$ | async)!.zone5_left_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.displacedLeftTurnInterchangeNorthSouthJunctionResult$ | async)!.zone6_right_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.displacedLeftTurnInterchangeNorthSouthJunctionResult$ | async)!.zone6_right_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.displacedLeftTurnInterchangeNorthSouthJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DisplacedLeftTurnInterchangeNorthSouth).interchangeResult | async)!.zone1_right_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DisplacedLeftTurnInterchangeNorthSouth).interchangeResult | async)!.zone1_right_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DisplacedLeftTurnInterchangeNorthSouth).interchangeResult | async)!.zone2_left_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DisplacedLeftTurnInterchangeNorthSouth).interchangeResult | async)!.zone2_left_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DisplacedLeftTurnInterchangeNorthSouth).interchangeResult | async)!.zone3_ctr1_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DisplacedLeftTurnInterchangeNorthSouth).interchangeResult | async)!.zone3_ctr1_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DisplacedLeftTurnInterchangeNorthSouth).interchangeResult | async)!.zone4_ctr2_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DisplacedLeftTurnInterchangeNorthSouth).interchangeResult | async)!.zone4_ctr2_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DisplacedLeftTurnInterchangeNorthSouth).interchangeResult | async)!.zone5_left_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DisplacedLeftTurnInterchangeNorthSouth).interchangeResult | async)!.zone5_left_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DisplacedLeftTurnInterchangeNorthSouth).interchangeResult | async)!.zone6_right_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DisplacedLeftTurnInterchangeNorthSouth).interchangeResult | async)!.zone6_right_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DisplacedLeftTurnInterchangeNorthSouth).interchangeResult | async)!.all_vc | handleNullValue}}</td>
             <td>
-              <capx-show-junction-rank [total]="interchangeTotal" [rank]="(capxStateService.rank$ | async)!.displacedLeftTurnInterchangeNorthSouthJunction"></capx-show-junction-rank>
+              <capx-show-junction-rank [total]="interchangeTotal" [rank]="(capxStateService.rank$ | async)!.get(junctions.DisplacedLeftTurnInterchangeNorthSouth)"></capx-show-junction-rank>
             </td>
           </tr>
           <tr>
             <td class="column">13.2</td>
             <td class="column"><a [routerLink]="['/junctions/displaced-left-turn-interchange-east-west']">E-W</a></td>
-            <td>{{(capxStateService.displacedLeftTurnInterchangeEastWestJunctionResult$ | async)!.zone1_right_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.displacedLeftTurnInterchangeEastWestJunctionResult$ | async)!.zone1_right_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.displacedLeftTurnInterchangeEastWestJunctionResult$ | async)!.zone2_left_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.displacedLeftTurnInterchangeEastWestJunctionResult$ | async)!.zone2_left_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.displacedLeftTurnInterchangeEastWestJunctionResult$ | async)!.zone3_ctr1_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.displacedLeftTurnInterchangeEastWestJunctionResult$ | async)!.zone3_ctr1_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.displacedLeftTurnInterchangeEastWestJunctionResult$ | async)!.zone4_ctr2_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.displacedLeftTurnInterchangeEastWestJunctionResult$ | async)!.zone4_ctr2_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.displacedLeftTurnInterchangeEastWestJunctionResult$ | async)!.zone5_left_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.displacedLeftTurnInterchangeEastWestJunctionResult$ | async)!.zone5_left_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.displacedLeftTurnInterchangeEastWestJunctionResult$ | async)!.zone6_right_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.displacedLeftTurnInterchangeEastWestJunctionResult$ | async)!.zone6_right_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.displacedLeftTurnInterchangeEastWestJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DisplacedLeftTurnInterchangeEastWest).interchangeResult | async)!.zone1_right_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DisplacedLeftTurnInterchangeEastWest).interchangeResult | async)!.zone1_right_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DisplacedLeftTurnInterchangeEastWest).interchangeResult | async)!.zone2_left_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DisplacedLeftTurnInterchangeEastWest).interchangeResult | async)!.zone2_left_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DisplacedLeftTurnInterchangeEastWest).interchangeResult | async)!.zone3_ctr1_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DisplacedLeftTurnInterchangeEastWest).interchangeResult | async)!.zone3_ctr1_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DisplacedLeftTurnInterchangeEastWest).interchangeResult | async)!.zone4_ctr2_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DisplacedLeftTurnInterchangeEastWest).interchangeResult | async)!.zone4_ctr2_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DisplacedLeftTurnInterchangeEastWest).interchangeResult | async)!.zone5_left_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DisplacedLeftTurnInterchangeEastWest).interchangeResult | async)!.zone5_left_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DisplacedLeftTurnInterchangeEastWest).interchangeResult | async)!.zone6_right_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DisplacedLeftTurnInterchangeEastWest).interchangeResult | async)!.zone6_right_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DisplacedLeftTurnInterchangeEastWest).interchangeResult | async)!.all_vc | handleNullValue}}</td>
             <td>
-              <capx-show-junction-rank [total]="interchangeTotal" [rank]="(capxStateService.rank$ | async)!.displacedLeftTurnInterchangeEastWestJunction"></capx-show-junction-rank>
+              <capx-show-junction-rank [total]="interchangeTotal" [rank]="(capxStateService.rank$ | async)!.get(junctions.DisplacedLeftTurnInterchangeEastWest)"></capx-show-junction-rank>
             </td>
           </tr>
           <tr>
             <td class="column">14.1</td>
             <td rowspan="2" class="column">Double Crossover Diamond</td>
             <td class="column"><a [routerLink]="['/junctions/double-crossover-diamond-interchange-north-south']">N-S</a></td>
-            <td>{{(capxStateService.doubleCrossoverDiamondInterchangeNorthSouthJunctionResult$ | async)!.zone1_right_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.doubleCrossoverDiamondInterchangeNorthSouthJunctionResult$ | async)!.zone1_right_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.doubleCrossoverDiamondInterchangeNorthSouthJunctionResult$ | async)!.zone2_left_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.doubleCrossoverDiamondInterchangeNorthSouthJunctionResult$ | async)!.zone2_left_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.doubleCrossoverDiamondInterchangeNorthSouthJunctionResult$ | async)!.zone3_ctr1_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.doubleCrossoverDiamondInterchangeNorthSouthJunctionResult$ | async)!.zone3_ctr1_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.doubleCrossoverDiamondInterchangeNorthSouthJunctionResult$ | async)!.zone4_ctr2_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.doubleCrossoverDiamondInterchangeNorthSouthJunctionResult$ | async)!.zone4_ctr2_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.doubleCrossoverDiamondInterchangeNorthSouthJunctionResult$ | async)!.zone5_left_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.doubleCrossoverDiamondInterchangeNorthSouthJunctionResult$ | async)!.zone5_left_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.doubleCrossoverDiamondInterchangeNorthSouthJunctionResult$ | async)!.zone6_right_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.doubleCrossoverDiamondInterchangeNorthSouthJunctionResult$ | async)!.zone6_right_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.doubleCrossoverDiamondInterchangeNorthSouthJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DoubleCrossoverDiamondInterchangeNorthSouth).interchangeResult | async)!.zone1_right_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DoubleCrossoverDiamondInterchangeNorthSouth).interchangeResult | async)!.zone1_right_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DoubleCrossoverDiamondInterchangeNorthSouth).interchangeResult | async)!.zone2_left_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DoubleCrossoverDiamondInterchangeNorthSouth).interchangeResult | async)!.zone2_left_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DoubleCrossoverDiamondInterchangeNorthSouth).interchangeResult | async)!.zone3_ctr1_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DoubleCrossoverDiamondInterchangeNorthSouth).interchangeResult | async)!.zone3_ctr1_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DoubleCrossoverDiamondInterchangeNorthSouth).interchangeResult | async)!.zone4_ctr2_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DoubleCrossoverDiamondInterchangeNorthSouth).interchangeResult | async)!.zone4_ctr2_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DoubleCrossoverDiamondInterchangeNorthSouth).interchangeResult | async)!.zone5_left_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DoubleCrossoverDiamondInterchangeNorthSouth).interchangeResult | async)!.zone5_left_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DoubleCrossoverDiamondInterchangeNorthSouth).interchangeResult | async)!.zone6_right_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DoubleCrossoverDiamondInterchangeNorthSouth).interchangeResult | async)!.zone6_right_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DoubleCrossoverDiamondInterchangeNorthSouth).interchangeResult | async)!.all_vc | handleNullValue}}</td>
             <td>
-              <capx-show-junction-rank [total]="interchangeTotal" [rank]="(capxStateService.rank$ | async)!.doubleCrossoverDiamondInterchangeNorthSouthJunction"></capx-show-junction-rank>
+              <capx-show-junction-rank [total]="interchangeTotal" [rank]="(capxStateService.rank$ | async)!.get(junctions.DoubleCrossoverDiamondInterchangeNorthSouth)"></capx-show-junction-rank>
             </td>
           </tr>
           <tr>
             <td class="column">14.2</td>
             <td class="column"><a [routerLink]="['/junctions/double-crossover-diamond-interchange-east-west']">E-W</a></td>
-            <td>{{(capxStateService.doubleCrossoverDiamondInterchangeEastWestJunctionResult$ | async)!.zone1_right_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.doubleCrossoverDiamondInterchangeEastWestJunctionResult$ | async)!.zone1_right_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.doubleCrossoverDiamondInterchangeEastWestJunctionResult$ | async)!.zone2_left_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.doubleCrossoverDiamondInterchangeEastWestJunctionResult$ | async)!.zone2_left_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.doubleCrossoverDiamondInterchangeEastWestJunctionResult$ | async)!.zone3_ctr1_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.doubleCrossoverDiamondInterchangeEastWestJunctionResult$ | async)!.zone3_ctr1_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.doubleCrossoverDiamondInterchangeEastWestJunctionResult$ | async)!.zone4_ctr2_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.doubleCrossoverDiamondInterchangeEastWestJunctionResult$ | async)!.zone4_ctr2_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.doubleCrossoverDiamondInterchangeEastWestJunctionResult$ | async)!.zone5_left_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.doubleCrossoverDiamondInterchangeEastWestJunctionResult$ | async)!.zone5_left_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.doubleCrossoverDiamondInterchangeEastWestJunctionResult$ | async)!.zone6_right_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.doubleCrossoverDiamondInterchangeEastWestJunctionResult$ | async)!.zone6_right_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.doubleCrossoverDiamondInterchangeEastWestJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DoubleCrossoverDiamondInterchangeEastWest).interchangeResult | async)!.zone1_right_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DoubleCrossoverDiamondInterchangeEastWest).interchangeResult | async)!.zone1_right_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DoubleCrossoverDiamondInterchangeEastWest).interchangeResult | async)!.zone2_left_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DoubleCrossoverDiamondInterchangeEastWest).interchangeResult | async)!.zone2_left_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DoubleCrossoverDiamondInterchangeEastWest).interchangeResult | async)!.zone3_ctr1_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DoubleCrossoverDiamondInterchangeEastWest).interchangeResult | async)!.zone3_ctr1_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DoubleCrossoverDiamondInterchangeEastWest).interchangeResult | async)!.zone4_ctr2_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DoubleCrossoverDiamondInterchangeEastWest).interchangeResult | async)!.zone4_ctr2_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DoubleCrossoverDiamondInterchangeEastWest).interchangeResult | async)!.zone5_left_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DoubleCrossoverDiamondInterchangeEastWest).interchangeResult | async)!.zone5_left_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DoubleCrossoverDiamondInterchangeEastWest).interchangeResult | async)!.zone6_right_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DoubleCrossoverDiamondInterchangeEastWest).interchangeResult | async)!.zone6_right_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.DoubleCrossoverDiamondInterchangeEastWest).interchangeResult | async)!.all_vc | handleNullValue}}</td>
             <td>
-              <capx-show-junction-rank [total]="interchangeTotal" [rank]="(capxStateService.rank$ | async)!.doubleCrossoverDiamondInterchangeEastWestJunction"></capx-show-junction-rank>
+              <capx-show-junction-rank [total]="interchangeTotal" [rank]="(capxStateService.rank$ | async)!.get(junctions.DoubleCrossoverDiamondInterchangeEastWest)"></capx-show-junction-rank>
             </td>
           </tr>
           <tr>
             <td class="column">15.1</td>
             <td rowspan="2" class="column">Single Point</td>
             <td class="column"><a [routerLink]="['/junctions/single-point-interchange-north-south']">N-S</a></td>
-            <td>{{(capxStateService.singlePointInterchangeNorthSouthJunctionResult$ | async)!.zone1_right_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.singlePointInterchangeNorthSouthJunctionResult$ | async)!.zone1_right_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.singlePointInterchangeNorthSouthJunctionResult$ | async)!.zone2_left_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.singlePointInterchangeNorthSouthJunctionResult$ | async)!.zone2_left_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.singlePointInterchangeNorthSouthJunctionResult$ | async)!.zone3_ctr1_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.singlePointInterchangeNorthSouthJunctionResult$ | async)!.zone3_ctr1_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.singlePointInterchangeNorthSouthJunctionResult$ | async)!.zone4_ctr2_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.singlePointInterchangeNorthSouthJunctionResult$ | async)!.zone4_ctr2_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.singlePointInterchangeNorthSouthJunctionResult$ | async)!.zone5_left_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.singlePointInterchangeNorthSouthJunctionResult$ | async)!.zone5_left_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.singlePointInterchangeNorthSouthJunctionResult$ | async)!.zone6_right_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.singlePointInterchangeNorthSouthJunctionResult$ | async)!.zone6_right_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.singlePointInterchangeNorthSouthJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SinglePointInterchangeNorthSouth).interchangeResult | async)!.zone1_right_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SinglePointInterchangeNorthSouth).interchangeResult | async)!.zone1_right_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SinglePointInterchangeNorthSouth).interchangeResult | async)!.zone2_left_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SinglePointInterchangeNorthSouth).interchangeResult | async)!.zone2_left_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SinglePointInterchangeNorthSouth).interchangeResult | async)!.zone3_ctr1_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SinglePointInterchangeNorthSouth).interchangeResult | async)!.zone3_ctr1_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SinglePointInterchangeNorthSouth).interchangeResult | async)!.zone4_ctr2_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SinglePointInterchangeNorthSouth).interchangeResult | async)!.zone4_ctr2_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SinglePointInterchangeNorthSouth).interchangeResult | async)!.zone5_left_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SinglePointInterchangeNorthSouth).interchangeResult | async)!.zone5_left_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SinglePointInterchangeNorthSouth).interchangeResult | async)!.zone6_right_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SinglePointInterchangeNorthSouth).interchangeResult | async)!.zone6_right_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SinglePointInterchangeNorthSouth).interchangeResult | async)!.all_vc | handleNullValue}}</td>
             <td>
-              <capx-show-junction-rank [total]="interchangeTotal" [rank]="(capxStateService.rank$ | async)!.singlePointInterchangeNorthSouthJunction"></capx-show-junction-rank>
+              <capx-show-junction-rank [total]="interchangeTotal" [rank]="(capxStateService.rank$ | async)!.get(junctions.SinglePointInterchangeNorthSouth)"></capx-show-junction-rank>
             </td>
           </tr>
           <tr>
             <td class="column">15.2</td>
             <td class="column"><a [routerLink]="['/junctions/single-point-interchange-east-west']">E-W</a></td>
-            <td>{{(capxStateService.singlePointInterchangeEastWestJunctionResult$ | async)!.zone1_right_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.singlePointInterchangeEastWestJunctionResult$ | async)!.zone1_right_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.singlePointInterchangeEastWestJunctionResult$ | async)!.zone2_left_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.singlePointInterchangeEastWestJunctionResult$ | async)!.zone2_left_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.singlePointInterchangeEastWestJunctionResult$ | async)!.zone3_ctr1_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.singlePointInterchangeEastWestJunctionResult$ | async)!.zone3_ctr1_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.singlePointInterchangeEastWestJunctionResult$ | async)!.zone4_ctr2_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.singlePointInterchangeEastWestJunctionResult$ | async)!.zone4_ctr2_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.singlePointInterchangeEastWestJunctionResult$ | async)!.zone5_left_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.singlePointInterchangeEastWestJunctionResult$ | async)!.zone5_left_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.singlePointInterchangeEastWestJunctionResult$ | async)!.zone6_right_merge_clv | handleNullValue}}</td>
-            <td>{{(capxStateService.singlePointInterchangeEastWestJunctionResult$ | async)!.zone6_right_merge_vc | handleNullValue}}</td>
-            <td>{{(capxStateService.singlePointInterchangeEastWestJunctionResult$ | async)!.all_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SinglePointInterchangeEastWest).interchangeResult | async)!.zone1_right_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SinglePointInterchangeEastWest).interchangeResult | async)!.zone1_right_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SinglePointInterchangeEastWest).interchangeResult | async)!.zone2_left_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SinglePointInterchangeEastWest).interchangeResult | async)!.zone2_left_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SinglePointInterchangeEastWest).interchangeResult | async)!.zone3_ctr1_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SinglePointInterchangeEastWest).interchangeResult | async)!.zone3_ctr1_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SinglePointInterchangeEastWest).interchangeResult | async)!.zone4_ctr2_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SinglePointInterchangeEastWest).interchangeResult | async)!.zone4_ctr2_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SinglePointInterchangeEastWest).interchangeResult | async)!.zone5_left_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SinglePointInterchangeEastWest).interchangeResult | async)!.zone5_left_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SinglePointInterchangeEastWest).interchangeResult | async)!.zone6_right_merge_clv | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SinglePointInterchangeEastWest).interchangeResult | async)!.zone6_right_merge_vc | handleNullValue}}</td>
+            <td>{{(capxStateService.state.get(junctions.SinglePointInterchangeEastWest).interchangeResult | async)!.all_vc | handleNullValue}}</td>
             <td>
-              <capx-show-junction-rank [total]="interchangeTotal" [rank]="(capxStateService.rank$ | async)!.singlePointInterchangeEastWestJunction"></capx-show-junction-rank>
+              <capx-show-junction-rank [total]="interchangeTotal" [rank]="(capxStateService.rank$ | async)!.get(junctions.SinglePointInterchangeEastWest)"></capx-show-junction-rank>
             </td>
           </tr>
         </table>

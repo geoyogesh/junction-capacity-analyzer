@@ -183,55 +183,12 @@ export interface CapxInterchangeAnalysisResultParameters {
 }
 
 
-export interface CapxAnalysisRank {
-  // Intersections
-  conventionalJunction: number | null;
-  conventionalSharedRightTurnLeftTurnJunction: number | null;
-  fullDisplacedLeftTurnIntersectionJunction: number | null;
-  medianUTurnIntersectionEastWestJunction: number | null;
-  medianUTurnIntersectionNorthSouthJunction: number | null;
-  partialDisplacedLeftTurnIntersectionEastWestJunction: number | null;
-  partialDisplacedLeftTurnIntersectionNorthSouthJunction: number | null;
-  partialMedianUTurnIntersectionEastWestJunction: number | null;
-  partialMedianUTurnIntersectionNorthSouthJunction: number | null;
-  restrictedCrossingUTurnIntersectionEastWestJunction: number | null;
-  restrictedCrossingUTurnIntersectionNorthSouthJunction: number | null;
-  quadrantRoadwayIntersectionNorthEastJunction: number | null;
-  quadrantRoadwayIntersectionNorthWestJunction: number | null;
-  quadrantRoadwayIntersectionSouthEastJunction: number | null;
-  quadrantRoadwayIntersectionSouthWestJunction: number | null;
-
-  // Interchange
-  displacedLeftTurnInterchangeEastWestJunction: number | null;
-  displacedLeftTurnInterchangeNorthSouthJunction: number | null;
-  doubleCrossoverDiamondInterchangeEastWestJunction: number | null;
-  doubleCrossoverDiamondInterchangeNorthSouthJunction: number | null;
-  partialCloverleafEastWestJunction: number | null;
-  partialCloverleafNorthSouthJunction: number | null;
-  singlePointInterchangeEastWestJunction: number | null;
-  singlePointInterchangeNorthSouthJunction: number | null;
-  traditionalDiamondEastWestJunction: number | null;
-  traditionalDiamondNorthSouthJunction: number | null;
-
-
-  // Roundabouts
-  fiftyICDMiniRoundaboutJunction: number | null;
-  oneNorthSouthxOneEastWestRoundaboutJunctionn: number | null;
-  oneNorthSouthxTwoEastWestLaneRoundaboutJunction: number | null;
-  seventyFiveICDMiniRoundaboutJunction: number | null;
-  threeNorthSouthxThreeEastWestLaneRoundaboutJunction: number | null;
-  twoNorthSouthxOneEastWestLaneRoundaboutJunction: number | null;
-  twoNorthSouthxTwoEastWestLaneRoundaboutJunction: number | null;
-
-}
-
-
 export interface Junction {
   title: string;
   type: JunctionTypes;
-  result: BehaviorSubject<CapxIntersectionAnalysisResultParameters> |
-  BehaviorSubject<CapxInterchangeAnalysisResultParameters> |
-  BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>
+  intersectionResult: BehaviorSubject<CapxIntersectionAnalysisResultParameters>;
+  interchangeResult: BehaviorSubject<CapxInterchangeAnalysisResultParameters>;
+  roundaboutResult: BehaviorSubject<CapxRoundaboutsAnalysisResultParameters>;
 }
 
 export enum JunctionTypes {
@@ -239,3 +196,4 @@ export enum JunctionTypes {
   Interchange,
   Roundabout
 }
+

@@ -1,0 +1,34 @@
+export class Junctions {
+  static ConventionalIntersection = 'conventional';
+  static ConventionalSharedRTLN = 'conventional-shared-right-turn-left-turn';
+  static QuadrantRoadwayIntersectionSouthWest = 'quadrant-roadway-intersection-south-west';
+  static QuadrantRoadwayIntersectionNorthEast = 'quadrant-roadway-intersection-north-east';
+  static QuadrantRoadwayIntersectionSouthEast = 'quadrant-roadway-intersection-south-east';
+  static QuadrantRoadwayIntersectionNorthWest = 'quadrant-roadway-intersection-north-west';
+  static PartialDisplacedLeftTurnIntersectionNorthSouth = 'partial-displaced-left-turn-intersection-north-south';
+  static PartialDisplacedLeftTurnIntersectionEastWest = 'partial-displaced-left-turn-intersection-east-west';
+  static FullDisplacedLeftTurnIntersection = 'full-displaced-left-turn-intersection';
+  static RestrictedCrossingUTurnIntersectionNorthSouth = 'restricted-crossing-uturn-intersection-north-south';
+  static RestrictedCrossingUTurnIntersectionEastWest = 'restricted-crossing-uturn-intersection-east-west';
+  static MedianUTurnIntersectionNorthSouth = 'median-uturn-intersection-north-south';
+  static MedianUTurnIntersectionEastWest = 'median-uturn-intersection-east-west';
+  static PartialMedianUTurnIntersectionNorthSouth = 'partial-median-uturn-intersection-north-south';
+  static PartialMedianUTurnIntersectionEastWest = 'partial-median-uturn-intersection-east-west';
+  static TraditionalDiamondNorthSouth = 'traditional-diamond-north-south';
+  static TraditionalDiamondEastWest = 'traditional-diamond-east-west';
+  static PartialCloverleafNorthSouth = 'partial-cloverleaf-north-south';
+  static PartialCloverleafEastWest = 'partial-cloverleaf-east-west';
+  static DisplacedLeftTurnInterchangeNorthSouth = 'displaced-left-turn-interchange-north-south';
+  static DisplacedLeftTurnInterchangeEastWest = 'displaced-left-turn-interchange-east-west';
+  static DoubleCrossoverDiamondInterchangeNorthSouth = 'double-crossover-diamond-interchange-north-south';
+  static DoubleCrossoverDiamondInterchangeEastWest = 'double-crossover-diamond-interchange-east-west';
+  static SinglePointInterchangeNorthSouth = 'single-point-interchange-north-south';
+  static SinglePointInterchangeEastWest = 'single-point-interchange-east-west';
+  static FiftyICDMiniRoundabout = 'fifty-icdmini-roundabout';
+  static SecentyFiveICDMiniRoundabout = 'seventy-five-icdmini-roundabout';
+  static OneNorthSouthxOneEastWestRoundabout = 'one-north-southx-one-east-west-roundabout';
+  static OneNorthSouthxTwoEastWestLaneRoundabout = 'one-north-southx-two-east-west-lane-roundabout';
+  static TwoNorthSouthxOneEastWestLaneRoundabout = 'two-north-southx-one-east-west-lane-roundabout';
+  static TwoNorthSouthxTwoEastWestLaneRoundabout = 'two-north-southx-two-east-west-lane-roundabout';
+  static ThreeNorthSouthxThreeEastWestLaneRoundabout = 'three-north-southx-three-east-west-lane-roundabout';
+}

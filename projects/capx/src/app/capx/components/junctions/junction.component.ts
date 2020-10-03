@@ -1,3 +1,4 @@
+import { CapxIntersectionAnalysisResultParameters, CapxRoundaboutsAnalysisResultParameters, JunctionTypes, CapxInterchangeAnalysisResultParameters } from './../../services/models/junction-capacity-analyser';
 import { SinglePointInterchangeNorthSouthDesignComponent } from './interchanges/single-point-interchange-north-south-junction/design/single-point-interchange-north-south-design.component';
 import { DoubleCrossoverDiamondInterchangeNorthSouthDesignComponent } from './interchanges/double-crossover-diamond-interchange-north-south-junction/design/double-crossover-diamond-interchange-north-south-design.component';
 import { DisplacedLeftTurnInterchangeNorthSouthConfigurationComponent } from './interchanges/displaced-left-turn-interchange-north-south-junction/configuration/displaced-left-turn-interchange-north-south-configuration.component';
@@ -33,7 +34,7 @@ import { CapxStateService } from '../../services/capx-state.service';
 import { ComponentPortal, Portal } from '@angular/cdk/portal';
 import { ConventionalDesignComponent } from './intersections/conventional-junction/design/conventional-design.component';
 import { ConventionalConfigurationComponent } from './intersections/conventional-junction/configuration/conventional-configuration.component';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
 import { Junction } from '../../services/models/junction-capacity-analyser';
 import { ConventionalSharedRightTurnLeftTurnConfigurationComponent } from './intersections/conventional-shared-right-turn-left-turn-junction/configuration/conventional-shared-right-turn-left-turn-configuration.component';
 import { QuadrantRoadwayIntersectionSouthWestDesignComponent } from './intersections/quadrant-roadway-intersection-south-west-junction/design/quadrant-roadway-intersection-south-west-design.component';
@@ -81,29 +82,80 @@ export class JunctionComponent implements OnInit, OnDestroy {
               private route: ActivatedRoute,
               private router: Router) { }
 
+  subscriptions = [];
+
   // tslint:disable-next-line: no-any
   design$: BehaviorSubject<any> = new BehaviorSubject(null);
   // tslint:disable-next-line: no-any
   configuration$: BehaviorSubject<any> = new BehaviorSubject(null);
   title$: BehaviorSubject<string> = new BehaviorSubject('');
-
+  vc$: BehaviorSubject<any> = new BehaviorSubject(null);
+  clv$: BehaviorSubject<any> = new BehaviorSubject(null);
   ngOnInit(): void {
     const junctionName = this.route.snapshot.paramMap.get('id');
     if (junctionName !== null && this.capxStateService.state.has(junctionName)) {
-      const junction = this.capxStateService.state.get(junctionName) as Junction;
-      this.title$.next(junction.title);
-      this.setPortalComponent(junctionName);
+      this.load(junctionName);
+
     } else {
       this.title$.next('unknown');
       this.design$.next(null);
       this.configuration$.next(null);
+      this.vc$.next(null);
+      this.clv$.next(null);
     }
+
+    this.subscriptions.push(this.router.events.subscribe((val) => {
+      if (val instanceof NavigationStart) {
+        console.log('NavigationStart..');
+        console.log(val);
+        const url = val.url;
+        const urlparts = url.split('/');
+        if (urlparts[1] === 'junctions') {
+          this.load(urlparts[2]);
+        }
+      }
+    }));
   }
 
   ngOnDestroy(): void {
+    for (const subscription of this.subscriptions) {
+      subscription.unsubscribe();
+    }
+
     this.design$.complete();
     this.configuration$.complete();
     this.title$.complete();
+    this.vc$.complete();
+    this.clv$.complete();
+  }
+
+  load(junctionName: string): void {
+    const junction = this.capxStateService.state.get(junctionName) as Junction;
+    this.title$.next(junction.title);
+    this.setPortalComponent(junctionName);
+
+    if (junction.type === JunctionTypes.Intersection) {
+      this.vc$.next(junction.intersectionResult.value.all_vc);
+      this.clv$.next(junction.intersectionResult.value.zone5_center_vc);
+      junction.intersectionResult.subscribe(result => {
+        this.vc$.next(result.all_vc);
+        this.clv$.next(result.zone5_center_clv);
+      });
+    } else if (junction.type === JunctionTypes.Interchange) {
+      this.vc$.next(junction.interchangeResult.value.all_vc);
+      this.clv$.next(junction.interchangeResult.value.zone3_ctr1_clv);
+      junction.interchangeResult.subscribe(result => {
+        this.vc$.next(result.all_vc);
+        this.clv$.next(result.zone3_ctr1_clv);
+      });
+    } else if (junction.type === JunctionTypes.Roundabout) {
+      this.vc$.next(junction.roundaboutResult.value.all_vc);
+      this.clv$.next(junction.roundaboutResult.value.zone1_north_lane1);
+      (junction.roundaboutResult).subscribe(result => {
+        this.vc$.next(result.all_vc);
+        this.clv$.next(result.zone1_north_lane1);
+      });
+    }
   }
 
   setPortalComponent(junctionName: string): void {

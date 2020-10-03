@@ -1282,11 +1282,11 @@ ZihEU6Y4k8mcOdP+TOZXv3oaNTW12nYe1ljJO7BcDgDIIf4/X1LPOnrN7d0AAAAASUVORK5CYII=" tr
 </g>
 <g id="Dynamic_Layer">
 	<g id="Zone5">
-		<rect [attr.fill]="capxStateService.getClvRangeColor((capxStateService.conventionalJunctionResult$ | async)!.zone5_center_clv)" x="63" y="100" class="st0" width="126" height="38.5"/>
-		<text transform="matrix(1.0843 0 0 1 98.9841 127.7308)" class="st1 st2">{{(capxStateService.conventionalJunctionResult$ | async)!.zone5_center_clv}}</text>
+		<rect [attr.fill]="capxStateService.getClvRangeColor((capxStateService.state.get(junctions.ConventionalIntersection).intersectionResult | async).zone5_center_clv)" x="63" y="100" class="st0" width="126" height="38.5"/>
+		<text transform="matrix(1.0843 0 0 1 98.9841 127.7308)" class="st1 st2">{{(capxStateService.state.get(junctions.ConventionalIntersection).intersectionResult | async).zone5_center_clv}}</text>
 		<rect x="63" y="138.5" class="st3" width="126" height="38.5"/>
-		<rect [attr.fill]="capxStateService.getClvRangeColor((capxStateService.conventionalJunctionResult$ | async)!.zone5_center_clv)" x="63" y="138.5" class="st4" width="63" height="38.5"/>
-		<text transform="matrix(1.0843 0 0 1 78.6836 164.3621)" class="st1 st5">{{(capxStateService.conventionalJunctionResult$ | async)!.zone5_center_vc}}</text>
+		<rect [attr.fill]="capxStateService.getClvRangeColor((capxStateService.state.get(junctions.ConventionalIntersection).intersectionResult | async).zone5_center_clv)" x="63" y="138.5" class="st4" width="63" height="38.5"/>
+		<text transform="matrix(1.0843 0 0 1 78.6836 164.3621)" class="st1 st5">{{(capxStateService.state.get(junctions.ConventionalIntersection).intersectionResult | async).zone5_center_vc}}</text>
 		<text transform="matrix(1.0843 0 0 1 137.4014 164.5713)" class="st1 st5">V / C</text>
 	</g>
 </g>
