@@ -6,18 +6,18 @@
   </div>
   <clr-tabs fxFlex>
     <clr-tab>
-      <button clrTabLink>Configuration</button>
-      <clr-tab-content>
-        <div class="junction-content centered-parent">
-          <ng-template [cdkPortalOutlet]="(configuration$ | async)" class="centered-child"></ng-template>
-        </div>
-      </clr-tab-content>
-    </clr-tab>
-    <clr-tab>
       <button clrTabLink>Design</button>
       <clr-tab-content>
         <div class="junction-content centered-parent">
           <ng-template [cdkPortalOutlet]="(design$ | async)" class="centered-child"></ng-template>
+        </div>
+      </clr-tab-content>
+    </clr-tab>
+    <clr-tab>
+      <button clrTabLink>Configuration</button>
+      <clr-tab-content>
+        <div class="junction-content centered-parent">
+          <ng-template [cdkPortalOutlet]="(configuration$ | async)" class="centered-child"></ng-template>
         </div>
       </clr-tab-content>
     </clr-tab>
