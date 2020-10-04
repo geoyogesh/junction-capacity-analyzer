@@ -1,4 +1,4 @@
-import { Junction, JunctionTypes } from './models/junction-capacity-analyser';
+import { Junction, JunctionTypes, CapxPartialDisplacedLeftTurnIntersectionNorthSouth } from './models/junction-capacity-analyser';
 import { Junctions } from './models/junctions';
 
 // tslint:disable: variable-name
@@ -138,6 +138,21 @@ export class CapxStateService {
   });
 
   conventionalJunctionParameters$ = new BehaviorSubject<CapxConventionalJunctionParameters>({
+    east_bound_left: 1,
+    east_bound_thru: 1,
+    east_bound_right: 1,
+    west_bound_left: 1,
+    west_bound_thru: 1,
+    west_bound_right: 1,
+    south_bound_left: 1,
+    south_bound_thru: 1,
+    south_bound_right: 1,
+    north_bound_left: 1,
+    north_bound_thru: 1,
+    north_bound_right: 1
+  });
+
+  partialDisplacedLeftTurnIntersectionNorthSouthJunctionParameters$ = new BehaviorSubject<CapxPartialDisplacedLeftTurnIntersectionNorthSouth>({
     east_bound_left: 1,
     east_bound_thru: 1,
     east_bound_right: 1,
@@ -460,6 +475,7 @@ export class CapxStateService {
 
     this.solve();
     this.solveConventionalJunction();
+    this.solvePartialDisplacedLeftTurnIntersectionNorthSouthJunction();
   }
 
   public updateInputParameters(params: CapxInputParameters): void {
@@ -671,7 +687,42 @@ export class CapxStateService {
       (masterParameters.south_bound_left / inputParameters.adjustment_factor_left_turn + masterParameters.south_bound_u / inputParameters.adjustment_factor_u) / inputParameters.adjustment_factor_left_turn / junctionParameters.south_bound_left + max(masterParameters.north_bound_thru / junctionParameters.north_bound_thru, round(max(0, masterParameters.north_bound_right / inputParameters.adjustment_factor_right_turn / junctionParameters.north_bound_right - masterParameters.west_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.west_bound_left), 0))
       );
     const zone5_center_vc = round(zone5_center_clv / inputParameters.critical_lane_volume, 2);
-    (this.state.get('conventional')?.intersectionResult as BehaviorSubject<CapxIntersectionAnalysisResultParameters>).next({
+    (this.state.get(Junctions.ConventionalIntersection)?.intersectionResult as BehaviorSubject<CapxIntersectionAnalysisResultParameters>).next({
+      zone1_north_clv: null,
+      zone1_north_vc: null,
+      zone2_south_clv: null,
+      zone2_south_vc: null,
+      zone3_east_clv: null,
+      zone3_east_vc: null,
+      zone4_west_clv: null,
+      zone4_west_vc: null,
+      zone5_center_clv: round(zone5_center_clv),
+      zone5_center_vc,
+      all_vc: zone5_center_vc
+    });
+
+    this.updateRank();
+  }
+
+  public updatePartialDisplacedLeftTurnIntersectionNorthSouthParameters(params: CapxPartialDisplacedLeftTurnIntersectionNorthSouth): void {
+    this.partialDisplacedLeftTurnIntersectionNorthSouthJunctionParameters$.next(params);
+    this.solvePartialDisplacedLeftTurnIntersectionNorthSouthJunction();
+  }
+
+  private solvePartialDisplacedLeftTurnIntersectionNorthSouthJunction(): void {
+    const inputParameters = this.inputParameters$.value;
+    const masterParameters = this.masterParameters$.value;
+    const junctionParameters = this.partialDisplacedLeftTurnIntersectionNorthSouthJunctionParameters$.value;
+    const zone5_center_clv = max(
+      (masterParameters.east_bound_left / inputParameters.adjustment_factor_left_turn + masterParameters.east_bound_u / inputParameters.adjustment_factor_u) / junctionParameters.east_bound_left + max(masterParameters.west_bound_thru / junctionParameters.west_bound_thru, round(max(0, masterParameters.west_bound_right / inputParameters.adjustment_factor_right_turn / junctionParameters.west_bound_right - masterParameters.south_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.south_bound_left), 0)),
+      (masterParameters.west_bound_left / inputParameters.adjustment_factor_left_turn + masterParameters.west_bound_u / inputParameters.adjustment_factor_u) / junctionParameters.west_bound_left + max(masterParameters.east_bound_thru / junctionParameters.east_bound_thru, round(max(0, masterParameters.east_bound_right / inputParameters.adjustment_factor_right_turn / junctionParameters.east_bound_right - masterParameters.north_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.north_bound_left), 0))
+      ) +
+      max(
+      (masterParameters.north_bound_left / inputParameters.adjustment_factor_left_turn + masterParameters.north_bound_u / inputParameters.adjustment_factor_u) / inputParameters.adjustment_factor_left_turn / junctionParameters.north_bound_left + max(masterParameters.south_bound_thru / junctionParameters.south_bound_thru, round(max(0, masterParameters.south_bound_right / inputParameters.adjustment_factor_right_turn / junctionParameters.south_bound_right - masterParameters.east_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.east_bound_left), 0)),
+      (masterParameters.south_bound_left / inputParameters.adjustment_factor_left_turn + masterParameters.south_bound_u / inputParameters.adjustment_factor_u) / inputParameters.adjustment_factor_left_turn / junctionParameters.south_bound_left + max(masterParameters.north_bound_thru / junctionParameters.north_bound_thru, round(max(0, masterParameters.north_bound_right / inputParameters.adjustment_factor_right_turn / junctionParameters.north_bound_right - masterParameters.west_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.west_bound_left), 0))
+      );
+    const zone5_center_vc = round(zone5_center_clv / inputParameters.critical_lane_volume, 2);
+    (this.state.get(Junctions.PartialDisplacedLeftTurnIntersectionNorthSouth)?.intersectionResult as BehaviorSubject<CapxIntersectionAnalysisResultParameters>).next({
       zone1_north_clv: null,
       zone1_north_vc: null,
       zone2_south_clv: null,

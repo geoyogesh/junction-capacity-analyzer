@@ -1,4 +1,6 @@
+import { CapxStateService } from './../../../../../services/capx-state.service';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Junctions } from './../../../../../services/models/junctions';
 
 @Component({
   selector: 'capx-partial-displaced-left-turn-intersection-north-south-design',
@@ -8,7 +10,9 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 })
 export class PartialDisplacedLeftTurnIntersectionNorthSouthDesignComponent implements OnInit {
 
-  constructor() { }
+  junctions = Junctions;
+  constructor(public capxStateService: CapxStateService) { }
+
 
   ngOnInit(): void {
   }
