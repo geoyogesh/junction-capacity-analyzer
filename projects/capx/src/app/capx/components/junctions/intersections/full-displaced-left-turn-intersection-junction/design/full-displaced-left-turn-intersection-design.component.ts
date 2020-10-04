@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'capx-full-displaced-left-turn-intersection-design',
-  templateUrl: './full-displaced-left-turn-intersection-design.component.html',
+  templateUrl: './full-displaced-left-turn-intersection-design.component.svg',
   styleUrls: ['./full-displaced-left-turn-intersection-design.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })

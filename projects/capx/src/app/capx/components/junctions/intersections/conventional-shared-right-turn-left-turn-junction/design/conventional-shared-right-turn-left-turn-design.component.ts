@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'capx-conventional-shared-right-turn-left-turn-design',
-  templateUrl: './conventional-shared-right-turn-left-turn-design.component.html',
+  templateUrl: './conventional-shared-right-turn-left-turn-design.component.svg',
   styleUrls: ['./conventional-shared-right-turn-left-turn-design.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })

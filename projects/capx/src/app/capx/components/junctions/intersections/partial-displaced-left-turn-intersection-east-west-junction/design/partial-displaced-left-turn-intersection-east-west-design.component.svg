@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 815.05 654">
+  <defs>
+    <clipPath id="clip-path" transform="translate(4.52 -1)">
+      <rect x="-4.52" y="1" width="811.73" height="654" style="fill: none"/>
+    </clipPath>
+  </defs>
+  <g id="Layer_1" data-name="Layer 1">
+    <g style="clip-path: url(#clip-path)">
+      <image width="2285" height="1841" transform="scale(0.36 0.36)" xlink:href="assets/junctions/partial-displaced-left-turn-intersection-east-west.jpeg"/>
+    </g>
+  </g>
+  <g id="drawings">
+    <circle cx="100.82" cy="311.69" r="12" style="fill: #fcee21"/>
+    <line x1="149.55" y1="221.69" x2="101.82" y2="311.69" style="fill: red;stroke: red;stroke-miterlimit: 10;stroke-width: 2px"/>
+    <circle cx="727.38" cy="356.04" r="12" style="fill: #fcee21"/>
+    <line x1="751.55" y1="259.28" x2="727.38" y2="356.04" style="fill: red;stroke: red;stroke-miterlimit: 10;stroke-width: 2px"/>
+    <circle cx="402.05" cy="326.86" r="12" style="fill: #fcee21"/>
+    <line x1="484.55" y1="258.28" x2="402.05" y2="326.86" style="fill: red;stroke: red;stroke-miterlimit: 10;stroke-width: 2px"/>
+  </g>
+  <g id="dynamic_layer">
+    <g id="zone3">
+      <rect x="688.55" y="182.28" width="126" height="38.5" style="fill: #faaf40;stroke: #231f20;stroke-miterlimit: 10"/>
+      <text transform="translate(721.96 210.01) scale(1.08 1)" style="font-size: 27px;fill: #231f20;font-family: OpenSans, Open Sans">662</text>
+      <rect x="688.55" y="220.78" width="126" height="38.5" style="fill: #fff;stroke: #231f20;stroke-miterlimit: 10"/>
+      <rect x="688.55" y="220.78" width="63" height="38.5" style="fill: #00adee;stroke: #231f20;stroke-miterlimit: 10"/>
+      <text transform="translate(701.81 246.65) scale(1.08 1)" style="font-size: 19px;fill: #231f20;font-family: OpenSans, Open Sans">0.41</text>
+      <text transform="translate(760.82 246.85) scale(1.08 1)" style="font-size: 19px;fill: #231f20;font-family: OpenSans, Open Sans">V / C</text>
+      <text transform="translate(713.58 169.78)" style="font-size: 24px;font-family: OpenSans, Open Sans">Zone 3</text>
+    </g>
+    <g id="zone4">
+      <rect x="149.55" y="183.19" width="126" height="38.5" style="fill: #faaf40;stroke: #231f20;stroke-miterlimit: 10"/>
+      <text transform="translate(182.96 210.92) scale(1.08 1)" style="font-size: 27px;fill: #231f20;font-family: OpenSans, Open Sans">662</text>
+      <rect x="149.55" y="221.69" width="126" height="38.5" style="fill: #fff;stroke: #231f20;stroke-miterlimit: 10"/>
+      <rect x="149.55" y="221.69" width="63" height="38.5" style="fill: #00adee;stroke: #231f20;stroke-miterlimit: 10"/>
+      <text transform="translate(162.81 247.55) scale(1.08 1)" style="font-size: 19px;fill: #231f20;font-family: OpenSans, Open Sans">0.41</text>
+      <text transform="translate(221.82 247.76) scale(1.08 1)" style="font-size: 19px;fill: #231f20;font-family: OpenSans, Open Sans">V / C</text>
+      <text transform="translate(174.58 170.69)" style="font-size: 24px;font-family: OpenSans, Open Sans">Zone 4</text>
+    </g>
+    <g id="zone5">
+      <rect x="484.55" y="181.28" width="126" height="38.5" style="fill: #faaf40;stroke: #231f20;stroke-miterlimit: 10"/>
+      <text transform="translate(517.96 209.01) scale(1.08 1)" style="font-size: 27px;fill: #231f20;font-family: OpenSans, Open Sans">662</text>
+      <rect x="484.55" y="219.78" width="126" height="38.5" style="fill: #fff;stroke: #231f20;stroke-miterlimit: 10"/>
+      <rect x="484.55" y="219.78" width="63" height="38.5" style="fill: #00adee;stroke: #231f20;stroke-miterlimit: 10"/>
+      <text transform="translate(497.81 245.65) scale(1.08 1)" style="font-size: 19px;fill: #231f20;font-family: OpenSans, Open Sans">0.41</text>
+      <text transform="translate(556.82 245.85) scale(1.08 1)" style="font-size: 19px;fill: #231f20;font-family: OpenSans, Open Sans">V / C</text>
+      <text transform="translate(509.58 168.78)" style="font-size: 24px;font-family: OpenSans, Open Sans">Zone 5</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 658.23 345.48">
+  <g id="Layer_1" data-name="Layer 1">
+    <image width="509" height="1727" transform="matrix(0, -0.38, 0.38, 0, 0.01, 263.79)" xlink:href="../ai/assets/junctions/restricted-crossing-uturn-intersection-north-south.jpeg"/>
+  </g>
+  <g id="drawings">
+    <circle cx="20.19" cy="192.48" r="12" style="fill: #fcee21"/>
+    <line x1="42.92" y1="306.48" x2="21.19" y2="192.48" style="fill: red;stroke: red;stroke-miterlimit: 10;stroke-width: 2px"/>
+    <circle cx="637.75" cy="139.82" r="12" style="fill: #fcee21"/>
+    <line x1="575.92" y1="74.57" x2="637.75" y2="139.82" style="fill: red;stroke: red;stroke-miterlimit: 10;stroke-width: 2px"/>
+    <circle cx="377.47" cy="188.75" r="12" style="fill: #fcee21"/>
+    <line x1="392.92" y1="305.57" x2="378.47" y2="188.75" style="fill: red;stroke: red;stroke-miterlimit: 10;stroke-width: 2px"/>
+    <circle cx="281.82" cy="146.46" r="12" style="fill: #fcee21"/>
+    <line x1="236.92" y1="71.57" x2="281.82" y2="146.46" style="fill: red;stroke: red;stroke-miterlimit: 10;stroke-width: 2px"/>
+  </g>
+  <g id="dynamic_layer">
+    <g id="zone3">
+      <rect x="449.92" y="36.07" width="126" height="38.5" style="fill: #faaf40;stroke: #231f20;stroke-miterlimit: 10"/>
+      <text transform="translate(483.33 63.8) scale(1.08 1)" style="font-size: 27px;fill: #231f20;font-family: OpenSans, Open Sans">662</text>
+      <rect x="449.92" y="74.57" width="126" height="38.5" style="fill: #fff;stroke: #231f20;stroke-miterlimit: 10"/>
+      <rect x="449.92" y="74.57" width="63" height="38.5" style="fill: #00adee;stroke: #231f20;stroke-miterlimit: 10"/>
+      <text transform="translate(463.18 100.43) scale(1.08 1)" style="font-size: 19px;fill: #231f20;font-family: OpenSans, Open Sans">0.41</text>
+      <text transform="translate(522.18 100.64) scale(1.08 1)" style="font-size: 19px;fill: #231f20;font-family: OpenSans, Open Sans">V / C</text>
+      <text transform="translate(474.95 23.57)" style="font-size: 24px;font-family: OpenSans, Open Sans">Zone 3</text>
+    </g>
+    <g id="zone4">
+      <rect x="42.92" y="267.98" width="126" height="38.5" style="fill: #faaf40;stroke: #231f20;stroke-miterlimit: 10"/>
+      <text transform="translate(76.33 295.71) scale(1.08 1)" style="font-size: 27px;fill: #231f20;font-family: OpenSans, Open Sans">662</text>
+      <rect x="42.92" y="306.48" width="126" height="38.5" style="fill: #fff;stroke: #231f20;stroke-miterlimit: 10"/>
+      <rect x="42.92" y="306.48" width="63" height="38.5" style="fill: #00adee;stroke: #231f20;stroke-miterlimit: 10"/>
+      <text transform="translate(56.18 332.34) scale(1.08 1)" style="font-size: 19px;fill: #231f20;font-family: OpenSans, Open Sans">0.41</text>
+      <text transform="translate(115.18 332.55) scale(1.08 1)" style="font-size: 19px;fill: #231f20;font-family: OpenSans, Open Sans">V / C</text>
+      <text transform="translate(67.95 255.48)" style="font-size: 24px;font-family: OpenSans, Open Sans">Zone 4</text>
+    </g>
+    <g id="zone2">
+      <rect x="392.92" y="267.07" width="126" height="38.5" style="fill: #faaf40;stroke: #231f20;stroke-miterlimit: 10"/>
+      <text transform="translate(426.33 294.8) scale(1.08 1)" style="font-size: 27px;fill: #231f20;font-family: OpenSans, Open Sans">662</text>
+      <rect x="392.92" y="305.57" width="126" height="38.5" style="fill: #fff;stroke: #231f20;stroke-miterlimit: 10"/>
+      <rect x="392.92" y="305.57" width="63" height="38.5" style="fill: #00adee;stroke: #231f20;stroke-miterlimit: 10"/>
+      <text transform="translate(406.18 331.43) scale(1.08 1)" style="font-size: 19px;fill: #231f20;font-family: OpenSans, Open Sans">0.41</text>
+      <text transform="translate(465.18 331.64) scale(1.08 1)" style="font-size: 19px;fill: #231f20;font-family: OpenSans, Open Sans">V / C</text>
+      <text transform="translate(417.95 254.57)" style="font-size: 24px;font-family: OpenSans, Open Sans">Zone 2</text>
+    </g>
+    <g id="zone1">
+      <rect x="110.92" y="33.07" width="126" height="38.5" style="fill: #faaf40;stroke: #231f20;stroke-miterlimit: 10"/>
+      <text transform="translate(144.33 60.8) scale(1.08 1)" style="font-size: 27px;fill: #231f20;font-family: OpenSans, Open Sans">662</text>
+      <rect x="110.92" y="71.57" width="126" height="38.5" style="fill: #fff;stroke: #231f20;stroke-miterlimit: 10"/>
+      <rect x="110.92" y="71.57" width="63" height="38.5" style="fill: #00adee;stroke: #231f20;stroke-miterlimit: 10"/>
+      <text transform="translate(124.18 97.43) scale(1.08 1)" style="font-size: 19px;fill: #231f20;font-family: OpenSans, Open Sans">0.41</text>
+      <text transform="translate(183.18 97.64) scale(1.08 1)" style="font-size: 19px;fill: #231f20;font-family: OpenSans, Open Sans">V / C</text>
+      <text transform="translate(135.95 20.57)" style="font-size: 24px;font-family: OpenSans, Open Sans">Zone 1</text>
+    </g>
+  </g>
+</svg>

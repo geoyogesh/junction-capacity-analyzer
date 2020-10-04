@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 700 639">
+  <g id="Layer_1" data-name="Layer 1">
+    <image width="1600" height="1280" transform="scale(0.44 0.5)" xlink:href="assets/junctions/conventional-shared-right-turn-left-turn.jpeg"/>
+  </g>
+  <g id="drawings">
+    <circle cx="345" cy="321.5" r="12" style="fill: #fcee21"/>
+    <line x1="154.98" y1="152" x2="345" y2="321.5" style="fill: red;stroke: red;stroke-miterlimit: 10;stroke-width: 2px"/>
+  </g>
+  <g id="dynamic_layer">
+    <rect x="91.98" y="75" width="126" height="38.5" style="fill: #faaf40;stroke: #231f20;stroke-miterlimit: 10"/>
+    <text transform="translate(125.39 102.73) scale(1.08 1)" style="font-size: 27px;fill: #231f20;font-family: OpenSans, Open Sans">662</text>
+    <rect x="91.98" y="113.5" width="126" height="38.5" style="fill: #fff;stroke: #231f20;stroke-miterlimit: 10"/>
+    <rect x="91.98" y="113.5" width="63" height="38.5" style="fill: #00adee;stroke: #231f20;stroke-miterlimit: 10"/>
+    <text transform="translate(105.24 139.36) scale(1.08 1)" style="font-size: 19px;fill: #231f20;font-family: OpenSans, Open Sans">0.41</text>
+    <text transform="translate(164.24 139.57) scale(1.08 1)" style="font-size: 19px;fill: #231f20;font-family: OpenSans, Open Sans">V / C</text>
+    <text transform="translate(117.01 62.5)" style="font-size: 24px;font-family: OpenSans, Open Sans">Zone 5</text>
+  </g>
+</svg>
