@@ -1,26 +1,25 @@
-
 <capx-critical-lane-volume-sum [vc]="vc$ | async" [clv]="clv$ | async"></capx-critical-lane-volume-sum>
-<div fxLayout="column" fxLayoutAlign="space-around stretch" >
+<div fxLayout="column" fxLayoutAlign="space-around stretch">
   <div>
-    <clr-icon shape="angle left"></clr-icon><a [routerLink]="['/results']" class="p3 back-to-results-text">Back to Results</a> <span class="p2" style="margin-left: 25px;">{{title$ | async}}</span>
+    <clr-icon shape="angle left"></clr-icon><a [routerLink]="['/results']" class="p3 back-to-results-text">Back to
+      Results</a> <span class="p2" style="margin-left: 25px;">{{title$ | async}}</span>
   </div>
   <clr-tabs fxFlex>
     <clr-tab>
-        <button clrTabLink>Design</button>
-        <clr-tab-content>
-          <div class="junction-content centered-parent">
-            <ng-template [cdkPortalOutlet]="(design$ | async)" class="centered-child"></ng-template>
-          </div>
-        </clr-tab-content>
+      <button clrTabLink>Configuration</button>
+      <clr-tab-content>
+        <div class="junction-content centered-parent">
+          <ng-template [cdkPortalOutlet]="(configuration$ | async)" class="centered-child"></ng-template>
+        </div>
+      </clr-tab-content>
     </clr-tab>
     <clr-tab>
-        <button clrTabLink>Configuration</button>
-        <clr-tab-content>
-          <div class="junction-content centered-parent">
-            <ng-template [cdkPortalOutlet]="(configuration$ | async)" class="centered-child"></ng-template>
-          </div>
-          </clr-tab-content>
+      <button clrTabLink>Design</button>
+      <clr-tab-content>
+        <div class="junction-content centered-parent">
+          <ng-template [cdkPortalOutlet]="(design$ | async)" class="centered-child"></ng-template>
+        </div>
+      </clr-tab-content>
     </clr-tab>
   </clr-tabs>
 </div>
-

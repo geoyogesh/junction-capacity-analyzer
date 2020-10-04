@@ -134,10 +134,10 @@ export class JunctionComponent implements OnInit, OnDestroy {
 
     if (junction.type === JunctionTypes.Intersection) {
       this.vc$.next(junction.intersectionResult.value.all_vc);
-      this.clv$.next(junction.intersectionResult.value.zone5_center_vc);
+      this.clv$.next(junction.intersectionResult.value.all_clv);
       junction.intersectionResult.subscribe(result => {
         this.vc$.next(result.all_vc);
-        this.clv$.next(result.zone5_center_clv);
+        this.clv$.next(result.all_clv);
       });
     } else if (junction.type === JunctionTypes.Interchange) {
       this.vc$.next(junction.interchangeResult.value.all_vc);
