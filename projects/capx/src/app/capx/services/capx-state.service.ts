@@ -35,7 +35,7 @@ export class CapxStateService {
     zone4_west_vc: null,
     zone5_center_clv: null,
     zone5_center_vc: null,
-    all_vlc: null,
+    all_clv: null,
     all_vc: null
   };
 
@@ -744,23 +744,23 @@ export class CapxStateService {
     this.updateRank();
   }
 
-  public getClvRangeColor(zone_all_vlc: number | null): string {
+  public getClvRangeColor(zone_all_clv: number | null): string {
     // update range text
     const clv = this.inputParameters$.value.critical_lane_volume;
-    if (zone_all_vlc === null || clv === null) {
+    if (zone_all_clv === null || clv === null) {
       return this.default_color;
     }
 
-    if (zone_all_vlc < round(0.75 * clv)) {
+    if (zone_all_clv < round(0.75 * clv)) {
       return '#ffffb2';
     }
-    else if (zone_all_vlc >= round(0.75 * clv) && zone_all_vlc <= round(0.875 * clv) - 1) {
+    else if (zone_all_clv >= round(0.75 * clv) && zone_all_clv <= round(0.875 * clv) - 1) {
       return '#fecc5c';
     }
-    else if (zone_all_vlc >= round(0.875 * clv) && zone_all_vlc <= round(clv) - 1) {
+    else if (zone_all_clv >= round(0.875 * clv) && zone_all_clv <= round(clv) - 1) {
       return '#fd8d3c';
     }
-    else if (zone_all_vlc >= round(clv)) {
+    else if (zone_all_clv >= round(clv)) {
       return '#e31a1c';
     }
     else {
@@ -768,24 +768,24 @@ export class CapxStateService {
     }
   }
 
-  public getCurrentClvRange(zone_all_vlc: string | number | null): number | null {
+  public getCurrentClvRange(zone_all_clv: string | number | null): number | null {
     // update range text
-    console.log(zone_all_vlc);
+    console.log(zone_all_clv);
     const clv = this.inputParameters$.value.critical_lane_volume;
-    if (zone_all_vlc === null || clv === null) {
+    if (zone_all_clv === null || clv === null) {
       return null;
     }
 
-    if (zone_all_vlc < round(0.75 * clv)) {
+    if (zone_all_clv < round(0.75 * clv)) {
       return 1;
     }
-    else if (zone_all_vlc >= round(0.75 * clv) && zone_all_vlc <= round(0.875 * clv) - 1) {
+    else if (zone_all_clv >= round(0.75 * clv) && zone_all_clv <= round(0.875 * clv) - 1) {
       return 2;
     }
-    else if (zone_all_vlc >= round(0.875 * clv) && zone_all_vlc <= round(clv) - 1) {
+    else if (zone_all_clv >= round(0.875 * clv) && zone_all_clv <= round(clv) - 1) {
       return 3;
     }
-    else if (zone_all_vlc >= round(clv)) {
+    else if (zone_all_clv >= round(clv)) {
       return 4;
     }
     else {
