@@ -1,5 +1,5 @@
 <div fxLayout="column" fxLayoutAlign="space-around center" fxLayoutGap="50px">
-  <table class="no-border centered-child" [formGroup]="form">
+  <table class="no-border centered-child" [formGroup]="form" fxFlexOffset="20px">
     <tr>
       <td>
         <table>
@@ -19,17 +19,17 @@
             <td class="editable"><div><input type="number" min="0"  max="9" value="1" formControlName="south_bound_right"></div></td>
             <td class="editable"><div><input type="number" min="0"  max="9" value="1" formControlName="south_bound_thru"></div></td>
             <td class="editable"><div><input type="number" value="0" formControlName="south_bound_left"></div></td>
-            <td></td>
+            <td class="empty-cell"></td>
           </tr>
         </table>
       </td>
     </tr>
     <tr>
-      <td style="height: 100px;border: 0.05rem solid #e8e8e8;">
+      <td style="border: 0.05rem solid #e8e8e8;">
         <div>
           <table style="margin: 0 auto;">
             <tr>
-              <td>Zone 1</td>
+              <td class="zone-cell">Zone 1</td>
             </tr>
             <tr>
               <td [ngStyle]="{'color': 'black', 'background-color': (capxStateService.getClvRangeColor((capxStateService.state.get(junctions.PartialDisplacedLeftTurnIntersectionNorthSouth).intersectionResult | async).zone1_north_clv))}">{{(capxStateService.state.get(junctions.PartialDisplacedLeftTurnIntersectionNorthSouth).intersectionResult | async).zone1_north_clv}}</td>
@@ -38,7 +38,7 @@
         </div>
 
       </td>
-      <td>
+      <td style="padding: 20px 0;">
         <table>
           <tr>
             <td class="readonly">{{form.get('north_bound_thru').value}}</td>
@@ -64,7 +64,7 @@
             <tr>
               <td><img src="assets/capx/east-u-turn.png" /></td>
               <td class="readonly"><div class="east-rotation">{{(capxStateService.masterParameters$ | async)!.east_bound_u}} <br/> PEPCH</div></td>
-              <td></td>
+              <td class="empty-cell"></td>
             </tr>
             <tr>
               <td><img src="assets/capx/east-left-turn.png" /></td>
@@ -93,7 +93,7 @@
         <div>
           <table style="margin: 0 auto;">
             <tr>
-              <td>Zone 5</td>
+              <td class="zone-cell">Zone 5</td>
             </tr>
             <tr>
               <td [ngStyle]="{'color': 'black', 'background-color': (capxStateService.getClvRangeColor((capxStateService.state.get(junctions.PartialDisplacedLeftTurnIntersectionNorthSouth).intersectionResult | async).zone5_center_clv))}">{{(capxStateService.state.get(junctions.PartialDisplacedLeftTurnIntersectionNorthSouth).intersectionResult | async).zone5_center_clv}}</td>
@@ -123,7 +123,7 @@
             </tr>
 
             <tr>
-              <td></td>
+              <td class="empty-cell"></td>
               <td class="readonly"><div class="west-rotation">PEPCH <br/> {{(capxStateService.masterParameters$ | async)!.west_bound_u}}</div></td>
               <td><img src="assets/capx/west-u-turn.png" /></td>
             </tr>
@@ -138,7 +138,7 @@
 
   <table class="no-border centered-child" [formGroup]="form">
     <tr>
-      <td>
+      <td style="padding: 20px 0;">
         <table>
           <tr>
             <td><img src="assets/capx/south-thru.png" /></td>
@@ -151,12 +151,12 @@
           </tr>
         </table>
       </td>
-      <td style="height: 100px;border: 0.05rem solid #e8e8e8;">
+      <td style="border: 0.05rem solid #e8e8e8;">
 
         <div>
           <table style="margin: 0 auto;">
             <tr>
-              <td>Zone 2</td>
+              <td class="zone-cell">Zone 2</td>
             </tr>
             <tr>
               <td [ngStyle]="{'color': 'black', 'background-color': (capxStateService.getClvRangeColor((capxStateService.state.get(junctions.PartialDisplacedLeftTurnIntersectionNorthSouth).intersectionResult | async).zone2_south_clv))}">{{(capxStateService.state.get(junctions.PartialDisplacedLeftTurnIntersectionNorthSouth).intersectionResult | async).zone2_south_clv}}</td>
@@ -172,7 +172,7 @@
 
         <table>
           <tr>
-            <td></td>
+            <td class="empty-cell"></td>
             <td class="editable"><input type="number" min="0"  max="9" value="1" formControlName="north_bound_left"></td>
             <td class="editable"><input type="number" value="0" formControlName="north_bound_thru"></td>
             <td class="editable"><input type="number" min="0"  max="9" value="1" formControlName="north_bound_right"></td>
