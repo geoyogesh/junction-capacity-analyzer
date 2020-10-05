@@ -16,7 +16,7 @@
     <clr-tab>
       <button clrTabLink>Configuration</button>
       <clr-tab-content *clrIfActive="false">
-        <div class="junction-content centered-parent">
+        <div class="junction-content centered-parent container">
           <ng-template [cdkPortalOutlet]="(configuration$ | async)" class="centered-child"></ng-template>
         </div>
       </clr-tab-content>

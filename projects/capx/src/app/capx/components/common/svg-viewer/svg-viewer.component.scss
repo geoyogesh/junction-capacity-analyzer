@@ -2,7 +2,10 @@
   display: block;
 
   .container {
-    width: calc(100vw - 18rem);
+    width: calc(100vw - 17.4rem);
     height: calc(100vh - 9rem);
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    border-radius: 3px;
   }
 }
