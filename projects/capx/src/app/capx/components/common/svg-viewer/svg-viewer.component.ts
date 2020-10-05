@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import * as svgPanZoom from 'svg-pan-zoom';
 
 @Component({
@@ -6,7 +6,7 @@ import * as svgPanZoom from 'svg-pan-zoom';
   templateUrl: './svg-viewer.component.html',
   styleUrls: ['./svg-viewer.component.scss']
 })
-export class SvgViewerComponent implements OnInit, AfterViewInit {
+export class SvgViewerComponent implements OnInit, AfterViewInit, OnDestroy {
 
   constructor() { }
 
@@ -34,4 +34,10 @@ export class SvgViewerComponent implements OnInit, AfterViewInit {
     }
   }
 
+  ngOnDestroy(): void {
+    if (this.svgPanZoom) {
+      this.svgPanZoom.destroy();
+      this.svgPanZoom = null;
+    }
+  }
 }
