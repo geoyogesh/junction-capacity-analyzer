@@ -1,7 +1,7 @@
 :host
 {
   display: block;
-  margin: auto;
+  overflow-y: scroll;
 
   table tr td input {
     max-width: 30px;
