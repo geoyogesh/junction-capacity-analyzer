@@ -1,0 +1,21 @@
+<capx-svg-viewer>
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Layer_1" data-name="Layer 1">
+      <image width="1600" height="1280" transform="scale(0.49)" xlink:href="assets/junctions/conventional.jpeg"/>
+    </g>
+    <g id="drawings">
+      <circle cx="383.63" cy="321.5" r="12" style="fill: #fcee21"/>
+      <line x1="193.61" y1="152" x2="383.63" y2="321.5" style="fill: red;stroke: red;stroke-miterlimit: 10;stroke-width: 2px"/>
+    </g>
+    <g id="dynamic_layer">
+      <rect x="130.61" y="75" width="126" height="38.5" style="stroke: #231f20;stroke-miterlimit: 10" [attr.fill]="capxStateService.getClvRangeColor((capxStateService.state.get(junctions.ConventionalIntersection).intersectionResult | async).zone5_center_clv)"/>
+      <text transform="translate(164.01 102.73) scale(1.08 1)" style="font-size: 27px;fill: #231f20;font-family: OpenSans, Open Sans">{{(capxStateService.state.get(junctions.ConventionalIntersection).intersectionResult | async).zone5_center_clv}}</text>
+      <rect x="130.61" y="113.5" width="126" height="38.5" style="fill: #fff;stroke: #231f20;stroke-miterlimit: 10"/>
+      <rect x="130.61" y="113.5" width="63" height="38.5" style="stroke: #231f20;stroke-miterlimit: 10" [attr.fill]="capxStateService.getClvRangeColor((capxStateService.state.get(junctions.ConventionalIntersection).intersectionResult | async).zone5_center_clv)"/>
+      <text transform="translate(143.87 139.36) scale(1.08 1)" style="font-size: 19px;fill: #231f20;font-family: OpenSans, Open Sans">{{(capxStateService.state.get(junctions.ConventionalIntersection).intersectionResult | async).zone5_center_vc}}</text>
+      <text transform="translate(202.87 139.57) scale(1.08 1)" style="font-size: 19px;fill: #231f20;font-family: OpenSans, Open Sans">V / C</text>
+      <text transform="translate(155.63 62.5)" style="font-size: 24px;font-family: OpenSans, Open Sans">Zone 5</text>
+    </g>
+  </svg>
+
+</capx-svg-viewer>

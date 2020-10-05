@@ -80,6 +80,7 @@ import { JunctionComponent } from '../capx/components/junctions/junction.compone
 import {PortalModule} from '@angular/cdk/portal';
 import { MedianUTurnIntersectionEastWestDesignComponent } from '../capx/components/junctions/intersections/median-uturn-intersection-east-west-junction/design/median-uturn-intersection-east-west-design.component';
 import { MedianUTurnIntersectionEastWestConfigurationComponent } from '../capx/components/junctions/intersections/median-uturn-intersection-east-west-junction/configuration/median-uturn-intersection-east-west-configuration.component';
+import { SvgViewerComponent } from '../capx/components/common/svg-viewer/svg-viewer.component';
 
 @NgModule({
   declarations: [
@@ -156,7 +157,8 @@ import { MedianUTurnIntersectionEastWestConfigurationComponent } from '../capx/c
      TwoNorthSouthxTwoEastWestLaneRoundaboutJunctionConfigurationComponent,
      JunctionComponent,
      MedianUTurnIntersectionEastWestDesignComponent,
-     MedianUTurnIntersectionEastWestConfigurationComponent],
+     MedianUTurnIntersectionEastWestConfigurationComponent,
+     SvgViewerComponent],
   imports: [
     CommonModule,
     CapxRoutingModule,

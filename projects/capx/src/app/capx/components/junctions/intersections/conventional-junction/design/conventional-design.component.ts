@@ -6,7 +6,7 @@ import { Junctions } from './../../../../../services/models/junctions';
 
 @Component({
   selector: 'capx-conventional-design',
-  templateUrl: './conventional-design.component.svg',
+  templateUrl: './conventional-design.component.html',
   styleUrls: ['./conventional-design.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })

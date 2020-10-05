@@ -48,6 +48,8 @@ ng generate component capx/components/junctions/SinglePointInterchangeEastWestJu
 
 ng generate component capx/components/common/CriticalLaneVolumeSum --prefix=capx --module=Capx
 
+ng generate component capx/components/common/SvgViewer --prefix=capx --module=Capx
+
 
 
 ng generate component capx/components/junctions/conventional-junction/ConventionalDesign --prefix=capx --module=Capx

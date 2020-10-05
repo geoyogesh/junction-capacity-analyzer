@@ -67,7 +67,8 @@
               "complex.js",
               "fraction.js",
               "decimal.js",
-              "typed-function"
+              "typed-function",
+              "svg-pan-zoom"
             ]
           },
           "configurations": {

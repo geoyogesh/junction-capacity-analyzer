@@ -22,13 +22,14 @@
     "@angular/platform-browser-dynamic": "~10.0.0",
     "@angular/router": "~10.0.0",
     "@clr/angular": "4.0.1",
+    "@clr/icons": "4.0.1",
+    "@clr/ui": "4.0.1",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
     "mathjs": "^7.2.0",
     "rxjs": "~6.5.5",
+    "svg-pan-zoom": "^3.6.1",
     "tslib": "^2.0.0",
-    "zone.js": "~0.10.3",
-    "@clr/ui": "4.0.1",
-    "@clr/icons": "4.0.1",
-    "@webcomponents/webcomponentsjs": "^2.0.0"
+    "zone.js": "~0.10.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1000.8",

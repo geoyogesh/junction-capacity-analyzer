@@ -4,7 +4,7 @@ import { Junctions } from './../../../../../services/models/junctions';
 
 @Component({
   selector: 'capx-partial-displaced-left-turn-intersection-north-south-design',
-  templateUrl: './partial-displaced-left-turn-intersection-north-south-design.component.svg',
+  templateUrl: './partial-displaced-left-turn-intersection-north-south-design.component.html',
   styleUrls: ['./partial-displaced-left-turn-intersection-north-south-design.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
