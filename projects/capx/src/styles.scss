@@ -15,32 +15,41 @@ button:focus {
   outline: 0;
 }
 
-
 // scrollbar
 /* The emerging W3C standard
    that is currently Firefox-only */
-   * {
-    scrollbar-width: thin;
-    scrollbar-color: #666 hsl(198, 0%, 80%);
-  }
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #666 hsl(198, 0%, 80%);
+}
 
-  /* Works on Chrome/Edge/Safari */
-  *::-webkit-scrollbar {
-    width: 14px;
-  }
-  *::-webkit-scrollbar-track {
-    background: hsl(198, 0%, 80%);
-  }
-  *::-webkit-scrollbar-thumb {
-    background-color: #666;
-    border-radius: 20px;
-    border: 3px solid hsl(198, 0%, 80%);
-  }
-
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 14px;
+}
+*::-webkit-scrollbar-track {
+  background: hsl(198, 0%, 80%);
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #666;
+  border-radius: 20px;
+  border: 3px solid hsl(198, 0%, 80%);
+}
 
 table {
   border-collapse: collapse;
+  &.zone-table {
+    margin: 0 auto;
 
+    td.zone-cell {
+      background-color: #fff;
+    }
+
+    td {
+      padding: 7px 10px;
+      font-size: 0.7rem;
+    }
+  }
   &.config-table {
     & > tr {
       border: 0.05rem solid #e8e8e8;
@@ -111,10 +120,6 @@ table {
         background-color: #cccccc;
       }
 
-      &.zone-cell {
-        background-color: #fff;
-      }
-
       &.readonly {
         //background-color: hsl(198, 0%, 87%);
       }
@@ -178,7 +183,6 @@ table.small-content-tbl {
   }
 }
 
-
 .back-to-results-text {
   padding-right: 5px;
 }
@@ -191,10 +195,9 @@ table.small-content-tbl {
 capx-svg-viewer {
   svg {
     width: 100%;
-    height:100%
+    height: 100%;
   }
 }
-
 
 .nav {
   box-shadow: none;
