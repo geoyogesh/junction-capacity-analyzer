@@ -143,6 +143,21 @@ export interface CapxPartialDisplacedLeftTurnIntersectionNorthSouth {
   north_bound_right: number;
 }
 
+export interface CapxPartialDisplacedLeftTurnIntersectionEastWest {
+  east_bound_left: number;
+  east_bound_thru: number;
+  east_bound_right: number;
+  west_bound_left: number;
+  west_bound_thru: number;
+  west_bound_right: number;
+  south_bound_left: number;
+  south_bound_thru: number;
+  south_bound_right: number;
+  north_bound_left: number;
+  north_bound_thru: number;
+  north_bound_right: number;
+}
+
 export interface CapxIntersectionAnalysisResultParameters {
   zone1_north_clv: number | null;
   zone1_north_vc: number | null;

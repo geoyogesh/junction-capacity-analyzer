@@ -1,4 +1,4 @@
-import { Junction, JunctionTypes, CapxPartialDisplacedLeftTurnIntersectionNorthSouth } from './models/junction-capacity-analyser';
+import { Junction, JunctionTypes, CapxPartialDisplacedLeftTurnIntersectionNorthSouth, CapxPartialDisplacedLeftTurnIntersectionEastWest } from './models/junction-capacity-analyser';
 import { Junctions } from './models/junctions';
 
 // tslint:disable: variable-name
@@ -154,6 +154,21 @@ export class CapxStateService {
   });
 
   partialDisplacedLeftTurnIntersectionNorthSouthJunctionParameters$ = new BehaviorSubject<CapxPartialDisplacedLeftTurnIntersectionNorthSouth>({
+    east_bound_left: 2,
+    east_bound_thru: 3,
+    east_bound_right: 1,
+    west_bound_left: 2,
+    west_bound_thru: 3,
+    west_bound_right: 1,
+    south_bound_left: 1,
+    south_bound_thru: 2,
+    south_bound_right: 1,
+    north_bound_left: 1,
+    north_bound_thru: 2,
+    north_bound_right: 1
+  });
+
+  partialDisplacedLeftTurnIntersectionEastWestJunctionParameters$ = new BehaviorSubject<CapxPartialDisplacedLeftTurnIntersectionEastWest>({
     east_bound_left: 2,
     east_bound_thru: 3,
     east_bound_right: 1,
@@ -477,6 +492,7 @@ export class CapxStateService {
     this.solve();
     this.solveConventionalJunction();
     this.solvePartialDisplacedLeftTurnIntersectionNorthSouthJunction();
+    this.solvePartialDisplacedLeftTurnIntersectionEastWestJunction();
   }
 
   public updateInputParameters(params: CapxInputParameters): void {
@@ -669,7 +685,7 @@ export class CapxStateService {
     this.rank$.next(inter_ranks);
   }
 
-
+  //#region Conventional
   public updateConventionalJunctionParameters(params: CapxConventionalJunctionParameters): void {
     this.conventionalJunctionParameters$.next(params);
     this.solveConventionalJunction();
@@ -705,7 +721,11 @@ export class CapxStateService {
 
     this.updateRank();
   }
+  //#endregion
 
+
+
+  //#region Partial Displaced LeftTurn Intersection North South
   public updatePartialDisplacedLeftTurnIntersectionNorthSouthParameters(params: CapxPartialDisplacedLeftTurnIntersectionNorthSouth): void {
     this.partialDisplacedLeftTurnIntersectionNorthSouthJunctionParameters$.next(params);
     this.solvePartialDisplacedLeftTurnIntersectionNorthSouthJunction();
@@ -743,6 +763,49 @@ export class CapxStateService {
 
     this.updateRank();
   }
+  //#endregion
+
+
+  //#region Partial Displaced LeftTurn Intersection East West
+  public updatePartialDisplacedLeftTurnIntersectionEastWestParameters(params: CapxPartialDisplacedLeftTurnIntersectionEastWest): void {
+    this.partialDisplacedLeftTurnIntersectionEastWestJunctionParameters$.next(params);
+    this.solvePartialDisplacedLeftTurnIntersectionEastWestJunction();
+  }
+
+  private solvePartialDisplacedLeftTurnIntersectionEastWestJunction(): void {
+    const inputParameters = this.inputParameters$.value;
+    const masterParameters = this.masterParameters$.value;
+    const junctionParameters = this.partialDisplacedLeftTurnIntersectionEastWestJunctionParameters$.value;
+
+    const zone1_north_clv = masterParameters.south_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.south_bound_left + (masterParameters.north_bound_thru + masterParameters.east_bound_left) / junctionParameters.north_bound_thru
+
+    const zone5_center_clv = max(masterParameters.north_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.north_bound_left, masterParameters.north_bound_thru / junctionParameters.north_bound_thru, round(max(0, masterParameters.north_bound_right / inputParameters.adjustment_factor_right_turn / junctionParameters.north_bound_right - masterParameters.east_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.east_bound_left), 0), masterParameters.south_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.south_bound_left, masterParameters.south_bound_thru / junctionParameters.south_bound_thru, round(max(0, masterParameters.south_bound_right / inputParameters.adjustment_factor_right_turn / junctionParameters.south_bound_right - masterParameters.east_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.east_bound_left), 0)) + max(masterParameters.east_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.east_bound_left + max(masterParameters.west_bound_thru / junctionParameters.west_bound_thru, round(max(0, masterParameters.west_bound_right / inputParameters.adjustment_factor_right_turn / junctionParameters.west_bound_right - masterParameters.south_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.south_bound_left), 0)), masterParameters.west_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.west_bound_left + max( masterParameters.east_bound_thru / junctionParameters.east_bound_thru, round(max(0, masterParameters.east_bound_right / inputParameters.adjustment_factor_right_turn / junctionParameters.east_bound_right - masterParameters.north_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.north_bound_left), 0)))
+
+    const zone2_south_clv = masterParameters.north_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.north_bound_left + (masterParameters.south_bound_thru + masterParameters.west_bound_left) / junctionParameters.south_bound_thru
+
+
+    const zone1_north_vc = round(zone1_north_clv / inputParameters.critical_lane_volume, 2);
+    const zone5_center_vc = round(zone5_center_clv / inputParameters.critical_lane_volume, 2);
+    const zone2_south_vc = round(zone2_south_clv / inputParameters.critical_lane_volume, 2);
+    (this.state.get(Junctions.PartialDisplacedLeftTurnIntersectionNorthSouth)?.intersectionResult as BehaviorSubject<CapxIntersectionAnalysisResultParameters>).next({
+      zone1_north_clv: round(zone1_north_clv),
+      zone1_north_vc,
+      zone2_south_clv: round(zone2_south_clv),
+      zone2_south_vc,
+      zone3_east_clv: null,
+      zone3_east_vc: null,
+      zone4_west_clv: null,
+      zone4_west_vc: null,
+      zone5_center_clv: round(zone5_center_clv),
+      zone5_center_vc,
+      all_clv: round(max(zone1_north_clv, zone5_center_clv, zone2_south_clv)),
+      all_vc: max(zone1_north_vc, zone5_center_vc, zone2_south_vc)
+    });
+
+    this.updateRank();
+  }
+  //#endregion
+
 
   public getClvRangeColor(zone_all_clv: number | null): string {
     // update range text
