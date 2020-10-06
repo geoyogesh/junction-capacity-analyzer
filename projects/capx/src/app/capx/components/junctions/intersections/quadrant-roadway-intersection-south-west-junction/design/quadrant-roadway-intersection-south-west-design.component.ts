@@ -1,4 +1,6 @@
+import { CapxStateService } from './../../../../../services/capx-state.service';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Junctions } from './../../../../../services/models/junctions';
 
 @Component({
   selector: 'capx-quadrant-roadway-intersection-south-west-design',
@@ -8,7 +10,9 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 })
 export class QuadrantRoadwayIntersectionSouthWestDesignComponent implements OnInit {
 
-  constructor() { }
+  junctions = Junctions;
+  constructor(public capxStateService: CapxStateService) { }
+
 
   ngOnInit(): void {
   }

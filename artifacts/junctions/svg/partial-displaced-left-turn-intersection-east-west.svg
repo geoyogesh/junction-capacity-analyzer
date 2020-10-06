@@ -19,28 +19,28 @@
   </g>
   <g id="dynamic_layer">
     <g id="zone3">
-      <rect x="688.55" y="182.28" width="126" height="38.5" style="fill: #faaf40;stroke: #231f20;stroke-miterlimit: 10"/>
+      <rect x="688.55" y="182.28" width="126" height="38.5" style="stroke: #231f20;stroke-miterlimit: 10"/>
       <text transform="translate(721.96 210.01) scale(1.08 1)" style="font-size: 27px;fill: #231f20;font-family: OpenSans, Open Sans">662</text>
       <rect x="688.55" y="220.78" width="126" height="38.5" style="fill: #fff;stroke: #231f20;stroke-miterlimit: 10"/>
-      <rect x="688.55" y="220.78" width="63" height="38.5" style="fill: #00adee;stroke: #231f20;stroke-miterlimit: 10"/>
+      <rect x="688.55" y="220.78" width="63" height="38.5" style="stroke: #231f20;stroke-miterlimit: 10"/>
       <text transform="translate(701.81 246.65) scale(1.08 1)" style="font-size: 19px;fill: #231f20;font-family: OpenSans, Open Sans">0.41</text>
       <text transform="translate(760.82 246.85) scale(1.08 1)" style="font-size: 19px;fill: #231f20;font-family: OpenSans, Open Sans">V / C</text>
       <text transform="translate(713.58 169.78)" style="font-size: 24px;font-family: OpenSans, Open Sans">Zone 3</text>
     </g>
     <g id="zone4">
-      <rect x="149.55" y="183.19" width="126" height="38.5" style="fill: #faaf40;stroke: #231f20;stroke-miterlimit: 10"/>
+      <rect x="149.55" y="183.19" width="126" height="38.5" style="stroke: #231f20;stroke-miterlimit: 10"/>
       <text transform="translate(182.96 210.92) scale(1.08 1)" style="font-size: 27px;fill: #231f20;font-family: OpenSans, Open Sans">662</text>
       <rect x="149.55" y="221.69" width="126" height="38.5" style="fill: #fff;stroke: #231f20;stroke-miterlimit: 10"/>
-      <rect x="149.55" y="221.69" width="63" height="38.5" style="fill: #00adee;stroke: #231f20;stroke-miterlimit: 10"/>
+      <rect x="149.55" y="221.69" width="63" height="38.5" style="stroke: #231f20;stroke-miterlimit: 10"/>
       <text transform="translate(162.81 247.55) scale(1.08 1)" style="font-size: 19px;fill: #231f20;font-family: OpenSans, Open Sans">0.41</text>
       <text transform="translate(221.82 247.76) scale(1.08 1)" style="font-size: 19px;fill: #231f20;font-family: OpenSans, Open Sans">V / C</text>
       <text transform="translate(174.58 170.69)" style="font-size: 24px;font-family: OpenSans, Open Sans">Zone 4</text>
     </g>
     <g id="zone5">
-      <rect x="484.55" y="181.28" width="126" height="38.5" style="fill: #faaf40;stroke: #231f20;stroke-miterlimit: 10"/>
+      <rect x="484.55" y="181.28" width="126" height="38.5" style="stroke: #231f20;stroke-miterlimit: 10"/>
       <text transform="translate(517.96 209.01) scale(1.08 1)" style="font-size: 27px;fill: #231f20;font-family: OpenSans, Open Sans">662</text>
       <rect x="484.55" y="219.78" width="126" height="38.5" style="fill: #fff;stroke: #231f20;stroke-miterlimit: 10"/>
-      <rect x="484.55" y="219.78" width="63" height="38.5" style="fill: #00adee;stroke: #231f20;stroke-miterlimit: 10"/>
+      <rect x="484.55" y="219.78" width="63" height="38.5" style="stroke: #231f20;stroke-miterlimit: 10"/>
       <text transform="translate(497.81 245.65) scale(1.08 1)" style="font-size: 19px;fill: #231f20;font-family: OpenSans, Open Sans">0.41</text>
       <text transform="translate(556.82 245.85) scale(1.08 1)" style="font-size: 19px;fill: #231f20;font-family: OpenSans, Open Sans">V / C</text>
       <text transform="translate(509.58 168.78)" style="font-size: 24px;font-family: OpenSans, Open Sans">Zone 5</text>

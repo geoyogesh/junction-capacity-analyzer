@@ -1,4 +1,6 @@
+import { CapxStateService } from './../../../../../services/capx-state.service';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Junctions } from './../../../../../services/models/junctions';
 
 @Component({
   selector: 'capx-restricted-crossing-uturn-intersection-east-west-design',
@@ -8,7 +10,9 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 })
 export class RestrictedCrossingUTurnIntersectionEastWestDesignComponent implements OnInit {
 
-  constructor() { }
+  junctions = Junctions;
+  constructor(public capxStateService: CapxStateService) { }
+
 
   ngOnInit(): void {
   }
