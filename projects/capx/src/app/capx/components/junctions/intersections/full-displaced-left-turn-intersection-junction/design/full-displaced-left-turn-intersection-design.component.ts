@@ -10,7 +10,7 @@ import { Junctions } from './../../../../../services/models/junctions';
 })
 export class FullDisplacedLeftTurnIntersectionDesignComponent implements OnInit {
 
-  junctions = Junctions;
+  junctionName = Junctions.FullDisplacedLeftTurnIntersection;
   constructor(public capxStateService: CapxStateService) { }
 
   ngOnInit(): void {

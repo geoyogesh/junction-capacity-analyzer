@@ -10,7 +10,7 @@ import { Junctions } from './../../../../../services/models/junctions';
 })
 export class PartialDisplacedLeftTurnIntersectionNorthSouthDesignComponent implements OnInit {
 
-  junctions = Junctions;
+  junctionName = Junctions.PartialDisplacedLeftTurnIntersectionNorthSouth;
   constructor(public capxStateService: CapxStateService) { }
 
 

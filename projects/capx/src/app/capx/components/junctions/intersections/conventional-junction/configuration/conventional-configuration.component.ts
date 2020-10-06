@@ -16,7 +16,7 @@ export class ConventionalConfigurationComponent implements OnInit, OnDestroy {
 
   result$: BehaviorSubject<CapxIntersectionAnalysisResultParameters> = new BehaviorSubject(null);
 
-  junctions = Junctions;
+  junctionName = Junctions.ConventionalIntersection;
   constructor(private fb: FormBuilder, public capxStateService: CapxStateService) { }
 
 
@@ -42,7 +42,7 @@ export class ConventionalConfigurationComponent implements OnInit, OnDestroy {
 
     this.form.setValue(this.capxStateService.conventionalJunctionParameters$.value, {onlySelf: true, emitEvent: false});
 
-    const junction = this.capxStateService.state.get(Junctions.ConventionalIntersection) as Junction;
+    const junction = this.capxStateService.state.get(this.junctionName) as Junction;
     (junction.intersectionResult as BehaviorSubject<CapxIntersectionAnalysisResultParameters>).subscribe(result => {
       this.result$.next(result);
     });

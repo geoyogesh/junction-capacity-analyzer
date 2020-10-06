@@ -15,7 +15,7 @@ export class PartialDisplacedLeftTurnIntersectionNorthSouthConfigurationComponen
 
   result$: BehaviorSubject<CapxIntersectionAnalysisResultParameters> = new BehaviorSubject(null);
 
-  junctions = Junctions;
+  junctionName = Junctions.PartialDisplacedLeftTurnIntersectionNorthSouth;
   constructor(private fb: FormBuilder, public capxStateService: CapxStateService) { }
 
 
@@ -42,7 +42,7 @@ export class PartialDisplacedLeftTurnIntersectionNorthSouthConfigurationComponen
     // tslint:disable-next-line: max-line-length
     this.form.setValue(this.capxStateService.partialDisplacedLeftTurnIntersectionNorthSouthJunctionParameters$.value, {onlySelf: true, emitEvent: false});
 
-    const junction = this.capxStateService.state.get(Junctions.PartialDisplacedLeftTurnIntersectionNorthSouth) as Junction;
+    const junction = this.capxStateService.state.get(this.junctionName) as Junction;
     (junction.intersectionResult as BehaviorSubject<CapxIntersectionAnalysisResultParameters>).subscribe(result => {
       this.result$.next(result);
     });

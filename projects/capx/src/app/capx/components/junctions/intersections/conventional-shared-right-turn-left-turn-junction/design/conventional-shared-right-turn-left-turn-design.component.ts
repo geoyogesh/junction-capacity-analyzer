@@ -10,7 +10,7 @@ import { Junctions } from './../../../../../services/models/junctions';
 })
 export class ConventionalSharedRightTurnLeftTurnDesignComponent implements OnInit {
 
-  junctions = Junctions;
+  junctionName = Junctions.ConventionalSharedRTLN;
   constructor(public capxStateService: CapxStateService) { }
 
   ngOnInit(): void {

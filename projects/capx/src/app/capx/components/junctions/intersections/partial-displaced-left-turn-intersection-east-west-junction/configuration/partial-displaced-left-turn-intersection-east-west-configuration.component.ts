@@ -1,7 +1,7 @@
+import { CapxIntersectionAnalysisResultParameters, Junction } from './../../../../../services/models/junction-capacity-analyser';
 import { CapxStateService } from './../../../../../services/capx-state.service';
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CapxIntersectionAnalysisResultParameters, Junction } from './../../../../../services/models/junction-capacity-analyser';
 import { Junctions } from './../../../../../services/models/junctions';
 import { BehaviorSubject } from 'rxjs';
 
@@ -15,7 +15,7 @@ export class PartialDisplacedLeftTurnIntersectionEastWestConfigurationComponent 
 
   result$: BehaviorSubject<CapxIntersectionAnalysisResultParameters> = new BehaviorSubject(null);
 
-  junctions = Junctions;
+  junctionName = Junctions.PartialDisplacedLeftTurnIntersectionEastWest;
   constructor(private fb: FormBuilder, public capxStateService: CapxStateService) { }
 
 
@@ -42,8 +42,8 @@ export class PartialDisplacedLeftTurnIntersectionEastWestConfigurationComponent 
     // tslint:disable-next-line: max-line-length
     this.form.setValue(this.capxStateService.partialDisplacedLeftTurnIntersectionEastWestJunctionParameters$.value, {onlySelf: true, emitEvent: false});
 
-    const junction = this.capxStateService.state.get(Junctions.PartialDisplacedLeftTurnIntersectionEastWest) as Junction;
-    (junction.intersectionResult as BehaviorSubject<CapxIntersectionAnalysisResultParameters>).subscribe(result => {
+    const junctionName = this.capxStateService.state.get(this.junctionName) as Junction;
+    (junctionName.intersectionResult as BehaviorSubject<CapxIntersectionAnalysisResultParameters>).subscribe(result => {
       this.result$.next(result);
     });
   }

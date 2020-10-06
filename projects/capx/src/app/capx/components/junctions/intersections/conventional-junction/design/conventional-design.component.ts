@@ -12,7 +12,7 @@ import { Junctions } from './../../../../../services/models/junctions';
 })
 export class ConventionalDesignComponent implements OnInit, OnDestroy {
 
-  junctions = Junctions;
+  junctionName = Junctions.ConventionalIntersection;
   constructor(public capxStateService: CapxStateService) { }
 
   ngOnInit(): void {

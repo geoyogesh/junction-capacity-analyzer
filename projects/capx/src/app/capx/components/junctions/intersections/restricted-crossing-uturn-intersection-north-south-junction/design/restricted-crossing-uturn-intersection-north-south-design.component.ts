@@ -10,7 +10,7 @@ import { Junctions } from './../../../../../services/models/junctions';
 })
 export class RestrictedCrossingUTurnIntersectionNorthSouthDesignComponent implements OnInit {
 
-  junctions = Junctions;
+  junctionName = Junctions.RestrictedCrossingUTurnIntersectionNorthSouth;
   constructor(public capxStateService: CapxStateService) { }
 
 

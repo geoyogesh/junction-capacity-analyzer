@@ -63,7 +63,7 @@
             <td class="zone-cell">Zone 5</td>
           </tr>
           <tr>
-            <td [ngStyle]="{'color': 'black', 'background-color': (capxStateService.getClvRangeColor((capxStateService.state.get(junctions.ConventionalIntersection).intersectionResult | async).zone5_center_clv))}">{{(capxStateService.state.get(junctions.ConventionalIntersection).intersectionResult | async).zone5_center_clv}}</td>
+            <td [ngStyle]="{'color': 'black', 'background-color': (capxStateService.getClvRangeColor((capxStateService.state.get(junctionName).intersectionResult | async).zone5_center_clv))}">{{(capxStateService.state.get(junctionName).intersectionResult | async).zone5_center_clv}}</td>
           </tr>
         </table>
       </div>

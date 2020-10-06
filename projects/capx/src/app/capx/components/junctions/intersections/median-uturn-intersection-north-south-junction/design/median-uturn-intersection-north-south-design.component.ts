@@ -10,7 +10,7 @@ import { Junctions } from './../../../../../services/models/junctions';
 })
 export class MedianUTurnIntersectionNorthSouthDesignComponent implements OnInit {
 
-  junctions = Junctions;
+  junctionName = Junctions.MedianUTurnIntersectionNorthSouth;
   constructor(public capxStateService: CapxStateService) { }
 
 

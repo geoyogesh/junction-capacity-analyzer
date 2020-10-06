@@ -10,7 +10,7 @@ import { Junctions } from './../../../../../services/models/junctions';
 })
 export class QuadrantRoadwayIntersectionSouthEastDesignComponent implements OnInit {
 
-  junctions = Junctions;
+  junctionName = Junctions.QuadrantRoadwayIntersectionSouthEast;
   constructor(public capxStateService: CapxStateService) { }
 
 
