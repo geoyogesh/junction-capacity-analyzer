@@ -2,17 +2,17 @@
   <table class="no-border centered-child" [formGroup]="form">
     <tr>
       <td>
-
         <div>
           <table class="config-table">
             <tr>
               <td><img src="assets/capx/east-u-turn.png" /></td>
               <td class="readonly pepch"><div class="east-rotation">{{(capxStateService.masterParameters$ | async)!.east_bound_u}} <br/> PEPCH</div></td>
-              <td rowspan="2" class="editable"><div class="east-rotation"><input type="number" min="0"  max="9" value="1" formControlName="east_bound_left"></div></td>
+              <td class="empty-cell"></td>
             </tr>
             <tr>
               <td><img src="assets/capx/east-left-turn.png" /></td>
               <td class="readonly pepch"><div class="east-rotation">{{(capxStateService.masterParameters$ | async)!.east_bound_left}} <br/> PEPCH</div></td>
+              <td class="editable"><div class="east-rotation"><input type="number" min="0"  max="9" value="1" formControlName="east_bound_left"></div></td>
             </tr>
 
             <tr>
@@ -28,11 +28,23 @@
             </tr>
           </table>
         </div>
-
-
       </td>
       <td style="width: 210px;border: 0.05rem solid #e8e8e8;">
-
+        <table style="position: absolute;margin-top: -95px;margin-left: 64px;">
+          <tr>
+            <td class="readonly">
+              <div class="west-rotation">
+                {{form.get('west_bound_thru').value}}
+              </div>
+            </td>
+            <td class="readonly pepch">
+              <div class="west-rotation">
+                PEPCH <br/> {{(capxStateService.masterParameters$ | async)!.north_bound_left + (capxStateService.masterParameters$ | async)!.west_bound_thru}}
+              </div>
+            </td>
+            <td><img src="assets/capx/west-thru.png" /></td>
+          </tr>
+        </table>
         <div>
           <table class="zone-table">
             <tr>
@@ -67,7 +79,8 @@
           <tr>
             <td class="editable"><div><input type="number" value="0" formControlName="south_bound_right"></div></td>
             <td class="editable"><div><input type="number" min="0"  max="9" value="1" formControlName="south_bound_thru"></div></td>
-            <td colspan="2" class="editable"><div><input type="number" min="0"  max="9" value="1" formControlName="south_bound_left"></div></td>
+            <td class="editable"><div><input type="number" min="0"  max="9" value="1" formControlName="south_bound_left"></div></td>
+            <td class="empty-cell"></td>
           </tr>
         </table>
       </td>
@@ -92,7 +105,8 @@
 
         <table>
           <tr>
-            <td colspan="2" class="editable"><input type="number" min="0"  max="9" value="1" formControlName="north_bound_left"></td>
+            <td class="empty-cell"></td>
+            <td class="editable"><input type="number" min="0"  max="9" value="1" formControlName="north_bound_left"></td>
             <td class="editable"><input type="number" value="0" formControlName="north_bound_thru"></td>
             <td class="editable"><input type="number" min="0"  max="9" value="1" formControlName="north_bound_right"></td>
           </tr>
@@ -128,6 +142,19 @@
               <td [ngStyle]="{'color': 'black', 'background-color': (capxStateService.getClvRangeColor((capxStateService.state.get(junctionName).intersectionResult | async).zone3_east_clv))}">{{(capxStateService.state.get(junctionName).intersectionResult | async).zone3_east_clv}}</td>
             </tr>
           </table>
+          <table style="position: absolute;margin-top: 51px;margin-left: 64px;">
+            <tr>
+              <td><img src="assets/capx/east-thru.png" /></td>
+              <td class="readonly pepch">
+                <div class="west-rotation">
+                  {{(capxStateService.masterParameters$ | async)!.east_bound_thru + (capxStateService.masterParameters$ | async)!.south_bound_left}} <br/> PEPCH
+                </div>
+              </td>
+              <td class="readonly"><div class="west-rotation">
+                {{form.get('east_bound_thru').value}}
+              </div></td>
+            </tr>
+          </table>
         </div>
 
       </td>
@@ -146,12 +173,13 @@
             </tr>
 
             <tr>
-              <td rowspan="2" class="editable"><div class="west-rotation"><input type="number" min="0"  max="9" value="1" formControlName="west_bound_left"></div></td>
+              <td class="editable"><div class="west-rotation"><input type="number" min="0"  max="9" value="1" formControlName="west_bound_left"></div></td>
               <td class="readonly pepch"><div class="west-rotation">PEPCH <br/> {{(capxStateService.masterParameters$ | async)!.west_bound_left}}</div></td>
               <td><img src="assets/capx/west-left-turn.png" /></td>
             </tr>
 
             <tr>
+              <td class="empty-cell"></td>
               <td class="readonly pepch"><div class="west-rotation">PEPCH <br/> {{(capxStateService.masterParameters$ | async)!.west_bound_u}}</div></td>
               <td><img src="assets/capx/west-u-turn.png" /></td>
             </tr>

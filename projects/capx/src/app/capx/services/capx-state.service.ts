@@ -736,11 +736,11 @@ export class CapxStateService {
     const masterParameters = this.masterParameters$.value;
     const junctionParameters = this.partialDisplacedLeftTurnIntersectionNorthSouthJunctionParameters$.value;
 
-    const zone1_north_clv = masterParameters.south_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.south_bound_left + (masterParameters.north_bound_thru + masterParameters.east_bound_left) / junctionParameters.north_bound_thru
+    const zone1_north_clv = masterParameters.south_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.south_bound_left + (masterParameters.north_bound_thru + masterParameters.east_bound_left) / junctionParameters.north_bound_thru;
 
-    const zone5_center_clv = max(masterParameters.north_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.north_bound_left, masterParameters.north_bound_thru / junctionParameters.north_bound_thru, round(max(0, masterParameters.north_bound_right / inputParameters.adjustment_factor_right_turn / junctionParameters.north_bound_right - masterParameters.east_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.east_bound_left), 0), masterParameters.south_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.south_bound_left, masterParameters.south_bound_thru / junctionParameters.south_bound_thru, round(max(0, masterParameters.south_bound_right / inputParameters.adjustment_factor_right_turn / junctionParameters.south_bound_right - masterParameters.east_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.east_bound_left), 0)) + max(masterParameters.east_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.east_bound_left + max(masterParameters.west_bound_thru / junctionParameters.west_bound_thru, round(max(0, masterParameters.west_bound_right / inputParameters.adjustment_factor_right_turn / junctionParameters.west_bound_right - masterParameters.south_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.south_bound_left), 0)), masterParameters.west_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.west_bound_left + max( masterParameters.east_bound_thru / junctionParameters.east_bound_thru, round(max(0, masterParameters.east_bound_right / inputParameters.adjustment_factor_right_turn / junctionParameters.east_bound_right - masterParameters.north_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.north_bound_left), 0)))
+    const zone5_center_clv = max(masterParameters.north_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.north_bound_left, masterParameters.north_bound_thru / junctionParameters.north_bound_thru, round(max(0, masterParameters.north_bound_right / inputParameters.adjustment_factor_right_turn / junctionParameters.north_bound_right - masterParameters.east_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.east_bound_left), 0), masterParameters.south_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.south_bound_left, masterParameters.south_bound_thru / junctionParameters.south_bound_thru, round(max(0, masterParameters.south_bound_right / inputParameters.adjustment_factor_right_turn / junctionParameters.south_bound_right - masterParameters.east_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.east_bound_left), 0)) + max(masterParameters.east_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.east_bound_left + max(masterParameters.west_bound_thru / junctionParameters.west_bound_thru, round(max(0, masterParameters.west_bound_right / inputParameters.adjustment_factor_right_turn / junctionParameters.west_bound_right - masterParameters.south_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.south_bound_left), 0)), masterParameters.west_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.west_bound_left + max( masterParameters.east_bound_thru / junctionParameters.east_bound_thru, round(max(0, masterParameters.east_bound_right / inputParameters.adjustment_factor_right_turn / junctionParameters.east_bound_right - masterParameters.north_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.north_bound_left), 0)));
 
-    const zone2_south_clv = masterParameters.north_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.north_bound_left + (masterParameters.south_bound_thru + masterParameters.west_bound_left) / junctionParameters.south_bound_thru
+    const zone2_south_clv = masterParameters.north_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.north_bound_left + (masterParameters.south_bound_thru + masterParameters.west_bound_left) / junctionParameters.south_bound_thru;
 
 
     const zone1_north_vc = round(zone1_north_clv / inputParameters.critical_lane_volume, 2);
@@ -777,29 +777,29 @@ export class CapxStateService {
     const masterParameters = this.masterParameters$.value;
     const junctionParameters = this.partialDisplacedLeftTurnIntersectionEastWestJunctionParameters$.value;
 
-    const zone1_north_clv = masterParameters.south_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.south_bound_left + (masterParameters.north_bound_thru + masterParameters.east_bound_left) / junctionParameters.north_bound_thru
+    const zone4_west_clv = masterParameters.east_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.east_bound_left + (masterParameters.west_bound_thru + masterParameters.north_bound_left) / junctionParameters.west_bound_thru;
 
-    const zone5_center_clv = max(masterParameters.north_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.north_bound_left, masterParameters.north_bound_thru / junctionParameters.north_bound_thru, round(max(0, masterParameters.north_bound_right / inputParameters.adjustment_factor_right_turn / junctionParameters.north_bound_right - masterParameters.east_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.east_bound_left), 0), masterParameters.south_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.south_bound_left, masterParameters.south_bound_thru / junctionParameters.south_bound_thru, round(max(0, masterParameters.south_bound_right / inputParameters.adjustment_factor_right_turn / junctionParameters.south_bound_right - masterParameters.east_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.east_bound_left), 0)) + max(masterParameters.east_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.east_bound_left + max(masterParameters.west_bound_thru / junctionParameters.west_bound_thru, round(max(0, masterParameters.west_bound_right / inputParameters.adjustment_factor_right_turn / junctionParameters.west_bound_right - masterParameters.south_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.south_bound_left), 0)), masterParameters.west_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.west_bound_left + max( masterParameters.east_bound_thru / junctionParameters.east_bound_thru, round(max(0, masterParameters.east_bound_right / inputParameters.adjustment_factor_right_turn / junctionParameters.east_bound_right - masterParameters.north_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.north_bound_left), 0)))
+    const zone5_center_clv = max(masterParameters.east_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.east_bound_left, masterParameters.east_bound_thru / junctionParameters.east_bound_thru, round(max(0, masterParameters.east_bound_right / inputParameters.adjustment_factor_right_turn / junctionParameters.east_bound_right - masterParameters.north_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.north_bound_left), 0), masterParameters.west_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.west_bound_left, masterParameters.west_bound_thru / junctionParameters.west_bound_thru, round(max(0, masterParameters.west_bound_right / inputParameters.adjustment_factor_right_turn / junctionParameters.west_bound_right - masterParameters.south_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.south_bound_left), 0)) + max(masterParameters.north_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.north_bound_left + max(masterParameters.south_bound_thru / junctionParameters.south_bound_thru, round(max(0, masterParameters.south_bound_right / inputParameters.adjustment_factor_right_turn / junctionParameters.south_bound_right - masterParameters.east_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.east_bound_left), 0)), masterParameters.south_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.south_bound_left + max(masterParameters.north_bound_thru / junctionParameters.north_bound_thru, round(max(0, masterParameters.north_bound_right / inputParameters.adjustment_factor_right_turn / junctionParameters.north_bound_right - masterParameters.west_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.west_bound_left), 0)));
 
-    const zone2_south_clv = masterParameters.north_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.north_bound_left + (masterParameters.south_bound_thru + masterParameters.west_bound_left) / junctionParameters.south_bound_thru
+    const zone3_east_clv = masterParameters.west_bound_left / inputParameters.adjustment_factor_left_turn / junctionParameters.west_bound_left + (masterParameters.east_bound_thru + masterParameters.south_bound_left) / junctionParameters.east_bound_thru;
 
 
-    const zone1_north_vc = round(zone1_north_clv / inputParameters.critical_lane_volume, 2);
+    const zone4_west_vc = round(zone4_west_clv / inputParameters.critical_lane_volume, 2);
     const zone5_center_vc = round(zone5_center_clv / inputParameters.critical_lane_volume, 2);
-    const zone2_south_vc = round(zone2_south_clv / inputParameters.critical_lane_volume, 2);
-    (this.state.get(Junctions.PartialDisplacedLeftTurnIntersectionNorthSouth)?.intersectionResult as BehaviorSubject<CapxIntersectionAnalysisResultParameters>).next({
-      zone1_north_clv: round(zone1_north_clv),
-      zone1_north_vc,
-      zone2_south_clv: round(zone2_south_clv),
-      zone2_south_vc,
-      zone3_east_clv: null,
-      zone3_east_vc: null,
-      zone4_west_clv: null,
-      zone4_west_vc: null,
+    const zone3_east_vc = round(zone3_east_clv / inputParameters.critical_lane_volume, 2);
+    (this.state.get(Junctions.PartialDisplacedLeftTurnIntersectionEastWest)?.intersectionResult as BehaviorSubject<CapxIntersectionAnalysisResultParameters>).next({
+      zone1_north_clv: null,
+      zone1_north_vc: null,
+      zone2_south_clv: null,
+      zone2_south_vc: null,
+      zone3_east_clv: round(zone3_east_clv),
+      zone3_east_vc,
+      zone4_west_clv: round(zone4_west_clv),
+      zone4_west_vc,
       zone5_center_clv: round(zone5_center_clv),
       zone5_center_vc,
-      all_clv: round(max(zone1_north_clv, zone5_center_clv, zone2_south_clv)),
-      all_vc: max(zone1_north_vc, zone5_center_vc, zone2_south_vc)
+      all_clv: round(max(zone3_east_clv, zone5_center_clv, zone4_west_clv)),
+      all_vc: max(zone3_east_vc, zone5_center_vc, zone4_west_vc)
     });
 
     this.updateRank();
