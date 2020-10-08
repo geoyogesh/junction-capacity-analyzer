@@ -23,7 +23,7 @@
       <rect x="394.2" y="716.28" width="126" height="38.5" style="stroke: #231f20;stroke-miterlimit: 10" [attr.fill]="capxStateService.getClvRangeColor((capxStateService.state.get(junctionName).intersectionResult | async).zone2_south_clv)"/>
       <text transform="translate(427.6 744.01) scale(1.08 1)" style="font-size: 27px;fill: #231f20;font-family: OpenSans, Open Sans">{{(capxStateService.state.get(junctionName).intersectionResult | async).zone2_south_clv}}</text>
       <rect x="394.2" y="754.78" width="126" height="38.5" style="fill: #fff;stroke: #231f20;stroke-miterlimit: 10"/>
-      <rect x="394.2" y="754.78" width="63" height="38.5" style="stroke: #231f20;stroke-miterlimit: 10" [attr.fill]="capxStateService.getClvRangeColor((capxStateService.state.get(junctionName).intersectionResult | async).zone2_south_clv)"/>
+      <rect x="394.2" y="754.78" width="63" height="38.5" style="stroke: #231f20;stroke-miterlimit: 10" [attr.fill]="(capxStateService.state.get(junctionName).intersectionResult | async).zone2_south_vc | vcStyle"/>
       <text transform="translate(407.46 780.65) scale(1.08 1)" style="font-size: 19px;fill: #231f20;font-family: OpenSans, Open Sans">{{(capxStateService.state.get(junctionName).intersectionResult | async).zone2_south_vc}}</text>
       <text transform="translate(466.46 780.85) scale(1.08 1)" style="font-size: 19px;fill: #231f20;font-family: OpenSans, Open Sans">V / C</text>
       <text transform="translate(419.22 703.78)" style="font-size: 24px;font-family: OpenSans, Open Sans">Zone 2</text>
@@ -32,7 +32,7 @@
       <rect x="117.2" y="88.19" width="126" height="38.5" style="stroke: #231f20;stroke-miterlimit: 10" [attr.fill]="capxStateService.getClvRangeColor((capxStateService.state.get(junctionName).intersectionResult | async).zone1_north_clv)"/>
       <text transform="translate(150.6 115.92) scale(1.08 1)" style="font-size: 27px;fill: #231f20;font-family: OpenSans, Open Sans">{{(capxStateService.state.get(junctionName).intersectionResult | async).zone1_north_clv}}</text>
       <rect x="117.2" y="126.69" width="126" height="38.5" style="fill: #fff;stroke: #231f20;stroke-miterlimit: 10"/>
-      <rect x="117.2" y="126.69" width="63" height="38.5" style="stroke: #231f20;stroke-miterlimit: 10" [attr.fill]="capxStateService.getClvRangeColor((capxStateService.state.get(junctionName).intersectionResult | async).zone1_north_clv)"/>
+      <rect x="117.2" y="126.69" width="63" height="38.5" style="stroke: #231f20;stroke-miterlimit: 10" [attr.fill]="(capxStateService.state.get(junctionName).intersectionResult | async).zone1_north_vc | vcStyle"/>
       <text transform="translate(130.46 152.55) scale(1.08 1)" style="font-size: 19px;fill: #231f20;font-family: OpenSans, Open Sans">{{(capxStateService.state.get(junctionName).intersectionResult | async).zone1_north_vc}}</text>
       <text transform="translate(189.46 152.76) scale(1.08 1)" style="font-size: 19px;fill: #231f20;font-family: OpenSans, Open Sans">V / C</text>
       <text transform="translate(142.22 75.69)" style="font-size: 24px;font-family: OpenSans, Open Sans">Zone 1</text>
@@ -41,7 +41,7 @@
       <rect x="427.2" y="240.28" width="126" height="38.5" style="stroke: #231f20;stroke-miterlimit: 10" [attr.fill]="capxStateService.getClvRangeColor((capxStateService.state.get(junctionName).intersectionResult | async).zone5_center_clv)"/>
       <text transform="translate(460.6 268.01) scale(1.08 1)" style="font-size: 27px;fill: #231f20;font-family: OpenSans, Open Sans">{{(capxStateService.state.get(junctionName).intersectionResult | async).zone5_center_clv}}</text>
       <rect x="427.2" y="278.78" width="126" height="38.5" style="fill: #fff;stroke: #231f20;stroke-miterlimit: 10"/>
-      <rect x="427.2" y="278.78" width="63" height="38.5" style="stroke: #231f20;stroke-miterlimit: 10" [attr.fill]="capxStateService.getClvRangeColor((capxStateService.state.get(junctionName).intersectionResult | async).zone5_center_clv)"/>
+      <rect x="427.2" y="278.78" width="63" height="38.5" style="stroke: #231f20;stroke-miterlimit: 10" [attr.fill]="(capxStateService.state.get(junctionName).intersectionResult | async).zone5_center_vc | vcStyle"/>
       <text transform="translate(440.46 304.65) scale(1.08 1)" style="font-size: 19px;fill: #231f20;font-family: OpenSans, Open Sans">{{(capxStateService.state.get(junctionName).intersectionResult | async).zone5_center_vc}}</text>
       <text transform="translate(499.46 304.85) scale(1.08 1)" style="font-size: 19px;fill: #231f20;font-family: OpenSans, Open Sans">V / C</text>
       <text transform="translate(452.22 227.78)" style="font-size: 24px;font-family: OpenSans, Open Sans">Zone 5</text>

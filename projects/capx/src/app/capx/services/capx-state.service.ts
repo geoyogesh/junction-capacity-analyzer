@@ -831,6 +831,7 @@ export class CapxStateService {
     }
   }
 
+
   public getCurrentClvRange(zone_all_clv: string | number | null): number | null {
     // update range text
     console.log(zone_all_clv);
