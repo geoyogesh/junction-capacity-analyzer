@@ -9,13 +9,13 @@ export class VcStylePipe implements PipeTransform {
     let color = '#666';
     if (cv !== null) {
       if (cv < 0.75) {
-        color = '#00FF00';
+        color = '#ffffb2';
       } else if (cv >= 0.75 && cv < 0.875) {
-        color = '#FFFF00';
+        color = '#fecc5c';
       } else if (cv >= 0.875 && cv < 1) {
-        color = '#FFA500';
+        color = '#fd8d3c';
       } else if (cv > 1) {
-        color = '#FF0000';
+        color = '#e31a1c';
       }
     }
     return color;
